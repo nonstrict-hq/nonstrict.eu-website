@@ -1,6 +1,6 @@
 html {
     background-color: #eee;
-    background-image: url(Images/background-noise-light.png);
+    background-image: url(/images/background-noise-light.png);
     color: #333;
 }
 
@@ -30,7 +30,7 @@ footer {
     display: inline-block;
     text-indent: -99999em;
     overflow: hidden;
-    background: url(/Images/nonstrict-logotype-light.png) 0 0 no-repeat;
+    background: url(/images/nonstrict-logotype-light.png) 0 0 no-repeat;
     width: 256px;
     height: 75px;
     background-size: 256px 75px;
@@ -39,7 +39,7 @@ footer {
 @media (prefers-color-scheme: dark) {
     html {
         background-color: #333;
-        background-image: url(Images/background-noise-dark.png);
+        background-image: url(/images/background-noise-dark.png);
         color: #eee;
     }
 
@@ -48,6 +48,6 @@ footer {
     }
 
     #logotype {
-        background-image: url(/Images/nonstrict-logotype-dark.png);
+        background-image: url(/images/nonstrict-logotype-dark.png);
     }
 }
