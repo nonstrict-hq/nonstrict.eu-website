@@ -1,0 +1,53 @@
+html {
+    background-color: #eee;
+    background-image: url(Images/background-noise-light.png);
+    color: #333;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 44pt;
+    margin: 60px 0 30px 0;
+}
+
+.contact {
+    margin: 140px 0;
+}
+
+a {
+    color: #555;
+}
+
+footer {
+    font-size: small;
+}
+
+#logotype {
+    display: inline-block;
+    text-indent: -99999em;
+    overflow: hidden;
+    background: url(/Images/nonstrict-logotype-light.png) 0 0 no-repeat;
+    width: 256px;
+    height: 75px;
+    background-size: 256px 75px;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: #333;
+        background-image: url(Images/background-noise-dark.png);
+        color: #eee;
+    }
+
+    a {
+        color: #aaa;
+    }
+
+    #logotype {
+        background-image: url(/Images/nonstrict-logotype-dark.png);
+    }
+}
