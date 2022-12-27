@@ -24,6 +24,26 @@ a {
 
 footer {
     font-size: small;
+/*
+    border-top: 1px solid #888;
+    max-width: 600px;
+    margin: 0px auto;
+*/
+}
+
+footer .external-links {
+    font-size: medium;
+    padding: 10px 0;
+}
+
+footer .external-links a {
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+footer .external-links a img {
+    vertical-align: text-top;
+    margin-right: 6px;
 }
 
 #logotype {
