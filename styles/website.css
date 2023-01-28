@@ -47,6 +47,10 @@ footer .external-links a img {
     margin-right: 6px;
 }
 
+footer p {
+	line-height: 1.5em;
+}
+
 #logotype {
     display: inline-block;
     text-indent: -99999em;
