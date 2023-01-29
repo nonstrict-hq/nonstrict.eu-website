@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug NonstrictWebsite",
+            "program": "${workspaceFolder:nonstrict.eu-website}/.build/debug/NonstrictWebsite",
+            "args": [],
+            "cwd": "${workspaceFolder:nonstrict.eu-website}",
+            "preLaunchTask": "swift: Build Debug NonstrictWebsite"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release NonstrictWebsite",
+            "program": "${workspaceFolder:nonstrict.eu-website}/.build/release/NonstrictWebsite",
+            "args": [],
+            "cwd": "${workspaceFolder:nonstrict.eu-website}",
+            "preLaunchTask": "swift: Build Release NonstrictWebsite"
+        }
+    ]
+}
