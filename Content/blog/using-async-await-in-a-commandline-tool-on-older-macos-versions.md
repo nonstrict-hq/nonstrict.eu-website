@@ -2,11 +2,10 @@
 date: 2023-01-30 12:00
 authors: mathijs, tom
 tags: Engineering blog, Screen Studio
+title: Using async/await in a commandline tool on older macOS versions
 intro: Building a commandline tool using Swift concurrency isn't as straight forward as you'd hope. Running on macOS pre-12 linker errors appear and back deployment is undocumented. We figured it out and documented it in this article.
-hero: images/blog/shashwat-verma-J0cKFsL8EMU-unsplash.jpg
+image: images/blog/shashwat-verma-J0cKFsL8EMU-unsplash.jpg
 ---
-
-# Using async/await in a commandline tool on older macOS versions
 
 *Fixing the `libswift_Concurrency.dylib could not be loaded` error.*
 

@@ -2,11 +2,11 @@
 date: 2023-01-31 12:00
 authors: tom, mathijs
 tags: Engineering blog, Screen Studio
-intro: Storing a screen capture on disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example. 
-hero: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
+title: Recording to disk using ScreenCaptureKit
+intro: Storing a screen capture on disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
+image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
 ---
 
-# Recording to disk using ScreenCaptureKit
 
 > Note: ScreenRecordingKit works in macOS 12.3 and later, if you need a solution that works on older macOS versions, check out “Recording to a file using AVCaptureScreenInput”.
 

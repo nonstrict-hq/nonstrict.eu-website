@@ -35,7 +35,13 @@ extension Theme where Site == NonstrictWebsite {
         }
         
         func makeItemHTML(for item: Publish.Item<NonstrictWebsite>, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML {
-            HTML(.body(.text("TODO")))
+            HTML(
+                .head(for: item, on: context.site),
+                .body(
+                    .component(Blog(item: item, site: context.site)),
+                    .component(Footer())
+                )
+            )
         }
         
         func makePageHTML(for page: Publish.Page, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML {

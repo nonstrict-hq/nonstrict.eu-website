@@ -11,7 +11,7 @@ struct NonstrictWebsite: Website {
         let authors: [Author]
         let date: Date
         let intro: String
-        let hero: String
+        let image: Path
     }
     
     let name = "Nonstrict"

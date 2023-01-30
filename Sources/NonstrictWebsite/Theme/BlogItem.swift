@@ -6,7 +6,7 @@ struct BlogItem: Component {
     var body: Component {
         Div {
             Div {
-                Image(item.metadata.hero)
+                Image(item.imagePath!.absoluteString)
                     .class("h-48 w-full object-cover")
             }
             .class("flex-shrink-0")
