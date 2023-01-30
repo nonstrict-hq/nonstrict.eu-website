@@ -1,2 +1,9 @@
+import ReadingTimePublishPlugin
+
 try! NonstrictWebsite()
-    .publish(withTheme: .nonstrictPlain)
+    .publish(
+        withTheme: .nonstrict,
+        additionalSteps: [
+            .installPlugin(.readingTime())
+        ]
+    )
