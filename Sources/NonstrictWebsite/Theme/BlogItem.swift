@@ -6,8 +6,10 @@ struct BlogItem: Component {
     var body: Component {
         Div {
             Div {
+                Link(url: item.path.absoluteString) {
                 Image(item.imagePath!.absoluteString)
                     .class("h-48 w-full object-cover")
+                }
             }
             .class("flex-shrink-0")
             
@@ -17,9 +19,9 @@ struct BlogItem: Component {
                         Link(url: site.path(for: primaryTag).absoluteString) {
                             Text(primaryTag.description)
                         }
-                        .class("hover:underline")
+                        .class("hover:underline hover:text-orange-500")
                     }
-                    .class("text-sm font-medium text-orange-600")
+                    .class("text-sm font-medium text-orange")
                     
                     Link(url: item.path.absoluteString) {
                         Paragraph {

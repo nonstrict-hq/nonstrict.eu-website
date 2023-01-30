@@ -12,6 +12,7 @@ struct NonstrictWebsite: Website {
         let date: Date
         let intro: String
         let image: Path
+        let tags: [String]
     }
     
     let name = "Nonstrict"

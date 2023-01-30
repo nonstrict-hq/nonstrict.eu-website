@@ -38,6 +38,7 @@ extension Theme where Site == NonstrictWebsite {
             HTML(
                 .head(for: item, on: context.site),
                 .body(
+                    .component(Header()),
                     .component(Blog(item: item, site: context.site)),
                     .component(Footer())
                 )

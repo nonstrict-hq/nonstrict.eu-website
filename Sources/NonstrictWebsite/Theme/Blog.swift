@@ -11,7 +11,7 @@ struct Blog: Component {
                         Link(url: site.path(for: primaryTag).absoluteString) {
                             Text(primaryTag.description)
                         }
-                        .class("block text-center text-lg font-semibold text-orange-600 hover:underline")
+                        .class("block text-center text-lg font-semibold text-orange hover:underline hover:text-orange-500")
                         Span(item.title)
                             .class("mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl")
                     }
@@ -51,11 +51,11 @@ struct Blog: Component {
                 Div {
                     item.content.body
                 }
-                .class("prose prose-lg prose-orange mx-auto mt-12 text-gray-500")
+                .class("prose prose-lg prose-orange mx-auto mt-12 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500")
             }
             .class("relative px-6 lg:px-8")
         }
-        .class("relative overflow-hidden bg-white py-16")
+        .class("relative overflow-hidden py-16")
     }
     
     let item: Item<NonstrictWebsite>
