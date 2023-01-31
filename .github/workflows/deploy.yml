@@ -35,8 +35,12 @@ jobs:
         with:
           path: .build
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
-      - name: Build
+      - name: Setup Tailwind
+        run: ./setup.sh
+      - name: Generate site
         run: swift run
+      - name: Build CSS
+        run: ./tailwindcss -i Styles/input.css -o Output/styles.css -m
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
