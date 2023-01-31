@@ -29,7 +29,7 @@ This details a simplified overview of how to set everything up, ignoring all the
 An AVAssetWriter is used to create QuickTime and H.264 video files. It can write out files with multiple tracks both audio and video. A single track can be written using an AVAssetWriterInput.
 
 ```swift
-let assetWriter = **try** AVAssetWriter(url: url, fileType: .mov)
+let assetWriter = try AVAssetWriter(url: url, fileType: .mov)
 let videoInput = AVAssetWriterInput(mediaType: .video, outputSettings: nil)
 assetWriter.add(videoInput)
 ```

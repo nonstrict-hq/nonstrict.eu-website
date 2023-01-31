@@ -11,7 +11,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/johnsundell/publish.git", from: "0.9.0"),
         .package(url: "https://github.com/alexito4/ReadingTimePublishPlugin", from: "0.3.0"),
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "2.2.4"),
+        .package(url: "https://github.com/johnsundell/splashpublishplugin", from: "0.2.0"),
     ],
     targets: [
         .executableTarget(
@@ -19,7 +19,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Publish", package: "publish"),
                 .product(name: "ReadingTimePublishPlugin", package: "ReadingTimePublishPlugin"),
-                .product(name: "Crypto", package: "swift-crypto"),
+                .product(name: "SplashPublishPlugin", package: "SplashPublishPlugin"),
             ]),
         .testTarget(
             name: "NonstrictWebsiteTests",
