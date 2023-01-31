@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    pre code {
+        overflow-x: auto;
+        white-space: pre;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    pre code .splash-keyword {
+        @apply text-rose-500
+    }
+    
+    pre code .splash-type {
+        @apply text-purple-400
+    }
+    
+    pre code .splash-call {
+        @apply text-cyan-500
+    }
+    
+    pre code .splash-property {
+        @apply text-emerald-500
+    }
+    
+    pre code .splash-number {
+        @apply text-amber-500
+    }
+    
+    pre code .splash-string {
+        @apply text-orange-500
+    }
+    
+    pre code .splash-comment {
+        @apply text-neutral-400
+    }
+    
+    pre code .splash-dotAccess {
+        @apply text-emerald-500
+    }
+    
+    pre code .splash-preprocessing {
+        @apply text-yellow-600
+    }
+}
