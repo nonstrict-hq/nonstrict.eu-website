@@ -5,6 +5,7 @@ tags: Engineering, Screen Studio
 title: Recording to disk using ScreenCaptureKit
 description: Saving a screen capture to disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
 image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
+path: 2023/recording-to-disk-with-screencapturekit
 ---
 
 
@@ -54,8 +55,8 @@ And finally, in the `stream(_:didOutputSampleBuffer:of:)` function, append the C
 
 ```swift
 func stream(_ stream: SCStream, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, of type: SCStreamOutputType) {
-        // … code removed for simplicity, see GitHub for complete example
-        videoInput.append(sampleBuffer)
+    // … code removed for simplicity, see GitHub for complete example
+    videoInput.append(sampleBuffer)
 }
 ```
 
@@ -72,9 +73,11 @@ Note that the above code is greatly simplified, and doesn’t handle all the edg
 
 ## Recording at correct (retina) resolution
 
-To make sure you’re recording full screen video, that is as sharp as possible for retina displays. Configure both the AVAssetInputWriter and the SCStreamConfiguration with the correct values.
+![Screenshot of screenrecording showing black bars around the recorded desktop](/images/blog/recording-to-disk-with-screencapturekit-black-bars.png)
 
-AVAssetInputWriter takes an outputSettings of type `[String : **Any**]?`. To help with constructing this dictionary, use AVOutputSettingsAssistant.
+To make sure you’re recording full screen video, without black bars that is as sharp as possible for retina displays. Configure both the AVAssetInputWriter and the SCStreamConfiguration with the correct values.
+
+AVAssetInputWriter takes an outputSettings of type `[String : Any]?`. To help with constructing this dictionary, use AVOutputSettingsAssistant.
 
 ```swift
 let displaySize = CGDisplayBounds(displayID).size
@@ -145,17 +148,17 @@ var firstSampleTime: CMTime = .zero
 var lastSampleBuffer: CMSampleBuffer?
 
 func stream(_ stream: SCStream, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, of type: SCStreamOutputType) {
-        // … code removed for simplicity, see GitHub for complete example
+    // … code removed for simplicity, see GitHub for complete example
 
-        // Save the timestamp of the current sample, all future samples will be offset by this
+    // Save the timestamp of the current sample, all future samples will be offset by this
     if firstSampleTime == .zero {
             firstSampleTime = sampleBuffer.presentationTimeStamp
     }
 
-        // Offset the time of the sample buffer, relative to the first sample
+    // Offset the time of the sample buffer, relative to the first sample
     let lastSampleTime = sampleBuffer.presentationTimeStamp - firstSampleTime
 
-        // Create a new CMSampleBuffer by copying the original, and applying the new presentationTimeStamp
+    // Create a new CMSampleBuffer by copying the original, and applying the new presentationTimeStamp
     let timing = CMSampleTimingInfo(duration: sampleBuffer.duration, presentationTimeStamp: lastSampleTime, decodeTimeStamp: sampleBuffer.decodeTimeStamp)
     let retimedSampleBuffer = try! CMSampleBuffer(copying: sampleBuffer, withNewTiming: [timing])
         videoInput.append(retimedSampleBuffer)
@@ -176,8 +179,8 @@ With one final edge case; If we make a 10 second recording of a screen where not
 // In case no changes happend on screen, and the last frame is from long ago
 // This ensures the recording is of the expected length
 if let originalBuffer = lastSampleBuffer {
-        let now = CMTime(seconds: ProcessInfo.processInfo.systemUptime, preferredTimescale: 100)
-        let additionalTime = now - streamOutput.firstSampleTime
+    let now = CMTime(seconds: ProcessInfo.processInfo.systemUptime, preferredTimescale: 100)
+    let additionalTime = now - streamOutput.firstSampleTime
     let timing = CMSampleTimingInfo(duration: originalBuffer.duration, presentationTimeStamp: additionalTime, decodeTimeStamp: originalBuffer.decodeTimeStamp)
     let additionalSampleBuffer = try CMSampleBuffer(copying: originalBuffer, withNewTiming: [timing])
     videoInput.append(additionalSampleBuffer)
