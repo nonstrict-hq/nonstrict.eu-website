@@ -8,8 +8,7 @@ image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
 path: 2023/recording-to-disk-with-screencapturekit
 ---
 
-
-> Note: ScreenRecordingKit works in macOS 12.3 and later, if you need a solution that works on older macOS versions, check out “Recording to a file using AVCaptureScreenInput”.
+> Note: ScreenRecordingKit works in macOS 12.3 and later, if you need a solution that works on older macOS versions, check out “[Recording to disk using AVCaptureScreenInput](/blog/2023/recording-to-disk-with-avcapturescreeninput)”.
 
 **tldr; Use an AVAssetWriter to save CMSampleBuffers in a SCStreamOutput callback. See our GitHub for a detailed example.**
 
@@ -193,7 +192,7 @@ assetWriter.endSession(atSourceTime: streamOutput.lastSampleBuffer?.presentation
 
 ## Detailed Example
 
-On GitHub we have the full example, with all edge cases covered, in a SPM package.
+On GitHub we have [the full example](https://github.com/nonstrict-hq/ScreenCaptureKit-Recording-example), with all edge cases covered, in a SPM package.
 
 To run this, clone the repo and run:
 
