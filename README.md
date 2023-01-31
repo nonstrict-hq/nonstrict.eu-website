@@ -1,6 +1,12 @@
 # The Nonstrict website
 
+## Install
+
+Run `./setup.sh` to install Tailwind
+
 ## Development
+
+Run tailwind locally with `./tailwindcss -i Styles/input.css -o Output/styles.css --watch` from the project folder.
 
 Run the website locally with `./serve.sh` from the project folder, the website will be available at `http://localhost:8000`.
 
