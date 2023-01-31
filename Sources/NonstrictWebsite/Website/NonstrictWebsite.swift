@@ -20,7 +20,7 @@ struct NonstrictWebsite: Website {
     let name = "Nonstrict"
     let description = "Experts on the Apple platform."
     let language = Language.english
-    let imagePath: Publish.Path? = "images/logo.png"
+    let imagePath: Publish.Path? = "images/og-logo.png"
     let url = URL(string: "https://nonstrict.eu")!
     let locale = Locale(identifier: "en_US_POSIX")
 }
