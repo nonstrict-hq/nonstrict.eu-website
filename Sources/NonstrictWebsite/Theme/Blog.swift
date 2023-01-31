@@ -48,6 +48,19 @@ struct Blog: Component {
                     .class("mt-6 flex items-center")
                 }
                 .class("mx-auto max-w-prose text-lg")
+                Element(name: "Figure") {
+                    Div {
+                        Image(url: item.imagePath!.absoluteString, description: item.metadata.imageAlt ?? "")
+                            .class("mx-auto w-[1024px] aspect-video lg:rounded-lg object-cover")
+                    }
+                    .class("mt-12 -mx-6 lg:-mx-8")
+                    if let imageCaption = item.metadata.imageCaption {
+                        Div {
+                            Element(name: "Figcaption") { Text(imageCaption) }
+                        }
+                        .class("prose prose-lg prose-orange mx-auto mt-3 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500")
+                    }
+                }
                 Div {
                     item.content.body
                 }

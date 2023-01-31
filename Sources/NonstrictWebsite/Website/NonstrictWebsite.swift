@@ -12,6 +12,8 @@ struct NonstrictWebsite: Website {
         let date: Date
         let intro: String
         let image: Path
+        let imageAlt: String?
+        let imageCaption: String?
         let tags: [String]
     }
     
