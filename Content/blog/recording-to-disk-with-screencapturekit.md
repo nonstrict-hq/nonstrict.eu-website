@@ -3,7 +3,7 @@ date: 2023-01-31 12:00
 authors: tom, mathijs
 tags: Engineering, Screen Studio
 title: Recording to disk using ScreenCaptureKit
-intro: Storing a screen capture on disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
+intro: Saving a screen capture to disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
 image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
 ---
 
@@ -16,9 +16,9 @@ image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
 
 ScreenCaptureKit is awesome, it allows for many custom filters to only capture specific content, and it is very efficient. In our recent project to build a new recording backend for Screen Studio, we needed to create a screen recording on macOS and write the output to a file on disk.
 
-The WWDC talks introducing and going deeper into ScreenCaptureKit are great introductions to the new framework, but don’t detail how to write to file.
+The WWDC talks [introducing](https://developer.apple.com/wwdc22/10156) and [going deeper](https://developer.apple.com/wwdc22/10155) into ScreenCaptureKit are great introductions to the new framework, but don’t detail how to write to file.
 
-Looking online, we didn’t find any good examples on what to do with the screen capture, presumably most users of this new API want to stream over the network in a video conferencing app, rather than write to disk. 
+For Screen Studio, we need to save the recorded screen capture to a file on disk. Searching online, we didn’t find examples of this. Presumably most users of this new API are video conferencing apps, that stream of the network, instead of writing to disk.
 
 During our development, we encountered some issues; the screen recording had black bars around it, it was blurry, and it didn’t work on a 5K display. We decided to do a dive deep into all these issues, this is what we found out:
 
