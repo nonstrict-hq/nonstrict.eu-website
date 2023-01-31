@@ -3,7 +3,7 @@ date: 2023-01-31 12:00
 authors: tom, mathijs
 tags: Engineering, Screen Studio
 title: Recording to disk using ScreenCaptureKit
-intro: Saving a screen capture to disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
+description: Saving a screen capture to disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
 image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
 ---
 

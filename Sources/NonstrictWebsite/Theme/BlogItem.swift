@@ -29,7 +29,7 @@ struct BlogItem: Component {
                         }
                         .class("text-xl font-semibold text-gray-900")
                         Paragraph {
-                            Text(item.metadata.intro)
+                            Text(item.metadata.description)
                         }
                         .class("mt-3 text-base text-gray-500")
                     }

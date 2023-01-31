@@ -8,9 +8,9 @@ struct NonstrictWebsite: Website {
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
+        var description: String
         let authors: [Author]
         let date: Date
-        let intro: String
         let image: Path
         let imageAlt: String?
         let imageCaption: String?
