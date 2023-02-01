@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Crypto
 
 enum Author: String, Decodable {
     case mathijs
