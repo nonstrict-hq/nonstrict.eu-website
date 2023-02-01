@@ -1,8 +1,6 @@
 import ReadingTimePublishPlugin
 import SplashPublishPlugin
 
-let foo = "bar"
-
 try! NonstrictWebsite()
     .publish(
         withTheme: .nonstrict,

@@ -3,7 +3,7 @@ date: 2023-01-29 12:00
 authors: tom, mathijs
 tags: Engineering, Screen Studio
 title: Recording to disk using AVCaptureScreenInput
-description: On older macOS versions, ScreenCaptureKit isn't available. We wrote an example project of how to create a screen recording using the older AVCaptureScreenInput.
+description: On older macOS versions, ScreenCaptureKit isn't available. We created an example project demonstrating screen recording using the older AVCaptureScreenInput.
 image: images/blog/clay-banks-zH9kK6wNC20-unsplash.jpg
 path: 2023/recording-to-disk-with-avcapturescreeninput
 ---
