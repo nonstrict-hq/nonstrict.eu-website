@@ -16,10 +16,10 @@ struct BlogItem: Component {
             Div {
                 Div {
                     Paragraph {
-                        Link(url: site.path(for: primaryTag).absoluteString) {
+                        // Link(url: site.path(for: primaryTag).absoluteString) {
                             Text(primaryTag.description)
-                        }
-                        .class("hover:underline hover:text-orange-500")
+                        // }
+                        // .class("hover:underline hover:text-orange-500")
                     }
                     .class("text-sm font-medium text-orange")
                     
