@@ -18,7 +18,7 @@ struct NonstrictWebsite: Website {
     }
     
     let name = "Nonstrict"
-    let description = "Experts on the Apple platform."
+    let description = "Experts on Apple platforms."
     let language = Language.english
     let imagePath: Publish.Path? = "images/og-logo.png"
     let url = URL(string: "https://nonstrict.eu")!
