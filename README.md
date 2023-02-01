@@ -2,7 +2,7 @@
 
 ## Install
 
-Run `./setup.sh` to install Tailwind
+Run `./setup-arm64.sh` (or the x64 variant if you're on Intel) to install Tailwind
 
 ## Development
 

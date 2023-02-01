@@ -36,7 +36,7 @@ jobs:
           path: .build
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
       - name: Setup Tailwind
-        run: ./setup.sh
+        run: ./setup-x64.sh
       - name: Generate site
         run: swift run
       - name: Build CSS
