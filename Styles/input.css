@@ -10,7 +10,7 @@
     }
     
     pre code .splash-keyword {
-        @apply text-rose-500
+        @apply text-rose-500 font-bold
     }
     
     pre code .splash-type {

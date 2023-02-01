@@ -58,13 +58,15 @@ struct Blog: Component {
                         Div {
                             Element(name: "Figcaption") { Text(imageCaption) }
                         }
-                        .class("prose prose-lg prose-orange mx-auto mt-3 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500")
+                        .class("prose prose-lg prose-orange mx-auto mt-3 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500 prose-figcaption:text-sm prose-figcaption:font-serif")
                     }
                 }
                 Div {
                     item.content.body
                 }
-                .class("prose prose-lg prose-orange mx-auto mt-12 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500")
+                .class("prose prose-lg prose-orange mx-auto mt-12 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500 prose-figcaption:italic prose-figcaption:italic prose-figcaption:-mt-6 prose-figcaption:text-sm prose-figcaption:font-serif prose-img:drop-shadow-xl")
+                // drop-shadow for image in /blog/2023/recording-to-disk-with-screencapturekit/
+                // not sure if its a good general default
             }
             .class("relative px-6 lg:px-8")
         }

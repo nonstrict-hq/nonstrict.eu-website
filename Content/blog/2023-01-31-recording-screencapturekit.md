@@ -73,10 +73,12 @@ Note that the above code is greatly simplified, and doesn’t handle all the edg
 ## Recording at correct (retina) resolution
 
 ![Screenshot of screenrecording showing black bars around the recorded desktop](/images/blog/recording-to-disk-with-screencapturekit-black-bars.png)
+<figcaption>Initially, we had some issues. Black bars around the desktop, and everything was blurry (non-retina).</figcaption>
 
 To make sure you’re recording full screen video, without black bars that is as sharp as possible for retina displays. Configure both the AVAssetInputWriter and the SCStreamConfiguration with the correct values.
 
 AVAssetInputWriter takes an outputSettings of type `[String : Any]?`. To help with constructing this dictionary, use AVOutputSettingsAssistant.
+
 
 ```swift
 let displaySize = CGDisplayBounds(displayID).size
