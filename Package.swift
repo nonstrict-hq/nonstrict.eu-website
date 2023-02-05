@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "nonstrict.eu-website",
-    defaultLocalization: "fr_FR",
+    defaultLocalization: "en",
     platforms: [
         .macOS(.v13)
     ],
