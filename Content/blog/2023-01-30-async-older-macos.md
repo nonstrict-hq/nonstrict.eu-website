@@ -115,9 +115,13 @@ The last rpath option is the path we added, so if the library is not at any of t
 
 ## Notes on this solution
 
-We also reached out to Apple Developer Technical Support (DTS) and asked if having to ship the library ourselves was expected. It turns out it is, it’s just not really documented anywhere. This is because it will be automatically packaged into the bundle of Mac/iOS apps. It’s only because commandline tools don’t have a bundle themselves that this becomes a problem.
+We also reached out to Apple Developer Technical Support (DTS) and asked if having to ship the library ourselves was expected. It turns out it is, it’s just not really documented anywhere. This is because it will be automatically packaged into the bundle of Mac/iOS apps that use Swift concurrency. It’s only because commandline tools don’t have a bundle themselves that this becomes a problem.
 
 Since we’re embedding the commandline tool into an Electron app shipping dynamic library alongside the binary was no issue. Also the file size hit (±1,1MB) wasn’t considered an issue in our case. Having to ship this library as a separate file might be more problematic in other situations of course.
+
+## Update February 8th
+
+After some more contact with Apple DTS it turns out it's important that you put everything in the right folder when shipping the binary as a helper app. As described in the [Placing Content in a Bundle](https://developer.apple.com/documentation/bundleresources/placing_content_in_a_bundle?language=objc) article from Apple, the binary should be in the `Contents/Helpers/` folder and the dynamic library in the `Contents/Frameworks/` folder. This helps to avoid code signing issues. We added another unsafe flag to the linker settings to `@executable_path/../Frameworks` to solve this.
 
 ## References
 
