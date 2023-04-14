@@ -5,6 +5,7 @@ import Plot
 struct NonstrictWebsite: Website {
     enum SectionID: String, WebsiteSectionID {
         case blog
+        case apps
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
@@ -15,6 +16,8 @@ struct NonstrictWebsite: Website {
         let imageAlt: String?
         let imageCaption: String?
         let tags: [String]
+
+        let appLink: String?
     }
     
     let name = "Nonstrict"

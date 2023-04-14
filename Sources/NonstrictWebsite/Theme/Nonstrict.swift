@@ -31,7 +31,7 @@ extension Theme where Site == NonstrictWebsite {
         
         
         func makeSectionHTML(for section: Publish.Section<NonstrictWebsite>, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML {
-            HTML(.body(.text("TODO")))
+            HTML(.body(.text("TODO section")))
         }
         
         func makeItemHTML(for item: Publish.Item<NonstrictWebsite>, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML {
@@ -46,15 +46,22 @@ extension Theme where Site == NonstrictWebsite {
         }
         
         func makePageHTML(for page: Publish.Page, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML {
-            HTML(.body(.text("TODO")))
+            HTML(
+                .head(for: page, on: context.site),
+                .body(
+                    .component(Header()),
+                    .component(AppItem(item: page, site: context.site)),
+                    .component(Footer())
+                )
+            )
         }
         
         func makeTagListHTML(for page: Publish.TagListPage, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML? {
-            HTML(.body(.text("TODO")))
+            HTML(.body(.text("TODO taglistpage")))
         }
         
         func makeTagDetailsHTML(for page: Publish.TagDetailsPage, context: Publish.PublishingContext<NonstrictWebsite>) throws -> Plot.HTML? {
-            HTML(.body(.text("TODO")))
+            HTML(.body(.text("TODO tagdetailspage")))
         }
     }
 }

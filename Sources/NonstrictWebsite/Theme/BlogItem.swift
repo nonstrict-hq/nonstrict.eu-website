@@ -74,7 +74,7 @@ struct BlogItem: Component {
     let site: NonstrictWebsite
 
     var readingTime: Int { max(1, item.readingTime.minutes) }
-    var primaryAuthor: AuthorInformation { item.metadata.authors.first!.info }
+    var primaryAuthor: AuthorInformation { item.metadata.authors.first?.info ?? { fatalError("No authors") }() }
     var primaryTag: Tag { item.tags.first! }
     
     var style: Date.FormatStyle {
