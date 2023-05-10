@@ -26,7 +26,7 @@ struct AppItem: Component {
                 .class("prose prose-md prose-orange mx-auto mt-12 text-gray-500 prose-a:text-orange hover:prose-a:text-orange-500 prose-figcaption:italic prose-figcaption:italic prose-figcaption:-mt-6 prose-figcaption:text-sm prose-figcaption:font-serif prose-img:drop-shadow-xl")
                 Div {
                     Link(url: appLink) {
-                        Text("Download via TestFlight")
+                        Text("Download in de AppStore")
                     }.class("inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-orange px-3 md:px-4 h-10 text-base font-medium text-white shadow-sm hover:bg-orange-600")
                 }
                 .class("mx-auto mt-12 text-gray-500 text-center")

@@ -6,7 +6,7 @@ title: Bonnetjes
 description: Bonnetjes app in TestFlight
 image: images/apps/app-icon-bonnetjes.png
 path: bonnetjes
-appLink: https://testflight.apple.com/join/671PBiQu
+appLink: https://apple.co/3BbQPoc
 ---
 
 Bonnetjes is een app van Nonstrict om snel en gemakkelijk bonnetjes te scannen en te uploaden naar Moneybird.
