@@ -10,7 +10,7 @@ import Publish
 import Plot
 
 struct AppItem: Component {
-    let appLink = "https://testflight.apple.com/join/671PBiQu"
+    let appLink = "https://apple.co/3BbQPoc"
     var body: Component {
         Div {
             Div {
