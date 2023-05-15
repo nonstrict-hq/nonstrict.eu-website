@@ -39,7 +39,7 @@ extension Theme where Site == NonstrictWebsite {
                 .head(for: item, on: context.site),
                 .body(
                     .component(Header(joinForces: true)),
-                    .component(Blog(item: item, site: context.site)),
+                    .component(BlogPost(item: item, site: context.site)),
                     .component(Footer())
                 )
             )
