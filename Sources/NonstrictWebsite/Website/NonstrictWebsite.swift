@@ -12,11 +12,12 @@ struct NonstrictWebsite: Website {
         var description: String
         let authors: [Author]
         let date: Date
-        let image: Path
+        let image: Path?
         let imageAlt: String?
         let imageCaption: String?
         let tags: [String]
 
+        let featured: Bool?
         let appLink: String?
     }
     

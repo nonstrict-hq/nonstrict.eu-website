@@ -23,7 +23,7 @@ extension Theme where Site == NonstrictWebsite {
                 .head(for: index, on: context.site),
                 .body(
                     .component(Hero()),
-                    .component(BlogSection(blogItems: context.sections[.blog].items.prefix(3), site: context.site)),
+                    .component(BlogSection(blogItems: context.sections[.blog].items.filter { $0.metadata.featured == true }.prefix(3), site: context.site)),
                     .component(Footer())
                 )
             )

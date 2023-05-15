@@ -7,8 +7,13 @@ struct BlogItem: Component {
         Div {
             Div {
                 Link(url: item.path.absoluteString) {
-                Image(item.imagePath!.absoluteString)
-                    .class("h-48 w-full object-cover")
+                    if let imagePath = item.imagePath {
+                        Image(imagePath.absoluteString)
+                            .class("h-48 w-full object-cover")
+                    } else {
+                        Div()
+                            .class("h-48 w-full object-cover")
+                    }
                 }
             }
             .class("flex-shrink-0")

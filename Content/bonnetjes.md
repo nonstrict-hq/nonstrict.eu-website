@@ -3,7 +3,7 @@ date: 2023-04-14 12:00
 authors: tom, mathijs
 tags: Apps, Bonnetjes
 title: Bonnetjes
-description: Bonnetjes app in TestFlight
+description: Bonnetjes app
 image: images/apps/app-icon-bonnetjes.png
 path: bonnetjes
 appLink: https://apple.co/3BbQPoc

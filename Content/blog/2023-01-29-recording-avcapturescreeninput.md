@@ -6,6 +6,7 @@ title: Recording to disk using AVCaptureScreenInput
 description: On older macOS versions, ScreenCaptureKit isn't available. We created an example project demonstrating screen recording using the older AVCaptureScreenInput.
 image: images/blog/clay-banks-zH9kK6wNC20-unsplash.jpg
 path: 2023/recording-to-disk-with-avcapturescreeninput
+featured: true
 ---
 
 > Note: On macOS 12.3 it is recommended to use ScreenRecordingKit instead, this is more efficient and provides more features. Check out our post “[Recording to disk using ScreenCaptureKit](/blog/2023/recording-to-disk-with-screencapturekit)”

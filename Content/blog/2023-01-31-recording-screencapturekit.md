@@ -6,6 +6,7 @@ title: Recording to disk using ScreenCaptureKit
 description: Saving a screen capture to disk has some interesting edge cases when using ScreenCaptureKit. The documentation and WWDC videos don't really cover using the captured frame samples. We created an example.
 image: images/blog/jakob-owens-HLXAU6LhAcI-unsplash.jpg
 path: 2023/recording-to-disk-with-screencapturekit
+featured: true
 ---
 
 > Note: ScreenRecordingKit works in macOS 12.3 and later, if you need a solution that works on older macOS versions, check out “[Recording to disk using AVCaptureScreenInput](/blog/2023/recording-to-disk-with-avcapturescreeninput)”.
