@@ -8,7 +8,7 @@ struct BlogPost: Component {
             Div {
                 Div {
                     H1 {
-                        Link(url: "/#blog" /*site.path(for: primaryTag).absoluteString*/) {
+                        Link(url: "/blog" /*site.path(for: primaryTag).absoluteString*/) {
                             Text(primaryTag.description)
                         }
                         .class("block text-center text-lg font-semibold text-orange hover:underline hover:text-orange-500")

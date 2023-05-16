@@ -2,20 +2,23 @@
 date: 2023-03-13 12:00
 authors: tom
 tags: Engineering
-title: ScreenCapureKit errors missing annotations
+title: Mentioning SCError crashes on older macOS versions
 description: Don't reference SCStreamError from your code if you target older macOS versions.
-path: 2023/screencapturekit-errors-missing-annotations
+path: 2023/mentioning-scerror-crashes-on-older-macos-versions
 ---
 
-A public service annoucement for those using ScreenCaptureKit in an app that also needs to run on macOS < 12.3.
+A public service annoucement for those using ScreenCaptureKit in an app that also needs to run on macOS < 12.3 (Monterey).
 
 The SCStreamError type and related error codes don't have `@availability` annotations. That means if you use them in your code, your app will crash on older macOS versions, because it can't find ScreenCaptureKit.
 
-Even using these types from within an `@available` scope won't work, instead hardcode the error domain and codes.
+Even using these types from within an `@available` scope won't work, as a workaround you can hardcode the error domain and codes raw values.
 
 ## Demonstrating the issue
 
-If you have an app that uses these types, it will work as expected on macOS 12.3+, but will crash on macOS versions from before, that don't ship with ScreenCaptureKit. The error reports that `ScreenCaptureKit.framework` can't be loaded:
+If you have an app that uses these types, it will work as expected on macOS 12.3+, but will crash on previous macOS versions.
+
+Because the SCError type isn't annotated with a proper availability annotations by Apple, older macOS versions also try to load ScreenCaptureKit.
+This results in the following error when you try to run an app that refers to any SCError, even when you guard it with an `@available` annotation.
 
 ```
 dyld: Library not loaded: /System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit
@@ -30,6 +33,7 @@ Abort trap: 6
 ## Workaround
 
 Don't directy reference the `SCStreamError` or `SCStreamError.Code` types from code. Instead, use their raw values.
+By not mentioning these types directly, the framework won't be loaded.
 
 For example, instead of:
 
@@ -42,7 +46,7 @@ do {
 }
 ```
 
-Instead use raw values:
+Use raw values:
 ```swift
 // Write this instead:
 let streamErrorDomain = "com.apple.ScreenCaptureKit.SCStreamErrorDomain"
