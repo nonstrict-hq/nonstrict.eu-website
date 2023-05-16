@@ -2,7 +2,7 @@
 date: 2023-03-13 12:00
 authors: tom
 tags: Engineering
-title: Mentioning SCError crashes on older macOS versions
+title: Mentioning SCStreamError crashes on older macOS versions
 description: Don't reference SCStreamError from your code if you target older macOS versions.
 path: 2023/mentioning-scerror-crashes-on-older-macos-versions
 ---
@@ -17,8 +17,8 @@ Even using these types from within an `@available` scope won't work, as a workar
 
 If you have an app that uses these types, it will work as expected on macOS 12.3+, but will crash on previous macOS versions.
 
-Because the SCError type isn't annotated with a proper availability annotations by Apple, older macOS versions also try to load ScreenCaptureKit.
-This results in the following error when you try to run an app that refers to any SCError, even when you guard it with an `@available` annotation.
+Because the SCStreamError type isn't annotated with a proper availability annotations by Apple, older macOS versions also try to load ScreenCaptureKit.
+This results in the following error when you try to run an app that refers to any SCStreamError, even when you guard it with an `@available` annotation.
 
 ```
 dyld: Library not loaded: /System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit
@@ -28,7 +28,7 @@ Abort trap: 6
 ```
 
 ![Screenshot showing the "Library not loaded" error](/images/blog/dyld-no-screencapturekit.png)
-<figcaption>On Big Sur, an executable referencing SCError will crash</figcaption>
+<figcaption>On Big Sur, an executable referencing SCStreamError will crash</figcaption>
 
 ## Workaround
 
