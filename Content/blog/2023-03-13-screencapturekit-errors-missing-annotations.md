@@ -4,7 +4,7 @@ authors: tom
 tags: Engineering
 title: Mentioning SCStreamError crashes on older macOS versions
 description: Don't reference SCStreamError from your code if you target older macOS versions.
-path: 2023/mentioning-scerror-crashes-on-older-macos-versions
+path: 2023/mentioning-scstreamerror-crashes-on-older-macos-versions
 ---
 
 A public service annoucement for those using ScreenCaptureKit in an app that also needs to run on macOS < 12.3 (Monterey).
