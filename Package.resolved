@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/johnsundell/plot.git",
       "state" : {
-        "revision" : "4237057acdaaea5def56d350815e37fa8311d1fd",
-        "version" : "0.13.0"
+        "revision" : "271926b4413fe868739d99f5eadcf2bd6cd62fb8",
+        "version" : "0.14.0"
       }
     },
     {

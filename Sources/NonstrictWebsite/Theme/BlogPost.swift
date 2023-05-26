@@ -16,18 +16,14 @@ struct BlogPost: Component {
                             .class("mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl")
                     }
 
-                    if item.imagePath != nil { // Big posts
-                        Paragraph {
-                            Text(item.metadata.description)
-                        }
-                        .class("mt-8 text-xl leading-8 text-gray-500")
-                        authorsTimeReadingTime
-                    } else { // Small posts
-                        timeOnly
+                    Paragraph {
+                        Text(item.metadata.description)
                     }
+                    .class("mt-8 text-xl leading-8 text-gray-500")
+                    authorsTimeReadingTime
                 }
                 .class("mx-auto max-w-prose text-lg")
-                if let imagePath = item.imagePath {
+                if let imagePath = item.imagePath, item.metadata.hideImageHero != true {
                     Element(name: "Figure") {
                         Div {
                             Image(url: imagePath.absoluteString, description: item.metadata.imageAlt ?? "")
@@ -82,17 +78,6 @@ struct BlogPost: Component {
             .class("ml-3")
         }
         .class("mt-6 flex items-center")
-    }
-
-    var timeOnly: any Component {
-        Div {
-            Element(name: "Time") {
-                Text(item.date.formatted(style))
-            }
-            .attribute(named: "datetime", value: item.date.ISO8601Format(.iso8601Date(timeZone: .gmt)))
-        }
-        .class("block text-center mt-6 items-center")
-        .class("text-sm text-gray-500")
     }
     
     let item: Item<NonstrictWebsite>

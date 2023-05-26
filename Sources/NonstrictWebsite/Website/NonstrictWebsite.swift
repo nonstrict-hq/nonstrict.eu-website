@@ -18,6 +18,7 @@ struct NonstrictWebsite: Website {
         let tags: [String]
 
         let featured: Bool?
+        let hideImageHero: Bool?
         let appLink: String?
     }
     

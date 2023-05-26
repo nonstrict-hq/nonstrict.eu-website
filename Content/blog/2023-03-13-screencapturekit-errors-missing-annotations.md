@@ -1,13 +1,14 @@
 ---
 date: 2023-03-13 12:00
-authors: tom
+authors: tom, mathijs
 tags: Engineering
 title: Mentioning SCStreamError crashes on older macOS versions
-description: Don't reference SCStreamError from your code if you target older macOS versions.
+description: A public service annoucement for those using ScreenCaptureKit in an app that also needs to run on macOS < 12.3 (Monterey).
 path: 2023/mentioning-scstreamerror-crashes-on-older-macos-versions
+image: images/blog/dyld-no-screencapturekit.png
+featured: true
+hideImageHero: true
 ---
-
-A public service annoucement for those using ScreenCaptureKit in an app that also needs to run on macOS < 12.3 (Monterey).
 
 The SCStreamError type and related error codes don't have `@availability` annotations. That means if you use them in your code, your app will crash on older macOS versions, because it can't find ScreenCaptureKit.
 
