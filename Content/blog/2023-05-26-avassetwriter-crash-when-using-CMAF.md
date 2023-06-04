@@ -23,12 +23,12 @@ Error Domain=AVFoundationErrorDomain Code=-11800 "The operation could not be com
 
 We first incorrectly assumed this error was related to presentation time stamps being out of order in the CMSampleBuffers that were added. After some investigations it turned out this error occurs when the following four conditions are all met:
 
-1. `AVAssetWriter.outputFileTypeProfile` set to `.mpeg4CMAFCompliant`
-2. The `AVAssetWriterInput` added to the writer must have `expectsMediaDataInRealTime` set to `true`.
-3. CMSampleBuffers must be appended to the input either:
-    - At a variable rate, for example because the source only generates samples when something changes (like ScreenCaptureKit does) or there is a discontinuity in samples from the capture device.
-    - Frames are delivered significantly faster than 60 FPS, for example on ProMotion screens.
-4. The application must run on an Intel mac, Apple Silicon macs are not affected.
+1. The application must run on an Intel mac, Apple Silicon macs are not affected.
+2. `AVAssetWriter.outputFileTypeProfile` set to `.mpeg4CMAFCompliant`
+3. The `AVAssetWriterInput` added to the writer must have `expectsMediaDataInRealTime` set to `true`.
+4. CMSampleBuffers must be appended to the input either:
+  - At a variable rate, for example because the source only generates samples when something changes (like ScreenCaptureKit does) or there is a discontinuity in samples from the capture device.
+  - Frames are delivered significantly faster than 60 FPS, for example on ProMotion screens.
 
 We’ve verified this issue on macOS 12 Monterey and 13 Ventura, it doesn’t seem to affect macOS 11 Big Sur.
 
