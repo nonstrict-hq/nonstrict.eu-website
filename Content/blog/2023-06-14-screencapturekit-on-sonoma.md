@@ -50,7 +50,7 @@ You don’t need to use the new picker UI, the previous API based on SCShareable
 
 (Note: Again, as with SCScreenshotManager, I couldn’t get this to work, this seems a bug in this first beta, FB12331920)
 
-One strange aspect of the current version of the system level UI is that it doesn’t show both we webcam and the content picker at the same time. It depends on the order in which the features get activated. That means if start a SCStream.startCapture() first, and then do AVCaptureSession.startRunning(), the the screen capture will be shown in the picker in the system level UI, if the webcam is started first, that one is shown. I suspect this is a bug in this first beta (FB12331901).
+One strange aspect of the current version of the system level UI is that it doesn’t show both the webcam and the screen capture in picker at the same time. It depends on the order in which the features get activated. That means if start a SCStream.startCapture() first, and then do AVCaptureSession.startRunning(), the the screen capture will be shown in the picker in the system level UI, if the webcam is started first, that one is shown. I suspect this is a bug in this first beta (FB12331901).
 
 ![Screenshot of macOS Ventura showing the system level picker](/images/blog/screencapturekit-picker-ventura.jpg)
 <figcaption>Sharing picker on macOS Ventura when using FaceTime.</figcaption>
@@ -59,7 +59,7 @@ Fun fact; The system level picker technically isn’t new to Sonoma, it is also 
 
 ### Conclusion
 
-There are a lot of issues in the current beta 1, the documentation is incomplete and many features don’t work right. But this is a beta, and I’m sure a lot of issues will be fixed in the comming months.
+There are a lot of issues in the current beta 1, the documentation is incomplete and many features don’t work right. But this is a beta, and I’m sure a lot of issues will be fixed in the coming months.
 
 The previous macOS method of allowing apps to record the screen is quite complicated; There is a confusing dialog, and users need to go to System Settings to manually enable the app. I’m excited by the new system level sharing picker, since this allows users to quickly get started with screensharing a window or screen, without navigating through any complicated flows.
 
