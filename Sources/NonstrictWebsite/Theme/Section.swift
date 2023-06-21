@@ -24,6 +24,18 @@ struct SectionItem: Component {
     var body: Component {
         Div {
             Div {
+                Link(url: item.path.absoluteString) {
+                    if let imagePath = item.imagePath {
+                        Image(imagePath.absoluteString)
+                            .class("h-48 w-full object-cover")
+                    } else {
+                        Div()
+                            .class("h-48 w-full object-cover")
+                    }
+                }
+            }
+            .class("flex-shrink-0")
+            Div {
                 Div {
                     Paragraph {
                         // Link(url: site.path(for: primaryTag).absoluteString) {
