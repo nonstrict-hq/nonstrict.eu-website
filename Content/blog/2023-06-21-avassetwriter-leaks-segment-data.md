@@ -21,7 +21,7 @@ This means passing the data in our own code from Objective-C to a Swift function
 
 ## Affected versions
 
-The leak is present since the introduction of segment writing in macOS 11 Big Sur. We’ve verified the leak on macOS 11.7.2, 12.6.5, 13.2.1. We’ve also confirmed that Apple has fixed this leak in macOS 13.3 and newer.
+The leak is present since the introduction of segment writing in macOS 11 Big Sur. We’ve verified the leak on macOS 11.7.2, 12.6.5, 13.2.1. We’ve also confirmed that Apple has fixed this leak in macOS 13.3 and newer. AVAssetWriter on iOS versions is probably also affected, but we haven't validated the leak and fix on different iOS versions.
 
 ## Workaround
 
@@ -36,5 +36,5 @@ A sample project demonstrating this issue and the workarounds is [available on G
 
 ## References
 
-- Nonstrict. (2023, June 21). AVAssetWriter segment leak sample. GitHub. https://github.com/nonstrict-hq/avassetwriter-segment-leak-sample
-- de Kort, J. (2022, December 16). *Memory leak when using AVCaptureSession to AVAssetWriter using AVAssetWriterDelegate for HLS.* StackOverflow. https://stackoverflow.com/questions/74825652/memory-leak-when-using-avcapturesession-to-avassetwriter-using-avassetwriterdele
+- Nonstrict. (2023, June 21). AVAssetWriter segment leak sample. GitHub. [https://github.com/nonstrict-hq/avassetwriter-segment-leak-sample](https://github.com/nonstrict-hq/avassetwriter-segment-leak-sample)
+- de Kort, J. (2022, December 16). *Memory leak when using AVCaptureSession to AVAssetWriter using AVAssetWriterDelegate for HLS.* StackOverflow. [https://stackoverflow.com/questions/74825652/memory-leak-when-using-avcapturesession-to-avassetwriter-using-avassetwriterdele](https://stackoverflow.com/questions/74825652/memory-leak-when-using-avcapturesession-to-avassetwriter-using-avassetwriterdele)
