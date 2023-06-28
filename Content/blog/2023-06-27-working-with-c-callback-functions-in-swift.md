@@ -1,0 +1,153 @@
+---
+date: 2023-06-27 12:00
+authors: tom, mathijs
+tags: Engineering
+title: Working with C callback functions in Swift
+description: Moving from a C function-pointer based callback API to Swift closures with generics. And a look at the future with parameter packs.
+path: 2023/working-with-c-callback-functions-in-swift
+image: images/blog/pavan-trikutam-71CjSSB83Wo-unsplash.jpg
+featured: true
+hideImageHero: false
+---
+
+For our app [CleanPresenter](https://cleanpresenter.com), we need to use some older Mac APIs. For example the function [CGDisplayRegisterReconfigurationCalback](https://developer.apple.com/documentation/coregraphics/1455336-cgdisplayregisterreconfiguration), to register a callback when the display configuration changes. This function was introduced 20 years ago in Mac OS X Panther.
+
+The function CGDisplayRegisterReconfigurationCalback does exactly what it promise, it takes a function pointer and calls back when needed. But this function pointer is annoying, we would like a more “Swifty” way of writing this code.
+
+## From functions to closures
+
+The C API uses function pointers to specify what function to callback. In Swift we don’t use function pointers, instead we use [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)). The difference between a function pointer and a closure is that a closure also captures its surrounding variables (it “closes over the environment”).
+
+In the automatic Swift-to-C bridging, we can write the familiar curly-braces syntax, that looks a lot like Swifts closures, but we cannot capture external variables.
+
+This is an example of a closure:
+
+```swift
+let start = Int(Date.now.timeIntervalSinceReferenceDate)
+let result = myArray.map { x in start + x }
+```
+
+Here, the map takes a closure argument, this isn’t just a function that returns a value based on the argument `x`, but it also captures the `start` value. If map instead used a function pointer instead, there would be no way to write the equivalent code. We couldn’t refer to the `start` variable, we could try to inline the `Date.now` call, but then it would be called multiple times, changing the behaviour from the original code.
+
+So, with just the function pointer, we can write this to print each display reconfiguration:
+
+```swift
+CGDisplayRegisterReconfigurationCallback({ displayID, flags, userInfo in
+    print("Reconfiguration of display:", displayID)
+}, nil)
+```
+
+Fortunately, the CGDisplayRegisterReconfigurationCallback function is not so limited that it only takes a function pointer. It also takes an optional second argument `userInfo`, this userInfo can be anything (it is an `UnsafeMutableRawPointer`) but that userInfo gets passed back into the callback! This is the standard method in C of getting the equivalent to a closure; pass an extra pointer around, that pointer can contain the environment needed.
+
+With this, we can now make a helper object to store the closure.
+
+```swift
+// Helper class to store closure
+class DisplayReconfigurationClosure {
+    let closure: (CGDirectDisplayID, CGDisplayChangeSummaryFlags) -> Void
+
+    init(_ closure: @escaping (CGDirectDisplayID, CGDisplayChangeSummaryFlags) -> Void) {
+        self.closure = closure
+    }
+}
+```
+
+And use that closure, so that we can also print the external `start` variable:
+
+```swift
+let start = Date.now
+
+let closure = DisplayReconfigurationClosure { (displayID: CGDirectDisplayID, flags: CGDisplayChangeSummaryFlags) in
+    print("Reconfiguration, display:", displayID, start)
+}
+// Store closure in long-lived object, so that it doesn't go out of scope
+self.stored = closure
+
+// Create a pointer from the helper object
+let unsafeMutableRawPointer = withUnsafeMutablePointer(to: &closure) { pointer in
+    UnsafeMutableRawPointer(pointer)
+}
+
+// Pass pointer around
+CGDisplayRegisterReconfigurationCallback({ displayID, flags, userInfo in
+    userInfo?.load(as: DisplayReconfigurationClosure.self).closure(displayID, flags)
+}, unsafeMutableRawPointer)
+```
+
+This involves a whole lot of pointer casting, and it is very specific to the DisplayReconfiguration case, but it does work.
+
+We can clean this up some more, and push most of the code into a generic `Closure2` class.
+
+```swift
+// Class to store the original closure, and also
+// a pointer to an object that can be used as userInfo.
+class Closure2<T1, T2> {
+    public struct Container {
+        let closure: (T1, T2) -> Void
+    }
+    var container: Container
+    var pointer: UnsafeMutableRawPointer
+
+    init(_ closure: @escaping (T1, T2) -> Void) {
+        self.container = Container(closure: closure)
+        self.pointer = withUnsafeMutablePointer(to: &container) { pointer in
+            UnsafeMutableRawPointer(pointer)
+        }
+    }
+
+    static func invoke(_ arg1: T1, _ arg2: T2, _ unsafeMutableRawPointer: UnsafeMutableRawPointer?) {
+        unsafeMutableRawPointer?.load(as: Container.self).closure(arg1, arg2)
+    }
+}
+```
+
+Which we can use like so:
+
+```swift
+let start = Date.now
+let closure = Closure2 { (displayID: CGDirectDisplayID, flags: CGDisplayChangeSummaryFlags) in
+    print("Reconfiguration, display:", displayID, start)
+}
+// Store closure in long-lived object, so that it doesn't go out of scope
+self.stored = closure
+
+CGDisplayRegisterReconfigurationCallback({ displayID, flags, userInfo in
+    Closure2.invoke(displayID, flags, userInfo)
+}, closure.pointer)
+```
+
+### Swift 5.9 parameter packs
+
+In theory, we could use Swift 5.9 parameter packs to make so that we are not restricted to two generics. Unfortunately, at the time of writing using Xcode 15 beta 2, this crashes with an `EXC_BAD_ACCESS` when calling the initialiser.
+
+```swift
+class Closure<each T> {
+    public struct Container {
+        let closure: (repeat each T) -> Void
+    }
+    var container: Container
+    var pointer: UnsafeMutableRawPointer
+
+    init(_ closure: @escaping (repeat each T) -> Void) {
+        self.container = Container(closure: closure)
+        self.pointer = withUnsafeMutablePointer(to: &container) { pointer in
+            UnsafeMutableRawPointer(pointer)
+        }
+    }
+
+    static func invoke(_ args: repeat each T, unsafeMutableRawPointer: UnsafeMutableRawPointer?) {
+        unsafeMutableRawPointer?.load(as: Container.self).closure(repeat (each args))
+    }
+}
+```
+
+### Conclusion
+
+When first encountering older C functions with callback, they might seem difficult to work with. But those older function are often well designed taking an additional context parameter, and with a little helper code, they can wrapped to work with a normal Swift closure.
+
+
+## References
+
+- Nonstrict. (2023, June 27). CleanPresenter Mac app. [https://cleanpresenter.com](https://cleanpresenter.com)
+- Apple. (2023, June 27). CGDisplayRegisterReconfigurationCallback [Online documentation](https://developer.apple.com/documentation/coregraphics/1455336-cgdisplayregisterreconfiguration)
+- Apple. (2023). - Apple. (2023). Session 10168: [Generalize APIs with parameter packs](https://developer.apple.com/videos/play/wwdc2023/10168/)
