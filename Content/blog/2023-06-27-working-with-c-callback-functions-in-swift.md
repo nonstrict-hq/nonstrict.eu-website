@@ -2,7 +2,7 @@
 date: 2023-06-27 12:00
 authors: tom, mathijs
 tags: Engineering
-title: Working with C callback functions in Swift
+title: Working with C callback functions in Swift using parameter packs
 description: Moving from a C function-pointer based callback API to Swift closures with generics. And a look at the future with parameter packs.
 path: 2023/working-with-c-callback-functions-in-swift
 image: images/blog/pavan-trikutam-71CjSSB83Wo-unsplash.jpg
@@ -118,7 +118,7 @@ CGDisplayRegisterReconfigurationCallback({ displayID, flags, userInfo in
 
 ### Swift 5.9 parameter packs
 
-In theory, we could use Swift 5.9 parameter packs to make so that we are not restricted to two generics. Unfortunately, at the time of writing using Xcode 15 beta 2, this crashes with an `EXC_BAD_ACCESS` when calling the initialiser.
+With parameter packs in Swift 5.9, we are no longer restricted to using a specific number of generic arguments. We can create a class with a variable number of generic arguments. Note that this does require runtime support as Parameter packs in generic types are only available in macOS 14.0.0 or newer.
 
 ```swift
 class Closure<each T> {
