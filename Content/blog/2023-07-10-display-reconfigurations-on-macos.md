@@ -12,7 +12,29 @@ hideImageHero: false
 
 For our app [CleanPresenter](https://cleanpresenter.com), we need to detect when new displays are added or removed in macOS. This happens when connecting a display via HDMI, but also when starting an AirPlay session to a TV, or using Sidecar with iPad.
 
-There are two C functions for this in macOS: [CGDisplayRegisterReconfigurationCalback](https://developer.apple.com/documentation/coregraphics/1455336-cgdisplayregisterreconfiguration) and the related [GDisplayRemoveReconfigurationCallback](https://developer.apple.com/documentation/coregraphics/1455407-cgdisplayremovereconfigurationca). These two functions were introduced 20 years ago in Mac OS X Panther.
+There are two C functions for this in macOS, introduced 20 years ago in Mac OS X Panther (10.3):
+
+```swift
+/* A client-supplied callback function that’s invoked whenever the
+   configuration of a local display is changed. */
+typealias CGDisplayReconfigurationCallBack = (CGDirectDisplayID, CGDisplayChangeSummaryFlags, UnsafeMutableRawPointer?) -> Void
+
+/* Register a display reconfiguration callback procedure. The `userInfo'
+   argument is passed back to the callback procedure each time it is
+   invoked.
+*/
+func CGDisplayRegisterReconfigurationCallback(
+    _ callback: CGDisplayReconfigurationCallBack?,
+    _ userInfo: UnsafeMutableRawPointer?
+) -> CGError
+
+/* Remove a display reconfiguration callback procedure. */
+func CGDisplayRemoveReconfigurationCallback(
+    _ callback: CGDisplayReconfigurationCallBack?,
+    _ userInfo: UnsafeMutableRawPointer?
+) -> CGError
+```
+
 
 These C functions do exactly what they promise, they callback the provided function, when a local display is reconfigured. However, we would like a more “Swifty” way of writing this code.
 
