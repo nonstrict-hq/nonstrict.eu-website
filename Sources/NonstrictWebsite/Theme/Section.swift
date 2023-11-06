@@ -49,13 +49,13 @@ struct SectionItem: Component {
                         Paragraph {
                             Text(item.title)
                         }
-                        .class("text-xl font-semibold text-gray-900")
+                        .class("text-xl font-semibold text-gray-900 group-hover:underline")
                         Paragraph {
                             Text(item.metadata.description)
                         }
                         .class("mt-3 text-base text-gray-500")
                     }
-                    .class("mt-2 block")
+                    .class("mt-2 block group")
                 }
                 .class("flex-1")
 
