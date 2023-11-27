@@ -1,6 +1,6 @@
 ---
 date: 2023-09-26 12:00
-authors: mathijs
+authors: mathijs, tom
 tags: Apps
 title: Launching Bezel
 description: Today we launch our macOS app Bezel! 🚀 It helps you to show an iPhone on your Mac. Just plug it in the cable and it shows up, simple as that.
