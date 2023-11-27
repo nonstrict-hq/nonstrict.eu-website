@@ -15,7 +15,7 @@ featured: true
 
 For our app [Bezel](https://getbezel.app) custom metadata is written into the recorded mp4 file. Information like the the make & model of the recorded device and some version information is there to later on be able to convert it into an interesting looking video. Adding this extra information directly into the file is pretty convenient as it can't get lost or get mixed up.
 
-However once we tried to write out metadata to the mp4 file the data often just didn't show up at all. No errors where reported, it just wasn't there. Turned out writing custom metadata to a mp4 container is much more restricted compared to mov container.
+However once we tried to write out metadata to the mp4 file the data often just didn't show up at all. No errors where reported, it just wasn't there. Turned out writing custom metadata to a mp4 container is much more restricted compared to a QuickTime container used in .mov files.
 
 ## The basics
 
@@ -37,7 +37,7 @@ let assetWriter = AVAssetWriter(url: outputURL, fileType: .mov)
 assetWriter.metadata = [item]
 ```
 
-This is basically it for mov files, since they are quite flexible with metadata. You can also put `NSNumber` or `NSData` in for other metadata as explained in the WWDC video.
+This is basically it for .mov files, since they are quite flexible with metadata. You can also put `NSNumber` or `NSData` in for other metadata as explained in the WWDC video.
 
 ## Writing to mp4 files
 
@@ -65,7 +65,7 @@ To quickly verify if the key was written out into the file I would recommend the
 
 ### Reading back the data
 
-While reading back custom metadata in mov files is very straight forward, everything is converted for you. This is less the case for mp4 files. Reading back the above item from a file would need:
+While reading back custom metadata in .mov files is very straight forward, everything is converted for you. This is less the case for mp4 files. Reading back the above item from a file would need:
 - Converting the key back from an unsigned 32-bit integer to a string
 - Converting the data back from `NSData` to a string
 
@@ -94,7 +94,7 @@ private func decodeFourCharCode(_ key: UInt32) -> String? {
 
 For the recorder we created for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=nXV1B) JSON files are used alongside the video/audio files. This is a very good alternative, but requires to write things out into a folder and define a custom format. It also is very easy for users to alter this data or mix up files between recordings. It is however a setup way more developers will be familiar with so it can be a very good alternative in a lot of cases.
 
-Another alternative is to switch away from the mp4 container and instead use mov files. This is what we did for [Bezel](https://getbezel.app), it's way more forgiving to work with metadata in mov files with AVFoundation. Since it's an intermediate storage that only has to be read by Bezel itself we aren't really concerned by compatibility issues that might arrise. So if you have the flexibility to switch away from mp4, I would really recommend that if you want to write out metadata. 
+Another alternative is to switch away from the mp4 container and instead use .mov files. This is what we did for [Bezel](https://getbezel.app), it's way more forgiving to work with metadata in .mov files with AVFoundation. Since it's an intermediate storage that only has to be read by Bezel itself we aren't really concerned by compatibility issues that might arrise. So if you have the flexibility to switch away from mp4, I would really recommend that if you want to write out metadata. 
 
 ## References
 
