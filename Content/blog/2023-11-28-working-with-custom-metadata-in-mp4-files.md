@@ -19,7 +19,7 @@ However once we tried to write out metadata to the mp4 file the data often just 
 
 ## The basics
 
-The basics are pretty well explained in older resources. The WWDC video "Harnessing metadata in audiovisual media" from WWDC14 gives a great overview, the Apple code samples `AVMetadataRecordPlay` and `AVTimedAnnotationWriter` released around the same time also contain great (Objective-C) example code showing how to work with metadata. Sadly that video and projects aren't hosted by Apple anymore, but you still can find unofficial mirrors on [YouTube](https://www.youtube.com/watch?v=ccz9kI8VQsw) and [GitHub](https://github.com/robovm/apple-ios-samples/tree/master/AVMetadataRecordPlayTimedMetadataCaptureRecordingandPlayback).
+The basics are pretty well explained in older resources. The WWDC video "Harnessing metadata in audiovisual media" from WWDC14 gives a great overview, the Apple code samples [AVMetadataRecordPlay](https://developer.apple.com/library/archive/samplecode/AVMetadataRecordPlay/Introduction/Intro.html#//apple_ref/doc/uid/TP40016165) and [AVTimedAnnotationWriter](https://developer.apple.com/library/archive/samplecode/AVTimedAnnotationWriter/Introduction/Intro.html#//apple_ref/doc/uid/TP40014496) released around the same time also contain great (Objective-C) example code showing how to work with metadata. Sadly that video isn't hosted by Apple anymore, but you still can find an unofficial mirrors on [YouTube](https://www.youtube.com/watch?v=ccz9kI8VQsw).
 
 If you want to read the data from audiovisual files use the `metadata` property on `AVAsset` and `AVAssetTrack`. To write it out use the `metadata` property on their counterparts `AVAssetWriter` and the `AVAssetWriterInput`.
 
@@ -98,11 +98,11 @@ Another alternative is to switch away from the mp4 container and instead use .mo
 
 ## References
 
-- Nonstrict. (2023) [Bezel - Show your iPhone on your Mac.](https://developer.apple.com/documentation/avfoundation/media_assets#3643898) Bezel website.
+- Nonstrict. (2023) [Bezel - Show your iPhone on your Mac.](https://getbezel.app) Bezel website.
 - Apple. (2023) [AVFoundation, Media Assets, Metadata.](https://developer.apple.com/documentation/avfoundation/media_assets#3643898) Apple Developer Documentation.
 - Apple. (2014, June 2-6). Session 505: Harnessing metadata in audiovisual media. WWDC14. ([Unofficial YouTube mirror](https://www.youtube.com/watch?v=ccz9kI8VQsw))
-- Apple. (2014). AVMetadataRecordPlay. Apple Developer Documentation. ([Unofficial GitHub mirror](https://github.com/robovm/apple-ios-samples/tree/master/AVMetadataRecordPlayTimedMetadataCaptureRecordingandPlayback))
-- Apple. (2014). AVTimedAnnotationWriter. Apple Developer Documentation. ([Unofficial GitHub mirror](https://github.com/robovm/apple-ios-samples/tree/master/AVTimedAnnotationWriterUsingCustomAnnotationMetadataforMovieWritingandPlayback))
+- Apple. (2014). [AVMetadataRecordPlay.](https://developer.apple.com/library/archive/samplecode/AVMetadataRecordPlay/Introduction/Intro.html#//apple_ref/doc/uid/TP40016165) Apple Developer Documentation Archive.
+- Apple. (2014). [AVTimedAnnotationWriter.](https://developer.apple.com/library/archive/samplecode/AVTimedAnnotationWriter/Introduction/Intro.html#//apple_ref/doc/uid/TP40014496) Apple Developer Documentation Archive.
 - GravisHimself. (2020, July 7). [Writing MP4 metadata with AVFoundation.](https://developer.apple.com/forums/thread/654753) Apple Developer Forums.
 - Axiomatic Systems. (2023, November 25). [Bento4.](https://github.com/axiomatic-systems/Bento4) GitHub.
 - Adam Pietrasiak. (2023) [Screen Studio. Beautiful Screen Recordings in minutes.](https://screen.studio) Screen Studio website.
