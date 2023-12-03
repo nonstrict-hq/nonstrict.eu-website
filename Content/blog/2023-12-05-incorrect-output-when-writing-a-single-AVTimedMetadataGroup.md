@@ -1,5 +1,5 @@
 ---
-date: 2023-12-05 12:00
+date: 2023-12-04 12:00
 authors: mathijs, tom
 tags: Engineering, Bezel
 title: Incorrect output when writing a single AVTimedMetadataGroup
