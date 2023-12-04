@@ -11,7 +11,7 @@ featured: true
 
 **tldr; Writing a single `AVTimedMetadataGroup` with a open time range gives unexpected results. Write another dummy `AVTimedMetadataGroup` after the source time you pass to `AVAssetWriter.endSession` as a workaround.**
 
-When writing `AVTimedMetadataGroup` with a timerange that has its end time set to `.invalid` the timerange will be automatically adjusted by `AVAssetWriter`. This is very useful as at the time you append the metadata to the writer it's often unknown when the next bit of metadata will become available. This behaviour is explained in the WWDC talk "Harnessing metadata in audiovisual media".
+When writing `AVTimedMetadataGroup` with a timerange that has its end time set to `.invalid` the timerange will be automatically adjusted by `AVAssetWriter`. This is very useful as at the time you append the metadata to the writer it's often unknown when the next bit of metadata will become available. This behaviour is explained in this WWDC talk from 2014: "Harnessing metadata in audiovisual media".
 
 ## Our use case
 
