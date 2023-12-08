@@ -34,7 +34,7 @@ Since video files can become quite big we don't want to keep the data in memory.
 
 ## The issue
 
-However when we started to drop the file on Finder or other apps like Slack nothing happened. They just didn't accept the content. It turns out in macOS 13 and 14 `FileRepresentation` isn't working correctly. No matter the declared content type, whether the file should be opened in place or if origional file access is allowed. The file is simply never accepted.
+However when we started to drop the file on Finder or other apps like Slack nothing happened. They just didn't accept the content. It turns out in macOS 13 and 14 `FileRepresentation` isn't working correctly. No matter the declared content type, whether the file should be opened in place or if original file access is allowed. The file is simply never accepted.
 
 ## Workaround
 
@@ -48,6 +48,8 @@ Turns out there is a workaround; If you also declare a `ProxyRepresentable` that
         ProxyRepresentation { myVideoType in myVideoType.url }
     }
 ```
+
+Please note that falling back to `ProxyRepresentation` only works for files that are already on disk. It's not allowed to perform long-running work in exporting and importing closures according to the documentation. If you take too much time the app stalls and shows a beachball. Additionally the other app will gain access to the original file and not a copy, so that also is something to keep in mind. 
 
 This was a pretty confusing issue and workaround, since the WWDC talk explicitly notes that `FileRepresentation` should be used for sharing files. The `ProxyRepresentation` with an `URL` should be used if you want to share an URL to a website for example. It seems this behaviour isn't working correctly at this moment.
 
