@@ -3,15 +3,13 @@ date: 2023-12-08 12:00
 authors: mathijs, tom
 tags: Engineering, Bezel
 title: Transferable drag & drop with only a FileRepresentation not working on macOS
-description: Implementing dragging of a file in macOS with SwiftUI is a breeze with the new Transferable protocol. However only having a FileRepresentation doesn't work for apps like Finder.
+description: Supporting file dragging in macOS is a breeze with SwiftUI using the new Transferable protocol. However only having a FileRepresentation doesn't work for apps like Finder.
 image: images/blog/erika-giraud-H6xKnDKrKDk-unsplash.jpg
 path: 2023/transferable-drag-drop-fails-with-only-FileRepresentation
 featured: true
 ---
 
 **tldr; Add a `ProxyRepresentation` returning the `URL` to your file right below the `FileRepresentation` as a workaround to make Finder and most other apps work.**
-
-High lever overview; implement Transferable protocol, do this by giving a representation of your data. Then pass it to `draggable` in SwiftUI and your done. See WWDC talk for more detail.
 
 Since the early days of Mac OS X dragging and dropping files from and to apps has been an important part of the user experience. In macOS 10.12 the API to implement this already got a great improvement with the introduction of `NSFilePromiseProvider`. However since macOS 13 the new `Transferable` protocol makes it easier than ever. It fits in really well with SwiftUI and the new declaritive style. It also not only support drag and drop, but also for example share sheets.
 
