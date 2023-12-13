@@ -31,7 +31,7 @@ public final class DarwinNotificationCenter {
     public func addObserver(name: String, callback: @escaping () -> Void) -> DarwinNotificationObservation {
         let observation = DarwinNotificationObservation(callback: callback)
 
-        let pointer = UnsafeRawPointer(Unmanaged.passUnretained(observation).toOpaque())
+        let pointer = UnsafeRawPointer(Unmanaged.passUnretained(observation.closure).toOpaque())
 
         CFNotificationCenterAddObserver(center, pointer, notificationCallback, name as CFString, nil, .deliverImmediately)
 
@@ -50,9 +50,9 @@ When a notification comes in, the `notificationCallback` function is called:
 private func notificationCallback(center: CFNotificationCenter?, observation: UnsafeMutableRawPointer?, name: CFNotificationName?, object _: UnsafeRawPointer?, userInfo _: CFDictionary?) {
     guard let pointer = observation else { return }
 
-    let observation = Unmanaged<DarwinNotificationObservation>.fromOpaque(pointer).takeUnretainedValue()
+    let closure = Unmanaged<DarwinNotificationObservation.Closure>.fromOpaque(pointer).takeUnretainedValue()
 
-    observation.callback()
+    closure.invoke()
 }
 ```
 
@@ -60,10 +60,16 @@ This function must be a C-style callback function, it cannot be a closure. We're
 
 ```
 public final class DarwinNotificationObservation: Cancellable {
-    fileprivate let callback: () -> Void
+    fileprivate class Closure {
+        let invoke: () -> Void
+        init(callback: @escaping () -> Void) {
+            self.invoke = callback
+        }
+    }
+    fileprivate let closure: Closure
 
     fileprivate init(callback: @escaping () -> Void) {
-        self.callback = callback
+        self.closure = Closure(callback: callback)
     }
 
     deinit {
@@ -71,8 +77,8 @@ public final class DarwinNotificationObservation: Cancellable {
     }
 
     public func cancel() {
-        DispatchQueue.main.sync {
-            let pointer = UnsafeRawPointer(Unmanaged.passUnretained(self).toOpaque())
+        DispatchQueue.main.async { [closure] in
+            let pointer = UnsafeRawPointer(Unmanaged.passUnretained(closure).toOpaque())
             CFNotificationCenterRemoveObserver(center, pointer, nil, nil)
         }
     }
