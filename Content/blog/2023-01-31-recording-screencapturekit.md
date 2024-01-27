@@ -39,7 +39,7 @@ Prepare the AVAssetWriter by calling startWriting, then start a session:
 
 ```swift
 assetWriter.startWriting()
-let now = CMTime(seconds: ProcessInfo.processInfo.systemUptime, preferredTimescale: 100)
+let now = CMClock.hostTimeClock.time
 assetWriter.startSession(atSourceTime: now)
 ```
 
@@ -63,7 +63,7 @@ func stream(_ stream: SCStream, didOutputSampleBuffer sampleBuffer: CMSampleBuff
 To stop the recording, end the session on the AVAssetWriter and finish writing:
 
 ```swift
-let now = CMTime(seconds: ProcessInfo.processInfo.systemUptime, preferredTimescale: 100)
+let now = CMClock.hostTimeClock.time
 assetWriter.endSession(atSourceTime: now)
 videoInput.markAsFinished()
 await assetWriter.finishWriting()
@@ -181,7 +181,7 @@ With one final edge case; If we make a 10 second recording of a screen where not
 // In case no changes happend on screen, and the last frame is from long ago
 // This ensures the recording is of the expected length
 if let originalBuffer = lastSampleBuffer {
-    let now = CMTime(seconds: ProcessInfo.processInfo.systemUptime, preferredTimescale: 100)
+    let now = CMClock.hostTimeClock.time
     let additionalTime = now - streamOutput.firstSampleTime
     let timing = CMSampleTimingInfo(duration: originalBuffer.duration, presentationTimeStamp: additionalTime, decodeTimeStamp: originalBuffer.decodeTimeStamp)
     let additionalSampleBuffer = try CMSampleBuffer(copying: originalBuffer, withNewTiming: [timing])
