@@ -15,7 +15,7 @@ featured: true
 
 ## Recording to a file
 
-ScreenCaptureKit is awesome, it allows for many custom filters to only capture specific content, and it is very efficient. In our recent project to build a new recording backend for Screen Studio, we needed to create a screen recording on macOS and write the output to a file on disk.
+ScreenCaptureKit is awesome, it allows for many custom filters to only capture specific content, and it is very efficient. In our recent project to build a new recording backend for [Screen Studio](https://screen.studio), we needed to create a screen recording on macOS and write the output to a file on disk.
 
 The WWDC talks [introducing](https://developer.apple.com/wwdc22/10156) and [going deeper](https://developer.apple.com/wwdc22/10155) into ScreenCaptureKit are great introductions to the new framework, but don’t detail how to write to file.
 

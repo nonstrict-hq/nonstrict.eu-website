@@ -15,7 +15,7 @@ featured: true
 
 ## Recording to a file
 
-In our recent project to build a new recording backend for Screen Studio, we needed to create a screen recording on macOS and write the output to a file on disk. For newer macOS versions, we use ScreenCaptureKit, but that has only been available since macOS 12.3, and we also wanted to support 10.15 Catalina.
+In our recent project to build a new recording backend for [Screen Studio](https://screen.studio), we needed to create a screen recording on macOS and write the output to a file on disk. For newer macOS versions, we use ScreenCaptureKit, but that has only been available since macOS 12.3, and we also wanted to support 10.15 Catalina.
 
 Fortunately for us, while it’s quite a bit of work to write a file from a ScreenCaptureKit recording, using the older APIs, it’s not a lot of code.
 
