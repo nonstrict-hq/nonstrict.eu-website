@@ -15,7 +15,7 @@ featured: true
 
 ## Building a commandline tool with async/await
 
-Swift concurrency seemed like a great fit for the new recorder backend for [Screen Studio](https://screen.studio) we built recently. It captures multiple devices in sync and features like async/await and task groups would help to write clear code that also executes in parallel where possible. The recorder is implemented as a macOS commandline tool that gets called from the Electron app and uses system native APIs to capture data from different devices.
+Swift concurrency seemed like a great fit for the new recorder backend for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=nXV1B) we built recently. It captures multiple devices in sync and features like async/await and task groups would help to write clear code that also executes in parallel where possible. The recorder is implemented as a macOS commandline tool that gets called from the Electron app and uses system native APIs to capture data from different devices.
 
 We wanted to target macOS 10.15 Catalina and newer we where very happy with the back deployment of Swift concurrency that is available since the release of Xcode 13.2. It supports macOS 10.15 and newer, so we went ahead and started using it.
 

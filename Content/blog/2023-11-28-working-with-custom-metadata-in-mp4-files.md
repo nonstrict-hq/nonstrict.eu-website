@@ -105,4 +105,4 @@ Another alternative is to switch away from the mp4 container and instead use .mo
 - Apple. (2014). [AVTimedAnnotationWriter.](https://developer.apple.com/library/archive/samplecode/AVTimedAnnotationWriter/Introduction/Intro.html#//apple_ref/doc/uid/TP40014496) Apple Developer Documentation Archive.
 - GravisHimself. (2020, July 7). [Writing MP4 metadata with AVFoundation.](https://developer.apple.com/forums/thread/654753) Apple Developer Forums.
 - Axiomatic Systems. (2023, November 25). [Bento4.](https://github.com/axiomatic-systems/Bento4) GitHub.
-- Adam Pietrasiak. (2023) [Screen Studio. Beautiful Screen Recordings in minutes.](https://screen.studio) Screen Studio website.
+- Adam Pietrasiak. (2023) [Screen Studio. Beautiful Screen Recordings in minutes.](https://screenstudio.lemonsqueezy.com?aff=nXV1B) Screen Studio website.
