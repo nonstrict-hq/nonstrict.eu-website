@@ -1,8 +1,8 @@
 # The Nonstrict website
 
-## Install
+## Setup
 
-Run `./setup-arm64.sh` (or the x64 variant if you're on Intel) to install Tailwind
+Run `./setup.sh`
 
 ## Development
 
@@ -13,3 +13,7 @@ Run the website locally with `./serve.sh` from the project folder, the website w
 If you make changes you can just run the package either from Xcode with the run button or from the commandline with `swift run`. This will build a fresh version of the site that will be served by the above script.
 
 To develop, open `Package.swift` with a recent version of Xcode, edit code and run
+
+## Build release
+
+Run `build.sh`

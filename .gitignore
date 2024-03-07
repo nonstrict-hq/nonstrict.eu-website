@@ -5,9 +5,9 @@
 *.swp
 
 # SPM
-/.build
-/Packages
-/*.xcodeproj
+.build
+Packages
+*.xcodeproj
 xcuserdata/
 DerivedData/
 .swiftpm/config/registries.json
@@ -15,6 +15,6 @@ DerivedData/
 .netrc
 
 # Publish
-/.publish
-/Output
-/tailwindcss
+.publish
+Output
+tailwindcss

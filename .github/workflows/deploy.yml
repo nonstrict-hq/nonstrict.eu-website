@@ -30,21 +30,14 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - name: Pull cache
-        uses: actions/cache@v3
-        with:
-          path: .build
-          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
-      - name: Setup Tailwind
-        run: ./setup-x64.sh
-      - name: Generate site
-        run: swift run
-      - name: Build CSS
-        run: ./tailwindcss -i Styles/input.css -o Output/styles.css -m
+      - name: Setup
+        run: ./setup.sh
+      - name: Build
+        run: ./build.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./Output
+          path: ./root/Output
 
   # Deployment job
   deploy:
