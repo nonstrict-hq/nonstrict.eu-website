@@ -29,6 +29,8 @@ jobs:
       - uses: volta-cli/action@v4
       - run: ./setup.sh
       - run: ./build.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist

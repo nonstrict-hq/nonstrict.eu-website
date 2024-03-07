@@ -10,3 +10,9 @@ pushd recordkit
 . ./build.sh
 mv .vitepress/dist ../dist/recordkit
 popd
+
+pushd recordkit-reference-swift
+. ./build.sh
+mkdir -p ../dist/recordkit/api
+mv dist ../dist/recordkit/api/swift
+popd
