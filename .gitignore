@@ -18,3 +18,9 @@ DerivedData/
 .publish
 Output
 tailwindcss
+
+# Vuepress
+dist
+.temp
+.cache
+node_modules/

@@ -1,3 +1,8 @@
 #!/bin/bash -x
-cd root
+pushd root
 . ./setup.sh
+popd
+
+pushd recordkit
+. ./setup.sh
+popd
