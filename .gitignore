@@ -24,3 +24,5 @@ dist
 .temp
 .cache
 node_modules/
+recordkit-docs-electron.zip
+recordkit-docs-swift.zip

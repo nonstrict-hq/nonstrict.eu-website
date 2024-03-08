@@ -16,3 +16,9 @@ pushd recordkit-reference-swift
 mkdir -p ../dist/recordkit/api
 mv dist ../dist/recordkit/api/swift
 popd
+
+pushd recordkit-reference-electron
+. ./build.sh
+mkdir -p ../dist/recordkit/api
+mv dist ../dist/recordkit/api/electron
+popd
