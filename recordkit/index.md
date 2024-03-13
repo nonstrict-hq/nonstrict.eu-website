@@ -4,22 +4,34 @@ layout: home
 
 hero:
   name: "RecordKit"
-  text: "Recording SDK for macOS apps"
-  tagline: My great project tagline
+  text: "The recording SDK developers trust"
+  tagline: Add powerful screenrecording features to your macOS app in minutes.
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: What is RecordKit?
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: Try SDK for Free
       link: /api-examples
 
 features:
-  - title: Feature A
+  - icon: 🐦‍🔥
+    title: Swift
+    details: RecordKit is a modern SPM package with first class SwiftUI and Swift concurrency support.
+    linkText: Learn about the Swift library
+    link: https://foo.com
+  - icon: ⚛
+    title: Electron
+    details: RecordKit has first class support for Electron apps including TypeScript definitions.
+    linkText: Learn about the Electron lib
+    link: https://foo.com
+  - icon: 🖥️
+    title: Screenrecording
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
+  - icon: 🤳
+    title: Selfie
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - icon: ⌨️
+    title: Mouse & keyboard
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
