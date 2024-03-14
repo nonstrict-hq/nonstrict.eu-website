@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "RecordKit"
   text: "The recording SDK developers trust"
-  tagline: Add powerful screenrecording features to your macOS app in minutes.
+  tagline: Add powerful screen recording features to your macOS app in minutes.
   actions:
     - theme: brand
       text: What is RecordKit?
@@ -27,7 +27,7 @@ features:
     link: https://foo.com
   - icon: 🚀
     title: Take a head start
-    details: Add screenrecording to your app in no time and focus on the added value of your product.
+    details: Add screen recording to your app in no time and focus on the added value of your product.
     linkText: What the SDK solves
     link: https://foo.com
   - icon: ⚡️
@@ -36,7 +36,7 @@ features:
     linkText: All features
     link: https://foo.com
   - icon: 🖥️
-    title: Screenrecording
+    title: Screen recording
     details: Get a solid, easy to work with efficient screen recording based on ScreenCaptureKit.
     linkText: Learn more
     link: https://foo.com
@@ -51,7 +51,7 @@ features:
     linkText: Learn more
     link: https://foo.com
   - icon: ✨
-    title: The final touch
+    title: Post-processing
     details: Remove a background, reduce noise, upscale or transcribe recordings, all on device.
     linkText: Learn more
     link: https://foo.com
