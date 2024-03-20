@@ -9,50 +9,32 @@ hero:
   actions:
     - theme: brand
       text: What is RecordKit?
-      link: /markdown-examples
+      link: /introduction
     - theme: alt
       text: Try SDK for Free
-      link: /api-examples
+      link: /try
 
 features:
-  - icon: 🐦‍🔥
+  - icon:
+      src: swift.png
     title: Swift
     details: RecordKit is a modern SPM package with SwiftUI and Swift concurrency support.
-    linkText: Learn about the Swift library
-    link: https://foo.com
-  - icon: ⚛
+    linkText: Get Started
+    link: /try-swift
+  - icon:
+      src: electron.png
     title: Electron
     details: RecordKit has first class support for Electron apps including TypeScript definitions.
-    linkText: Learn about the Electron lib
-    link: https://foo.com
-  - icon: 🚀
-    title: Take a head start
-    details: Add screen recording to your app in no time and focus on the added value of your product.
-    linkText: What the SDK solves
-    link: https://foo.com
+    linkText: Get Started
+    link: /try-electron
   - icon: ⚡️
-    title: Powerful features
-    details: RecordKit offers a powerful and complete set of recording features.
-    linkText: All features
-    link: https://foo.com
-  - icon: 🖥️
-    title: Screen recording
-    details: Get a solid, easy to work with efficient screen recording based on ScreenCaptureKit.
-    linkText: Learn more
-    link: https://foo.com
-  - icon: 🤳
-    title: Camera & microphone
-    details: Record the camera & microphone in sync with the screen recording for voice overs.
-    linkText: Learn more
-    link: https://foo.com
-  - icon: 🖱️
-    title: Mouse & keyboard
-    details: Highlight input like shortcuts and clicks that happened during the screen recording.
-    linkText: Learn more
-    link: https://foo.com
-  - icon: ✨
-    title: Post-processing
-    details: Remove a background, reduce noise, upscale or transcribe recordings, all on device.
-    linkText: Learn more
-    link: https://foo.com
+    title: Powerful recording APIs
+    details: Simple, easy to use components. Highly customizable using low-level APIs.
+    linkText: Explore All Functionality
+    link: /features
+  - icon: 🚀
+    title: Pre-built features
+    details: Discover devices, record and post-process recordings out-of-the-box.
+    linkText: Try the Demo App
+    link: /product-demo
 ---
