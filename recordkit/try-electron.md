@@ -27,7 +27,7 @@ import type { ForgeConfig } from '@electron-forge/shared-types';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
-    extraResource: ["recordkit-rpc"] // Add this line to forge.config.ts
+    extraResource: ['node_modules/@nonstrict/recordkit/bin/recordkit-rpc'] // Add this line to forge.config.ts
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
@@ -44,7 +44,7 @@ export default config;
   "name": "my-electron-app",
   "productName": "my-electron-app",
   "version": "1.0.0",
-  "build": { "extraResources": "recordkit-rpc" }, // Add this line to package.json
+  "build": { "extraResources": "node_modules/@nonstrict/recordkit/bin/recordkit-rpc" }, // Add this line to package.json
   "devDependencies": {
     // ...
   },
