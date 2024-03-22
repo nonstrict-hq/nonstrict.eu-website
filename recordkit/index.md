@@ -16,13 +16,13 @@ hero:
 
 features:
   - icon:
-      src: swift.png
+      src: /swift.png
     title: Swift
     details: RecordKit is a modern SPM package with SwiftUI and Swift concurrency support.
     linkText: Get Started
     link: /try-swift
   - icon:
-      src: electron.png
+      src: /electron.png
     title: Electron
     details: RecordKit has first class support for Electron apps including TypeScript definitions.
     linkText: Get Started
