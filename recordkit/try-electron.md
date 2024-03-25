@@ -87,7 +87,7 @@ app.on('ready', async () => {
 const windows = await recordkit.getWindows()
 const cameras = await recordkit.getCameras()
 const microphones = await recordkit.getMicrophones()
-const appleDevices = await recordkit.getAppleDevices()
+const appleDevices = await recordkit.getAppleDevices() // iPhones, iPads, etc.
 ```
 
 2. Configure & start a recorder
