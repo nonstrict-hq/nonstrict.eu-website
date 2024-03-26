@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash -x -e
 
 if [[ $(arch) == 'arm64' ]]; then
     curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64

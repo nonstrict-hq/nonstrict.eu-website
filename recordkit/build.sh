@@ -1,2 +1,2 @@
-#!/bin/bash -x
+#!/bin/bash -x -e
 npm run docs:build

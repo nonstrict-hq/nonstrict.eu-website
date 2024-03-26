@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash -x -e
 pushd root
 . ./setup.sh
 popd
