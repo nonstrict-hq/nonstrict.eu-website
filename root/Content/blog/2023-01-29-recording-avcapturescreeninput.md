@@ -78,5 +78,5 @@ swift run avcrecording
 
 ## References
 
-- Nonstrict. (2023, January 24). AVCaptureScreenInput Recording Example. GitHub. [https://github.com/nonstrict-hq/AVCaptureScreenInput-Recording-example](https://github.com/nonstrict-hq/AVCaptureScreenInput-Recording-example) ‣
+- Nonstrict. (2023, January 24). AVCaptureScreenInput Recording Example. GitHub. [https://github.com/nonstrict-hq/AVCaptureScreenInput-Recording-example](https://github.com/nonstrict-hq/AVCaptureScreenInput-Recording-example)
 - Sindre Sorhus. (2022, September 22). ExceptionCatcher. GitHub.  [https://github.com/sindresorhus/ExceptionCatcher](https://github.com/sindresorhus/ExceptionCatcher)
