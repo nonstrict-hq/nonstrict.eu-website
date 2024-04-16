@@ -22,7 +22,7 @@ extension Theme where Site == BezelWebsite {
             var indexWithImage = index
             indexWithImage.imagePath = context.site.imagePath
             return HTML(
-                .head(for: indexWithImage, on: context.site),
+                .head(for: indexWithImage, on: context.site, stylesheetPaths: ["/bezel/styles.css"]),
                 .body(
                     .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
                     .component(Header()),
@@ -48,7 +48,7 @@ extension Theme where Site == BezelWebsite {
             switch page.path {
             case "pricing":
                 return HTML(
-                    .head(for: pageWithImage, on: context.site),
+                    .head(for: pageWithImage, on: context.site, stylesheetPaths: ["/bezel/styles.css"]),
                     .body(
                         .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
                         .component(Header()),
@@ -58,7 +58,7 @@ extension Theme where Site == BezelWebsite {
                 )
             case "thank-you-for-trying-bezel":
                 return HTML(
-                    .head(for: pageWithImage, on: context.site, nodes: [
+                    .head(for: pageWithImage, on: context.site, stylesheetPaths: ["/bezel/styles.css"], nodes: [
                         .meta(.attribute(named: "name", value: "robots"), .attribute(named: "content", value: "noindex"))]),
                     .body(
                         .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
@@ -69,7 +69,7 @@ extension Theme where Site == BezelWebsite {
                 )
             case "subscribed":
                 return HTML(
-                    .head(for: pageWithImage, on: context.site, nodes: [
+                    .head(for: pageWithImage, on: context.site, stylesheetPaths: ["/bezel/styles.css"], nodes: [
                         .meta(.attribute(named: "name", value: "robots"), .attribute(named: "content", value: "noindex"))]),
                     .body(
                         .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
@@ -87,7 +87,7 @@ extension Theme where Site == BezelWebsite {
                 s.description = "Bezel shows your iPhone inside Vision Pro."
 
                 return HTML(
-                    .head(for: pageWithImage, on: s, titleSeparator: ""),
+                    .head(for: pageWithImage, on: s, titleSeparator: "", stylesheetPaths: ["/bezel/styles.css"]),
                     .body(
                         .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
                         .component(VisionHeader()),
@@ -97,7 +97,7 @@ extension Theme where Site == BezelWebsite {
                 )
             case "helper":
                 return HTML(
-                    .head(for: pageWithImage, on: context.site),
+                    .head(for: pageWithImage, on: context.site, stylesheetPaths: ["/bezel/styles.css"]),
                     .body(
                         .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
                         .component(Header(showRightSideButtons: false)),
@@ -119,6 +119,7 @@ extension Theme where Site == BezelWebsite {
         }
     }
 }
+
 
 public extension Node where Context == HTML.DocumentContext {
 
