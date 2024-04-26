@@ -23,4 +23,5 @@ struct BezelWebsite: Website {
     let imagePath: Publish.Path? = "images/og-main.png"
     let url = URL(string: "https://nonstrict.eu/bezel")!
     let locale = Locale(identifier: "en_US_POSIX")
+    let favicon: Favicon? = Favicon(path: "/bezel/images/favicon.png", type: "image/png")
 }
