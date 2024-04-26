@@ -1,0 +1,47 @@
+<div class="relative isolate overflow-hidden min-h-screen">
+    <div class="absolute left-[calc(50%-40rem)] top-10 -z-10 transform-gpu blur-3xl lg:top-[calc(50%-30rem)]" aria-hidden="true">
+        <div class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+    </div>
+    <div class="mx-auto max-w-6xl px-9 pt-7 lg:flex lg:gap-9 lg:place-content-between lg:px-8 lg:pt-20">
+        <div class="mx-auto max-w-lg min-h-[24rem] sm:min-h-[448px] lg:min-h-min lg:max-h-[448px] flex-shrink-0 flex flex-col justify-center gap-10 lg:mx-0 lg:mt-8">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">Download started</h1>
+                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">Not working? <a class="underline" href="https://download.nonstrict.eu/bezel/Bezel.dmg">Start download again.</a></p>
+            </div>
+            <form id="form" action="https://production.bezelsubscribe.nonstrict.workers.dev/" method="post" target="_self" novalidate="">
+                <p class="mt-4 mb-4 text-lg leading-8">
+                    <span class="text-gray-900 dark:text-white font-bold">Sign up for updates</span><br>
+                    <span class="text-gray-600 dark:text-gray-300">Be the first to learn about new features.</a>
+                </p>
+                <label for="email-address" class="sr-only">Email address</label>
+                <input type="hidden" name="tags" value="2821428">
+                <div class="flex items-center gap-x-0">
+                    <input id="email-address" name="EMAIL" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-l-md border-0 bg-white/5 px-3.5 py-2 text-gray-900 placeholder-gray-600/70 dark:text-white dark:placeholder-gray-300 shadow-sm ring-1 ring-inset ring-gray-600/70 dark:ring-white/10 sm:text-sm sm:leading-6" placeholder="Your email address">
+                    <button type="submit" class="flex-none rounded-r-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Sign up</button>
+                </div>
+                <p class="text-left text-xs pt-2 text-gray-600 dark:text-gray-400"><span class="whitespace-nowrap">Bezel updates only, unsubscribe anytime.</span></p>
+            </form>
+            <div id="thanks" class="hidden flex place-content-between">
+                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 inline-block text-purple-400 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Great, you're on the list.</p>
+                <a href="/bezel/" class="mt-4 text-lg text-purple-400 underline text-right">Back to homepage →</a>
+            </div>
+        </div>
+
+        <div class="mx-auto max-w-lg lg:mx-0 lg:mt-8">
+            <video id="demo-video" data-trigger="replay-demo-video" muted playsinline loop preload="auto" class="mx-auto mt-16 w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+                <source src="/bezel/video/demo-square.mov#t=8" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+<script>
+    function startDownload() {
+        window.location = 'https://download.nonstrict.eu/bezel/Bezel.dmg';
+    }
+    window.addEventListener('load', startDownload)
+</script>

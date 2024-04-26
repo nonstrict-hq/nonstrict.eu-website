@@ -6,6 +6,11 @@ pushd root
 mv Output ../dist
 popd
 
+pushd bezel
+. ./build.sh
+mv Output ../dist/bezel
+popd
+
 pushd recordkit
 . ./build.sh
 mv .vitepress/dist ../dist/recordkit
