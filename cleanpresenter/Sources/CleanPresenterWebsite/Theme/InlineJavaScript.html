@@ -1,0 +1,24 @@
+<script>
+function replay(id) {
+    document.getElementById(id).currentTime = 0;
+    document.getElementById(id).play();
+}
+
+window.addEventListener('load', function () {
+    // Autoplay videos once their in view
+    let observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                let video = document.getElementById(entry.target.dataset.target)
+                console.log(entry.target.id, entry.intersectionRatio, video.id)
+                if (entry.intersectionRatio > 0.9 && video.paused && video.currentTime < 0.1) {
+                    console.log("Autoplay", video.id)
+                    video.play();
+                }
+            });
+        },
+        { threshold: [0.9], rootMargin: "0 999px" }
+    );
+    document.querySelectorAll("video").forEach((video) => { observer.observe(document.getElementById(video.dataset.trigger)) });
+})
+</script>

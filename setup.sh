@@ -7,6 +7,10 @@ pushd bezel
 . ./setup.sh
 popd
 
+pushd cleanpresenter
+. ./setup.sh
+popd
+
 pushd recordkit
 . ./setup.sh
 popd

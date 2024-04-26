@@ -11,6 +11,11 @@ pushd bezel
 mv Output ../dist/bezel
 popd
 
+pushd cleanpresenter
+. ./build.sh
+mv Output ../dist/cleanpresenter
+popd
+
 pushd recordkit
 . ./build.sh
 mv .vitepress/dist ../dist/recordkit
