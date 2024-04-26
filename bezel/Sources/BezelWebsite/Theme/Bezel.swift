@@ -40,11 +40,39 @@ extension Theme where Site == BezelWebsite {
         }
 
         func makeSectionHTML(for section: Publish.Section<BezelWebsite>, context: Publish.PublishingContext<BezelWebsite>) throws -> Plot.HTML {
-            HTML(.body(.text("Not found")))
+            return HTML(
+                .head(
+                    for: section,
+                    on: context.site,
+                    stylesheetPaths: ["/bezel/styles.css"],
+                    rssFeedPath: nil,
+                    rssFeedTitle: nil
+                ),
+                .body(
+                    .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
+                    .component(Header()),
+                    .component(Section(sectionItems: section.items, site: context.site)),
+                    .component(Footer())
+                )
+            )
         }
         
         func makeItemHTML(for item: Publish.Item<BezelWebsite>, context: Publish.PublishingContext<BezelWebsite>) throws -> Plot.HTML {
-            HTML(.body(.text("Not found")))
+            return HTML(
+                .head(
+                    for: item,
+                    on: context.site,
+                    stylesheetPaths: ["/bezel/styles.css"],
+                    rssFeedPath: nil,
+                    rssFeedTitle: nil
+                ),
+                .body(
+                    .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
+                    .component(Header()),
+                    .component(Article(item: item, site: context.site)),
+                    .component(Footer())
+                )
+            )
         }
         
         func makePageHTML(for page: Publish.Page, context: Publish.PublishingContext<BezelWebsite>) throws -> Plot.HTML {

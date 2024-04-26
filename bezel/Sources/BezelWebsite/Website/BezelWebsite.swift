@@ -4,17 +4,11 @@ import Plot
 
 struct BezelWebsite: Website {
     enum SectionID: String, WebsiteSectionID {
-        case none
+        case article
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
         var description: String
-        let authors: [String]
-        let date: Date
-        let image: Path
-        let imageAlt: String?
-        let imageCaption: String?
-        let tags: [String]
     }
 
     var name = "Bezel • Show your iPhone on your Mac"
