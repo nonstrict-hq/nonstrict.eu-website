@@ -32,3 +32,8 @@ pushd recordkit-reference-electron
 mkdir -p ../dist/recordkit/api
 mv dist ../dist/recordkit/api/electron
 popd
+
+pushd wwdcindex
+. ./build.sh
+mv dist ../dist/wwdcindex
+popd
