@@ -40,7 +40,7 @@ let appleDevices = await RKRecorder.getAppleDevices() // iPhones, iPads, etc.
 let recorder = RKRecorder(schema: RKRecorderSchema(items: [
     .windowBasedCrop(windowID: windows.first!.id),
     .webcam(microphoneID: microphones.first!.id, cameraID: cameras.first!.id),
-    .iPhonePortrait(deviceID: appleDevices.first!.id)
+    .appleDeviceStaticOrientation(deviceID: appleDevices.first!.id)
                                                     ])) { _ in }
 
 // Calling prepare is highly recommended, this activates all devices and makes sure a call to start will start the recording instantly.
