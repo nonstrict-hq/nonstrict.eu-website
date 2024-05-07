@@ -5,6 +5,14 @@ export default defineConfig({
   title: "RecordKit",
   description: "Recording SDK for macOS apps",
   base: '/recordkit/',
+  sitemap: {
+    hostname: 'https://nonstrict.eu/recordkit/',
+    transformItems: (items) => {
+      // DocC doesn't generate a sitemap, so at least reference the Swift API docs here
+      items.push({url: 'https://nonstrict.eu/recordkit/api/swift/documentation/recordkit/'})
+      return items
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
