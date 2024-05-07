@@ -37,3 +37,7 @@ pushd wwdcindex
 . ./build.sh
 mv dist ../dist/wwdcindex
 popd
+
+# Install the sitemap index
+mv dist/sitemap.xml dist/sitemap-root.xml
+cp sitemap-index.xml dist/sitemap.xml
