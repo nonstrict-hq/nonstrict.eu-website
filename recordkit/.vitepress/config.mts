@@ -5,6 +5,9 @@ export default defineConfig({
   title: "RecordKit",
   description: "Recording SDK for macOS apps",
   base: '/recordkit/',
+  head: [
+    ['script', { defer: '', src: 'https://web.nonstrictmetrics.com/js/script.js', 'data-domain': 'nonstrict.eu', 'data-api': 'https://web.nonstrictmetrics.com/api/event' }]
+  ],
   sitemap: {
     hostname: 'https://nonstrict.eu/recordkit/',
     transformItems: (items) => {
