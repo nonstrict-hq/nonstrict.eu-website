@@ -15,4 +15,7 @@
   <sitemap>
     <loc>https://nonstrict.eu/recordkit/api/electron/sitemap.xml</loc>
   </sitemap>
+  <sitemap>
+    <loc>https://nonstrict.eu/wwdcindex/sitemap.xml</loc>
+  </sitemap>
 </sitemapindex>
