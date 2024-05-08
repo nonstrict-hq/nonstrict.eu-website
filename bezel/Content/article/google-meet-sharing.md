@@ -1,7 +1,7 @@
 ---
 title: Share Your iPhone Screen on Google Meet
 description: Learn how to mirror the screen of your iPhone on a Google Meet call. 
-image: bezel/images/article/how-to-share-your-iPhone-screen-on-Google-Meet.jpg
+image: images/article/how-to-share-your-iPhone-screen-on-Google-Meet.jpg
 path: how-to-share-your-iPhone-screen-on-Google-Meet
 tags: How To, Screen sharing, Google Meet
 ---

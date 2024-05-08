@@ -26,7 +26,7 @@ struct SectionItem: Component {
             Div {
                 Link(url: "/bezel/" + item.path.absoluteString) {
                     if let imagePath = item.imagePath {
-                        Image(imagePath.absoluteString)
+                        Image("/bezel/" + imagePath.absoluteString)
                             .class("h-48 w-full object-cover")
                     } else {
                         Div()
