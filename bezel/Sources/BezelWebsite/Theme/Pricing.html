@@ -186,6 +186,8 @@
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script type="text/javascript">
+    window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+
     let priceIdLookup = {
         'standard': 'pri_01h91ccwwqbqmy4rf0azt28j09',
         'extended': 'pri_01hnv6he4wbwgenjkrma607bhp',
@@ -205,12 +207,18 @@
         };
     } else {
         Paddle.Setup({
-            seller: 173178
+            seller: 173178,
+            eventCallback: function(data) {
+                if (data.name == 'checkout.completed') {
+                    window.plausible('Bezel Checkout Completed')
+                }
+            }
         });
     }
 
     function openCheckout(licenseType) {
         const priceId = priceIdLookup[licenseType];
         Paddle.Checkout.open({items:[{quantity: licenseType == 'team' ? 5 : 1,priceId}]});
+        window.plausible('Bezel Checkout Opened')
     }
 </script>
