@@ -22,6 +22,30 @@ public extension Node where Context == HTML.DocumentContext {
         rssFeedPath: Path? = .defaultForRSSFeed,
         rssFeedTitle: String? = nil
     ) -> Node {
+        head(for: location, on: site, titleSeparator: titleSeparator, stylesheetPaths: stylesheetPaths, rssFeedPath: rssFeedPath, rssFeedTitle: rssFeedTitle, nodes: [])
+    }
+
+    /// Add an HTML `<head>` tag within the current context, based
+    /// on inferred information from the current location and `Website`
+    /// implementation.
+    /// - parameter location: The location to generate a `<head>` tag for.
+    /// - parameter site: The website on which the location is located.
+    /// - parameter titleSeparator: Any string to use to separate the location's
+    ///   title from the name of the website. Default: `" | "`.
+    /// - parameter stylesheetPaths: The paths to any stylesheets to add to
+    ///   the resulting HTML page. Default: `styles.css`.
+    /// - parameter rssFeedPath: The path to any RSS feed to associate with the
+    ///   resulting HTML page. Default: `feed.rss`.
+    /// - parameter rssFeedTitle: An optional title for the page's RSS feed.
+    static func head<T: Website>(
+        for location: Location,
+        on site: T,
+        titleSeparator: String = " | ",
+        stylesheetPaths: [Path] = ["/styles.css"],
+        rssFeedPath: Path? = .defaultForRSSFeed,
+        rssFeedTitle: String? = nil,
+        nodes: [Node<HTML.HeadContext>] = []
+    ) -> Node {
         var title = location.title
 
         if title.isEmpty {
@@ -54,7 +78,8 @@ public extension Node where Context == HTML.DocumentContext {
             .unwrap(location.imagePath ?? site.imagePath, { path in
                 let url = site.url(for: path)
                 return .socialImageLink(url)
-            })
+            }),
+            .forEach(nodes, { $0 })
         )
     }
 }
