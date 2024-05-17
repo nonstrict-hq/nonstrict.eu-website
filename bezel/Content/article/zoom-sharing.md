@@ -1,7 +1,7 @@
 ---
 title: Mirror Your iPhone Screen on Zoom
 description: Discover how to display your iPhone screen during a Zoom meeting. 
-image: images/article/how-to-share-your-iPhone-screen-on-Zoom.jpg
+image: images/article/how-to-share-your-iPhone-screen-on-Zoo.jpg
 path: how-to-share-your-iPhone-screen-on-a-Zoom-call
 tags: How To, Screen sharing, Zoom
 ---
@@ -50,4 +50,4 @@ Open Zoom and start or join a meeting. You can then share your screen or just th
 
 You've learned how to use Bezel to display your iPhone or iPad screen on Zoom. It is simple and enhances your meeting experience. With a few clicks, you can share apps, demonstrate iOS features, or display photos and videos directly from your device. All looking great with a neat device frame around it giving people context. 
 
-There is however also an alternative available in Zoom by default. The "Share Screen" dialog in Zoom also has an option to share your iPhone or iPad, either wireless or with a cable. This option doesn't show a device frame around the screen share, and doesn't help you setup the connection. But it's can be a good alternative when working on a computer without Bezel installed.   
+There is however also an alternative available in Zoom by default. The "Share Screen" dialog in Zoom also has an option to share your iPhone or iPad, either wireless or with a cable. This option doesn't show a device frame around the screen share, and doesn't help you setup the connection, but can be a good alternative for users on older Macs.   
