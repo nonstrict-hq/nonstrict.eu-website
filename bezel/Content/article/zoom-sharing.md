@@ -1,7 +1,7 @@
 ---
 title: Mirror Your iPhone Screen on Zoom
 description: Discover how to display your iPhone screen during a Zoom meeting. 
-image: images/article/how-to-share-your-iPhone-screen-on-Zoo.jpg
+image: images/article/how-to-share-your-iPhone-screen-on-Zoom.jpg
 path: how-to-share-your-iPhone-screen-on-a-Zoom-call
 tags: How To, Screen sharing, Zoom
 ---
