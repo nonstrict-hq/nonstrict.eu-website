@@ -8,7 +8,6 @@ tags: How To, Screen sharing, Jitsi
 
 Screen sharing is great for interactive communication and collaboration. Sharing your iPhone or iPad screen on a Jitsi meeting is seamless with the app [Bezel](https://getbezel.app/). This article is a quick guide on how to share your screen during a Jitsi call.
 
-
 ## Step 1: Get Bezel on Your Mac
 
 Bezel is tailor-made for iOS devices and works perfectly with Jitsi. The app is available for free, offering all necessary screen sharing capabilities:
