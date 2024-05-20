@@ -3,7 +3,7 @@ date: 2024-05-20 12:00
 authors: mathijs, tom
 tags: Engineering
 title: Sending the initial workout configuration through HealthKit
-description: `HKWorkoutSession` will throw "Remote session delegate is not set up" errors at you when sending data too soon. So how do we share data before starting the actual workout? 
+description: `HKWorkoutSession` will throw 'Remote session delegate is not set up' errors at you when sending data too soon. So how do we share data before starting the actual workout? 
 image: images/blog/blocks-fletcher-3_PaUEEcwMc-unsplash.jpg
 path: 2024/hkworkoutsession-remote-delegate-not-setup-error
 featured: true
