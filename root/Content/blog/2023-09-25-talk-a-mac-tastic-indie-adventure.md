@@ -12,6 +12,22 @@ hideImageHero: false
 
 Last week at [CocoaHeadsNL](https://cocoaheads.nl), a monthly meetup for iOS/macOS developers in The Netherlands, Mathijs gave a talk about our company. We started Nonstrict at beginning of 2023 with the dream of launching our own indie apps. So far, we have done client work, worked on some apps, and now we are on the cusp of lauching our biggest app yet: [Bezel](https://getbezel.app).
 
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=a-mac-tastic-indie-adventure" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div> 
+
 The recording of the talk is included here. Below is a transcript of the talk, if you prefer to read.
 
 <iframe width="707" height="398" src="https://www.youtube-nocookie.com/embed/ewT_f4-34nc?si=-Z7MHVAMEwcZ4bsX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="max-width: 100%; vertical-align: middle"></iframe>
@@ -218,6 +234,20 @@ A: No, I think for a lot of devices, it's possible to create something like that
 
 A: So the company started in January. And December was when we got Adam as a client. So that's the point where we started. Yeah, so nine, 10 months now.
 
----
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=a-mac-tastic-indie-adventure" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div> 
 
 _Transcript created with [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper)._

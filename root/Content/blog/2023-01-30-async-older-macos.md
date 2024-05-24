@@ -13,6 +13,22 @@ featured: true
 
 ***tl;dr You need to ship `libswift_Concurrency.dylib` along with your CLI executable on macOS 10.15 and macOS 11, put it in `../lib` relative to your executable. You can add an rpath if you want a more convenient location (see blogpost).***
 
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=using-async-await-in-a-commandline-tool-on-older-macos-versions" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
+
 ## Building a commandline tool with async/await
 
 Swift concurrency seemed like a great fit for the new recorder backend for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=nXV1B) we built recently. It captures multiple devices in sync and features like async/await and task groups would help to write clear code that also executes in parallel where possible. The recorder is implemented as a macOS commandline tool that gets called from the Electron app and uses system native APIs to capture data from different devices.
@@ -123,6 +139,22 @@ Since we’re embedding the commandline tool into an Electron app shipping dynam
 ## Update February 8th
 
 After some more contact with Apple DTS it turns out it's important that you put everything in the right folder when shipping the binary as a helper app. As described in the [Placing Content in a Bundle](https://developer.apple.com/documentation/bundleresources/placing_content_in_a_bundle?language=objc) article from Apple, the binary should be in the `Contents/Helpers/` folder and the dynamic library in the `Contents/Frameworks/` folder. This helps to avoid code signing issues. We added another unsafe flag to the linker settings to `@executable_path/../Frameworks` to solve this.
+
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=using-async-await-in-a-commandline-tool-on-older-macos-versions" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
 
 ## References
 

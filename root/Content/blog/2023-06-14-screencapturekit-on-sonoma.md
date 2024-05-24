@@ -14,6 +14,22 @@ Last week at WWDC23 Apple introduced macOS 14 “Sonoma”, it features some imp
 
 There are three big new features introducted. We have been experimenting with the first developer preview of Sonoma. This post gives an overview of the new features.
 
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=a-look-at-screencapturekit-on-macos-sonoma" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
+
 ### New features
 
 - Presenter Overlay: allows users to show a bubble of their head floating on top of a screen share. This can be use directly in screen sharing apps like Zoom or Google Meet
@@ -62,6 +78,22 @@ Fun fact; The system level picker technically isn’t new to Sonoma, it is also 
 There are a lot of issues in the current beta 1, the documentation is incomplete and many features don’t work right. But this is a beta, and I’m sure a lot of issues will be fixed in the coming months.
 
 The previous macOS method of allowing apps to record the screen is quite complicated; There is a confusing dialog, and users need to go to System Settings to manually enable the app. I’m excited by the new system level sharing picker, since this allows users to quickly get started with screensharing a window or screen, without navigating through any complicated flows.
+
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=a-look-at-screencapturekit-on-macos-sonoma" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
 
 ## References
 

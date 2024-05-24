@@ -13,6 +13,22 @@ featured: true
 
 **tldr; Use an AVAssetWriter to save CMSampleBuffers in a SCStreamOutput callback. See our GitHub for a detailed example.**
 
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=recording-to-disk-with-screencapturekit" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
+
 ## Recording to a file
 
 ScreenCaptureKit is awesome, it allows for many custom filters to only capture specific content, and it is very efficient. In our recent project to build a new recording backend for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=nXV1B), we needed to create a screen recording on macOS and write the output to a file on disk.
@@ -202,6 +218,22 @@ To run this, clone the repo and run:
 ```swift
 swift run sckrecording
 ```
+
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=recording-to-disk-with-screencapturekit" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
 
 ## References
 

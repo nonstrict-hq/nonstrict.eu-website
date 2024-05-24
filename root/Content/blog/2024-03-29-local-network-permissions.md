@@ -13,6 +13,22 @@ featured: true
 
 Our app [Bezel](https://getbezel.app/vision) communicates over the local network to other devices. On iOS and iPadOS since 14 and in visionOS the user needs to grant Local Network permission before apps can use the local network. This change is explained in the WWDC talk [Support local network privacy in your app](https://developer.apple.com/videos/play/wwdc2020/10110/) from WWDC20.
 
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=request-and-check-for-local-network-permission" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
+
 ## Existing networking APIs
 
 Apple has done quite a good job making this all work with existing networking code. The alert requesting the permission is triggered whenever the app starts using the local network. Virtually all networking APIs are asynchronous, so the will just wait until permission is granted before they perform their actual work.
@@ -107,6 +123,22 @@ When the user navigates away from this view the task will be cancelled that in t
 This gives us an easy to use API to get request the permission. The remaining limitation is that we can't silently check the permission without ever triggering the permission request towards to user. The request dialog does however only appear once, so if after you've asked for the first time you can use this function to check if you still have permission without the user being bothered.    
 
 The complete implementation of the function described here, including comments, is available [in this gist](https://gist.github.com/mac-cain13/fa684f54a7ae1bba8669e78d28611784). 
+
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=request-and-check-for-local-network-permission" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
 
 ## References
 

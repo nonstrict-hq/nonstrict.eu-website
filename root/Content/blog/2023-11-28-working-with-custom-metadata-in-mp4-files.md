@@ -17,6 +17,22 @@ For our app [Bezel](https://getbezel.app) custom metadata is written into the re
 
 However once we tried to write out metadata to the mp4 file the data often just didn't show up at all. No errors where reported, it just wasn't there. Turned out writing custom metadata to a mp4 container is much more restricted compared to a QuickTime container used in .mov files.
 
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=working-with-custom-metadata-in-mp4-files" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
+
 ## The basics
 
 The basics are pretty well explained in older resources. The WWDC video "Harnessing metadata in audiovisual media" from WWDC14 gives a great overview, the Apple code samples [AVMetadataRecordPlay](https://developer.apple.com/library/archive/samplecode/AVMetadataRecordPlay/Introduction/Intro.html#//apple_ref/doc/uid/TP40016165) and [AVTimedAnnotationWriter](https://developer.apple.com/library/archive/samplecode/AVTimedAnnotationWriter/Introduction/Intro.html#//apple_ref/doc/uid/TP40014496) released around the same time also contain great (Objective-C) example code showing how to work with metadata. Sadly that video isn't hosted by Apple anymore, but you still can find an unofficial mirrors on [YouTube](https://www.youtube.com/watch?v=ccz9kI8VQsw).
@@ -95,6 +111,22 @@ private func decodeFourCharCode(_ key: UInt32) -> String? {
 For the recorder we created for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=nXV1B) JSON files are used alongside the video/audio files. This is a very good alternative, but requires to write things out into a folder and define a custom format. It also is very easy for users to alter this data or mix up files between recordings. It is however a setup way more developers will be familiar with so it can be a very good alternative in a lot of cases.
 
 Another alternative is to switch away from the mp4 container and instead use .mov files. This is what we did for [Bezel](https://getbezel.app), it's way more forgiving to work with metadata in .mov files with AVFoundation. Since it's an intermediate storage that only has to be read by Bezel itself we aren't really concerned by compatibility issues that might arrise. So if you have the flexibility to switch away from mp4, I would really recommend that if you want to write out metadata. 
+
+<div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
+    <div class="flex-initial">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=working-with-custom-metadata-in-mp4-files" target="_blank"><img src="/images/bezel-icon.png" class="max-h-full max-w-10 m-0"></a>
+    </div>
+    <div class="flex-initial">
+        <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror your iPhone on your Mac</a></h3>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Learn more →</a></p> 
+    </div>
+    <div class="flex-initial hidden md:block">
+        <a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">
+            <img src="/images/bezel-still.jpg" class="max-h-full max-w-36 rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
+        </a>
+    </div>
+</div>
 
 ## References
 
