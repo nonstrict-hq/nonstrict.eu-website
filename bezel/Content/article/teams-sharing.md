@@ -33,7 +33,7 @@ Launch the Bezel app by clicking its icon and connect your iPhone with a USB cab
 Join the Teams meeting as you normally would on your Mac. Click the “Share” button at the bottom of the screen and select the mirrored iPhone window or share the entire display showing the iPhone screen.
 
 <video autoplay muted playsinline loop preload="auto" class="not-prose mx-auto w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
-    <source src="/bezel/video/article-share-in-webex.mp4#t=0.001" type="video/mp4">
+    <source src="/bezel/video/article-share-in-teams.mp4#t=0.001" type="video/mp4">
 </video>
 
 ## All Done!
