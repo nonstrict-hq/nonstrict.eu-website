@@ -1,6 +1,6 @@
 # Getting Started on Swift
 
-This guide will walk you through the steps to integreate RecordKit into your Swift app. By the end you will be able to make a screen recording.
+This guide will walk you through the steps to integrate RecordKit into your Swift app. By the end you will be able to make a screen recording.
 
 ::: details Starting from scratch?
 1. Start [Xcode](https://developer.apple.com/xcode/) choose "Create New Project..." from the launch screen.
@@ -38,10 +38,10 @@ let appleDevices = await RKRecorder.getAppleDevices() // iPhones, iPads, etc.
 ```Swift
 // Configure the recorder
 let recorder = RKRecorder(schema: RKRecorderSchema(items: [
-    .windowBasedCrop(windowID: windows.first!.id),
-    .webcam(microphoneID: microphones.first!.id, cameraID: cameras.first!.id),
-    .appleDeviceStaticOrientation(deviceID: appleDevices.first!.id)
-                                                    ])) { _ in }
+        .windowBasedCrop(windowID: windows.first!.id),
+        .webcam(microphoneID: microphones.first!.id, cameraID: cameras.first!.id),
+        .appleDeviceStaticOrientation(deviceID: appleDevices.first!.id)
+    ])) { _ in }
 
 // Calling prepare is highly recommended, this activates all devices and makes sure a call to start will start the recording instantly.
 // (Screen recording & camera indicators will be visible to the user after calling prepare, also permission alerts might be triggered.)

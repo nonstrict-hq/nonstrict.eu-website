@@ -1,6 +1,6 @@
 # Getting Started on Electron
 
-This guide will walk you through the steps to integreate RecordKit into your Electron app. By the end you will be able to make a screen recording.
+This guide will walk you through the steps to integrate RecordKit into your Electron app. By the end you will be able to make a screen recording.
 
 ::: details Starting from scratch?
 To bootstrap an Electron project using [Electron Forge](https://www.electronforge.io) run:
