@@ -45,6 +45,13 @@ export default defineConfig({
           { text: 'Try using Swift', link: '/try-swift' },
           { text: 'Try using Electron', link: '/try-electron' },
         ]
+      },
+      {
+        text: 'Guides',
+        items: [
+          { text: 'Screen Recording', link: '/guide/screen-recording' },
+          { text: 'Recording System Audio', link: '/guide/recording-system-audio' },
+        ]
       }
     ],
 
