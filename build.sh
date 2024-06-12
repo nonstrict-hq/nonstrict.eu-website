@@ -33,7 +33,7 @@ mkdir -p ../dist/recordkit/api
 mv dist ../dist/recordkit/api/electron
 popd
 
-pushd wwdcindex
+pushd wwdcindex-reference
 . ./build.sh
 mv dist ../dist/wwdcindex
 popd
