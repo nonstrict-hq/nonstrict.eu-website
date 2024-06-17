@@ -24,7 +24,7 @@ export default defineConfig({
         text: 'API Reference',
         items: [
           { text: 'Swift', link: 'https://nonstrict.eu/recordkit/api/swift/documentation/recordkit/' },
-          { text: 'Electron', link: 'https://nonstrict.eu/recordkit/api/electron/' },
+          { text: 'Electron', link: 'https://nonstrict.eu/recordkit/api/electron/' }
         ]
       },
       { text: 'Contact Sales', link: 'mailto:team+recordkit@nonstrict.com' }
@@ -44,6 +44,14 @@ export default defineConfig({
         items: [
           { text: 'Try using Swift', link: '/try-swift' },
           { text: 'Try using Electron', link: '/try-electron' },
+        ]
+      },
+      {
+        text: 'References',
+        items: [
+          { text: 'Changelog', link: '/changelog' },
+          { text: 'Swift API docs', link: 'https://nonstrict.eu/recordkit/api/swift/documentation/recordkit/' },
+          { text: 'Electron API docs', link: 'https://nonstrict.eu/recordkit/api/electron/' }
         ]
       }
     ],
