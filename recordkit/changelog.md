@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.8.0
+
+- Fix: Other windows are no longer being recorded in WindowBasedCrop recorder
+
 ### 0.7.0
 
 - Add support keyboard input recording
