@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.8.1
+
+- Fix: Don't show window sharing indicator in WindowBasedCrop recorder
+
 ### 0.8.0
 
 - Fix: Other windows are no longer being recorded in WindowBasedCrop recorder
