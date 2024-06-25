@@ -37,11 +37,11 @@ let appleDevices = await RKRecorder.getAppleDevices() // iPhones, iPads, etc.
 
 ```Swift
 // Configure the recorder
-let recorder = RKRecorder(schema: RKRecorderSchema(items: [
+let recorder = RKRecorder([
         .windowBasedCrop(windowID: windows.first!.id),
         .webcam(microphoneID: microphones.first!.id, cameraID: cameras.first!.id),
         .appleDeviceStaticOrientation(deviceID: appleDevices.first!.id)
-    ])) { _ in }
+    ])
 
 // Calling prepare is highly recommended, this activates all devices and makes sure a call to start will start the recording instantly.
 // (Screen recording & camera indicators will be visible to the user after calling prepare, also permission alerts might be triggered.)
