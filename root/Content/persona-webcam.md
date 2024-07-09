@@ -8,8 +8,8 @@ image: images/apps/app-icon-persona-webcam.png
 path: persona-webcam
 ---
 
-<meta http-equiv="refresh" content="0; url=https://forms.gle/YKEY5UzRAkKUM33r8" />
+<meta http-equiv="refresh" content="0; url=https://apps.apple.com/us/app/id6498891868" />
 
 Persona Webcam shows your Vision Persona on Mac.
 
-[Join the wait list](https://forms.gle/YKEY5UzRAkKUM33r8)
+[App Store](https://apps.apple.com/us/app/id6498891868)
