@@ -1,14 +1,18 @@
 # Changelog
 
-### 0.8.1
+### 0.10.0
 
-- Fix: Don't show window sharing indicator in WindowBasedCrop recorder
+- Swift: Add System Audio recorder
 
 ### 0.9.0
 
 - Swift: Add Display recorder
 - Swift: Add Microphone recorder
 - Swift: `RKRecorderScheme` has been renamed `RKRecorder.Scheme`
+
+### 0.8.1
+
+- Fix: Don't show window sharing indicator in WindowBasedCrop recorder
 
 ### 0.8.0
 
