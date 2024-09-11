@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.11.0
+
+- Swift: Add RKSources property wrapper to list available recording sources
+
 ### 0.10.0
 
 - Swift: Add System Audio recorder
