@@ -1,5 +1,17 @@
 # Changelog
 
+### 0.12.0
+
+- New `allowFrameReordering` setting on recorder to disable generation of B-frames in output files.
+- Length of recorded videos is much more accurate to the start/stop of the recorder.
+- Several thread safety improvements.
+- Swift: New `RKSources` property wrapper to discover recording sources like microphones.
+- Swift: New `RKMicrophone` (async) discovery methods `microphone` and `updates`.
+- Swift: New `RKMicrophone.preferred` property to get the preferred microphone.
+- Swift: New `RKUserPreferred` class to manage and access preferred recording sources.
+- Swift: Removed `RKRecorder.Scheme` the API; Use the `RKRecorder` initializer that takes `[RKRecorder.SchemaItem]` instead.
+- Electron: Updated availability type information for several recording sources.
+
 ### 0.11.0
 
 - Swift: Add RKSources property wrapper to list available recording sources
