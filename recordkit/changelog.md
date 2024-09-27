@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.12.1
+
+- Resolved an issue preventing some camera and screen recordings from finalizing.
+
 ### 0.12.0
 
 - New `allowFrameReordering` setting on recorder to disable generation of B-frames in output files.
