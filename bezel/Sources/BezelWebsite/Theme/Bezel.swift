@@ -140,7 +140,7 @@ extension Theme where Site == BezelWebsite {
 
                 var s = context.site
                 s.name = "Bezel • iPhone mirroring for Vision Pro"
-                s.description = "Bezel shows your iPhone inside Vision Pro."
+                s.description = "Bezel mirrors any iPhone inside Vision Pro."
 
                 return HTML(
                     .head(
