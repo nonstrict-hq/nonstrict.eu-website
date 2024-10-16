@@ -220,4 +220,12 @@
         Paddle.Checkout.open({items:[{quantity: licenseType == 'team' ? 5 : 1,priceId}]});
         window.plausible('Bezel Checkout Opened')
     }
+
+    function checkForTeamHash() {
+        if (window.location.hash === '#team') {
+            openCheckout('team');
+        }
+    }
+    window.addEventListener('load', checkForTeamHash);
+    window.addEventListener('hashchange', checkForTeamHash);
 </script>
