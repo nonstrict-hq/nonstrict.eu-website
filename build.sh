@@ -38,6 +38,11 @@ pushd wwdcindex-reference
 mv dist ../dist/wwdcindex
 popd
 
+# pushd _template_app
+# . ./build.sh
+# mv out ../dist/_template_app
+# popd
+
 # Install the sitemap index
 mv dist/sitemap.xml dist/sitemap-root.xml
 cp sitemap-index.xml dist/sitemap.xml
