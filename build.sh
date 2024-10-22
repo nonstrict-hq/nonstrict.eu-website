@@ -51,3 +51,7 @@ popd
 # Install the sitemap index
 mv dist/sitemap.xml dist/sitemap-root.xml
 cp sitemap-index.xml dist/sitemap.xml
+
+# Install merchantid-domain-association for improved Paddle Apple Pay checkout
+mkdir dist/.well-known
+cp apple-developer-merchantid-domain-association.txt dist/.well-known/apple-developer-merchantid-domain-association.txt
