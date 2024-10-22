@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import Image, { type ImageProps } from 'next/image'
+import Image from 'next/image'
 import logo from '@/images/logo.png'
 
 export function Logo() {
