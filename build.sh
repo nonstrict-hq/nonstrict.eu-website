@@ -38,6 +38,11 @@ pushd wwdcindex-reference
 mv dist ../dist/wwdcindex
 popd
 
+pushd keepgoing
+. ./build.sh
+mv out ../dist/keepgoing
+popd
+
 # pushd _template_app
 # . ./build.sh
 # mv out ../dist/_template_app

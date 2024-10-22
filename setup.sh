@@ -15,6 +15,10 @@ pushd recordkit
 . ./setup.sh
 popd
 
+pushd keepgoing
+. ./setup.sh
+popd
+
 # pushd _template_app
 # . ./setup.sh
 # popd
