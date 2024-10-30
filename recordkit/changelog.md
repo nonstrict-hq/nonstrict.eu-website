@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.13.0
+
+- Added additional debug logging around discovered devices.
+- Fixed a potential deadlock.
+
 ### 0.12.1
 
 - Resolved an issue preventing some camera and screen recordings from finalizing.
