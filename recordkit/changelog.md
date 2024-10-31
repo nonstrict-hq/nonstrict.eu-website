@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.14.0
+
+- Fix: Issue where preferred microphone would sometime return no microphone.
+
 ### 0.13.0
 
 - Added additional debug logging around discovered devices.
