@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.15.0
+
+- Electron: Add explicit cancel method on Recorder.
+- Support for mp4 and mov video container file types.
+
 ### 0.14.0
 
 - Fix: Issue where preferred microphone would sometime return no microphone.
