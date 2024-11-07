@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.15.1
+
+- Fix: Occasional crash when starting multiple keyboard recorders after each other.
+
 ### 0.15.0
 
 - Electron: Add explicit cancel method on Recorder.
