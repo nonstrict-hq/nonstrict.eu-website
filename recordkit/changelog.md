@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.16.0
+
+- Electron: Log RecordKit log message to console.
+- Electron: Add option to set log level for RecordKit.
+- Improved stability of `RKRecorder.getWindows`.
+
 ### 0.15.1
 
 - Fix: Occasional crash when starting multiple keyboard recorders after each other.
