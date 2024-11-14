@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.17.0
+
+- Improved output file when screen recording starts or ends with static video.
+- Electron: Add option to set log level per category.
+
 ### 0.16.0
 
 - Electron: Log RecordKit log message to console.
