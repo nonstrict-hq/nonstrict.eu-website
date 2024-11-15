@@ -21,10 +21,11 @@ export default defineConfig({
     nav: [
       { text: 'Get Started', link: '/try' },
       {
-        text: 'API Reference',
+        text: 'Docs',
         items: [
-          { text: 'Swift', link: 'https://nonstrict.eu/recordkit/api/swift/documentation/recordkit/' },
-          { text: 'Electron', link: 'https://nonstrict.eu/recordkit/api/electron/' }
+          { text: 'Guide', link: '/try' },
+          { text: 'Swift API Reference', link: 'https://nonstrict.eu/recordkit/api/swift/documentation/recordkit/' },
+          { text: 'Electron API Reference', link: 'https://nonstrict.eu/recordkit/api/electron/' }
         ]
       },
       { text: 'Contact Sales', link: 'mailto:team+recordkit@nonstrict.com' }
