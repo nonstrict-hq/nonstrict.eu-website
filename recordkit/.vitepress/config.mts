@@ -48,6 +48,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Guides',
+        items: [
+          { text: 'Output formats', link: '/guides/output-formats' },
+        ]
+      },
+      {
         text: 'References',
         items: [
           { text: 'Changelog', link: '/changelog' },
