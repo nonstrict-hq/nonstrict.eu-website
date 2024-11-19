@@ -1,5 +1,17 @@
 # Changelog
 
+### 0.19.0
+
+- Electron: Add option to receive RecordKit logs through `recordkit.on('log', (logEvent) => { })`.
+
+### 0.18.1
+
+- Fixed missing types from API documentation.
+
+### 0.18.0
+
+- Added support for segmented media streams (HLS) output.
+
 ### 0.17.0
 
 - Improved output file when screen recording starts or ends with static video.
