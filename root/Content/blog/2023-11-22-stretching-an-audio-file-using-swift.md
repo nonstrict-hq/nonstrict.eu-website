@@ -9,7 +9,9 @@ path: 2023/stretching-an-audio-file-using-swift
 featured: true
 ---
 
-**tldr; Add your audio file to an AVMutableComposition and use its scaleTimeRange method to stretch the audio to the desired duration.**
+**[Update November 2024] The approach described below doesn't work in when stretching very long audio by small amounts. See our [follow-up post](/blog/2024/stretching-audio-by-small-amounts-using-swift) a more solid solution.**
+
+_tldr; Add your audio file to an AVMutableComposition and use its scaleTimeRange method to stretch the audio to the desired duration._
 
 ## Our use case
 
