@@ -1,5 +1,21 @@
 # Changelog
 
+### 0.20.0
+
+- Added `RKCameraPreview` to preview a camera in SwiftUI.
+- Apple device recordings now also capture audio from the device.
+- Recorder is more robust when prepare/start/stop are called multiple times.
+- The start method on a recorder can now throw an error if something fails.
+- Improved precision of recorder start/stop.
+- Improved window filtering when listing available windows.
+- Improved resillience of all audio recorders when audio gaps occur.
+- Segmented output now has correct video dimensions for Apple device recordings.
+- Improved error messages through the SDK.
+- Improved log messages through the SDK.
+- Swift: Options to exclude windows when recording a display.
+- Swift: Improved device discovery API.
+- Swift: Ability to store/retrieve prefered microphone, camera and display.
+
 ### 0.19.0
 
 - Electron: Add option to receive RecordKit logs through `recordkit.on('log', (logEvent) => { })`.
