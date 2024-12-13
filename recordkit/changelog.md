@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.21.0
+
+- Clearer logs when enableing Apple device discovery fails.
+- Swift: Improved the API around authorization status.
+
 ### 0.20.0
 
 - Added `RKCameraPreview` to preview a camera in SwiftUI.
