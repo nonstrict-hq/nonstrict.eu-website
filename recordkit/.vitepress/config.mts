@@ -1,7 +1,24 @@
 import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
+  },
+  vite: {
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          'swift': 'vscode-icons:file-type-swift',
+          'electron': 'logos:electron',
+        }
+      })
+    ],
+  },
+
   title: "RecordKit",
   description: "Recording SDK for macOS apps",
   base: '/recordkit/',

@@ -9,5 +9,8 @@
   },
   "volta": {
     "node": "20.11.1"
+  },
+  "dependencies": {
+    "vitepress-plugin-group-icons": "^1.3.3"
   }
 }
