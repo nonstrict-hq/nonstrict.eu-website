@@ -2,7 +2,7 @@
 
 ### 0.21.0
 
-- Clearer logs when enableing Apple device discovery fails.
+- Clearer logs when discovery of Apple devices fails.
 - Swift: Improved the API around authorization status.
 
 ### 0.20.0
