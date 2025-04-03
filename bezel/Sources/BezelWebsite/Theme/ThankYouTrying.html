@@ -8,15 +8,16 @@
                 <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">Download started</h1>
                 <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">Not working? <a class="underline" href="https://download.nonstrict.eu/bezel/Bezel.dmg">Start download again.</a></p>
             </div>
-            <form id="form" action="https://production.bezelsubscribe.nonstrict.workers.dev/" method="post" target="_self" novalidate="">
+            <form id="form" action="https://customers.nonstrict.com/api/v1/mailing/subscribe" method="post" target="_self" novalidate="">
                 <p class="mt-4 mb-4 text-lg leading-8">
                     <span class="text-gray-900 dark:text-white font-bold">Sign up for updates</span><br>
                     <span class="text-gray-600 dark:text-gray-300">Be the first to learn about new features.</a>
                 </p>
                 <label for="email-address" class="sr-only">Email address</label>
-                <input type="hidden" name="tags" value="2821428">
+                <input type="hidden" name="list_id" value="bezel-updates">
+                <input type="hidden" name="return_url" value="https://nonstrict.eu/bezel/subscribed/">
                 <div class="flex items-center gap-x-0">
-                    <input id="email-address" name="EMAIL" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-l-md border-0 bg-white/5 px-3.5 py-2 text-gray-900 placeholder-gray-600/70 dark:text-white dark:placeholder-gray-300 shadow-sm ring-1 ring-inset ring-gray-600/70 dark:ring-white/10 sm:text-sm sm:leading-6" placeholder="Your email address">
+                    <input id="email-address" name="email_address" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-l-md border-0 bg-white/5 px-3.5 py-2 text-gray-900 placeholder-gray-600/70 dark:text-white dark:placeholder-gray-300 shadow-sm ring-1 ring-inset ring-gray-600/70 dark:ring-white/10 sm:text-sm sm:leading-6" placeholder="Your email address">
                     <button type="submit" class="flex-none rounded-r-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Sign up</button>
                 </div>
                 <p class="text-left text-xs pt-2 text-gray-600 dark:text-gray-400"><span class="whitespace-nowrap">Bezel updates only, unsubscribe anytime.</span></p>
