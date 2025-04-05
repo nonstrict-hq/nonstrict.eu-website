@@ -23,7 +23,7 @@ In our code we use an `AVCaptureSession` with a `AVCaptureVideoDataOutput`, but 
 
 A simple workaround when this happens is to retry. The 25th time when trying to use the Studio Display Camera, it works again. Or rather, it resets the 24 counter, because the 48th time the camera will again not produce frames.
 
-Because this issue doesn’t when Center Stage is active, a different workaround is to enable/disable Center Stage from code:
+Because this issue doesn’t happen when Center Stage is active, a different workaround is to enable/disable Center Stage from code:
 
 ```swift
 AVCaptureDevice.centerStageControlMode = .cooperative
