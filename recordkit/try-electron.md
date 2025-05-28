@@ -99,7 +99,7 @@ const recorder = await recordkit.createRecorder({
   items: [
     { type: 'windowBasedCrop', window: windows[0] },
     { type: 'webcam', camera: cameras[0], microphone: microphones[0] },
-    { type: 'appleDeviceStaticOrientation', device: appleDevices[0] }
+    // { type: 'appleDeviceStaticOrientation', device: appleDevices[0] } // Uncomment this line if you have an Apple device connected that you want to record (iPhone, iPad, etc.)
   ]
 })
 
