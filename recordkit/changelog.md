@@ -1,5 +1,155 @@
 # Changelog
 
+### 0.48.1
+
+- Swift: Make desktopIndependentWindow macOS 13.1+ only
+
+### 0.48.0
+
+- Swift: Add crop option to display recording.
+- Keep Mac awake during a recording.
+- Swift: `RKRunningApplication` now exposes the bundle identifier of the app.
+- Add `videoDimensions` to the bundle format, deprecating `recordingScale`.
+- Swift: Add support for recording a window independent of the desktop.
+
+### 0.47.1
+
+- Fix potential issue when recording microphones with more than 2 channels.
+
+### 0.47.0
+
+- Fix bug when recording left audio recording.
+- Fix bug in input recorder when it's momentarily disabled by macOS.
+
+### 0.46.0
+
+- Fixes for `SCKAudioRecorder` on Intel Macs.
+
+### 0.45.0
+
+- Restart input recording when interrupted.
+- Swift: Add `minimumFrameInterval` and `maxVideoDimensions` options to screen and webcam recorders.
+- Swift: Add the option to record the mic left channel only
+- Prevent webcam from changing it's resolution unexpectedly.
+
+### 0.44.0
+
+- Fixed an issue M4A files didn't have the correct container format.
+
+### 0.43.0
+
+- Enable segmented file recording for audio recorders.
+- Workaround for non-working Studio Display camera in `RKCameraPreview`
+
+### 0.42.0
+
+- `RKDisplay` identifier changed to prevent collisions.
+- Include device name in error message where relevant.
+- Fixed a multithreading issue in the recorder.
+
+### 0.41.0 
+
+- Exclude Apples TipKit view when `screenRecordingIndicator` exclude option is used.
+
+### 0.40.0
+
+- Added low disk space error to `SCKAudioRecorder`.
+- Swift: Added option to exclude specific processes from screen recordings.
+
+### 0.39.0
+
+- Swift: Improve performance of switching cameras in `RKCameraPreview`.
+- Swift: Improve performance of switching microphones in `MicrophonePowerMeter`.
+
+### 0.38.0
+
+- Major performance improvements in top window tracking.
+
+### 0.37.3
+
+- Prefixed all Objective-C code with `RK` to avoid name collisions.
+
+### 0.37.0
+
+- Additional minor logging improvements.
+
+### 0.36.0
+
+- Improved logging.
+- Improve window tracking when new windows are created.
+
+### 0.35.0
+
+- Fix correctly stopping input event capturing once a recording is stopped.
+- Fix incorrectly aborting the recording when using input recording.
+
+### 0.34.0
+
+- Reduce CPU usage when window discovery isn't used anymore.
+- Fix memory leak in JSON writer.
+
+### 0.33.0
+
+- Prevent memory load in macOS 13 when using segmented file output.
+- Added window title change tracking.
+- Swift: Only trigger camera prompt when preview is visible
+
+### 0.32.0 
+
+- Improved audio recording reliability.
+
+### 0.31.0
+
+- Swift: Add `accessibilityProcessTrusted` to `RKAuthorizationStatus`
+- Minor top window tracking improvements.
+
+### 0.30.0
+
+- Swift: Allow custom content in `RKCameraPreview`.
+- Fixed memory leak while capturing user input.
+- Performance improvements in top window tracking.
+
+### 0.29.0
+
+- Fix possibly incorrect `recordingSize` in RKBundleInfo.
+- Fixed an ordering issue in the top window detection.
+
+### 0.28.0
+
+- Added `recordingSize` & `recordingScale` to the recordkit.json file.
+
+### 0.27.0
+
+- Swift: Update `RKMicrophonePreview`, only render when window is visible on screen.
+- Swift: Add `promptForAuthorization` option to `RKCameraPreview`.
+
+### 0.26.0
+
+- Improved top window detection logic.
+
+### 0.25.0
+
+- Swift: Microphone preview support, monitoring power levels.
+- Swift: Use cameraID in `RKCameraPreview`.
+
+### 0.24.1
+
+- Swift: Fixes `RKCameraPreview` background color and start/stop behaviour.
+
+### 0.24.0
+
+- Swift: Renamed `RKAuthorizationStatus` to `RKAuthorization`.
+- Made streaming JSON writing atomic to be more robust in case of a crash.
+- Renamed `RKWindow` `onlyOnScreen` filter option to `allOnScreen`.
+
+### 0.23.0
+
+- Fixed an issue where tracking the top window didn't always correctly stop.
+
+### 0.22.0
+
+- SwiftUI: Improve display highlighting.
+
 ### 0.21.0
 
 - Clearer logs when discovery of Apple devices fails.
