@@ -1,8 +1,58 @@
 # Changelog
 
+### 0.53.1
+
+- Electron: Updated EventEmitter imports for better compatibility
+
+### 0.53.0
+
+- Electron: New streaming audio support for microphone, system audio, and application audio
+- Electron: New `createWebAudioBuffer` helper function for converting audio streams
+- Swift: Make microphone stream callback available
+
+### 0.52.0
+
+- Swift: Fix multithreading bug where audio could write to asset writer before it was started
+- Swift: Add inline documentation improvements
+- Electron: Add comprehensive documentation for Discovery, Permissions, and Recording Schemas
+
+### 0.51.1
+
+- Swift: Additional audio delay logging for debugging
+
+### 0.51.0
+
+- Swift: New `audioDelay` option for microphone recorder
+
+### 0.50.0
+
+- Swift: Beta implement system audio recording using Core Audio
+- Electron: Add SystemAudio/ApplicationAudio recording
+
+### 0.49.3
+
+- Fixed for Xcode 26 beta 1 compatibility
+
+### 0.49.2
+
+- Fix documentation building issues
+
+### 0.49.1
+
+- Fix build with Xcode 16.4
+
+### 0.49.0
+
+- Video is now always recorded with first frame at time zero for better compatibility
+
+### 0.48.2
+
+- Fix audio recording issues with ScreenRecorder on Intel Macs
+- Record desktop independent windows always at 2x resolution
+
 ### 0.48.1
 
-- Swift: Make desktopIndependentWindow macOS 13.1+ only
+- Make desktopIndependentWindow macOS 13.1+ only
 
 ### 0.48.0
 
