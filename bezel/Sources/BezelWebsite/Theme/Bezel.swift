@@ -158,6 +158,30 @@ extension Theme where Site == BezelWebsite {
                         .component(VisionFooter())
                     )
                 )
+            case "ios":
+                pageWithImage.title = ""
+                pageWithImage.imagePath = "images/ios/og-main.png"
+
+                var s = context.site
+                s.name = "Bezel iOS • Frame iPhone Screenshots"
+                s.description = "Instant beautiful screenshots."
+
+                return HTML(
+                    .head(
+                        for: pageWithImage,
+                        on: s,
+                        titleSeparator: "",
+                        stylesheetPaths: ["/bezel/styles.css"],
+                        rssFeedPath: nil,
+                        rssFeedTitle: nil
+                    ),
+                    .body(
+                        .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
+                        .component(iOSHeader()),
+                        .component(iOS()),
+                        .component(iOSFooter())
+                    )
+                )
             case "helper":
                 return HTML(
                     .head(

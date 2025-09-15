@@ -1,3 +1,3 @@
 ---
-title: Apple Vision Pro
+title: Bezel Apple Vision Pro App
 ---
