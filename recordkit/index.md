@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "RecordKit"
-  text: "macOS recording built for real-world scale"
+  text: "macOS recording for real-world scale"
   tagline: "The fastest, safest and most cost-effective way to add recording to your app"
   actions:
     - theme: brand
