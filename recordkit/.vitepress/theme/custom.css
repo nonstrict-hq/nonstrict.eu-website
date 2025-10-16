@@ -53,6 +53,18 @@ html, body {
 .vp-doc h3 { font-size: clamp(18px, 3vw, 20px); font-weight: 600; margin-top: 1.25rem; }
 
 /* hero */
+.VPHome {
+  --vp-home-hero-name-color: #fff;
+  --vp-home-hero-name-background: transparent;
+}
+
+.VPHome .VPHero {
+  padding-bottom: 1.25rem;
+  margin-bottom: 0;
+  background: linear-gradient(180deg, #2d1d1f 0%, #050506 45%, #2d1d1f 100%);
+  color: #f9fafb;
+}
+
 .VPHome .VPHero .container {
   align-items: center;
   text-align: center;
@@ -60,35 +72,97 @@ html, body {
 }
 
 .VPHome .VPHero .main {
-  max-width: min(90vw, 920px);
+  max-width: min(92vw, 1040px);
   margin: 0 auto;
   width: 100%;
 }
 
 .VPHome .VPHero .actions {
   justify-content: center;
+  margin-top: 1.25rem;
+  margin-bottom: 2.25rem;
 }
 
 .VPHome .VPHero .name,
 .VPHome .VPHero .text,
 .VPHome .VPHero .tagline {
   margin: 0 auto;
+  color: #f9fafb;
+}
+
+.VPHome .VPHero .text {
+  max-width: none;
+  font-size: 2.5rem;
+  color: rgba(249, 250, 251, 0.92);
 }
 
 .VPHome .VPHero .tagline {
-  max-width: min(80vw, 720px);
+  max-width: min(85vw, 1080px);
+  color: rgba(249, 250, 251, 0.75);
+}
+
+.VPHome .VPHero .name::before {
+  content: '';
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-right: 0.45rem;
+  border-radius: 999px;
+  background: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+  animation: rk-record-pulse 1.8s ease-in-out infinite;
+  vertical-align: middle;
+  position: relative;
+  top: -0.08em;
 }
 
 @media (min-width: 960px) {
-  .VPHome .VPHero .main,
-  .VPHome .VPHero .text,
-  .VPHome .VPHero .tagline {
-    max-width: min(90vw, 1280px);
+  .VPHome .VPHero .main {
+    max-width: min(82vw, 1080px);
   }
+}
 
-  .VPHome .VPHero .text {
-    font-size: 2.8rem;
+@keyframes rk-record-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.55);
   }
+  50% {
+    transform: scale(0.86);
+    opacity: 0.6;
+    box-shadow: 0 0 4px rgba(239, 68, 68, 0.35);
+  }
+}
+
+.VPNavBar.home.top .title {
+  color: #f9fafb;
+}
+
+.VPNavBar.home.top .title span {
+  color: inherit;
+}
+
+.VPNavBar.home.top .menu .VPNavBarMenuLink {
+  color: rgba(249, 250, 251, 0.82);
+}
+
+.VPNavBar.home.top .menu .VPNavBarMenuLink:hover,
+.VPNavBar.home.top .menu .VPNavBarMenuLink.active {
+  color: #fef08a;
+}
+
+.VPNavBar.home.top .appearance button,
+.VPNavBar.home.top .translations button,
+.VPNavBar.home.top .social-links a {
+  color: rgba(249, 250, 251, 0.82);
+}
+
+.VPNavBar.home.top .appearance button:hover,
+.VPNavBar.home.top .translations button:hover,
+.VPNavBar.home.top .social-links a:hover {
+  color: #fef08a;
 }
 
 
@@ -96,12 +170,19 @@ html, body {
 p { margin: .5rem 0 1rem; max-width: 70ch; }
 ul, ol { margin: .5rem 0 1rem 1.25rem; }
 
+.rk-intro {
+  text-align: center;
+}
+
 .rk-intro .intro-lede {
   font-size: 1.2rem;
   line-height: 1.7;
   color: var(--vp-c-text-2);
   margin-top: .5rem;
   margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
 }
 
 /* Subtle rules to separate big blocks if needed */
