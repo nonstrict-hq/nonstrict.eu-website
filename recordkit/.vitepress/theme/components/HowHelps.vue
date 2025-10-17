@@ -2,10 +2,10 @@
   <section id="benefits" class="rk-section rk-how rk-backstyle">
     <p class="preamble">&darr;</p>
 
-    <h2>Just add RecordKit</h2>
+    <h2>Just add <span class="rk-brand">RecordKit</span></h2>
     <p style="margin-top: 0.75rem;">
       RecordKit wraps macOS's multiple recording APIs, sources, and quirks into one field-tested, flexible,
-      developer-friendly SDK. It's the fastest, safest, and most cost-effective path to add recording to your app
+      developer-friendly SDK. It's the <strong>fastest, safest, and most cost-effective path</strong> to add recording to your app
       and free up your team to focus on your product's unique value. We've spent years fixing
       the edge cases you'd be discovering otherwise.
     </p>

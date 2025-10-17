@@ -227,6 +227,10 @@ body[data-theme='dark'] .VPNavBar.top .social-links a:hover {
 p { margin: .5rem 0 1rem; max-width: 70ch; }
 ul, ol { margin: .5rem 0 1rem 1.25rem; }
 
+.rk-brand {
+  color: var(--vp-c-brand-3);
+}
+
 .rk-intro {
   text-align: center;
 }
@@ -252,7 +256,7 @@ ul, ol { margin: .5rem 0 1rem 1.25rem; }
 }
 
 .rk-band {
-  background: linear-gradient(180deg, transparent 0, transparent 3rem, #feeded 3rem, #f5f7fb 100%);
+  background: linear-gradient(180deg, transparent 0, transparent 3rem, #feeded 3rem, #f5f7fb 50%, rgb(255, 255, 255) 100%);
   padding: 3rem 0 4rem;
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -292,6 +296,14 @@ ul, ol { margin: .5rem 0 1rem 1.25rem; }
   margin-left: auto;
   margin-right: auto;
   max-width: 70ch;
+}
+
+.rk-how h3 {
+  color: var(--vp-c-brand-3);
+}
+
+.rk-how strong {
+  color: var(--vp-c-brand-3);
 }
 
 .rk-how-it-works {

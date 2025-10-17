@@ -138,7 +138,6 @@ await rk.start({ screen: true, systemAudio: true }</code></pre>
 
 .mode-label.active {
   color: var(--rk-link);
-  transform: translateY(-2px);
 }
 
 .mode-switch-control {
