@@ -153,6 +153,7 @@ html, body {
   }
 }
 
+
 .VPNavBar.home.top .title,
 .VPNavBar.home.top .title span,
 body[data-theme='dark'] .VPNavBar.home.top .title,
@@ -162,6 +163,8 @@ body[data-theme='dark'] .VPNavBar.home.top .title span {
 
 .VPNavBar.home.top .menu .VPNavBarMenuLink,
 .VPNavBar.home.top .menu .VPNavBarMenuLink span,
+.VPNavBar.home.top .menu .VPNavBarMenuGroup button span,
+.VPNavBar.home.top .menu .VPNavBarMenuLink::after,
 body[data-theme='dark'] .VPNavBar.home.top .menu .VPNavBarMenuLink,
 body[data-theme='dark'] .VPNavBar.home.top .menu .VPNavBarMenuLink span {
   color: rgba(249, 250, 251, 0.9) !important;
@@ -189,6 +192,33 @@ body[data-theme='dark'] .VPNavBar.home.top .social-links a {
 body[data-theme='dark'] .VPNavBar.home.top .appearance button:hover,
 body[data-theme='dark'] .VPNavBar.home.top .translations button:hover,
 body[data-theme='dark'] .VPNavBar.home.top .social-links a:hover {
+  color: #fef08a !important;
+}
+
+body[data-theme='dark'] .VPNavBar.top .title,
+body[data-theme='dark'] .VPNavBar.top .title span {
+  color: #f9fafb !important;
+}
+
+body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink,
+body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink span {
+  color: rgba(249, 250, 251, 0.9) !important;
+}
+
+body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink:hover,
+body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink.active {
+  color: #fef08a !important;
+}
+
+body[data-theme='dark'] .VPNavBar.top .appearance button,
+body[data-theme='dark'] .VPNavBar.top .translations button,
+body[data-theme='dark'] .VPNavBar.top .social-links a {
+  color: rgba(249, 250, 251, 0.82) !important;
+}
+
+body[data-theme='dark'] .VPNavBar.top .appearance button:hover,
+body[data-theme='dark'] .VPNavBar.top .translations button:hover,
+body[data-theme='dark'] .VPNavBar.top .social-links a:hover {
   color: #fef08a !important;
 }
 
@@ -388,7 +418,7 @@ pre {
   flex-direction: column;
   justify-content: flex-start;
   gap: 0.75rem;
-  background: #f3f4f6;
+  background: linear-gradient(0deg, #f9fafc 0, #f5f7fb 100%);
   border-radius: 14px;
   padding: 1rem;
   min-height: 220px;

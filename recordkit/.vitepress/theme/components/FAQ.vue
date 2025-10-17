@@ -9,8 +9,9 @@
       </article>
 
       <article class="faq-item">
-        <h3>How is RecordKit licensed?</h3>
-        <p>Annual commercial license; <a href="mailto:team+rcordkit@nonstrict.com">email us</a> for pricing (we'll tailor for you).</p>
+        <h3>What does pricing look like?</h3>
+        <p>RecordKit is priced around an annual commercial license. We have options that work for anyone from indie developers to large enterprises. 
+          <a href="mailto:team+rcordkit@nonstrict.com">Email us</a> for an offer tailored for you.</p>
       </article>
 
       <article class="faq-item">

@@ -74,7 +74,7 @@ const featureGroups: Feature[] = [
   },
   {
     icon: '🧑‍💻',
-    title: 'Developer experience',
+    title: 'Lovely developer experience',
     points: [
       'Modern, well-documented APIs with ready-to-use outputs',
       'Direct support from the RecordKit team'

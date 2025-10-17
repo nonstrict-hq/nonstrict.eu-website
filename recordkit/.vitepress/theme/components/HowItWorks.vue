@@ -87,7 +87,9 @@ recorder.start()</code></pre>
           <li>
             <strong>Start a recording</strong>
 <pre><code>import { createRecorder } from '@nonstrict/recordkit'
+
 const rk = createRecorder()
+
 await rk.start({ screen: true, systemAudio: true }</code></pre>
           </li>
 
