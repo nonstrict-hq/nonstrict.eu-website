@@ -17,10 +17,11 @@ hero:
 <div class="rk-container">
   <Intro />
   <Features />
-  <UntilYouShip />
-  <HowHelps />
+  <div class="rk-band">
+    <UntilYouShip />
+    <HowHelps />
+  </div>
   <HowItWorks />
-  <FreeTrial />
   <Customers />
   <FAQ />
 </div>

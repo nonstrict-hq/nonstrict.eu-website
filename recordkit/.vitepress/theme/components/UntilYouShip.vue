@@ -1,5 +1,5 @@
 <template>
-  <section id="why" class="rk-section rk-why">
+  <section id="why" class="rk-section rk-why rk-backstyle">
     <p class="preamble">The Problem</p>
     <h2>Recording is easy — <span class="evil">until you ship</span></h2>
     <p>

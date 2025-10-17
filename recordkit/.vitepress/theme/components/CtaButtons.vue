@@ -8,3 +8,9 @@ import { VPButton } from 'vitepress/theme'
     <VPButton text="Get in touch" href="mailto:team+recordkit@nonstrict.com" theme="alt" size="medium" />
   </div>
 </template>
+
+<style scoped>
+.rk-actions :deep(a) {
+  text-decoration: none !important;
+}
+</style>

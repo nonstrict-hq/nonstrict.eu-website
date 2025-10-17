@@ -1,6 +1,6 @@
 <template>
-  <section id="customers" class="rk-section">
-    <h2>Trusted by experts</h2>
+  <section id="customers" class="rk-section rk-customers">
+    <h2>Customers</h2>
 
     <div class="customer-bubbles">
       <article class="customer-bubble">
@@ -9,21 +9,21 @@
           “RecordKit took video capture off our plate so we could focus on what matters”
         </blockquote>
         <p>— Grant Shaddick, Co-founder</p>
-        <img class="customer-logo" src="/customers/tella.svg" alt="Tella logo" />
+        <img class="customer-logo" src="/customers/tella.jpg" alt="Tella logo" />
       </article>
 
       <article class="customer-bubble">
         <h3>Yarn (YC W24)</h3>
         <blockquote>“Quote”</blockquote>
         <p>— Nicole Atack, CTO &amp; Co-founder</p>
-        <img class="customer-logo" src="/customers/yarn.svg" alt="Yarn logo" />
+        <img class="customer-logo" src="/customers/yarn.jpg" alt="Yarn logo" />
       </article>
 
       <article class="customer-bubble">
         <h3>Screen Studio</h3>
         <blockquote>“Quote”</blockquote>
         <p>— Adam Pietrasiak, Founder</p>
-        <img class="customer-logo" src="/customers/screenstudio.svg" alt="Screen Studio logo" />
+        <img class="customer-logo" src="/customers/screenstudio.jpg" alt="Screen Studio logo" />
       </article>
     </div>
   </section>

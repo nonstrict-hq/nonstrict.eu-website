@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import VPSwitch from 'vitepress/dist/client/theme-default/components/VPSwitch.vue'
+import { VPButton } from 'vitepress/theme'
 
 const mode = ref<'swift' | 'electron'>('swift')
 
@@ -10,89 +11,101 @@ const toggleMode = () => {
 </script>
 
 <template>
-  <section id="how-it-works" class="rk-section">
-    <h2>How it works</h2>
+  <section id="how-it-works" class="rk-section rk-how-it-works">
+    <div class="rk-narrow">
+      <h2>How it works</h2>
 
-    <div class="mode-switch" role="group" aria-label="Select implementation guide">
-      <button
-        type="button"
-        class="mode-label"
-        :class="{ active: mode === 'swift' }"
-        @click="mode = 'swift'"
-      >
-        Swift
-      </button>
+      <div class="mode-switch" role="group" aria-label="Select implementation guide">
+        <button
+          type="button"
+          class="mode-label"
+          :class="{ active: mode === 'swift' }"
+          @click="mode = 'swift'"
+        >
+          Swift
+        </button>
 
-      <VPSwitch
-        class="mode-switch-control"
-        :class="{ 'is-electron': mode === 'electron' }"
-        :aria-checked="mode === 'electron'"
-        role="switch"
-        :title="mode === 'swift' ? 'Switch to Electron guide' : 'Switch to Swift guide'"
-        @click="toggleMode"
-      >
-        <span class="mode-switch-icon swift" aria-hidden="true">S</span>
-        <span class="mode-switch-icon electron" aria-hidden="true">E</span>
-      </VPSwitch>
+        <VPSwitch
+          class="mode-switch-control"
+          :class="{ 'is-electron': mode === 'electron' }"
+          :aria-checked="mode === 'electron'"
+          role="switch"
+          :title="mode === 'swift' ? 'Switch to Electron guide' : 'Switch to Swift guide'"
+          @click="toggleMode"
+        >
+          <span class="mode-switch-icon swift" aria-hidden="true">
+            <img src="/recordkit/swift.png" alt="" />
+          </span>
+          <span class="mode-switch-icon electron" aria-hidden="true">
+            <img src="/recordkit/electron.png" alt="" />
+          </span>
+        </VPSwitch>
 
-      <button
-        type="button"
-        class="mode-label"
-        :class="{ active: mode === 'electron' }"
-        @click="mode = 'electron'"
-      >
-        Electron
-      </button>
-    </div>
+        <button
+          type="button"
+          class="mode-label"
+          :class="{ active: mode === 'electron' }"
+          @click="mode = 'electron'"
+        >
+          Electron
+        </button>
+      </div>
 
-    <ol>
-      <li>
-        <strong>Install via SwiftPM / Electron</strong>
+      <div v-if="mode === 'swift'" class="how-content">
+        <ol>
+          <li>
+            <strong>Install via Swift Package Manager</strong>
+          </li>
 
-        <div v-if="mode === 'swift'">
-          <pre><code>// Package.swift (snippet)
-dependencies: [
-  .package(url: "https://github.com/nonstrict/recordkit", from: "X.Y.Z")
-]</code></pre>
-        </div>
-        <div v-else>
-          <pre><code># terminal
-npm install @nonstrict/recordkit
-# or
-pnpm add @nonstrict/recordkit
-</code></pre>
-        </div>
-      </li>
+          <li>
+            <strong>Start a recording</strong>
+<pre><code>let recorder = RKRecorder([(...)])
 
-      <li>
-        <strong>Add a few lines to record screen + audio</strong>
-        <div v-if="mode === 'swift'">
-<pre><code>// Swift (conceptual example)
-import RecordKit
+try await recorder.prepare()
 
-let recorder = RKRecorder()
-try recorder.start(.screenAndSystemAudio)
-// ...
-try recorder.stop()</code></pre>
-        </div>
-        <div v-else>
-<pre><code>// Electron (conceptual example)
-import { createRecorder } from '@nonstrict/recordkit'
+recorder.start()</code></pre>
+          </li>
 
+          <li>
+            <strong>Stop the Recording</strong>
+<pre><code>try await recorder.stop()</code></pre>
+          </li>
+
+          <li><strong>That's it!</strong></li>
+
+          <li><a href="try-swift">Read the full guide now</a> to get up and running in minutes</li>
+        </ol>
+
+      </div>
+
+      <div v-else class="how-content">
+        <ol>
+          <li>
+            <strong>Install via npm, pnpm or yarn</strong>
+          </li>
+
+          <li>
+            <strong>Start a recording</strong>
+<pre><code>import { createRecorder } from '@nonstrict/recordkit'
 const rk = createRecorder()
-await rk.start({ screen: true, systemAudio: true })
-// ...
-await rk.stop()</code></pre>
-        </div>
-      </li>
+await rk.start({ screen: true, systemAudio: true }</code></pre>
+          </li>
 
-      <li><strong>Build &amp; go!</strong></li>
-      <li><strong>Finetune, add features, get a license, and launch!</strong></li>
-    </ol>
+          <li>
+            <strong>Stop the recording</strong>
+<pre><code>await rk.stop()
+</code></pre>
+          </li>
 
-    <p style="margin-top: .5rem;">
-      <a href="#video">See RecordKit in action (video)</a>
-    </p>
+          <li><strong>That's it!</strong></li>
+
+          <li><a href="try-electron">Read the full guide now</a> to get up and running in minutes</li>
+        </ol>
+
+      </div>
+      <p>&nbsp;</p>
+      <CtaButtons />
+    </div>
   </section>
 </template>
 
@@ -127,10 +140,10 @@ await rk.stop()</code></pre>
 }
 
 .mode-switch-control {
-  width: 82px;
-  height: 36px;
-  border-radius: 18px;
-  border: 1px solid var(--vp-input-border-color);
+  width: 86px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid var(--vp-input-border-color);
   background-color: var(--vp-input-switch-bg-color);
   transition: border-color 0.25s ease, background-color 0.25s ease;
 }
@@ -172,8 +185,18 @@ await rk.stop()</code></pre>
   transition: opacity 0.2s ease;
 }
 
+.mode-switch-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .mode-switch-control :deep(.icon) .mode-switch-icon.swift {
   opacity: 1;
+}
+
+.mode-switch-control :deep(.icon) .mode-switch-icon.electron {
+  opacity: 0;
 }
 
 .mode-switch-control.is-electron :deep(.icon) .mode-switch-icon.swift {
@@ -186,6 +209,20 @@ await rk.stop()</code></pre>
 
 .mode-switch-control.is-electron :deep(.check) {
   transform: translateX(46px);
+}
+
+.how-content {
+  margin-top: 1.5rem;
+}
+
+.how-link {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.cta {
+  display: block;
+  margin: 1.5rem auto 0;
 }
 
 @media (max-width: 720px) {

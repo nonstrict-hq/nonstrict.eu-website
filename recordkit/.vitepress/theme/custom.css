@@ -221,6 +221,21 @@ ul, ol { margin: .5rem 0 1rem 1.25rem; }
   text-decoration-skip-ink: auto; 
 }
 
+.rk-band {
+  background: linear-gradient(180deg, transparent 0, transparent 3rem, #feeded 3rem, #f5f7fb 100%);
+  padding: 3rem 0 4rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.rk-band .rk-section {
+  max-width: var(--rk-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .rk-why {
   text-align: center;
 }
@@ -249,9 +264,32 @@ ul, ol { margin: .5rem 0 1rem 1.25rem; }
   max-width: 70ch;
 }
 
+.rk-how-it-works {
+  margin-top: 4rem;
+}
+
+.rk-narrow {
+  max-width: 700px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .rk-how .preamble {
   font-size: 2rem;
   margin-top: 40px;
+}
+
+@media (max-width: 720px) {
+  .rk-how-it-works {
+    margin-top: 3rem;
+  }
+  .rk-narrow {
+    max-width: 100%;
+  }
+  .rk-band {
+    padding: 2.25rem 0 3.5rem;
+  }
 }
 
 /* Subtle rules to separate big blocks if needed */
@@ -274,7 +312,15 @@ a:hover { color: var(--rk-link-hover); }
   margin-bottom: 0;
 }
 
-.rk-actions { display: inline-flex; gap: .75rem; align-items: center; margin-top: .5rem; }
+.rk-actions {
+  display: inline-flex;
+  gap: .75rem;
+  align-items: center;
+  margin-top: .5rem;
+  justify-content: center;
+  width: 100%;
+}
+
 .rk-btn {
   display: inline-block;
   padding: .55rem .9rem;
@@ -291,7 +337,7 @@ a:hover { color: var(--rk-link-hover); }
 
 /* Details / FAQ */
 .rk-faq {
-  margin-top: 8rem;
+  margin-top: 12rem;
 }
 
 .faq-item {
@@ -300,6 +346,7 @@ a:hover { color: var(--rk-link-hover); }
 
 .faq-item:first-of-type {
   border-top: none;
+  margin-top: 3rem;
 }
 
 .faq-item h3 {
@@ -501,12 +548,15 @@ pre {
 
 .customer-bubble:nth-child(1) .customer-logo {
   width: 70px;
+  background: #86F;
 }
 .customer-bubble:nth-child(2) .customer-logo {
-  width: 74px;
+  width: 70px;
+  background: #000;
 }
 .customer-bubble:nth-child(3) .customer-logo {
-  width: 78px;
+  width: 70px;
+  background: #111;
 }
 
 .customer-bubble:nth-child(1) {
@@ -577,4 +627,7 @@ pre {
   .features-grid {
     grid-template-columns: 1fr;
   }
+}
+.rk-customers {
+  margin-top: 5rem;
 }

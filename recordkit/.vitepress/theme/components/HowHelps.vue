@@ -1,5 +1,5 @@
 <template>
-  <section id="benefits" class="rk-section rk-how">
+  <section id="benefits" class="rk-section rk-how rk-backstyle">
     <p class="preamble">&darr;</p>
     <h2>Just add RecordKit</h2>
 
