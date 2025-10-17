@@ -26,7 +26,7 @@ const featureGroups: Feature[] = [
   },
   {
     icon: '🔴',
-    title: 'Screen recording',
+    title: 'Screen and audio recording',
     points: [
       'Capture displays, windows, and system audio together',
       'Record iPad and iPhone devices via cable'
@@ -58,7 +58,7 @@ const featureGroups: Feature[] = [
   },
   {
     icon: '🛡️',
-    title: 'Battle-tested resilience',
+    title: 'Battle-tested',
     points: [
       'Handles hundreds of real-world edge cases',
       'Built on years of production usage at scale'

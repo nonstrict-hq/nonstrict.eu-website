@@ -4,13 +4,13 @@ layout: home
 hero:
   name: "RecordKit"
   text: "macOS recording for real-world scale"
-  tagline: "The fastest, safest and most cost-effective way to add recording to your app"
+  tagline: "The fast, robust and cost-effective way to add recording to your app"
   actions:
     - theme: brand
       text: Try RecordKit for free
       link: /try
     - theme: alt
-      text: Check out the documentation
+      text: Check out the docs
       link: /introduction
 ---
 
@@ -23,5 +23,4 @@ hero:
   <FreeTrial />
   <Customers />
   <FAQ />
-  <FooterLinks />
 </div>
