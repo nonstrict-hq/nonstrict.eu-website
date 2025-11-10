@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { withBase } from 'vitepress'
 import VPSwitch from 'vitepress/dist/client/theme-default/components/VPSwitch.vue'
 import { VPButton } from 'vitepress/theme'
 
@@ -34,10 +35,10 @@ const toggleMode = () => {
           @click="toggleMode"
         >
           <span class="mode-switch-icon swift" aria-hidden="true">
-            <img src="/recordkit/swift.png" alt="" />
+            <img :src="withBase('/swift.png')" alt="" />
           </span>
           <span class="mode-switch-icon electron" aria-hidden="true">
-            <img src="/recordkit/electron.png" alt="" />
+            <img :src="withBase('/electron.png')" alt="" />
           </span>
         </VPSwitch>
 

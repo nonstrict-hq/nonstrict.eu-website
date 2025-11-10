@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { withBase } from 'vitepress'
+
 type FeatureIcon = string | { src: string; alt: string }
 
 interface Feature {
@@ -9,7 +11,7 @@ interface Feature {
 
 const featureGroups: Feature[] = [
   {
-    icon: { src: '/recordkit/swift.png', alt: 'Swift' },
+    icon: { src: withBase('/swift.png'), alt: 'Swift' },
     title: 'Swift support',
     points: [
       'Modern SPM package with SwiftUI & concurrency support',
@@ -17,7 +19,7 @@ const featureGroups: Feature[] = [
     ]
   },
   {
-    icon: { src: '/recordkit/electron.png', alt: 'Electron' },
+    icon: { src: withBase('/electron.png'), alt: 'Electron' },
     title: 'Electron support',
     points: [
       'First-class bridge with TypeScript definitions',
