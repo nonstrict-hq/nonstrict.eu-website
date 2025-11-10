@@ -1,5 +1,76 @@
 # Changelog
 
+### 0.62.0
+
+- Swift: Add pause/resume support to recordings
+- Swift: Add `RKDiscontinuationEvent` for tracking recording interruptions
+
+### 0.61.0
+
+- Improved state machine implementation in the `RKRecorder`
+
+### 0.60.0
+
+- Swift: Add `videoCodec` output options
+- Swift: Fix sending annotations in concurrent iteration
+
+### 0.59.1
+
+- Swift: Add `ContentMode` option to `RKCameraPreview`
+
+### 0.59.0
+
+- Filter webcam formats to 420v and 420f for better compatibility
+
+### 0.58.0
+
+- Swift: Add `preserveActiveCameraConfiguration` option to webcam configuration
+- Electron: Add `preserveActiveCameraConfiguration`, `leftAudioChannelOnly` and `audioDelay` fields in webcam configuration
+
+### 0.57.0
+
+- Fix crash in `MicrophonePowerMeter` with CamLink 4K microphone
+
+### 0.56.2
+
+- Improved logging about dropped sample buffers and active frame duration changes
+
+### 0.56.1
+
+- Improve camera format selection logic for better quality
+- Swift: Add `symbolName` property to `RKDisplay`
+
+### 0.55.0
+
+- Avoid toggling Center Stage if control mode is set to user
+- Improved logging
+
+### 0.54.5
+
+- Fix crash when `AVAudioFormat` initialization fails
+
+### 0.54.4
+
+- Fix crash in audio processing
+
+### 0.54.3
+
+- Fix audio stream buffer initialization issues
+
+### 0.54.2
+
+- Improve error messages when prepare or start fails
+- Add MotivMix to the list of audio loopback apps
+- Improved audio stream reliability
+
+### 0.54.1
+
+- Swift: Drop video frames when they arrive in the wrong order
+
+### 0.54.0
+
+- Swift: Improved audio timing accuracy during recordings
+
 ### 0.53.1
 
 - Electron: Updated EventEmitter imports for better compatibility
