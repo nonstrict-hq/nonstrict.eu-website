@@ -82,7 +82,7 @@ export default defineConfig({
 
     footer: {
       message: 'Questions? Feel free to contact us at team@nonstrict.com',
-      copyright: 'Copyright 2023-2024 Nonstrict B.V. All Rights Reserved.'
+      copyright: 'Copyright 2023-2025 Nonstrict B.V. All Rights Reserved.'
     }
   }
 })

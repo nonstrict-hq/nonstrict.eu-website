@@ -3,9 +3,9 @@ prev: false
 next: false
 ---
 
-# Getting Started with our Free Trial
+# Getting Started
 
-The RecordKit free trial is available for both Swift based and Electron based macOS apps. You're free to evaluate RecordKit in non-production builds of your app.
+The RecordKit <strong>free and fully functioning trial</strong> is available for both Swift based and Electron based macOS apps. You're free to evaluate RecordKit in non-production builds of your app.
 
 ## Choose your technology
 
