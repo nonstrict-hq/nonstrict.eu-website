@@ -1,21 +1,17 @@
 :root{
   --rk-max: 860px;
-  --rk-text: #1f2937;
   --rk-muted: #6b7280;
   --rk-border: #e5e7eb;
   --rk-link: #111827;
   --rk-link-hover: #000;
-  --rk-bg: #ffffff;
   --rk-code-bg: #f8fafc;
 }
 
 .dark {
-  --rk-text: #f9fafb;
   --rk-muted: #9ca3af;
   --rk-border: #374151;
   --rk-link: #e5e7eb;
   --rk-link-hover: #fff;
-  --rk-bg: #656c85;
   --rk-code-bg: #374151;
 }
 
