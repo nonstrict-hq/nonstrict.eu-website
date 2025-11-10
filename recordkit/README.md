@@ -23,7 +23,7 @@ npm run docs:dev
 ./serve.sh
 ```
 
-This starts VitePress' dev server (default: http://localhost:5173) with hot reloading.
+This starts VitePress' dev server (default: `http://localhost:5173`) with hot reloading.
 
 ## Build for Production
 
