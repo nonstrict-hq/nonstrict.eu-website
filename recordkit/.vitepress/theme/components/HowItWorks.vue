@@ -60,7 +60,9 @@ const toggleMode = () => {
 
           <li>
             <strong>Start a recording</strong>
-<pre><code>let recorder = RKRecorder([/*...*/])
+<pre><code>import RecordKit
+
+let recorder = RKRecorder([/*...*/])
 
 recorder.start()</code></pre>
           </li>
