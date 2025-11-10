@@ -60,16 +60,14 @@ const toggleMode = () => {
 
           <li>
             <strong>Start a recording</strong>
-<pre><code>let recorder = RKRecorder([(...)])
-
-try await recorder.prepare()
+<pre><code>let recorder = RKRecorder([/*...*/])
 
 recorder.start()</code></pre>
           </li>
 
           <li>
             <strong>Stop the Recording</strong>
-<pre><code>try await recorder.stop()</code></pre>
+            <pre><code>let result = try await recorder.stop()</code></pre>
           </li>
 
           <li><strong>That's it!</strong></li>
@@ -89,15 +87,14 @@ recorder.start()</code></pre>
             <strong>Start a recording</strong>
 <pre><code>import { createRecorder } from '@nonstrict/recordkit'
 
-const rk = createRecorder()
+const rk = createRecorder({/*...*/})
 
-await rk.start({ screen: true, systemAudio: true }</code></pre>
+await rk.start()</code></pre>
           </li>
 
           <li>
             <strong>Stop the recording</strong>
-<pre><code>await rk.stop()
-</code></pre>
+            <pre><code>const result = await rk.stop()</code></pre>
           </li>
 
           <li><strong>That's it!</strong></li>
