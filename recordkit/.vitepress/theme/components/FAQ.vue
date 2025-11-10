@@ -20,7 +20,7 @@
           in tackling all of the real-world edge cases that your customers will run into. We've already solved those.
         </p>
         <p class="secret">
-          (In fact most of our customers tried themselves before concluding they have better things to do with their time)
+          (In fact most of our customers tried themselves before concluding they have better things to do with their time.)
         </p>
       </article>
 
@@ -32,11 +32,6 @@
       <article class="faq-item">
         <h3>Can you help us with integration?</h3>
         <p>A license includes direct access to our founding team — they'll even code side-by-side with your team.</p>
-      </article>
-
-      <article class="faq-item">
-        <h3>We only need audio.</h3>
-        <p>No problem! We'll reduce the licensing cost.  <a href="mailto:team+rcordkit@nonstrict.com">Get in touch</a> to learn more.</p>
       </article>
     </div>
   </section>

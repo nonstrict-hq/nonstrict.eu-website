@@ -380,6 +380,7 @@ a:hover { color: var(--rk-link-hover); }
 /* Details / FAQ */
 .rk-faq {
   margin-top: 12rem;
+  margin-bottom: 0.5rem;
 }
 
 .faq-item {
@@ -522,9 +523,9 @@ pre {
 .customer-bubbles {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 7.5rem;
   margin-top: 2rem;
   padding-bottom: 3.5rem;
 }
@@ -533,12 +534,12 @@ pre {
   --bubble-x: 0px;
   --bubble-y: 0px;
   position: relative;
-  max-width: 18rem;
-  padding: 1.25rem 1.5rem 3.65rem;
+  max-width: 45rem;
+  padding: 1.5rem 2rem 3.65rem;
   border-radius: 1.25rem;
   background: #ffffff;
   background-image: none;
-  box-shadow: 0 12px 28px rgba(30, 41, 59, 0.18);
+  filter: drop-shadow(0 12px 28px rgba(30, 41, 59, 0.18));
   transform: translate(var(--bubble-x), var(--bubble-y));
   animation: rk-bubble-drift 8s ease-in-out infinite;
 }
@@ -546,14 +547,14 @@ pre {
 .customer-bubble::after {
   content: '';
   position: absolute;
-  bottom: -0.55rem;
+  bottom: -0.75rem;
   left: 50%;
-  width: 1.35rem;
-  height: 1.35rem;
-  background: #ffffff;
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 0.4rem 0.4rem 0 0;
-  box-shadow: 0 10px 22px rgba(30, 41, 59, 0.12);
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  border-top: 0.8rem solid #ffffff;
 }
 
 .customer-bubble h3 {
@@ -582,41 +583,35 @@ pre {
   height: auto;
   padding: 0.4rem 0.6rem;
   border-radius: 0.9rem;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.22);
   z-index: 1;
 }
 
 .customer-bubble:nth-child(1) .customer-logo {
   width: 70px;
-  background: #86F;
 }
 .customer-bubble:nth-child(2) .customer-logo {
   width: 70px;
-  background: #000;
 }
 .customer-bubble:nth-child(3) .customer-logo {
   width: 70px;
-  background: #111;
 }
 
 .customer-bubble:nth-child(1) {
-  --bubble-x: -50px;
+  --bubble-x: -20px;
   --bubble-y: 0px;
   animation-duration: 7.5s;
 }
 
 .customer-bubble:nth-child(2) {
-  --bubble-x: 50px;
-  --bubble-y: 12px;
+  --bubble-x: 20px;
+  --bubble-y: 8px;
   animation-duration: 9s;
   animation-delay: .4s;
 }
 
 .customer-bubble:nth-child(3) {
   --bubble-x: -8px;
-  --bubble-y: 18px;
+  --bubble-y: 12px;
   animation-duration: 8.2s;
   animation-delay: .8s;
 }
@@ -633,7 +628,8 @@ pre {
 
 @media (max-width: 800px) {
   .customer-bubbles {
-    gap: 1.25rem;
+    gap: 5rem;
+    padding-bottom: 5rem;
   }
   .customer-bubble {
     max-width: 100%;
@@ -672,4 +668,9 @@ pre {
 }
 .rk-customers {
   margin-top: 5rem;
+}
+
+/* Remove max-width constraint on footer paragraphs */
+.VPFooter p {
+  max-width: none;
 }

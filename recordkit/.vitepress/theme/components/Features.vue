@@ -21,7 +21,7 @@ const featureGroups: Feature[] = [
     title: 'Electron support',
     points: [
       'First-class bridge with TypeScript definitions',
-      'Consistent API surface across macOS + Electron'
+      'Tap into native performance right from Electron'
     ]
   },
   {

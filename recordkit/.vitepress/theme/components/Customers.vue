@@ -6,24 +6,19 @@
       <article class="customer-bubble">
         <h3>Tella (YC S20)</h3>
         <blockquote>
-          “RecordKit took video capture off our plate so we could focus on what matters”
+          "RecordKit makes Tella compatible with any camera and microphone configuration our users throw at us and allows us to focus on our core strengths."
         </blockquote>
-        <p>— Grant Shaddick, Co-founder</p>
+        <p>— Michiel Westerbeek, Co-Founder</p>
         <img class="customer-logo" src="/customers/tella.jpg" alt="Tella logo" />
       </article>
 
       <article class="customer-bubble">
         <h3>Yarn (YC W24)</h3>
-        <blockquote>“Quote”</blockquote>
-        <p>— Nicole Atack, CTO &amp; Co-founder</p>
+        <blockquote>
+          "Our home-grown Swift binaries became a maintenance nightmare. RecordKit gave us stability and freed our team to work on features that actually differentiate us."
+        </blockquote>
+        <p>— Nicole Atack, Co-Founder</p>
         <img class="customer-logo" src="/customers/yarn.jpg" alt="Yarn logo" />
-      </article>
-
-      <article class="customer-bubble">
-        <h3>Screen Studio</h3>
-        <blockquote>“Quote”</blockquote>
-        <p>— Adam Pietrasiak, Founder</p>
-        <img class="customer-logo" src="/customers/screenstudio.jpg" alt="Screen Studio logo" />
       </article>
     </div>
   </section>
