@@ -9,9 +9,14 @@
   --rk-code-bg: #f8fafc;
 }
 
-html, body {
-  background: var(--rk-bg);
-  color: var(--rk-text);
+.dark {
+  --rk-text: #f9fafb;
+  --rk-muted: #9ca3af;
+  --rk-border: #374151;
+  --rk-link: #e5e7eb;
+  --rk-link-hover: #fff;
+  --rk-bg: #656c85;
+  --rk-code-bg: #374151;
 }
 
 .rk-container {
@@ -157,8 +162,8 @@ html, body {
 
 .VPNavBar.home.top .title,
 .VPNavBar.home.top .title span,
-body[data-theme='dark'] .VPNavBar.home.top .title,
-body[data-theme='dark'] .VPNavBar.home.top .title span {
+.dark .VPNavBar.home.top .title,
+.dark .VPNavBar.home.top .title span {
   color: #f9fafb !important;
 }
 
@@ -166,60 +171,60 @@ body[data-theme='dark'] .VPNavBar.home.top .title span {
 .VPNavBar.home.top .menu .VPNavBarMenuLink span,
 .VPNavBar.home.top .menu .VPNavBarMenuGroup button span,
 .VPNavBar.home.top .menu .VPNavBarMenuLink::after,
-body[data-theme='dark'] .VPNavBar.home.top .menu .VPNavBarMenuLink,
-body[data-theme='dark'] .VPNavBar.home.top .menu .VPNavBarMenuLink span {
+.dark .VPNavBar.home.top .menu .VPNavBarMenuLink,
+.dark .VPNavBar.home.top .menu .VPNavBarMenuLink span {
   color: rgba(249, 250, 251, 0.9) !important;
 }
 
 .VPNavBar.home.top .menu .VPNavBarMenuLink:hover,
 .VPNavBar.home.top .menu .VPNavBarMenuLink.active,
-body[data-theme='dark'] .VPNavBar.home.top .menu .VPNavBarMenuLink:hover,
-body[data-theme='dark'] .VPNavBar.home.top .menu .VPNavBarMenuLink.active {
+.dark .VPNavBar.home.top .menu .VPNavBarMenuLink:hover,
+.dark .VPNavBar.home.top .menu .VPNavBarMenuLink.active {
   color: #fef08a !important;
 }
 
 .VPNavBar.home.top .appearance button,
 .VPNavBar.home.top .translations button,
 .VPNavBar.home.top .social-links a,
-body[data-theme='dark'] .VPNavBar.home.top .appearance button,
-body[data-theme='dark'] .VPNavBar.home.top .translations button,
-body[data-theme='dark'] .VPNavBar.home.top .social-links a {
+.dark .VPNavBar.home.top .appearance button,
+.dark .VPNavBar.home.top .translations button,
+.dark .VPNavBar.home.top .social-links a {
   color: rgba(249, 250, 251, 0.82) !important;
 }
 
 .VPNavBar.home.top .appearance button:hover,
 .VPNavBar.home.top .translations button:hover,
 .VPNavBar.home.top .social-links a:hover,
-body[data-theme='dark'] .VPNavBar.home.top .appearance button:hover,
-body[data-theme='dark'] .VPNavBar.home.top .translations button:hover,
-body[data-theme='dark'] .VPNavBar.home.top .social-links a:hover {
+.dark .VPNavBar.home.top .appearance button:hover,
+.dark .VPNavBar.home.top .translations button:hover,
+.dark .VPNavBar.home.top .social-links a:hover {
   color: #fef08a !important;
 }
 
-body[data-theme='dark'] .VPNavBar.top .title,
-body[data-theme='dark'] .VPNavBar.top .title span {
+.dark .VPNavBar.top .title,
+.dark .VPNavBar.top .title span {
   color: #f9fafb !important;
 }
 
-body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink,
-body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink span {
+.dark .VPNavBar.top .menu .VPNavBarMenuLink,
+.dark .VPNavBar.top .menu .VPNavBarMenuLink span {
   color: rgba(249, 250, 251, 0.9) !important;
 }
 
-body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink:hover,
-body[data-theme='dark'] .VPNavBar.top .menu .VPNavBarMenuLink.active {
+.dark .VPNavBar.top .menu .VPNavBarMenuLink:hover,
+.dark .VPNavBar.top .menu .VPNavBarMenuLink.active {
   color: #fef08a !important;
 }
 
-body[data-theme='dark'] .VPNavBar.top .appearance button,
-body[data-theme='dark'] .VPNavBar.top .translations button,
-body[data-theme='dark'] .VPNavBar.top .social-links a {
+.dark .VPNavBar.top .appearance button,
+.dark .VPNavBar.top .translations button,
+.dark .VPNavBar.top .social-links a {
   color: rgba(249, 250, 251, 0.82) !important;
 }
 
-body[data-theme='dark'] .VPNavBar.top .appearance button:hover,
-body[data-theme='dark'] .VPNavBar.top .translations button:hover,
-body[data-theme='dark'] .VPNavBar.top .social-links a:hover {
+.dark .VPNavBar.top .appearance button:hover,
+.dark .VPNavBar.top .translations button:hover,
+.dark .VPNavBar.top .social-links a:hover {
   color: #fef08a !important;
 }
 
@@ -669,5 +674,32 @@ pre {
 }
 .rk-customers {
   margin-top: 5rem;
+}
+
+/* Dark mode overrides */
+.dark .rk-band {
+  background: linear-gradient(180deg, transparent 0, transparent 3rem, #2d1f1f 3rem, #1f2937 50%, #111827 100%);
+}
+
+.dark .feature-card {
+  background: linear-gradient(0deg, #1f2937 0, #374151 100%);
+  border-color: #4b5563;
+}
+
+.dark .customer-bubble {
+  background: #374151;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.6));
+}
+
+.dark .customer-bubble::after {
+  border-top-color: #374151;
+}
+
+.dark .customer-bubble p {
+  color: #f9fafb;
+}
+
+.dark .customer-bubble h3 {
+  color: #f9fafb;
 }
 
