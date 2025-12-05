@@ -196,8 +196,9 @@
     if (window.location.hostname == "localhost" || window.location.hostname == "preview.getbezel.app") {
         console.log("Using Paddle Sandbox.")
         Paddle.Environment.set('sandbox');
-        Paddle.Setup({
-            seller: 13986
+        Paddle.Initialize({
+          token: 'test_e2444648b5f78f881fb956fccfe',
+          pwCustomer: {}
         });
         priceIdLookup = {
             'standard': 'pri_01h81rgp0c2e6swvpyrm0qfy1b',
@@ -205,8 +206,9 @@
             'team': 'pri_01hbgn6vgnshdgkt963tsn8a1f'
         };
     } else {
-        Paddle.Setup({
-            seller: 173178,
+        Paddle.Initialize({
+            token: 'live_9c21c76f6fe79a77f7cab1bc4b8',
+            pwCustomer: {},
             eventCallback: function(data) {
                 if (data.name == 'checkout.completed') {
                     window.plausible('Bezel Checkout Completed')
