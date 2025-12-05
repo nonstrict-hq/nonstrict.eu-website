@@ -198,6 +198,38 @@ extension Theme where Site == BezelWebsite {
                         .component(Footer())
                     )
                 )
+            case "terms":
+                return HTML(
+                    .head(
+                        for: pageWithImage,
+                        on: context.site,
+                        stylesheetPaths: ["/bezel/styles.css"],
+                        rssFeedPath: nil,
+                        rssFeedTitle: nil
+                    ),
+                    .body(
+                        .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
+                        .component(Header()),
+                        .component(Terms()),
+                        .component(Footer())
+                    )
+                )
+            case "privacy":
+                return HTML(
+                    .head(
+                        for: pageWithImage,
+                        on: context.site,
+                        stylesheetPaths: ["/bezel/styles.css"],
+                        rssFeedPath: nil,
+                        rssFeedTitle: nil
+                    ),
+                    .body(
+                        .attribute(named: "class", value: "bg-gray-100 dark:bg-gray-900"),
+                        .component(Header()),
+                        .component(Privacy()),
+                        .component(Footer())
+                    )
+                )
             default:
                 return HTML(.body(.text("Not found: \(page.path)")))
             }
