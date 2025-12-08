@@ -1,13 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./Output/**/*.{html,js}"],
+  content: ["./layouts/**/*.html", "./content/**/*.md", "./static/**/*.html"],
   theme: {
     extend: {
-        colors: {
-            'orange': {
-                DEFAULT: '#FF9500',
-            }
+      colors: {
+        'orange': {
+          DEFAULT: '#FF9500',
+          500: '#E88600',
         }
+      }
     },
   },
   plugins: [

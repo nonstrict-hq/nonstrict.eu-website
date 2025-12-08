@@ -1,32 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
-# Build the project if needed
-[ ! -d "Output" ] && ./build.sh
+# Build Tailwind CSS in watch mode in background
+./tailwindcss -i assets/css/input.css -o static/styles.css --watch &
+TAILWIND_PID=$!
 
-# Enable us to be able to serve this directory under the path /bezel
-SERVE_DIR=`mktemp -d`
-ln -s "$(realpath Output)" $SERVE_DIR/bezel
+# Start Hugo dev server
+hugo server --buildDrafts --port 8000
 
-# Start python HTTP server in background
-python3 -m http.server --directory $SERVE_DIR 8000 &
-PID1=$!
-echo "Python server running with PID: $PID1"
-
-# Start Tailwind CSS process in background
-./tailwindcss -i Styles/input.css -o Output/styles.css --watch=always &
-PID2=$!
-echo "Tailwind running with PID: $PID2"
-
-# Function to handle script termination
-cleanup() {
-    echo "Stopping all processes..."
-    kill $PID1 $PID2
-    rm -rf "$SERVE_DIR"
-    echo "Cleanup complete and processes stopped."
-}
-
-# Trap SIGINT and exit signals
-trap cleanup INT TERM
-
-# Wait for both processes to finish
-wait $PID1 $PID2
+# Clean up Tailwind when Hugo exits
+kill $TAILWIND_PID 2>/dev/null
