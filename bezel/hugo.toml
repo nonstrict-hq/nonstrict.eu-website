@@ -1,6 +1,7 @@
 baseURL = "https://nonstrict.eu/bezel/"
 languageCode = "en-US"
-title = "Bezel - Mirror any iPhone on your Mac"
+disablePathToLower = true
+title = "Bezel • Mirror any iPhone on your Mac"
 enableRobotsTXT = true
 
 [params]
