@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="relative isolate overflow-hidden">
+    <div class="mx-auto max-w-2xl px-9 pb-20 mt-12">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Knowledge Base</h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Articles and guides for using Bezel.</p>
+
+        <div class="mt-12 space-y-8">
+            {{ range .Pages }}
+            <article class="relative flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-2xl ring-1 ring-gray-200 dark:ring-gray-700">
+                {{ with .Params.image }}
+                <img src="{{ . | relURL }}" alt="" class="w-full h-48 object-cover rounded-lg">
+                {{ end }}
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
+                        <a href="{{ .RelPermalink }}" class="hover:text-purple-600">
+                            {{ .Title }}
+                        </a>
+                    </h2>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">{{ .Params.description }}</p>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

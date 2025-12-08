@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="bg-gray-100 dark:bg-gray-900">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if and .Title (not .IsHome) }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title | default .Site.Title }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ .Site.Params.ogImage }}{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+
+    {{ block "head" . }}{{ end }}
+
+    <!-- Plausible Analytics -->
+    <script defer src="https://web.nonstrictmetrics.com/js/script.js" data-domain="nonstrict.eu" data-api="https://web.nonstrictmetrics.com/api/event" add-file-type="dmg"></script>
+
+    {{ with .Params.robots }}
+    <meta name="robots" content="{{ . }}">
+    {{ end }}
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    {{ block "header" . }}
+        {{ partial "header.html" . }}
+    {{ end }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

@@ -1,16 +1,16 @@
 ---
-title: Mirror Your iPhone during a Microsoft Teams Meeting
-description: A simple method to mirror your iPhone or iPad during a Teams meeting on your Mac. 
-image: images/article/how-to-share-your-iPhone-screen-on-Teams.jpg
-path: how-to-mirror-your-iphone-during-a-teams-call
-tags: How To, Screen sharing, Teams
+title: "Mirror Your iPhone during a Microsoft Teams Meeting"
+description: "A simple method to mirror your iPhone or iPad during a Teams meeting on your Mac."
+images: ["/bezel/images/article/how-to-share-your-iPhone-screen-on-Teams.jpg"]
+slug: "how-to-mirror-your-iphone-during-a-teams-call"
+tags: ["How To", "Screen sharing", "Teams"]
 ---
 
-Demonstrating your iPhone or iPad screen during a Microsoft Teams meeting is an excellent way to share your experience or present your work. With the Bezel app on your Mac, you can mirror your iPhone screen directly in the meeting without needing to join from your iPhone. Here’s a quick guide to do it in three steps.
+Demonstrating your iPhone or iPad screen during a Microsoft Teams meeting is an excellent way to share your experience or present your work. With the Bezel app on your Mac, you can mirror your iPhone screen directly in the meeting without needing to join from your iPhone. Here's a quick guide to do it in three steps.
 
 ## 1. Get the Bezel App for Free
 
-Bezel is a fully native Mac app created for mirroring your iPhone screen. It’s user-friendly and easy to install, making it accessible for everyone. Download the app on your Mac:
+Bezel is a fully native Mac app created for mirroring your iPhone screen. It's user-friendly and easy to install, making it accessible for everyone. Download the app on your Mac:
 
 <p class="not-prose">
     <a href="/bezel/thank-you-for-trying-bezel?utm_source=bezel&utm_medium=article&utm_content=jitsi-sharing" class="rounded-md ring-1 ring-purple-600 hover:bg-purple-600 hover:ring-purple-600 px-6 py-3 text-m font-semibold text-purple-600 dark:text-white hover:text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline-block w-6 h-6 mr-1 -mt-1">
@@ -30,7 +30,7 @@ Launch the Bezel app by clicking its icon and connect your iPhone with a USB cab
 
 ## 3. Join the Teams Meeting
 
-Join the Teams meeting as you normally would on your Mac. Click the “Share” button at the bottom of the screen and select the mirrored iPhone window or share the entire display showing the iPhone screen.
+Join the Teams meeting as you normally would on your Mac. Click the "Share" button at the bottom of the screen and select the mirrored iPhone window or share the entire display showing the iPhone screen.
 
 <video autoplay muted playsinline loop preload="auto" class="not-prose mx-auto w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
     <source src="/bezel/video/article-share-in-teams.mp4#t=0.001" type="video/mp4">
@@ -38,4 +38,4 @@ Join the Teams meeting as you normally would on your Mac. Click the “Share” 
 
 ## All Done!
 
-Connect your iPhone and choose the new window to share in Teams. It’s that simple to get a perfect mirror of your iPhone, complete with the device frame!
+Connect your iPhone and choose the new window to share in Teams. It's that simple to get a perfect mirror of your iPhone, complete with the device frame!

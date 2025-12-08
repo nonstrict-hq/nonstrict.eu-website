@@ -1,3 +1,0 @@
----
-title: Bezel iOS app
----

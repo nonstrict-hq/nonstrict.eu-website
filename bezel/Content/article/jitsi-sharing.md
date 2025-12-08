@@ -1,9 +1,9 @@
 ---
-title: Mirror iPhone Screen on Jitsi
-description: How to display your iPhone screen during a Jitsi meeting.
-image: images/article/how-to-share-your-iPhone-screen-on-Jitsi.jpg
-path: how-to-share-your-iPhone-screen-on-a-Jitsi-meeting
-tags: How To, Screen sharing, Jitsi
+title: "Mirror iPhone Screen on Jitsi"
+description: "How to display your iPhone screen during a Jitsi meeting."
+images: ["/bezel/images/article/how-to-share-your-iPhone-screen-on-Jitsi.jpg"]
+slug: "how-to-share-your-iPhone-screen-on-a-Jitsi-meeting"
+tags: ["How To", "Screen sharing", "Jitsi"]
 ---
 
 Screen sharing is great for interactive communication and collaboration. Sharing your iPhone or iPad screen on a Jitsi meeting is seamless with the app [Bezel](https://getbezel.app/). This article is a quick guide on how to share your screen during a Jitsi call.

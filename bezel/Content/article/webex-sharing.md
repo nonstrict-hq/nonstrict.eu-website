@@ -1,12 +1,12 @@
 ---
-title: Mirror Your iPhone during a Cisco Webex
-description: An easy way to mirroring your iPhone or iPad in a Webex on your Mac. 
-image: images/article/how-to-share-your-iPhone-screen-on-Webex.jpg
-path: how-to-mirror-your-iphone-during-a-webex-call
-tags: How To, Screen sharing, Webex
+title: "Mirror Your iPhone during a Cisco Webex"
+description: "An easy way to mirroring your iPhone or iPad in a Webex on your Mac."
+images: ["/bezel/images/article/how-to-share-your-iPhone-screen-on-Webex.jpg"]
+slug: "how-to-mirror-your-iphone-during-a-webex-call"
+tags: ["How To", "Screen sharing", "Webex"]
 ---
 
-Sharing your iPhone or iPad screen during a Webex is an excellent way to demonstrate what you're experiencing or showcasing your work. With the Bezel app on Mac you can share you iPhone screen directly in the call without needing to join the call from your iPhone. Here’s how you can do it in three easy steps.
+Sharing your iPhone or iPad screen during a Webex is an excellent way to demonstrate what you're experiencing or showcasing your work. With the Bezel app on Mac you can share you iPhone screen directly in the call without needing to join the call from your iPhone. Here's how you can do it in three easy steps.
 
 ## 1. Download the Bezel App for Free
 
@@ -30,7 +30,7 @@ Launch the Bezel app by clicking its icon, then connect your iPhone with a USB c
 
 ## 3. Join the Webex and Share Your Screen
 
-Join the Webex call as usual on your Mac. Click the "Share" button at the bottom of the screen and choose the mirrored iPhone window or share the whole display showing the iPhone. 
+Join the Webex call as usual on your Mac. Click the "Share" button at the bottom of the screen and choose the mirrored iPhone window or share the whole display showing the iPhone.
 
 <video autoplay muted playsinline loop preload="auto" class="not-prose mx-auto w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
     <source src="/bezel/video/article-share-in-webex.mp4#t=0.001" type="video/mp4">
@@ -40,4 +40,4 @@ Join the Webex call as usual on your Mac. Click the "Share" button at the bottom
 
 Simply plug in the iPhone and select the newly appeared window to share in Webex. It doesn't get easier than this to get a perfect mirror of your iPhone, it even includes the device frame!
 
-If you can't install Bezel or prefer a completely free solution, you can choose "Advanced" under screen sharing. Here you can start a wired mirroring session without using third-party apps. While it won't display a device frame around the mirror, it's a handy built-in feature worth knowing about! 
+If you can't install Bezel or prefer a completely free solution, you can choose "Advanced" under screen sharing. Here you can start a wired mirroring session without using third-party apps. While it won't display a device frame around the mirror, it's a handy built-in feature worth knowing about!
