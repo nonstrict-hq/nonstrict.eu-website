@@ -14,10 +14,16 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
 
-# Publish
+# Static Site Generators (Publish & Hugo)
 .publish
 Output
+public
+.hugo_build.lock
+resources/_gen/
 tailwindcss
+
+# Bezel Hugo generated CSS
+bezel/static/styles.css
 
 # Vuepress
 dist

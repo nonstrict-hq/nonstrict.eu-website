@@ -1,0 +1,28 @@
+baseURL = "https://nonstrict.eu/bezel/"
+languageCode = "en-US"
+disablePathToLower = true
+title = "Bezel • Mirror any iPhone on your Mac"
+enableRobotsTXT = true
+
+[params]
+  description = "The best way to display and record any iPhone, iPad, and Apple TV."
+  ogImage = "images/og-main.png"
+  favicon = "/bezel/images/favicon.png"
+
+[permalinks]
+  article = "/article/:slug/"
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+
+[sitemap]
+  filename = "sitemap.xml"

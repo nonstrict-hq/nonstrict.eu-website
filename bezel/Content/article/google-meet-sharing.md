@@ -1,9 +1,10 @@
 ---
-title: Share Your iPhone Screen on Google Meet
-description: Learn how to mirror the screen of your iPhone on a Google Meet call. 
-image: images/article/how-to-share-your-iPhone-screen-on-Google-Meet.jpg
-path: how-to-share-your-iPhone-screen-on-Google-Meet
-tags: How To, Screen sharing, Google Meet
+title: "Share Your iPhone Screen on Google Meet"
+description: "Learn how to mirror the screen of your iPhone on a Google Meet call."
+images: ["/bezel/images/article/how-to-share-your-iPhone-screen-on-Google-Meet.jpg"]
+slug: "how-to-share-your-iPhone-screen-on-Google-Meet"
+tags: ["How To", "Screen sharing", "Google Meet"]
+date: 2024-06-03T14:01:00
 ---
 
 Screen sharing is an essential tool for collaboration and communication. If you're using an iPhone or iPad and want to share your screen on Google Meet, the [Bezel app](https://getbezel.app/) offers a streamlined solution. This blog post provides a simple, step-by-step guide on how to use Bezel for screen sharing during your Google Meet calls. Let's dive in!
@@ -48,4 +49,4 @@ Open Google Meet and either start a new meeting or join an existing one. Now you
 
 ## Conclusion
 
-Using the Bezel app to display the screen of your iPhone or iPad on Google Meet is straightforward and enhances your ability to conduct productive and engaging meetings. With just a few clicks, you can demonstrate apps, explain iOS functionality or share photo’s or videos directly from your device.
+Using the Bezel app to display the screen of your iPhone or iPad on Google Meet is straightforward and enhances your ability to conduct productive and engaging meetings. With just a few clicks, you can demonstrate apps, explain iOS functionality or share photo's or videos directly from your device.

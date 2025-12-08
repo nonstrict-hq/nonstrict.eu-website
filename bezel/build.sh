@@ -1,3 +1,3 @@
 #!/bin/bash -x -e
-swift run
-./tailwindcss -i Styles/input.css -o Output/styles.css -m
+./tailwindcss -i assets/css/input.css -o static/styles.css -m
+hugo --minify -d Output
