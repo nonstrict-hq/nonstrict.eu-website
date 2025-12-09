@@ -34,6 +34,29 @@ jobs:
       - run: ./build.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+      - name: Configure robots.txt for deployment target
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          echo "Repository name: $REPO_NAME"
+
+          if [ "$REPO_NAME" = "nonstrict.eu-preview" ]; then
+            echo "Preview deployment: Adding noindex robots.txt"
+            # Remove any existing robots.txt files
+            find ./dist -name "robots.txt" -type f -delete
+            # Create noindex robots.txt at root
+            cat > ./dist/robots.txt << 'EOF'
+          User-agent: *
+          Disallow: /
+          EOF
+          elif [ "$REPO_NAME" = "nonstrict.eu-website" ]; then
+            echo "Production deployment: No robots.txt changes needed"
+          else
+            echo "ERROR: Unknown repository '$REPO_NAME'. Expected 'nonstrict.eu-preview' or 'nonstrict.eu-website'."
+            echo "Please investigate and update the deploy workflow if this is a valid deployment target."
+            exit 1
+          fi
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
