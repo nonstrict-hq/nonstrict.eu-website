@@ -1,5 +1,53 @@
 # Changelog
 
+### 0.72.0
+
+- Swift: Add `SCKAudioStreamRecorder` for streaming system audio from ScreenCaptureKit
+
+### 0.71.0
+
+- Swift: Add `isVirtual` property to `RKCamera` and `RKMicrophone`
+- Swift: Improved `RKError` with error codes and better `LocalizedError` conformance
+- Fix crash when setting up NSWorkspace KVO observation from background thread
+
+### 0.70.0
+
+- Swift: `RKRecorder.prepare()` now returns `RKBundleInfo`
+
+### 0.69.0
+
+- Swift: Update `screenRecordingIndicator` filter for macOS Tahoe compatibility
+- Fix video dimensions not being aligned to even numbers
+
+### 0.68.0
+
+- Improved macOS cursor type detection
+
+### 0.67.0
+
+- Swift: Add `topWindowInfoOutputOptions` to display schema
+- Swift: Add `inputEventsOutputOptions` to display schema
+- Swift: Add `JSONOutputOptions` for configurable JSON output
+
+### 0.66.0
+
+- Swift: Add `move(to:)` method to `RKWindow`
+
+### 0.65.0
+
+- Swift: Add `maximize()`, `resize(to:)`, and `center()` methods to `RKWindow`
+
+### 0.64.0
+
+- Swift: `RKDisplayDecorator` now supports multiple panels
+
+### 0.63.0
+
+- Swift: Add `RKDisplayDecorator` for overlaying panels on displays
+- Swift: Add `RKWindowTrackerView` for tracking windows in SwiftUI
+- Swift: Add `RKWindow` resizing support
+- Swift: Fix `WindowTracker` losing window state after moving between displays
+
 ### 0.62.0
 
 - Swift: Add pause/resume support to recordings
