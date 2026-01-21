@@ -1,39 +1,35 @@
 # What is RecordKit?
 
-RecordKit is a screen recording SDK for macOS apps. Enabling simultaneous recording of the users screen, system audio, camera, microphone, mouse and keyboard. RecordKit is the recording foundation of apps. Generating easy to use video and JSON to build upon.
+RecordKit is a screen recording SDK for macOS apps. It enables simultaneous recording of screen, system audio, camera, microphone, mouse and keyboard. Output includes easy-to-process video and JSON files.
 
-::: tip 
+::: tip
 Just want to try it out? Skip to the [Product Demo](/product-demo).
 :::
 
 ## Use Cases
 
-- **Video Messaging & Product Demo apps**
+**AI meeting notes & assistants** — Build apps like Granola or Otter that record meetings for AI transcription and summarization. Capture screen context alongside microphone and system audio to help AI understand what's being discussed.
 
-RecordKit is a solid foundation for video messaging apps (like Loom) and apps to create product demos (like ScreenFlow). Our SDK helps you focus on the added value of your app, the powerful recording APIs let you easily integrate all recording features users expect from a modern app.
+**Video messaging & product demos** — Build apps like Loom or ScreenFlow. RecordKit handles the recording complexity so you can focus on your product's unique value.
 
-- **Support, monitoring or QA recordings**
+**Support & QA recordings** — Add screen recording to capture bug reports or user sessions. A short video often tells you more than a written description.
 
-With just a few lines of code you can add a recording feature to create a support, monitoring or QA feature to your app. A short recording of a problem or action of the users often tells you more than text. With RecordKit building such features becomes simple and easy, we take care of the heavy lifting.
+## Why RecordKit?
 
-## User Experience
+### Battle-Tested
 
-- **Native performance**
+Recording on macOS is full of edge cases. RecordKit handles them so you don't have to discover them yourself. Tested across multiple production apps, it saves you months of foundational work.
 
-RecordKit fully leverages native Apple APIs like ScreenCaptureKit, AVFoundation and CoreMedia to perform high quality and high performance recordings. Even in Electron apps we completely skip the browser and directly call out to macOS, removing all browser limitations.
+### Native Performance
 
-- **Enhanced statuses and errors**
+RecordKit uses Apple's ScreenCaptureKit, AVFoundation and CoreMedia directly. For Electron apps, we bypass the browser entirely and call native macOS APIs. No browser limitations.
 
-The SDK adds detailed statuses and errors to many situations. Whether ScreenCaptureKit fails to start or microphone is silent because the MacBook lid is closed, RecordKit will report a [clear status or error](/guides/logging-and-errors) that you can present in the user interface.
+### Clear Errors and Statuses
 
-## Developer Experience
+The SDK provides detailed, user-friendly errors for common issues. Whether ScreenCaptureKit fails to start or a microphone is silent because the MacBook lid is closed, RecordKit reports a [clear status](/guides/logging-and-errors#error-handling) you can show in your UI.
 
-RecordKit provides a great Developer Experience (DX) when integrating in a Swift or Electron based app.
+### Simple Integration
 
-- **Modern API:** A modern SPM package with first class SwiftUI and Swift concurrency support. First class support for Electron apps including complete TypeScript definitions.
-
-- **Simple output:** RecordKit outputs all assets in easy to process MP4 videos and JSON files by default. Making it easy to process them further using your own pipeline.
-
-- **Native power:** RecordKit applies countless of best-practices and workarounds that we have collected over the years on top of native Apple APIs such as ScreenCaptureKit, AVFoundation and CoreMedia.
-
-- **Flexible with sane defaults:** Providing sane defaults gives you a quick start, making it easy to experiment and integrate RecordKit. The API is also flexible and gives you a great deal of control to create a great User Experience (UX) and integrate into existing setups.
+- **Modern APIs** — Swift Package with SwiftUI and async/await support. Full TypeScript definitions for Electron.
+- **Standard output** — MP4 video and JSON files by default. Easy to process with your existing pipeline. See [Output Formats](/guides/output-formats).
+- **Sensible defaults** — Get started quickly with minimal configuration, then customize as needed.
