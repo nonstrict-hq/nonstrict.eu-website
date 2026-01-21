@@ -57,3 +57,5 @@ recorder.start()
 // Stop the recording, returns information about the recording
 let result = try await recorder.stop()
 ```
+
+For handling errors and setting up logging, see [Logging and Error Handling](/guides/logging-and-errors).

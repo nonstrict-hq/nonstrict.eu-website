@@ -22,9 +22,9 @@ With just a few lines of code you can add a recording feature to create a suppor
 
 RecordKit fully leverages native Apple APIs like ScreenCaptureKit, AVFoundation and CoreMedia to perform high quality and high performance recordings. Even in Electron apps we completely skip the browser and directly call out to macOS, removing all browser limitations.
 
-- **Enhanced statusses and errors**
+- **Enhanced statuses and errors**
 
-The SDK adds detailed statusses and errors to many situations. Whether ScreenCaptureKit fails to start or microphone is silent because the MacBook lid is closed, RecordKit will report a clear status or error that you can present in the user interface.
+The SDK adds detailed statuses and errors to many situations. Whether ScreenCaptureKit fails to start or microphone is silent because the MacBook lid is closed, RecordKit will report a [clear status or error](/guides/logging-and-errors) that you can present in the user interface.
 
 ## Developer Experience
 

@@ -68,6 +68,7 @@ export default defineConfig({
       {
         text: 'Guides',
         items: [
+          { text: 'Logging and Error Handling', link: '/guides/logging-and-errors' },
           { text: 'Output formats', link: '/guides/output-formats' },
         ]
       },
