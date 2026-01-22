@@ -39,7 +39,11 @@ RKRecorder([
 ```
 
 ```ts [Electron]
-// HEVC codec selection coming soon
+await recordkit.createRecorder({
+  items: [
+    { type: 'display', display: selectedDisplay, videoCodec: 'hevc' }
+  ]
+})
 ```
 :::
 
@@ -67,7 +71,12 @@ RKRecorder([
 ```
 
 ```ts [Electron]
-// Color space selection coming soon
+// Record in Display P3 with HEVC for wide gamut colors
+await recordkit.createRecorder({
+  items: [
+    { type: 'display', display: selectedDisplay, videoCodec: 'hevc', colorSpace: 'displayP3' }
+  ]
+})
 ```
 :::
 
