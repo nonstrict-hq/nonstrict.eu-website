@@ -1,0 +1,57 @@
+baseURL = "https://nonstrict.eu/"
+languageCode = "en-us"
+title = "Nonstrict"
+description = "Experts on Apple platforms."
+
+# Preserve trailing slashes like current site
+uglyURLs = false
+disablePathToLower = true
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+# RSS configuration - CRITICAL: need both baseName AND suffix
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "feed"
+    suffix = "rss"
+
+# Permalinks - CRITICAL for URL preservation
+[permalinks]
+  blog = "/blog/:year/:slug/"
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+    tabWidth = 4
+    noClasses = false
+
+# Sitemap
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Custom params
+[params]
+  ogImage = "/images/og-logo.png"
+  favicon = "/images/favicon.png"
+
+  [params.plausible]
+    domain = "nonstrict.eu"
+    scriptURL = "https://web.nonstrictmetrics.com/js/script.js"
+    apiURL = "https://web.nonstrictmetrics.com/api/event"

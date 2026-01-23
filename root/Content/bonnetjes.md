@@ -1,12 +1,12 @@
 ---
-date: 2023-04-14 12:00
-authors: tom, mathijs
-tags: Apps, Bonnetjes
-title: Bonnetjes
-description: Bonnetjes app
-image: images/apps/app-icon-bonnetjes.png
-path: bonnetjes
-appLink: https://apple.co/3BbQPoc
+title: "Bonnetjes"
+date: 2023-04-14T12:00:00+01:00
+description: "Bonnetjes app"
+url: /bonnetjes/
+authors: ["tom", "mathijs"]
+tags: ["Apps", "Bonnetjes"]
+image: "images/apps/app-icon-bonnetjes.png"
+appLink: "https://apple.co/3BbQPoc"
 ---
 
 Bonnetjes is een app van Nonstrict om snel en gemakkelijk bonnetjes te scannen en te uploaden naar Moneybird.

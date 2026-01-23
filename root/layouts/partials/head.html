@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+<!-- Description -->
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="{{ if .Params.image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ with .Params.image }}
+<meta name="twitter:image" content="{{ . | absURL }}">
+{{ else }}
+<meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}">
+{{ end }}
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/png">
+
+<!-- RSS -->
+<link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to {{ .Site.Title }}">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/styles.css" type="text/css">
+
+<!-- Plausible Analytics -->
+<script defer
+    src="{{ .Site.Params.plausible.scriptURL }}"
+    data-domain="{{ .Site.Params.plausible.domain }}"
+    data-api="{{ .Site.Params.plausible.apiURL }}"
+    add-file-type="dmg"></script>
