@@ -14,7 +14,7 @@ apps:
     url: "https://apps.apple.com/app/splitscreen/id1562144634"
   - name: "CleanPresenter"
     icon: "/images/apps/cleanpresenter.png"
-    url: "/cleanpresenter/"
+    url: "https://cleanpresenter.com"
   - name: "Persona Webcam"
     icon: "/images/apps/app-icon-persona-webcam.png"
     url: "/persona-webcam/"
