@@ -10,16 +10,13 @@ disablePathToLower = true
 # Output formats
 [outputs]
   home = ["HTML", "RSS"]
-  section = ["HTML", "RSS"]
+  section = ["HTML"]
   taxonomy = ["HTML"]
   term = ["HTML"]
 
-# RSS configuration - CRITICAL: need both baseName AND suffix
-[outputFormats]
-  [outputFormats.RSS]
-    mediaType = "application/rss+xml"
-    baseName = "feed"
-    suffix = "rss"
+# RSS configuration - base name is feed (creates feed.xml, build script copies to feed.rss)
+[outputFormats.RSS]
+  baseName = "feed"
 
 # Permalinks - CRITICAL for URL preservation
 [permalinks]

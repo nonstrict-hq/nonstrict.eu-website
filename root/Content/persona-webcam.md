@@ -4,7 +4,7 @@ date: 2024-04-16T12:00:00+01:00
 description: "Your Vision Persona on Mac"
 url: /persona-webcam/
 authors: ["tom", "mathijs"]
-tags: ["Apps", "Persona Webcam"]
+tags: ["Apps", "persona-webcam"]
 image: "images/apps/app-icon-persona-webcam.png"
 ---
 
