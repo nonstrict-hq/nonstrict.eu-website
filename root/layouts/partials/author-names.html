@@ -1,0 +1,8 @@
+{{ $names := slice }}
+{{ range .Params.authors }}
+{{ $author := index $.Site.Data.authors . }}
+{{ if $author }}
+{{ $names = $names | append $author.name }}
+{{ end }}
+{{ end }}
+{{ delimit $names ", " }}
