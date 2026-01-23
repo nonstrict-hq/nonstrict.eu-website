@@ -45,6 +45,7 @@ disablePathToLower = true
 
 # Custom params
 [params]
+  description = "Experts on Apple platforms."
   ogImage = "/images/og-logo.png"
   favicon = "/images/favicon.png"
 
