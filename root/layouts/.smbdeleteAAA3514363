@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="text-center py-16">
+    <h1 class="text-4xl font-bold">{{ .Site.Title }}</h1>
+    <p class="mt-4 text-xl text-gray-600">{{ .Site.Params.description }}</p>
+    <p class="mt-8">Homepage placeholder - will be redesigned in Phase 7</p>
+</div>
+{{ end }}
