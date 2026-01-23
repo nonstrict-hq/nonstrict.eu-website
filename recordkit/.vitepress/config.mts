@@ -69,6 +69,7 @@ export default defineConfig({
         text: 'Guides',
         items: [
           { text: 'Logging and Error Handling', link: '/guides/logging-and-errors' },
+          { text: 'Apple Device Recording', link: '/guides/apple-device-recording' },
           { text: 'Output Formats', link: '/guides/output-formats' },
         ]
       },

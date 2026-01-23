@@ -179,7 +179,7 @@ Record the screen of iPhones and iPads connected via USB cable. These devices ap
 ```swift [Swift]
 let devices = await RKAppleDevice.appleDevices
 let recorder = RKRecorder([
-    .appleDeviceStaticOrientation(deviceID: device.id)
+    .appleDevice(deviceID: device.id)
 ])
 ```
 
@@ -187,7 +187,7 @@ let recorder = RKRecorder([
 const devices = await recordkit.sources.iosDevices()
 const recorder = await recordkit.createRecorder({
     items: [
-        { type: 'iosDevice', device: device }
+        { type: 'appleDevice', device: device }
     ]
 })
 ```
