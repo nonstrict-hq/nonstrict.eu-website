@@ -15,7 +15,7 @@ image: images/blog/matt-botsford-OKLqGsCT8qs-unsplash.jpg
 featured: true
 ---
 
-When working on [RecordKit](/recordkit/), our macOS recording SDK, we ran into an issue where in certain situations the recorded audio files would sound distorted. Digging into this issue, we found we could reproduce this by using an external microphone (not the MacBook Built-in Microphone), and it only happens on the second recording (not the first one).
+When working on [RecordKit](https://nonstrict.eu/recordkit/), our macOS recording SDK, we ran into an issue where in certain situations the recorded audio files would sound distorted. Digging into this issue, we found we could reproduce this by using an external microphone (not the MacBook Built-in Microphone), and it only happens on the second recording (not the first one).
 
 ![Screenshot comparing waveforms of normal audio and distored audio](/images/blog/distorted-audio-waveform.png)
 
@@ -80,6 +80,6 @@ We have reported this issue FB16500782, and have created [a sample project](http
 ## References
 
 - Nonstrict. (2025, February). [FB16500782: AVCaptureSession Wrong Format](https://github.com/nonstrict-hq/AppleFeedback/tree/main/FB16500782). GitHub.
-- WWDC Index. (2014). [Harnessing Metadata in Audiovisual Media @28:48](/wwdcindex/wwdc2014/505/?t=1728). WWDC 2014.
+- WWDC Index. (2014). [Harnessing Metadata in Audiovisual Media @28:48](https://nonstrict.eu/wwdcindex/wwdc2014/505/?t=1728). WWDC 2014.
 - Apple. (2025, February). [AVAssetWriterInput sourceFormatHint](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/init(mediatype:outputsettings:sourceformathint:)) Apple Developer Documentation.
 - Apple. (2024, November). [Distorted Audio When Recording External Mics With AVCaptureSession and AVAssetWriter](https://developer.apple.com/forums/thread/765449). Apple Developer Forums.

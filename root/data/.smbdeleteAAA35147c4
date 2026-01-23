@@ -6,7 +6,7 @@ featured:
   - name: "RecordKit"
     icon: "/images/recordkit-icon.png"
     description: "Screen recording SDK for macOS developers"
-    url: "/recordkit/"
+    url: "https://nonstrict.eu/recordkit/"
 
 apps:
   - name: "Splitscreen"
@@ -35,4 +35,4 @@ apps:
     url: "https://apps.apple.com/app/upscale-video-enhancer/id1561731307"
   - name: "WWDC Index"
     icon: "/images/apps/wwdcindex.png"
-    url: "/wwdcindex/"
+    url: "https://nonstrict.eu/wwdcindex/"

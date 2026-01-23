@@ -35,4 +35,4 @@ apps:
     url: "https://apps.apple.com/app/upscale-video-enhancer/id1561731307"
   - name: "WWDC Index"
     icon: "/images/apps/wwdcindex.png"
-    url: "/wwdcindex/"
+    url: "https://nonstrict.eu/wwdcindex/"

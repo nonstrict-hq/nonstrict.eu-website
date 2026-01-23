@@ -15,7 +15,7 @@ image: images/blog/studio-display-camera-light.jpg
 featured: true
 ---
 
-When working on [RecordKit](/recordkit/), our macOS recording SDK, we ran into an issue where occasionally the camera of an Apple Studio Display will not produce video frames. Digging into this issue, we found we could reproduce this by trying to record the camera in a loop. Consistently, every 24th time, no frames are produced by the camera. Interrestingly, this doesn’t happen when Center Stage is active for the application.
+When working on [RecordKit](https://nonstrict.eu/recordkit/), our macOS recording SDK, we ran into an issue where occasionally the camera of an Apple Studio Display will not produce video frames. Digging into this issue, we found we could reproduce this by trying to record the camera in a loop. Consistently, every 24th time, no frames are produced by the camera. Interrestingly, this doesn’t happen when Center Stage is active for the application.
 
 This silent failure happens accross multiple different physical Studio Displays, and accross multiple Macs and macOS versions (14, 15). The only variation being that sometimes it fails after 22 or 23 loops, instead of 24.
 
