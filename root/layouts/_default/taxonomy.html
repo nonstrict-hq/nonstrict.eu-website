@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="relative bg-gray-50 px-6 pt-16 pb-20 lg:px-8 lg:pb-28">
+    <div class="relative mx-auto max-w-7xl">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ .Title }}</h1>
+            <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                Browse all tags
+            </p>
+        </div>
+        <div class="mx-auto mt-12 flex flex-wrap justify-center gap-4">
+            {{ range .Pages }}
+            <a href="{{ .Permalink }}" class="inline-block bg-white px-6 py-3 rounded-lg shadow-sm ring-1 ring-gray-200 text-gray-700 hover:text-orange-500 hover:ring-orange-500 transition">
+                {{ .Title }}
+                <span class="text-gray-400 ml-2">({{ len .Pages }})</span>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
