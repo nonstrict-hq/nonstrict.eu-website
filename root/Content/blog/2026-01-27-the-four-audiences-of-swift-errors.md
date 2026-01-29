@@ -46,8 +46,7 @@ enum LocationServiceError: Int, LocalizedError, CustomNSError {
 
 The `Int` raw value gives explicit error codes for free. `CustomNSError` uses `rawValue` as the error code and derives the domain from the type name automatically.
 
-If you need associated values on your error cases, you'll need to implement `errorCode` manually. Our upcomming blogpost on SDK error design will describe that pattern in more detail.
-<!-- See [our post on SDK error design](/blog/2026/the-fifth-audience-swift-errors-for-sdks) for that pattern. -->
+If you need associated values on your error cases, you'll need to implement `errorCode` manually. See [our post on SDK error design](/blog/2026/designing-swift-errors-for-an-sdk) for that pattern.
 
 Let's walk through how this pattern serves each audience.
 
@@ -182,7 +181,7 @@ Create a separate enum per service or module. For example: `LocationServiceError
 
 We don't like to create one giant app-wide error enum like `enum MyAppError`. There's no benefit since errors in the app are already known to be from the app. Instead, start small: when an error is needed in a service, create an enum with the one case needed. Add more cases as needs grow.
 
-SDK development has a fifth audience: the app developers using your SDK. They need stable, documented error codes as part of your public API. We cover that pattern in a separate post.
+_Note: SDK development has a fifth audience: the app developers using your SDK. They need stable, documented error codes as part of your public API. We cover that pattern in [a separate post](/blog/2026/designing-swift-errors-for-an-sdk)._
 
 ## References
 
