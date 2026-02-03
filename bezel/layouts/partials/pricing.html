@@ -386,9 +386,9 @@
 
         try {
             const apiBase = (window.location.hostname == "localhost" || window.location.hostname == "preview.nonstrict.eu")
-                ? 'http://localhost:3030'
+                ? 'https://customers-sandbox.nonstrict.com'
                 : 'https://customers.nonstrict.com';
-            const response = await fetch(apiBase + '/api/v1/license/discount', {
+            const response = await fetch(apiBase + '/api/v2/license/discount', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ serial: serial })
@@ -396,13 +396,18 @@
 
             const data = await response.json();
 
-            if (data.discount_code) {
-                // Success - open checkout with discount code
+            if (data.discount_id) {
+                // Success - open checkout with discount ID and serial as custom data
                 const priceId = priceIdLookup['yearly'];
-                Paddle.Checkout.open({
+                const checkoutOptions = {
                     items: [{ quantity: 1, priceId }],
-                    discountCode: data.discount_code
-                });
+                    discountId: data.discount_id,
+                    customData: { serial: serial }
+                };
+                if (data.customer_id) {
+                    checkoutOptions.customer = { id: data.customer_id };
+                }
+                Paddle.Checkout.open(checkoutOptions);
                 window.plausible('Bezel Upgrade Checkout Opened');
             } else if (data.error) {
                 // Show error message
