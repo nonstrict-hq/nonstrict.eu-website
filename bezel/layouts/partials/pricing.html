@@ -163,40 +163,37 @@
 
         </div>
 
-        <!-- Upgrade Discount Section -->
-        <div class="mt-8 mx-auto max-w-2xl text-center">
-            <button id="upgrade-toggle" onclick="toggleUpgradeSection()" class="text-sm text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 underline cursor-pointer">
-                Upgrading from an earlier Bezel version? Enter your serial to get a discount code
-            </button>
-            <div id="upgrade-form" class="hidden mt-4">
-                <form onsubmit="submitUpgradeSerial(event)" class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <input
-                        type="text"
-                        id="upgrade-serial"
-                        placeholder="XXXX-XXXX-XXXX-XXXX-XXXX"
-                        pattern="[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}"
-                        required
-                        class="w-full sm:w-72 px-4 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                    >
-                    <button
-                        type="submit"
-                        id="upgrade-submit"
-                        class="px-4 py-2 text-sm font-semibold text-white bg-purple-600 rounded-lg hover:bg-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                        Get Discount
+        <!-- Upgrade Banner -->
+        <div id="upgrade-banner" class="mt-8 mx-auto max-w-2xl rounded-3xl bg-gray-50 dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-700 shadow-sm px-6 py-5">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                <div class="flex-1 text-center lg:text-left">
+                    <h3 class="text-base font-semibold text-gray-900 dark:text-white">Upgrading from an earlier Bezel version?</h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Enter your previous serial for a 50% discount.</p>
+                </div>
+                <div class="w-full lg:w-auto lg:ml-auto mt-3 lg:mt-0">
+                    <button type="button" id="upgrade-cta" onclick="toggleUpgradeSection()" aria-controls="upgrade-form" aria-expanded="false" class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto rounded-lg bg-white dark:bg-gray-800 px-4 py-2 text-sm font-semibold text-purple-700 dark:text-purple-200 ring-1 ring-purple-300/70 dark:ring-purple-900/70 hover:bg-purple-50 dark:hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600">
+                        Enter serial
                     </button>
-                </form>
-                <p id="upgrade-error" class="hidden mt-2 text-sm text-red-600"></p>
+                    <form id="upgrade-form" onsubmit="submitUpgradeSerial(event)" class="hidden flex w-full max-w-[15rem] mx-auto lg:mx-0 lg:max-w-none lg:w-auto flex-col lg:flex-row items-center lg:justify-end gap-3">
+                        <input
+                            type="text"
+                            id="upgrade-serial"
+                            placeholder="ABCD-1234-ABCD-1234-ABCD"
+                        pattern="\s*[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}\s*"
+                            required
+                            class="w-full lg:w-60 px-4 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                        >
+                        <button
+                            type="submit"
+                            id="upgrade-submit"
+                            class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto px-4 py-2 text-sm font-semibold text-white bg-purple-600 rounded-lg hover:bg-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            Get Discount
+                        </button>
+                    </form>
+                    <p id="upgrade-error" class="hidden mt-2 text-sm text-red-600 text-center lg:text-right"></p>
+                </div>
             </div>
-        </div>
-
-        <!-- Teams Banner -->
-        <div class="mt-8 mx-auto max-w-2xl flex items-center justify-center gap-3 rounded-full bg-gray-200 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-600 px-6 py-3">
-            <svg class="h-5 w-5 text-purple-600 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zM6 8a2 2 0 11-4 0 2 2 0 014 0zM1.49 15.326a.78.78 0 01-.358-.442 3 3 0 014.308-3.516 6.484 6.484 0 00-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 01-2.07-.655zM16.44 15.98a4.97 4.97 0 002.07-.654.78.78 0 00.357-.442 3 3 0 00-4.308-3.517 6.484 6.484 0 011.907 3.96 2.32 2.32 0 01-.026.654zM18 8a2 2 0 11-4 0 2 2 0 014 0zM5.304 16.19a.844.844 0 01-.277-.71 5 5 0 019.947 0 .843.843 0 01-.277.71A6.975 6.975 0 0110 18a6.974 6.974 0 01-4.696-1.81z" />
-            </svg>
-            <span class="text-sm text-gray-600 dark:text-gray-300">Need Bezel for your team? Get volume pricing for 5+ seats.</span>
-            <a href="mailto:team@nonstrict.com?subject=Bezel%20Team%20license" class="text-sm font-semibold text-purple-600 hover:text-purple-500 whitespace-nowrap">Contact us &rarr;</a>
         </div>
 
         <div class="mt-4 text-sm text-center text-gray-500 dark:text-gray-400">
@@ -346,11 +343,20 @@
     window.addEventListener('hashchange', checkForTeamHash);
 
     function toggleUpgradeSection() {
+        const banner = document.getElementById('upgrade-banner');
         const form = document.getElementById('upgrade-form');
-        const toggle = document.getElementById('upgrade-toggle');
+        const cta = document.getElementById('upgrade-cta');
+        const isExpanded = !form.classList.contains('hidden');
         form.classList.toggle('hidden');
-        if (!form.classList.contains('hidden')) {
+        if (!isExpanded) {
             document.getElementById('upgrade-serial').focus();
+        }
+        if (cta) {
+            cta.classList.toggle('hidden', !isExpanded);
+            cta.setAttribute('aria-expanded', String(!isExpanded));
+        }
+        if (banner) {
+            banner.classList.toggle('lg:max-w-3xl', !isExpanded);
         }
     }
 
