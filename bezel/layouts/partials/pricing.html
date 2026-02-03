@@ -163,6 +163,33 @@
 
         </div>
 
+        <!-- Upgrade Discount Section -->
+        <div class="mt-8 mx-auto max-w-2xl text-center">
+            <button id="upgrade-toggle" onclick="toggleUpgradeSection()" class="text-sm text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 underline cursor-pointer">
+                Upgrading from an earlier Bezel version? Enter your serial to get a discount code
+            </button>
+            <div id="upgrade-form" class="hidden mt-4">
+                <form onsubmit="submitUpgradeSerial(event)" class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <input
+                        type="text"
+                        id="upgrade-serial"
+                        placeholder="XXXX-XXXX-XXXX-XXXX-XXXX"
+                        pattern="[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}"
+                        required
+                        class="w-full sm:w-72 px-4 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    >
+                    <button
+                        type="submit"
+                        id="upgrade-submit"
+                        class="px-4 py-2 text-sm font-semibold text-white bg-purple-600 rounded-lg hover:bg-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        Get Discount
+                    </button>
+                </form>
+                <p id="upgrade-error" class="hidden mt-2 text-sm text-red-600"></p>
+            </div>
+        </div>
+
         <!-- Teams Banner -->
         <div class="mt-8 mx-auto max-w-2xl flex items-center justify-center gap-3 rounded-full bg-gray-200 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-600 px-6 py-3">
             <svg class="h-5 w-5 text-purple-600 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
@@ -317,4 +344,72 @@
     }
     window.addEventListener('load', checkForTeamHash);
     window.addEventListener('hashchange', checkForTeamHash);
+
+    function toggleUpgradeSection() {
+        const form = document.getElementById('upgrade-form');
+        const toggle = document.getElementById('upgrade-toggle');
+        form.classList.toggle('hidden');
+        if (!form.classList.contains('hidden')) {
+            document.getElementById('upgrade-serial').focus();
+        }
+    }
+
+    async function submitUpgradeSerial(event) {
+        event.preventDefault();
+
+        const serialInput = document.getElementById('upgrade-serial');
+        const submitButton = document.getElementById('upgrade-submit');
+        const errorElement = document.getElementById('upgrade-error');
+        const serial = serialInput.value.trim().toUpperCase();
+
+        // Hide any previous error
+        errorElement.classList.add('hidden');
+        errorElement.textContent = '';
+
+        // Validate format (XXXX-XXXX-XXXX-XXXX-XXXX)
+        const serialPattern = /^[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+        if (!serialPattern.test(serial)) {
+            errorElement.textContent = 'Please enter a valid serial number in the format XXXX-XXXX-XXXX-XXXX-XXXX';
+            errorElement.classList.remove('hidden');
+            return;
+        }
+
+        // Disable button and show loading state
+        submitButton.disabled = true;
+        submitButton.textContent = 'Checking...';
+
+        try {
+            const apiBase = (window.location.hostname == "localhost" || window.location.hostname == "preview.nonstrict.eu")
+                ? 'http://localhost:3030'
+                : 'https://customers.nonstrict.com';
+            const response = await fetch(apiBase + '/api/v1/license/discount', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ serial: serial })
+            });
+
+            const data = await response.json();
+
+            if (data.discount_code) {
+                // Success - open checkout with discount code
+                const priceId = priceIdLookup['yearly'];
+                Paddle.Checkout.open({
+                    items: [{ quantity: 1, priceId }],
+                    discountCode: data.discount_code
+                });
+                window.plausible('Bezel Upgrade Checkout Opened');
+            } else if (data.error) {
+                // Show error message
+                errorElement.textContent = data.error;
+                errorElement.classList.remove('hidden');
+            }
+        } catch (error) {
+            errorElement.textContent = 'Something went wrong. Please try again.';
+            errorElement.classList.remove('hidden');
+        } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Discount';
+        }
+    }
 </script>
