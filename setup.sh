@@ -19,6 +19,10 @@ pushd keepgoing
 . ./setup.sh
 popd
 
+pushd fikkie
+. ./setup.sh
+popd
+
 # pushd _template_app
 # . ./setup.sh
 # popd

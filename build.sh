@@ -43,6 +43,11 @@ pushd keepgoing
 mv out ../dist/keepgoing
 popd
 
+pushd fikkie
+. ./build.sh
+mv out ../dist/fikkie
+popd
+
 # pushd _template_app
 # . ./build.sh
 # mv out ../dist/_template_app
