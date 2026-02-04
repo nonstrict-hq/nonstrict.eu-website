@@ -342,6 +342,41 @@
     window.addEventListener('load', checkForTeamHash);
     window.addEventListener('hashchange', checkForTeamHash);
 
+    function checkForExtendLicense() {
+        if (window.location.hash === '#extend-license') {
+            const banner = document.getElementById('upgrade-banner');
+            const form = document.getElementById('upgrade-form');
+            const serialInput = document.getElementById('upgrade-serial');
+            const cta = document.getElementById('upgrade-cta');
+
+            // Pre-fill serial from query parameter if present
+            const urlParams = new URLSearchParams(window.location.search);
+            const serial = urlParams.get('serial');
+            if (serial && serialInput) {
+                serialInput.value = serial;
+            }
+
+            // Expand the form
+            if (form && form.classList.contains('hidden')) {
+                form.classList.remove('hidden');
+                if (cta) {
+                    cta.classList.add('hidden');
+                    cta.setAttribute('aria-expanded', 'true');
+                }
+                if (banner) {
+                    banner.classList.add('lg:max-w-3xl');
+                }
+            }
+
+            // Scroll to the banner
+            if (banner) {
+                banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    }
+    window.addEventListener('load', checkForExtendLicense);
+    window.addEventListener('hashchange', checkForExtendLicense);
+
     function toggleUpgradeSection() {
         const banner = document.getElementById('upgrade-banner');
         const form = document.getElementById('upgrade-form');
