@@ -38,6 +38,13 @@ export function IntroEN() {
           Terms
         </Link>
         <span className="text-gray-600">|</span>
+        <a
+          href="mailto:team+fikkie@nonstrict.com"
+          className="hover:text-white transition-colors"
+        >
+          Contact
+        </a>
+        <span className="text-gray-600">|</span>
         <Link href="/" className="hover:text-white transition-colors">
           NL
         </Link>
