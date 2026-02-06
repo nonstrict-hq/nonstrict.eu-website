@@ -1,2 +1,2 @@
 #!/bin/bash
-npm run docs:dev
+npm run docs:dev -- --host
