@@ -2,7 +2,7 @@
 
 System audio recording lets you capture exactly what users hear, which is useful for apps like meeting recorders.
 
-RecordKit supports two ways to record system audio: Core Audio and ScreenCaptureKit. By default, the most appropriate backend is sekected, which works well for most setups, but you can also explicitly choose the backend when needed.
+RecordKit supports two ways to record system audio: Core Audio and ScreenCaptureKit. By default, the most appropriate backend is selected, which works well for most setups, but you can also explicitly choose the backend when needed.
 
 ## Record All System Audio
 
