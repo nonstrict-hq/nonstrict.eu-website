@@ -192,6 +192,11 @@
                         </button>
                     </form>
                     <p id="upgrade-error" class="hidden mt-2 text-sm text-red-600 text-center lg:text-right"></p>
+                    <div id="upgrade-actions" class="hidden mt-2 text-xs text-center lg:text-right text-gray-600 dark:text-gray-300">
+                        <button type="button" id="upgrade-open-yearly" onclick="reopenUpgradeCheckout('yearly')" class="underline hover:text-purple-600">Upgrade to yearly</button>
+                        <span class="mx-1 text-gray-400">•</span>
+                        <button type="button" id="upgrade-open-lifetime" onclick="reopenUpgradeCheckout('lifetime')" class="underline hover:text-purple-600">Upgrade to lifetime</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -377,6 +382,35 @@
     window.addEventListener('load', checkForExtendLicense);
     window.addEventListener('hashchange', checkForExtendLicense);
 
+    let upgradeSession = null;
+
+    function openUpgradeDiscountCheckout(plan, discountId) {
+        const priceId = priceIdLookup[plan];
+        if (!priceId) return;
+        const checkoutOptions = {
+            items: [{ quantity: 1, priceId }],
+            discountId: discountId,
+            customData: { serial: upgradeSession.serial }
+        };
+        if (upgradeSession.customerId) {
+            checkoutOptions.customer = { id: upgradeSession.customerId };
+        }
+        Paddle.Checkout.open(checkoutOptions);
+        window.plausible('Bezel Upgrade Checkout Opened');
+    }
+
+    async function reopenUpgradeCheckout(plan) {
+        const errorElement = document.getElementById('upgrade-error');
+        if (!upgradeSession) {
+            errorElement.textContent = 'Please enter your previous serial first.';
+            errorElement.classList.remove('hidden');
+            return;
+        }
+        errorElement.classList.add('hidden');
+        errorElement.textContent = '';
+        openUpgradeDiscountCheckout(plan, upgradeSession.discountId);
+    }
+
     function toggleUpgradeSection() {
         const banner = document.getElementById('upgrade-banner');
         const form = document.getElementById('upgrade-form');
@@ -406,6 +440,7 @@
         // Hide any previous error
         errorElement.classList.add('hidden');
         errorElement.textContent = '';
+        document.getElementById('upgrade-actions').classList.add('hidden');
 
         // Validate format (XXXX-XXXX-XXXX-XXXX-XXXX)
         const serialPattern = /^[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
@@ -428,24 +463,18 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ serial: serial })
             });
-
             const data = await response.json();
 
             if (data.discount_id) {
-                // Success - open checkout with discount ID and serial as custom data
-                const priceId = priceIdLookup['yearly'];
-                const checkoutOptions = {
-                    items: [{ quantity: 1, priceId }],
-                    discountId: data.discount_id,
-                    customData: { serial: serial }
+                upgradeSession = {
+                    serial: serial,
+                    customerId: data.customer_id || null,
+                    discountId: data.discount_id
                 };
-                if (data.customer_id) {
-                    checkoutOptions.customer = { id: data.customer_id };
-                }
-                Paddle.Checkout.open(checkoutOptions);
-                window.plausible('Bezel Upgrade Checkout Opened');
+
+                document.getElementById('upgrade-actions').classList.remove('hidden');
+                openUpgradeDiscountCheckout('yearly', data.discount_id);
             } else if (data.error) {
-                // Show error message
                 errorElement.textContent = data.error;
                 errorElement.classList.remove('hidden');
             }
