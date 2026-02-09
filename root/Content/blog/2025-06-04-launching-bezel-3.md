@@ -36,7 +36,7 @@ This release also has a lot of smaller improvements and fixes, such as the onboa
 
 ### Try Bezel 3.0 for free
 
-Bezel has a free trail, you can download the app from our [website](https://getbezel.app) or the [Mac App Store](https://apps.apple.com/en/app/bezel/id6476268685). There also is a [Press Kit](https://impresskit.net/bezel) available if you want to write about this Bezel release.
+Bezel has a free trial. You can download the app from our [website](https://getbezel.app) or the [Mac App Store](https://apps.apple.com/en/app/bezel/id6476268685). There also is a [Press Kit](https://impresskit.net/bezel) available if you want to write about this Bezel release.
 
 <div class="not-prose flex space-x-4 border-2 border-orange-500 rounded-lg pl-4 pr-6 py-6 mt-8 -mb-6">
     <div class="flex-initial">
@@ -44,7 +44,7 @@ Bezel has a free trail, you can download the app from our [website](https://getb
     </div>
     <div class="flex-initial">
         <h3 class="text-2xl font-bold text-black hover:text-orange-500 leading-relaxed mt-0 mb-2"><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank">Bezel · Mirror any iPhone on your Mac</a></h3>
-        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone and it automatically shows up on your Mac.</p>
+        <p class="mb-2">Perfect for app demos & presentations; Simply plug in an iPhone or wirelessly mirror it to your Mac.</p>
         <p><a href="/bezel?utm_source=nonstrict&utm_medium=blog&utm_content=hkworkoutsession-remote-delegate-not-setup-error" target="_blank" class="text-orange hover:text-orange-500 underline font-medium">Try for free →</a></p> 
     </div>
     <div class="flex-initial hidden md:block">
