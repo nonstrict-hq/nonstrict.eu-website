@@ -24,6 +24,7 @@ tailwindcss
 
 # Bezel Hugo generated CSS
 bezel/static/styles.css
+bezel/assets/css/styles.css
 
 # Vuepress
 dist

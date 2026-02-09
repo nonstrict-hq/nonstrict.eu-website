@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Build Tailwind CSS in watch mode in background
-./tailwindcss -i assets/css/input.css -o static/styles.css --watch &
+./tailwindcss -i assets/css/input.css -o assets/css/styles.css --watch &
 TAILWIND_PID=$!
 
 # Start Hugo dev server

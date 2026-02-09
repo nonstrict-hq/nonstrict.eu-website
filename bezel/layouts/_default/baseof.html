@@ -20,7 +20,9 @@
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+    {{ with resources.Get "css/styles.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+    {{ end }}
 
     {{ block "head" . }}{{ end }}
 
