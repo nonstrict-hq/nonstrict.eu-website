@@ -28,6 +28,10 @@ await recorder.start()
 ```
 :::
 
+::: warning Prerequisite
+Add `NSAudioCaptureUsageDescription` to your app's `Info.plist`. Without it, Core Audio system-audio recordings will be silent.
+:::
+
 ## Choose a Backend
 
 ### Default (Recommended)
@@ -116,10 +120,11 @@ Apps that do both screen and system audio only recordings can consider using the
 
 Permissions differ by backend:
 
-- Core Audio backend: requires system audio capture permission.
+- Core Audio backend: requires system audio capture permission and `NSAudioCaptureUsageDescription` in your app's `Info.plist`.
 - ScreenCaptureKit backend: requires Screen Recording permission.
 
 Use backend-aware permission helpers so your app checks and requests the correct permission path.
+If you use `.systemAudio()` with the default backend, include `NSAudioCaptureUsageDescription` so fallback/backend selection stays safe.
 
 ::: code-group
 ```swift [Swift]
