@@ -83,10 +83,6 @@ const recorder = await recordkit.createRecorder({
 ```
 :::
 
-::: tip
-If your app already has been granted screen recording permission, then no additional permission is needed for system audio recording.
-:::
-
 ### ScreenCaptureKit
 
 ScreenCaptureKit is available from macOS 12.3+. It needs full screen recording permissions, those need to be granted manually by the user through the Settings app.
