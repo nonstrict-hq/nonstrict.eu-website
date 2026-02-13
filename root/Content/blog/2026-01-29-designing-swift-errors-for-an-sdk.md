@@ -76,7 +76,7 @@ extension MySDKError.Code {
 }
 ```
 
-Inside the SDK, these static properties are not used to throw. Instead we construct the error with more context, and throw that:
+Inside the SDK we throw an error with context about the specific situation:
 
 ```swift
 // Customized localized description
