@@ -64,13 +64,14 @@ To make catching specific errors easier, we add static properties and a pattern 
 
 ```swift
 extension MySDKError {
-    public static let permissionDenied = MySDKError(code: .permissionDenied, localizedDescription: "Device access denied")
-    public static let deviceUnavailable = MySDKError(code: .deviceUnavailable, localizedDescription: "Device unavailable")
+    public static var permissionDenied: Code { .permissionDenied }
+    public static var deviceUnavailable: Code { .deviceUnavailable }
     // ... other cases
+}
 
-    public static func ~= (pattern: MySDKError, value: any Error) -> Bool {
-        guard let value = value as? MySDKError else { return false }
-        return pattern.code == value.code
+extension MySDKError.Code {
+    public static func ~= (code: MySDKError.Code, error: any Error) -> Bool {
+        (error as? MySDKError)?.code == code
     }
 }
 ```
