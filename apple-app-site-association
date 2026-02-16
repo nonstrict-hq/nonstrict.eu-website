@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "WT5N9FK54M.com.nonstrict.Fikkie",
+        "paths": ["/fikkie/*"]
+      }
+    ]
+  }
+}
