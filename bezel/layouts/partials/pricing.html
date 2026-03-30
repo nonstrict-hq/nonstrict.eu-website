@@ -335,7 +335,7 @@
 
     function openCheckout(licenseType) {
         const priceId = priceIdLookup[licenseType];
-        Paddle.Checkout.open({items:[{quantity: licenseType == 'team' ? 5 : 1, priceId}]});
+        Paddle.Checkout.open({settings: {displayMode: "overlay", variant: "one-page"}, items:[{quantity: licenseType == 'team' ? 5 : 1, priceId}]});
         window.plausible('Bezel Checkout Opened')
     }
 
@@ -388,6 +388,7 @@
         const priceId = priceIdLookup[plan];
         if (!priceId) return;
         const checkoutOptions = {
+            settings: { displayMode: "overlay", variant: "one-page" },
             items: [{ quantity: 1, priceId }],
             discountId: discountId,
             customData: { serial: upgradeSession.serial }
