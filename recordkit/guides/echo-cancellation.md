@@ -89,7 +89,7 @@ When `residualEchoGate` is enabled, a post-processing gate attenuates output whe
 
 ## Permissions
 
-Echo cancellation works by capturing system audio to use as a reference signal. This means it uses system audio recording under the hood, and your app needs the same permissions as for [system audio recording](/recordkit/guides/system-audio-recording#permissions).
+Echo cancellation works by capturing system audio to use as a reference signal. This means it uses system audio recording under the hood, and your app needs the same permissions as for [system audio recording](/guides/system-audio-recording#permissions).
 
 Add `NSAudioCaptureUsageDescription` to your app's `Info.plist` and use RecordKit's permission helpers:
 
