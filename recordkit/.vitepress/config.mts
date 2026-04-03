@@ -71,6 +71,7 @@ export default defineConfig({
           { text: 'Logging and Error Handling', link: '/guides/logging-and-errors' },
           { text: 'Output Formats', link: '/guides/output-formats' },
           { text: 'System Audio Recording', link: '/guides/system-audio-recording' },
+          { text: 'Echo Cancellation', link: '/guides/echo-cancellation' },
         ]
       },
       {

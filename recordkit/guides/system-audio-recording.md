@@ -119,7 +119,7 @@ Use RecordKit's permission helpers to check and request the correct permission f
 let backend: RKRecorder.SystemAudioBackend = .default
 
 if !RKAuthorization.systemAudioRecording(backend: backend) {
-    RKAuthorization.requestSystemAudioRecording(backend: backend)
+    try await RKAuthorization.requestSystemAudioRecording(backend: backend)
 }
 ```
 
