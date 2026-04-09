@@ -26,8 +26,12 @@
 
     {{ block "head" . }}{{ end }}
 
-    <!-- Plausible Analytics -->
-    <script defer src="https://web.nonstrictmetrics.com/js/script.js" data-domain="nonstrict.eu" data-api="https://web.nonstrictmetrics.com/api/event" add-file-type="dmg"></script>
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://web.nonstrictmetrics.com/js/pa-5d7r576Ms9Yaj423O_jsY.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
 
     {{ with .Params.robots }}
     <meta name="robots" content="{{ . }}">

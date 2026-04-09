@@ -63,7 +63,8 @@ public extension Node where Context == HTML.DocumentContext {
         return .head(
             .encoding(.utf8),
             .siteName(site.name),
-            .script(.defer(), .src("https://web.nonstrictmetrics.com/js/script.js"), .data(named: "domain", value: "nonstrict.eu"), .data(named: "api", value: "https://web.nonstrictmetrics.com/api/event"), .attribute(named: "add-file-type", value: "dmg")), // Add Plausible metrics
+            .script(.async(), .src("https://web.nonstrictmetrics.com/js/pa-5d7r576Ms9Yaj423O_jsY.js")),
+            .script(#"window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()"#),
             .url(site.url(for: location)),
             .title(title),
             .description(description),
