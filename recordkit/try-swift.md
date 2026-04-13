@@ -22,6 +22,10 @@ RecordKit for Swift is installed as a SPM (Swift Package Manager) package.
 
 Make sure the RecordKit library is added to your macOS app target.
 
+::: tip Shipping to the Mac App Store?
+Use [RecordKit Sandboxed](https://github.com/nonstrict-hq/RecordKitSandboxed) instead — it's a variant of RecordKit that is fully compatible with the Mac App Store sandbox. The package URL is: `https://github.com/nonstrict-hq/RecordKitSandboxed`
+:::
+
 ## 2. Start a recording
 
 1. Discover the devices, windows or displays to record.

@@ -30,6 +30,11 @@
       </article>
 
       <article class="faq-item">
+        <h3>Does RecordKit work on the Mac App Store?</h3>
+        <p>Yes. <a href="https://github.com/nonstrict-hq/RecordKitSandboxed">RecordKit Sandboxed</a> is a variant of RecordKit that is fully compatible with the Mac App Store sandbox.</p>
+      </article>
+
+      <article class="faq-item">
         <h3>Can you help us with integration?</h3>
         <p>A license includes direct access to our founding team — they'll even code side-by-side with your team.</p>
       </article>
