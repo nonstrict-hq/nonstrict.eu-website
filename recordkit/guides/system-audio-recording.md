@@ -85,7 +85,7 @@ const recorder = await recordkit.createRecorder({
 
 ### ScreenCaptureKit
 
-ScreenCaptureKit is available from macOS 12.3+. It needs full screen recording permissions, those need to be granted manually by the user through the Settings app.
+ScreenCaptureKit is available from macOS 12.3+. It uses Screen Recording permission, which the user needs to enable in System Settings. After enabling, the app must be restarted for it to take effect.
 
 ::: code-group
 ```swift [Swift]
@@ -108,19 +108,11 @@ const recorder = await recordkit.createRecorder({
 ```
 :::
 
-::: tip
-Apps that do both screen and system audio only recordings can consider using the ScreenCaptureKit backend to make sure the audio capturing behaviour is always consistent.
-:::
-
 ## Permissions
 
-Permissions differ by backend:
+Core Audio requires `NSAudioCaptureUsageDescription` in your app's `Info.plist`.
 
-- Core Audio backend: requires system audio capture permission and `NSAudioCaptureUsageDescription` in your app's `Info.plist`.
-- ScreenCaptureKit backend: requires Screen Recording permission.
-
-Use backend-aware permission helpers so your app checks and requests the correct permission path.
-If you use `.systemAudio()` with the default backend, include `NSAudioCaptureUsageDescription` so fallback/backend selection stays safe.
+Use RecordKit's permission helpers to check and request the correct permission for your chosen backend:
 
 ::: code-group
 ```swift [Swift]
@@ -138,6 +130,10 @@ if (!(await recordkit.getSystemAudioRecordingAccess({ backend }))) {
   await recordkit.requestSystemAudioRecordingAccess({ backend })
 }
 ```
+:::
+
+::: tip
+On macOS 26+, Screen Recording permission also grants access to system audio via Core Audio. If your app is already granted this permission, you're already covered, but still include `NSAudioCaptureUsageDescription` in your `Info.plist`.
 :::
 
 ## Recording Modes

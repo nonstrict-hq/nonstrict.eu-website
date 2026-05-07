@@ -17,7 +17,7 @@
             <div class="relative mx-auto mt-2 mb-1 max-w-sm rounded-3xl p-8 ring-1 xl:p-10 ring-gray-300 dark:ring-gray-200 bg-white">
                 <h3 id="bezel-monthly" class="text-lg font-semibold leading-8 text-gray-900">Monthly</h3>
                 <p class="mt-1 flex items-baseline gap-x-1">
-                    <span class="text-4xl font-bold tracking-tight text-gray-900">$5</span>
+                    <span class="text-4xl font-bold tracking-tight text-gray-900">$9</span>
                     <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>
                 </p>
                 <p class="mt-1 text-sm leading-6 text-gray-600">Most flexible option.</p>
@@ -70,7 +70,7 @@
                     <span class="text-4xl font-bold tracking-tight text-gray-900">$29</span>
                     <span class="text-sm font-semibold leading-6 text-gray-600">/year</span>
                 </p>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Save over 50% vs monthly.</p>
+                <p class="mt-1 text-sm leading-6 text-gray-600">Save over 70% vs monthly.</p>
                 <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-600">
                     <li class="flex gap-x-3 font-semibold">
                         <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -116,7 +116,7 @@
             <div class="relative mx-auto mt-2 mb-1 max-w-sm rounded-3xl p-8 ring-1 xl:p-10 ring-gray-300 dark:ring-gray-200 bg-white">
                 <h3 id="bezel-lifetime" class="text-lg font-semibold leading-8 text-gray-900">Lifetime</h3>
                 <p class="mt-1 flex items-baseline gap-x-1">
-                    <span class="text-4xl font-bold tracking-tight text-gray-900">$89</span>
+                    <span class="text-4xl font-bold tracking-tight text-gray-900">$99</span>
                     <span class="text-sm font-semibold leading-6 text-gray-600">one-time</span>
                 </p>
                 <p class="mt-1 text-sm leading-6 text-gray-600">Pay once, own it forever.</p>
@@ -163,40 +163,17 @@
 
         </div>
 
-        <!-- Upgrade Banner -->
-        <div id="upgrade-banner" class="mt-8 mx-auto max-w-2xl rounded-3xl bg-gray-50 dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-700 shadow-sm px-6 py-5">
+        <!-- Business Plan Banner -->
+        <div class="mt-8 mx-auto max-w-2xl rounded-3xl bg-gray-50 dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-700 shadow-sm px-6 py-5">
             <div class="flex flex-col lg:flex-row lg:items-center gap-4">
                 <div class="flex-1 text-center lg:text-left">
-                    <h3 class="text-base font-semibold text-gray-900 dark:text-white">Upgrading from an earlier Bezel version?</h3>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Enter your previous serial for a 50% discount.</p>
+                    <h3 class="text-base font-semibold text-gray-900 dark:text-white">Business — <span class="font-normal text-gray-600 dark:text-gray-300">$35/seat/year</span></h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Employee enrollment, consolidated billing and team management.</p>
                 </div>
                 <div class="w-full lg:w-auto lg:ml-auto mt-3 lg:mt-0">
-                    <button type="button" id="upgrade-cta" onclick="toggleUpgradeSection()" aria-controls="upgrade-form" aria-expanded="false" class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto rounded-lg bg-white dark:bg-gray-800 px-4 py-2 text-sm font-semibold text-purple-700 dark:text-purple-200 ring-1 ring-purple-300/70 dark:ring-purple-900/70 hover:bg-purple-50 dark:hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600">
-                        Enter serial
-                    </button>
-                    <form id="upgrade-form" onsubmit="submitUpgradeSerial(event)" class="hidden flex w-full max-w-[15rem] mx-auto lg:mx-0 lg:max-w-none lg:w-auto flex-col lg:flex-row items-center lg:justify-end gap-3">
-                        <input
-                            type="text"
-                            id="upgrade-serial"
-                            placeholder="ABCD-1234-ABCD-1234-ABCD"
-                        pattern="\s*[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}\s*"
-                            required
-                            class="w-full lg:w-60 px-4 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                        >
-                        <button
-                            type="submit"
-                            id="upgrade-submit"
-                            class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto px-4 py-2 text-sm font-semibold text-white bg-purple-600 rounded-lg hover:bg-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            Get Discount
-                        </button>
-                    </form>
-                    <p id="upgrade-error" class="hidden mt-2 text-sm text-red-600 text-center lg:text-right"></p>
-                    <div id="upgrade-actions" class="hidden mt-2 text-xs text-center lg:text-right text-gray-600 dark:text-gray-300">
-                        <button type="button" id="upgrade-open-yearly" onclick="reopenUpgradeCheckout('yearly')" class="underline hover:text-purple-600">Upgrade to yearly</button>
-                        <span class="mx-1 text-gray-400">•</span>
-                        <button type="button" id="upgrade-open-lifetime" onclick="reopenUpgradeCheckout('lifetime')" class="underline hover:text-purple-600">Upgrade to lifetime</button>
-                    </div>
+                    <a href="mailto:team+bezel@nonstrict.com?subject=Bezel%20Business%20plan%20inquiry" class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto rounded-lg bg-white dark:bg-gray-800 px-4 py-2 text-sm font-semibold text-purple-700 dark:text-purple-200 ring-1 ring-purple-300/70 dark:ring-purple-900/70 hover:bg-purple-50 dark:hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 text-center">
+                        Contact us
+                    </a>
                 </div>
             </div>
         </div>
@@ -287,6 +264,45 @@
         <p class="my-2 text-gray-600 dark:text-gray-400">After a successful purchase, you get an email from us with your license key. Make sure to check your Spam folder.</p>
         <p class="my-2 text-gray-600 dark:text-gray-400">If you can't find your license key please reach out to us at <a class="underline" href="mailto:team@nonstrict.com">team@nonstrict.com</a>.</p>
 
+        <h3 class="mt-8 mb-2 text-lg text-gray-900 dark:text-white font-semibold">Is there an upgrade discount available?</h3>
+        <p class="my-2 text-gray-600 dark:text-gray-400">If you purchased Bezel with a one year of upgrades license, you're eligible for a 50% discount on the new Bezel plans. Enter your previous serial below to get your upgrade discount.</p>
+        <div id="upgrade-banner" class="mt-4 scroll-mt-28 rounded-3xl bg-gray-50 dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-700 shadow-sm px-6 py-5">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                <div class="flex-1 text-center lg:text-left">
+                    <h4 class="text-base font-semibold text-gray-900 dark:text-white">Upgrading from an earlier Bezel version?</h4>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Enter your previous serial for a 50% discount.</p>
+                </div>
+                <div class="w-full lg:w-auto lg:ml-auto mt-3 lg:mt-0">
+                    <button type="button" id="upgrade-cta" onclick="toggleUpgradeSection()" aria-controls="upgrade-form" aria-expanded="false" class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto rounded-lg bg-white dark:bg-gray-800 px-4 py-2 text-sm font-semibold text-purple-700 dark:text-purple-200 ring-1 ring-purple-300/70 dark:ring-purple-900/70 hover:bg-purple-50 dark:hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600">
+                        Enter serial
+                    </button>
+                    <form id="upgrade-form" onsubmit="submitUpgradeSerial(event)" class="hidden flex w-full max-w-[15rem] mx-auto lg:mx-0 lg:max-w-none lg:w-auto flex-col lg:flex-row items-center lg:justify-end gap-3">
+                        <input
+                            type="text"
+                            id="upgrade-serial"
+                            placeholder="ABCD-1234-ABCD-1234-ABCD"
+                        pattern="\s*[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}\s*"
+                            required
+                            class="w-full lg:w-60 px-4 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                        >
+                        <button
+                            type="submit"
+                            id="upgrade-submit"
+                            class="block w-full max-w-[15rem] mx-auto lg:mx-0 lg:w-auto px-4 py-2 text-sm font-semibold text-white bg-purple-600 rounded-lg hover:bg-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            Get Discount
+                        </button>
+                    </form>
+                    <p id="upgrade-error" class="hidden mt-2 text-sm text-red-600 text-center lg:text-right"></p>
+                    <div id="upgrade-actions" class="hidden mt-2 text-xs text-center lg:text-right text-gray-600 dark:text-gray-300">
+                        <button type="button" id="upgrade-open-yearly" onclick="reopenUpgradeCheckout('yearly')" class="underline hover:text-purple-600">Upgrade to yearly</button>
+                        <span class="mx-1 text-gray-400">•</span>
+                        <button type="button" id="upgrade-open-lifetime" onclick="reopenUpgradeCheckout('lifetime')" class="underline hover:text-purple-600">Upgrade to lifetime</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h3 class="mt-8 mb-2 text-lg text-gray-900 dark:text-white font-semibold">How do I transfer my license to another Mac?</h3>
         <p class="my-2 text-gray-600 dark:text-gray-400">Deactivate the Mac currently using your license by going to Settings > About and click the "Deactivate License.." button. After deactivating you can use the license key on another Mac.</p>
         <p class="my-2 text-gray-600 dark:text-gray-400">If you've lost access to the machine using your license, please contact us at <a class="underline" href="mailto:team@nonstrict.com">team@nonstrict.com</a>.</p>
@@ -335,7 +351,7 @@
 
     function openCheckout(licenseType) {
         const priceId = priceIdLookup[licenseType];
-        Paddle.Checkout.open({items:[{quantity: licenseType == 'team' ? 5 : 1, priceId}]});
+        Paddle.Checkout.open({settings: {displayMode: "overlay", variant: "one-page"}, items:[{quantity: licenseType == 'team' ? 5 : 1, priceId}]});
         window.plausible('Bezel Checkout Opened')
     }
 
@@ -388,6 +404,7 @@
         const priceId = priceIdLookup[plan];
         if (!priceId) return;
         const checkoutOptions = {
+            settings: { displayMode: "overlay", variant: "one-page" },
             items: [{ quantity: 1, priceId }],
             discountId: discountId,
             customData: { serial: upgradeSession.serial }

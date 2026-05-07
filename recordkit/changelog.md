@@ -1,5 +1,79 @@
 # Changelog
 
+### 0.85.0
+
+- Swift: Renamed App Store SDK from `RecordKitAppStore` to `RecordKitSandboxed`
+- Swift: Rewritten echo cancellation with configurable `AEC3Config` (sample rate, suppression mode, high-pass filter, residual echo gate)
+- Swift: Replaced `aec3Online`/`aec3Offline`/`aec3Both` cases with single `.aec3(AEC3Config)` case on `RKRecorder.EchoCancellation`
+
+### 0.84.0
+
+- Swift: Filter Core Audio aggregate devices from microphone list
+
+### 0.83.0
+
+- Swift: `probeSystemAudioRecordingStatus(backend:)` now available in non-sandboxed SDK
+- Swift: System audio permission checking improvements for Core Audio backend
+
+### 0.82.1
+
+- Fix data race crash when recording window corners
+
+### 0.82.0
+
+- Swift: System audio now defaults to Core Audio backend
+- Swift: Backend-aware system audio permissions via `RKAuthorization.systemAudioRecording(backend:)` and `RKAuthorization.requestSystemAudioRecording(backend:)`
+- Swift: Add `probeSystemAudioRecordingStatus(backend:)` for sandboxed apps
+- Electron: `requestSystemAudioRecording()` now returns `Promise<boolean>`
+
+### 0.81.0
+
+- Swift: Improved Core Audio tap process detection for system audio recording
+
+### 0.80.0
+
+- Swift: Add `.appleDevice` schema item for recording Apple device screens with rotation support
+- Swift: Deprecate `appleDeviceStaticOrientation` in favor of `appleDevice`
+- Swift: Add `.preferred` support for `RKAppleDevice`
+- Fix log writer close errors no longer failing a recording
+
+### 0.79.0
+
+- Swift: Add configurable `keyframeIntervalDuration` to `RKRecorder.Settings`
+- Swift: Add configurable `audioSegmentDuration` and `videoSegmentDuration` to `RKRecorder.Settings`
+
+### 0.78.0
+
+- Fix audio drift caused by clock domain mismatch
+
+### 0.77.0
+
+- Swift: Add `echoCancellation` parameter to microphone schema items for WebRTC AEC3-based echo cancellation
+- Swift: Add runtime warnings for missing camera/microphone entitlements and `NS*UsageDescription` Info.plist keys
+
+### 0.76.0
+
+- Swift: Add `.coreAudio` case to `SystemAudioBackend` for recording system audio via Core Audio process taps (macOS 14.2+)
+- Swift: Promote Core Audio backend from beta (`._beta_coreAudio` is now deprecated in favor of `.coreAudio`)
+
+### 0.75.0
+
+- Swift: Add `videoCodec` option to webcam schema item
+- Electron: Add new webcam recording options
+
+### 0.74.1
+
+- Fix recording of window larger than `maxSize` adding black bars
+
+### 0.74.0
+
+- Swift: Add `includeAudio` option for `windowBasedCrop`
+- Fix sharp recording for non-retina displays
+
+### 0.73.0
+
+- Electron: Add `videoCodec` and `colorSpace` options for screen recording
+
 ### 0.72.0
 
 - Swift: Add `SCKAudioStreamRecorder` for streaming system audio from ScreenCaptureKit

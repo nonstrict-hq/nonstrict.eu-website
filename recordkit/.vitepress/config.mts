@@ -24,7 +24,8 @@ export default defineConfig({
   base: '/recordkit/',
   srcExclude: ['README.md'],
   head: [
-    ['script', { defer: '', src: 'https://web.nonstrictmetrics.com/js/script.js', 'data-domain': 'nonstrict.eu', 'data-api': 'https://web.nonstrictmetrics.com/api/event' }]
+    ['script', { async: '', src: 'https://web.nonstrictmetrics.com/js/pa-5d7r576Ms9Yaj423O_jsY.js' }],
+    ['script', {}, 'window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()']
   ],
   sitemap: {
     hostname: 'https://nonstrict.eu/recordkit/',
@@ -72,6 +73,7 @@ export default defineConfig({
           { text: 'Apple Device Recording', link: '/guides/apple-device-recording' },
           { text: 'Output Formats', link: '/guides/output-formats' },
           { text: 'System Audio Recording', link: '/guides/system-audio-recording' },
+          { text: 'Echo Cancellation', link: '/guides/echo-cancellation' },
         ]
       },
       {
