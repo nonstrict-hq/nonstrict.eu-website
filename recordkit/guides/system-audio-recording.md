@@ -124,7 +124,7 @@ if !RKAuthorization.systemAudioRecording(backend: backend) {
 ```
 
 ```ts [Electron]
-const backend = 'default' // 'default' | '_beta_coreAudio' | 'screenCaptureKit'
+const backend = 'default' // 'default' | 'coreAudio' | 'screenCaptureKit'
 
 if (!(await recordkit.getSystemAudioRecordingAccess({ backend }))) {
   await recordkit.requestSystemAudioRecordingAccess({ backend })
