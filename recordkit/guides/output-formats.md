@@ -145,7 +145,7 @@ Enable segmented output by setting the output parameter to `.segmented`. You can
 ::: code-group
 ```swift [Swift]
 RKRecorder([
-    .display(displayID: selectedDisplay, output: .segmented(filenamePrefix: "screen"))
+    .display(displayID: selectedDisplay, output: .segmented(filenamePrefix: "screen", segmentCallback: nil))
 ])
 ```
 
@@ -165,7 +165,7 @@ Pass a callback to be notified each time a new segment is written to disk. This 
 ::: code-group
 ```swift [Swift]
 RKRecorder([
-    .display(displayID: selectedDisplay, output: .segmented(segmentCallback: { url in
+    .display(displayID: selectedDisplay, output: .segmented(filenamePrefix: "screen", segmentCallback: { url in
         // Upload the segment to your backend
         uploadSegment(url)
     }))

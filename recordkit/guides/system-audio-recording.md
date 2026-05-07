@@ -62,7 +62,7 @@ const recorder = await recordkit.createRecorder({
 
 ### Core Audio
 
-Core Audio has a friendlier flow where the user can grant system audio recording permissions with one click. This also ensures the user the app can't also capture the screen. It is supported on macOS 14.2+.
+Core Audio has a friendlier flow where the user can grant system audio recording permissions with one click. This also assures the user that the app can't also capture the screen. It is supported on macOS 14.2+.
 
 ::: code-group
 ```swift [Swift]
@@ -127,7 +127,7 @@ If you use `.systemAudio()` with the default backend, include `NSAudioCaptureUsa
 let backend: RKRecorder.SystemAudioBackend = .default
 
 if !RKAuthorization.systemAudioRecording(backend: backend) {
-    RKAuthorization.requestSystemAudioRecording(backend: backend)
+    try await RKAuthorization.requestSystemAudioRecording(backend: backend)
 }
 ```
 
