@@ -86,13 +86,13 @@ The `.dimension-changes.json` file contains an array of rotation events:
 ```json
 [
   {
-    "time": { "seconds": 0.0, "value": 0, "timescale": 1000 },
+    "time": { "seconds": 0.0, "value": 0, "timescale": 1000000000 },
     "dimensions": { "width": 1179.0, "height": 2556.0 },
     "rotation": 0,
     "animated": false
   },
   {
-    "time": { "seconds": 3.25, "value": 3250, "timescale": 1000 },
+    "time": { "seconds": 3.25, "value": 3250000000, "timescale": 1000000000 },
     "dimensions": { "width": 1179.0, "height": 2556.0 },
     "rotation": 90,
     "animated": true
@@ -114,7 +114,7 @@ Each entry contains:
 To display rotation correctly:
 
 1. **Parse the metadata file** alongside the video
-2. **Track playback time** against the `since` timestamps
+2. **Track playback time** against the `time` timestamps
 3. **Apply rotation transforms** as each timestamp is reached
 4. **Animate transitions** when `animated` is `true`, or apply instantly when `false`
 
