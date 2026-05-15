@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Apple Device Recording
 
 RecordKit can record iPhone and iPad screens via a wired USB connection. Unlike other recording solutions, RecordKit provides first-class support for device rotation—when the user rotates their device during recording, the video seamlessly captures this with accompanying metadata that enables smooth animated rotation transitions during playback.
@@ -68,7 +72,7 @@ const result = await recorder.stop()
 
 When the device rotates during recording, RecordKit writes the rotated video frames to the video file and records each rotation change in a companion metadata file. This enables players to animate rotation transitions during playback.
 
-<video src="/recordkit/playerview-device-rotate.mp4" autoplay loop muted playsinline></video>
+<video :src="withBase('/playerview-device-rotate.mp4')" autoplay loop muted playsinline></video>
 
 ### Output Files
 

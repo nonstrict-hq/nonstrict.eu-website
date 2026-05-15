@@ -22,6 +22,9 @@ public
 resources/_gen/
 tailwindcss
 
+# VitePress source dir (overrides the `public` rule above)
+!recordkit/public/
+
 # Bezel Hugo generated CSS
 bezel/static/styles.css
 bezel/assets/css/styles.css
