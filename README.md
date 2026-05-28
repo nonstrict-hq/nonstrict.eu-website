@@ -15,3 +15,4 @@ Run `./build.sh` in the root to build all subwebsites and integrate them togethe
 ## Deployment
 
 A GitHub action will run the `./build.sh` command and publish the `./dist` folder on GitHub Pages automatically on each push to main.
+
