@@ -1,0 +1,28 @@
+{{/* Target of the signup form's return_url (no-JS path) and a shareable download landing page. */}}
+{{ define "main" }}
+<section class="mx-auto max-w-2xl px-6 py-24 text-center sm:py-32">
+  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-300/70 bg-white/60 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-live dark:border-white/10 dark:bg-white/5">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-3.5 w-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+    You're on the list
+  </span>
+
+  <h1 class="mt-6 font-display text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+    Your download is starting
+  </h1>
+  <p class="mx-auto mt-4 max-w-md text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+    Thanks for trying the beta. If the download doesn't begin automatically, use the button below.
+  </p>
+
+  <a href="{{ .Site.Params.downloadMac }}" class="mt-8 inline-block rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+    Download for Mac
+  </a>
+
+  <p class="mt-8">
+    <a href="/captureinspector/" class="font-mono text-sm text-brand-700 underline transition hover:text-brand dark:text-brand">← Back to Capture Inspector</a>
+  </p>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>window.addEventListener('load', function () { window.location = '{{ .Site.Params.downloadMac }}'; });</script>
+{{ end }}

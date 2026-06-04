@@ -23,6 +23,10 @@ pushd fikkie
 . ./setup.sh
 popd
 
+pushd captureinspector
+. ./setup.sh
+popd
+
 # pushd _template_app
 # . ./setup.sh
 # popd

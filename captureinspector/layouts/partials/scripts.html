@@ -1,0 +1,194 @@
+{{/* Video modal — play buttons carry a data-video URL (YouTube/Tella embed). Empty = "coming soon". */}}
+<div id="video-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-5 backdrop-blur-sm">
+  <div class="relative w-full max-w-4xl">
+    <button id="video-close" type="button" aria-label="Close video" class="absolute -top-10 right-0 text-white/80 transition hover:text-white">
+      <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="aspect-video overflow-hidden rounded-xl bg-black shadow-2xl ring-1 ring-white/10">
+      <iframe id="video-frame" class="hidden h-full w-full" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <div id="video-placeholder" class="grid h-full w-full place-items-center bg-neutral-900 text-center">
+        <div>
+          <p class="font-display text-xl font-bold text-white">Demo video coming soon</p>
+          <p class="mt-2 font-mono text-sm text-neutral-400">We're recording a walkthrough of the beta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Video modal ---- */
+  var modal = document.getElementById('video-modal');
+  var frame = document.getElementById('video-frame');
+  var placeholder = document.getElementById('video-placeholder');
+
+  function openVideo(url) {
+    if (url) {
+      frame.src = url;
+      frame.classList.remove('hidden');
+      placeholder.classList.add('hidden');
+    } else {
+      frame.classList.add('hidden');
+      placeholder.classList.remove('hidden');
+    }
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideo() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    frame.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-video]').forEach(function (btn) {
+    btn.addEventListener('click', function () { openVideo(btn.getAttribute('data-video')); });
+  });
+  document.getElementById('video-close').addEventListener('click', closeVideo);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeVideo(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideo(); });
+
+  /* ---- Camera Center Stage badge, synced to the video timeline ---- */
+  /* Lighter violet so the ON state reads on the dark badge (the card's cam violet is too dark on black). */
+  var csBadge = document.getElementById('cs-badge');
+  var camVideo = document.getElementById('cam-video');
+  function setCenterStage(on) {
+    var dot = document.getElementById('cs-dot');
+    var lbl = document.getElementById('cs-label');
+    if (!dot || !lbl) return;
+    dot.className = 'h-1.5 w-1.5 rounded-full ' + (on ? 'bg-violet-400' : 'bg-neutral-500');
+    lbl.className = on ? 'text-violet-300' : 'text-neutral-300';
+    lbl.textContent = 'CENTER STAGE ' + (on ? 'ON' : 'OFF');
+  }
+  if (csBadge && camVideo) {
+    var CS_ON_TIME = 3.77;  /* the face jumps / Center Stage activates here; off before, off again when the loop restarts */
+    var csState = null;
+    setCenterStage(false);
+    (function syncCenterStage() {
+      var on = camVideo.currentTime >= CS_ON_TIME;
+      if (on !== csState) { csState = on; setCenterStage(on); }
+      requestAnimationFrame(syncCenterStage);
+    })();
+  } else if (csBadge) {
+    setCenterStage(false);
+  }
+
+  /* ---- Camera fps readout ---- */
+  if (!reduce) {
+    var fpsEl = document.getElementById('cam-fps');
+    if (fpsEl) setInterval(function () { fpsEl.textContent = (29 + Math.floor(Math.random() * 3)); }, 900);
+  }
+
+  /* ---- Microphone stereo level meter with peak hold ---- */
+  (function () {
+    var chans = [
+      { fill: document.getElementById('mic-l-fill'), peak: document.getElementById('mic-l-peak'), db: document.getElementById('mic-l-db'), off: 0.10, lvl: 0.34, pk: 0.52 },
+      { fill: document.getElementById('mic-r-fill'), peak: document.getElementById('mic-r-peak'), db: document.getElementById('mic-r-db'), off: -0.10, lvl: 0.28, pk: 0.44 }
+    ];
+    if (!chans[0].fill) return;
+    function dbText(v) { return Math.round(-48 + v * 48) + ' dB'; } /* 0..1 -> -48..0 dB */
+    function paint(c) {
+      c.fill.style.width = (c.lvl * 100) + '%';
+      c.peak.style.left = (c.pk * 100) + '%';
+      c.db.textContent = dbText(c.lvl);                  /* dB always matches the bar */
+    }
+    if (reduce) { chans.forEach(paint); return; }
+    var base = 0.4;
+    setInterval(function () {
+      base += (Math.random() - 0.5) * 0.18;              /* one shared source signal, livelier */
+      base = Math.max(0.12, Math.min(0.9, base));
+      chans.forEach(function (c) {
+        c.off = c.off * 0.6 + (Math.random() - 0.5) * 0.12; /* fast mean-reverting L/R spread (~±12%) */
+        c.lvl = Math.max(0.04, Math.min(0.98, base + c.off));
+        if (c.lvl > c.pk) c.pk = c.lvl; else c.pk = Math.max(c.lvl, c.pk - 0.045); /* peak hold + fall-off */
+        paint(c);
+      });
+    }, 80);
+  })();
+
+  /* ---- Beta signup: Cloudflare Turnstile (invisible, on submit) → subscribe → download ---- */
+  (function () {
+    var form = document.getElementById('beta-form');
+    if (!form) return;
+    var emailEl = document.getElementById('beta-email');
+    var errEl = document.getElementById('beta-error');
+    var thanks = document.getElementById('beta-thanks');
+    var fineprint = document.getElementById('beta-fineprint');
+    var dl = document.getElementById('beta-download');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var btnLabel = submitBtn ? submitBtn.textContent.trim() : '';
+    var siteKey = form.getAttribute('data-turnstile-sitekey') || '';
+    var hasTurnstile = siteKey && siteKey.indexOf('TODO') === -1;
+    var EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    var tsWidgetId = null;
+    var pendingEmail = '';
+    var done = false;                         /* one-shot guard: never download/subscribe more than once */
+
+    function setBusy(busy) {
+      if (!submitBtn) return;
+      submitBtn.disabled = busy;
+      submitBtn.textContent = busy ? 'Verifying…' : btnLabel;
+    }
+
+    function finish() {                       /* show thanks + start the download (once) */
+      if (done) return;
+      done = true;
+      form.classList.add('hidden');
+      if (fineprint) fineprint.classList.add('hidden');
+      thanks.classList.remove('hidden');
+      if (dl && dl.href) window.location = dl.href;   /* the .zip downloads without unloading the page */
+    }
+
+    function subscribe(token) {               /* fire-and-forget add to list; opaque (no-cors) is fine */
+      try {
+        var body = new URLSearchParams({
+          list_id: form.list_id.value,
+          source: form.source.value,
+          return_url: form.return_url.value,
+          email_address: pendingEmail
+        });
+        if (token) body.set('cf-turnstile-response', token);
+        fetch(form.action, { method: 'POST', mode: 'no-cors', body: body });
+      } catch (ignored) {}
+      finish();
+    }
+
+    /* Turnstile renders invisibly and only runs when we call execute() on submit. */
+    window.ciTurnstileReady = function () {
+      if (!hasTurnstile || !window.turnstile) return;
+      tsWidgetId = window.turnstile.render('#ts-widget', {
+        sitekey: siteKey,
+        execution: 'execute',
+        appearance: 'interaction-only',
+        callback: function (token) { subscribe(token); },
+        'error-callback': function () { setBusy(false); subscribe(null); },  /* don't trap the user */
+        'timeout-callback': function () { setBusy(false); },
+        'expired-callback': function () { if (tsWidgetId !== null) window.turnstile.reset(tsWidgetId); }
+      });
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var addr = (emailEl.value || '').trim();
+      if (!EMAIL_RE.test(addr)) {            /* loose "looks slightly valid" check */
+        errEl.classList.remove('hidden');
+        emailEl.focus();
+        return;
+      }
+      errEl.classList.add('hidden');
+      pendingEmail = addr;
+
+      if (hasTurnstile && tsWidgetId !== null && window.turnstile) {
+        setBusy(true);
+        window.turnstile.execute(tsWidgetId);  /* invisible unless a challenge is needed → callback → subscribe */
+      } else {
+        subscribe(null);                       /* Turnstile not configured/ready: proceed */
+      }
+    });
+  })();
+})();
+</script>

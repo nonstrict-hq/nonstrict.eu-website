@@ -1,0 +1,40 @@
+baseURL = "https://nonstrict.eu/captureinspector/"
+languageCode = "en-US"
+disablePathToLower = true
+title = "Capture Inspector"
+enableRobotsTXT = true
+
+# Single landing page: no taxonomies (tags/categories) or RSS feeds.
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  description = "Capture Inspector surfaces detailed, real-time information about the cameras, microphones, and displays connected to your Mac."
+  ogImage = "images/og-main.jpg"
+  favicon = "/captureinspector/images/favicon.svg"
+
+  # Beta download + mailing signup (single source of truth).
+  downloadMac = "https://download.nonstrict.eu/captureinspector/mac/CaptureInspector.zip"
+  # TODO: create the "captureinspector-updates" list in NS Customer before going live.
+  mailingSubscribeURL = "https://customers.nonstrict.com/api/v1/mailing/subscribe"
+  mailingListId = "captureinspector-updates"
+  mailingSource = "captureinspector-website"
+  # Demo video: set to the YouTube/Tella *embed* URL once recorded. Empty = play buttons hidden.
+  demoVideoURL = ""
+  # Cloudflare Turnstile (invisible, runs on submit). Paste the portal's public site key here
+  # to enable; leave empty to disable. The subscribe endpoint must verify cf-turnstile-response.
+  turnstileSiteKey = "0x4AAAAAACszGculHHNbfIfG"
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+
+[sitemap]
+  filename = "sitemap.xml"

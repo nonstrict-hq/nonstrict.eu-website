@@ -1,0 +1,126 @@
+<section class="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
+  <div class="mx-auto max-w-2xl text-center">
+    <h2 class="font-display text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
+      A live readout of your hardware
+    </h2>
+    <p class="mt-3 text-neutral-600 dark:text-neutral-300">
+      Capture Inspector watches every device in real time:<br>
+      formats, levels, and changes the moment they happen.
+    </p>
+  </div>
+
+  <div class="mt-12 grid gap-5 md:grid-cols-3">
+
+    {{/* ---------- Camera (violet) ---------- */}}
+    <div class="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-neutral-900">
+      <div class="flex items-center gap-3">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-cam/10 text-cam">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.5-2.5v9L15 14M4 7h9a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg>
+        </span>
+        <h3 class="font-display text-lg font-bold text-neutral-900 dark:text-white">Cameras</h3>
+      </div>
+
+      {{/* Real clip: someone sits, Center Stage turns on, they leave, it turns off.
+           Drop the file at static/video/camera-centerstage.mp4 (falls back to the gradient until then). */}}
+      <div class="relative mt-4 aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-cam/30 via-neutral-800 to-neutral-900">
+        <video id="cam-video" class="h-full w-full object-cover" autoplay loop muted playsinline preload="auto">
+          <source src="/captureinspector/video/camera-centerstage.mp4" type="video/mp4">
+        </video>
+        <span id="cs-badge" class="absolute left-2 top-2 inline-flex items-center gap-1.5 rounded-md bg-black/55 px-2 py-1 font-mono text-[10px] font-bold backdrop-blur transition">
+          <span id="cs-dot" class="h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+          <span id="cs-label" class="text-neutral-300">CENTER STAGE OFF</span>
+        </span>
+        <div class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-black/55 px-2.5 py-1.5 font-mono text-[11px] text-white/90">
+          <span>1920×1080</span>
+          <span><span id="cam-fps">30</span> fps · 420v</span>
+        </div>
+      </div>
+
+      <p class="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+        Formats, resolution, frame rate and color space, plus virtual-camera detection, Center Stage and UVC controls.
+      </p>
+    </div>
+
+    {{/* ---------- Microphone (amber) ---------- */}}
+    <div class="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-neutral-900">
+      <div class="flex items-center gap-3">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-mic/10 text-mic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a3 3 0 00-3 3v6a3 3 0 006 0V6a3 3 0 00-3-3zM5 11a7 7 0 0014 0M12 18v3"/></svg>
+        </span>
+        <h3 class="font-display text-lg font-bold text-neutral-900 dark:text-white">Microphones</h3>
+      </div>
+
+      {{/* Stereo level meter: L/R channels, orange fill, peak-hold marker that falls off. */}}
+      <div class="mt-4 flex aspect-video flex-col justify-center gap-3 rounded-lg bg-neutral-50 p-4 dark:bg-neutral-950/60">
+
+        {{/* Channel L */}}
+        <div class="flex items-center gap-2.5">
+          <span class="w-3 font-mono text-[10px] font-bold text-neutral-400 dark:text-neutral-500">L</span>
+          <div class="relative h-2.5 flex-1 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/10">
+            <div id="mic-l-fill" class="absolute inset-y-0 left-0 rounded-full bg-mic transition-[width] duration-75 ease-linear" style="width:34%"></div>
+            <div id="mic-l-peak" class="absolute inset-y-0 w-[3px] rounded-full bg-amber-600 transition-[left] duration-75 ease-linear" style="left:52%"></div>
+          </div>
+          <span id="mic-l-db" class="w-12 text-right font-mono text-[10px] tabular-nums text-neutral-500 dark:text-neutral-400">-16 dB</span>
+        </div>
+
+        {{/* Channel R */}}
+        <div class="flex items-center gap-2.5">
+          <span class="w-3 font-mono text-[10px] font-bold text-neutral-400 dark:text-neutral-500">R</span>
+          <div class="relative h-2.5 flex-1 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/10">
+            <div id="mic-r-fill" class="absolute inset-y-0 left-0 rounded-full bg-mic transition-[width] duration-75 ease-linear" style="width:28%"></div>
+            <div id="mic-r-peak" class="absolute inset-y-0 w-[3px] rounded-full bg-amber-600 transition-[left] duration-75 ease-linear" style="left:44%"></div>
+          </div>
+          <span id="mic-r-db" class="w-12 text-right font-mono text-[10px] tabular-nums text-neutral-500 dark:text-neutral-400">-20 dB</span>
+        </div>
+
+        <div class="mt-1 text-center leading-tight">
+          <p class="text-[11px] font-semibold text-neutral-700 dark:text-neutral-200">the t.bone MB7 Beta USB</p>
+          <p class="mt-0.5 font-mono text-[10px] text-neutral-500 dark:text-neutral-400">48 kHz · 16-bit · stereo</p>
+        </div>
+      </div>
+
+      <p class="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+        Active format, sample rate, input source, live levels and mute state, plus which app is currently listening.
+      </p>
+    </div>
+
+    {{/* ---------- Display (cyan) — reads the visitor's real window ---------- */}}
+    <div class="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-neutral-900">
+      <div class="flex items-center gap-3">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-disp/10 text-disp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18v11H3zM8 21h8M12 16v5"/></svg>
+        </span>
+        <h3 class="font-display text-lg font-bold text-neutral-900 dark:text-white">Displays</h3>
+      </div>
+
+      {{/* Display arrangement, macOS-style: proportional screens, bottoms aligned and close
+           together, selected one with a menu-bar strip, built-in one with a notch. */}}
+      <div class="mt-4 flex aspect-video items-center justify-center rounded-lg bg-neutral-50 p-4 dark:bg-neutral-950/60">
+        <div class="flex items-end gap-1.5">
+
+          {{/* Studio Display (selected) */}}
+          <div class="flex h-20 w-36 flex-col overflow-hidden rounded-md border-2 border-disp bg-disp/10">
+            <div class="h-2.5 w-full border-b border-disp/25 bg-disp/15"></div>
+            <div class="flex flex-1 flex-col items-center justify-center leading-tight">
+              <span class="text-[10px] font-bold text-disp">Studio Display</span>
+              <span class="font-mono text-[9px] text-neutral-500 dark:text-neutral-400">2560 × 1440</span>
+            </div>
+          </div>
+
+          {{/* Built-in Retina Display (with notch) */}}
+          <div class="relative flex h-[4.5rem] w-28 flex-col items-center justify-center overflow-hidden rounded-md border-2 border-neutral-300 bg-neutral-100 px-1.5 text-center leading-tight dark:border-white/15 dark:bg-white/5">
+            <div class="absolute left-1/2 top-0 h-2 w-6 -translate-x-1/2 rounded-b-lg bg-neutral-300 dark:bg-white/15"></div>
+            <span class="text-[10px] font-bold text-neutral-700 dark:text-neutral-200">Built-in Retina Display</span>
+            <span class="font-mono text-[9px] text-neutral-500 dark:text-neutral-400">1800 × 1169</span>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+        Arrangement, resolution and color for every display, updated the instant you connect, disconnect, or resize one.
+      </p>
+    </div>
+
+  </div>
+</section>

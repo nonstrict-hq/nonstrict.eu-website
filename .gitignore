@@ -1,6 +1,9 @@
 # MacOS
 .DS_Store
 
+# SMB network volume delete-pending artifacts
+.smbdelete*
+
 # vim
 *.swp
 
@@ -28,6 +31,13 @@ tailwindcss
 # Bezel Hugo generated CSS
 bezel/static/styles.css
 bezel/assets/css/styles.css
+
+# Capture Inspector Hugo generated CSS
+captureinspector/assets/css/styles.css
+# Raw design sources (heavy; optimized/encoded versions live in static/)
+captureinspector/captureinspector.png
+captureinspector/centerstage_short.mov
+captureinspector/cleanshot_*.png
 
 # Vuepress
 dist

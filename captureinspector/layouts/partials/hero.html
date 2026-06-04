@@ -1,0 +1,54 @@
+<section class="relative overflow-hidden">
+  {{/* Soft blue "info" glow on the gray canvas — restrained. */}}
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 -top-24 -z-10 flex justify-center">
+    <div class="h-72 w-[42rem] max-w-full rounded-full bg-brand/20 blur-3xl dark:bg-brand/15"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-5 pt-14 text-center sm:px-8 sm:pt-20">
+    <p class="inline-flex items-center gap-2 rounded-full border border-neutral-300/70 bg-white/60 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
+      <span class="relative flex h-2 w-2">
+        <span class="ci-ping absolute inline-flex h-full w-full rounded-full bg-live"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-live"></span>
+      </span>
+      Now in beta
+    </p>
+
+    <h1 class="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 dark:text-white sm:text-7xl">
+      Capture Inspector
+    </h1>
+    <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-300 sm:text-xl">
+      Real-time details on every camera, microphone, and display.
+    </p>
+
+    <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href="#beta" class="w-full rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 sm:w-auto">
+        Get the beta
+      </a>
+      {{ with .Site.Params.demoVideoURL }}
+      <button type="button" data-video="{{ . }}" class="group inline-flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white/70 px-5 py-3 text-sm font-semibold text-neutral-800 transition hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10 sm:w-auto">
+        <svg viewBox="0 0 24 24" class="h-4 w-4 fill-brand" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+        Watch the demo
+      </button>
+      {{ end }}
+    </div>
+  </div>
+
+  {{/* Hero media: real app screenshot with a play overlay → opens the video modal. */}}
+  <div class="mx-auto mt-12 max-w-5xl px-5 sm:px-8">
+    <figure class="group relative overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
+      {{ with .Site.Params.demoVideoURL }}
+      <button type="button" data-video="{{ . }}" aria-label="Play the demo video" class="absolute inset-0 z-10 grid place-items-center">
+        <span class="grid h-16 w-16 place-items-center rounded-full bg-white/90 shadow-xl ring-1 ring-black/5 backdrop-blur transition duration-200 group-hover:scale-105">
+          <svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-brand" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+        </span>
+      </button>
+      {{ end }}
+      <img
+        src="/captureinspector/images/captureinspector-hero.webp"
+        width="2400" height="1660" loading="eager" fetchpriority="high"
+        alt="Capture Inspector on macOS showing live camera, microphone and display details"
+        class="w-full"
+      />
+    </figure>
+  </div>
+</section>

@@ -48,6 +48,11 @@ pushd fikkie
 mv out ../dist/fikkie
 popd
 
+pushd captureinspector
+. ./build.sh
+mv Output ../dist/captureinspector
+popd
+
 # pushd _template_app
 # . ./build.sh
 # mv out ../dist/_template_app

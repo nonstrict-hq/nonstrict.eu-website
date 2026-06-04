@@ -1,0 +1,62 @@
+{{/* Beta signup → adds email to NS Customer, then hands over the download.
+     Progressive enhancement: works as a native form POST (no JS); JS upgrades it to
+     an inline "you're on the list" + auto-download. See scripts.html for the handler.
+     Bot protection: Cloudflare Turnstile (invisible, runs on submit) — set
+     params.turnstileSiteKey in hugo.toml to enable; the subscribe endpoint must
+     verify the cf-turnstile-response token server-side. */}}
+<section id="beta" class="scroll-mt-20">
+  <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
+    <h2 class="font-display text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
+      Try the beta
+    </h2>
+    <p class="mx-auto mt-3 max-w-xl text-neutral-600 dark:text-neutral-300">
+      Drop your email and download the beta.<br>
+      <span class="text-neutral-900 dark:text-white">Free while in beta. Mac now, Windows soon.</span>
+    </p>
+
+    {{/* The form: native POST is the no-JS fallback; JS intercepts for the inline flow. */}}
+    <form
+      id="beta-form"
+      class="mx-auto mt-7 flex max-w-md flex-col gap-3 sm:flex-row"
+      action="{{ .Site.Params.mailingSubscribeURL }}" method="post" novalidate
+      data-turnstile-sitekey="{{ .Site.Params.turnstileSiteKey }}"
+    >
+      <input type="hidden" name="list_id" value="{{ .Site.Params.mailingListId }}">
+      <input type="hidden" name="source" value="{{ .Site.Params.mailingSource }}">
+      <input type="hidden" name="return_url" value="{{ "thank-you/" | absURL }}">
+      <label for="beta-email" class="sr-only">Email address</label>
+      <input
+        id="beta-email" type="email" name="email_address" autocomplete="email" required
+        placeholder="you@example.com"
+        class="flex-1 rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 shadow-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40 dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder-neutral-500"
+      />
+      <button type="submit" class="rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 disabled:opacity-60">
+        Get the link
+      </button>
+    </form>
+    <p id="beta-error" class="mt-3 hidden font-mono text-xs text-red-600 dark:text-red-400">Please enter a valid email address.</p>
+
+    {{/* Turnstile renders here only if it needs to show an interactive challenge. */}}
+    <div id="ts-widget" class="mt-4 flex justify-center"></div>
+
+    {{/* Shown by JS after a successful submit. */}}
+    <div id="beta-thanks" class="mx-auto mt-7 hidden max-w-md">
+      <p class="flex items-center justify-center gap-2 font-semibold text-neutral-900 dark:text-white">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-live"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        You're on the list. Your download should start automatically.
+      </p>
+      <a
+        id="beta-download" href="{{ .Site.Params.downloadMac }}"
+        class="mt-5 inline-block rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
+      >Download for Mac</a>
+      <p class="mt-3 font-mono text-xs text-neutral-400 dark:text-neutral-500">Didn't start? Use the button above.</p>
+    </div>
+
+    <p id="beta-fineprint" class="mt-3 font-mono text-xs text-neutral-400 dark:text-neutral-500">No spam, just the occasional beta update.</p>
+  </div>
+</section>
+
+{{/* Load Turnstile only when a site key is configured. */}}
+{{ with .Site.Params.turnstileSiteKey }}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=ciTurnstileReady&render=explicit" async defer></script>
+{{ end }}

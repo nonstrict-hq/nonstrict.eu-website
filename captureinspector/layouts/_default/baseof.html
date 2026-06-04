@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="bg-neutral-100 dark:bg-neutral-950">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .Params.fullTitle }}{{ .Title }}{{ else if and .Title (not .IsHome) }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    {{- $ogTitle := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
+    {{- if .Params.fullTitle }}{{ $ogTitle = .Title }}{{ end -}}
+    {{- $ogDesc := or .Description .Site.Params.description -}}
+    {{- $ogImage := .Site.Params.ogImage -}}
+    {{- with .Params.images }}{{ $ogImage = index . 0 }}{{ end -}}
+    {{- $ogImage = printf "%s%s" .Site.BaseURL $ogImage -}}
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Capture Inspector">
+    <meta property="og:title" content="{{ $ogTitle }}">
+    <meta property="og:description" content="{{ $ogDesc }}">
+    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Capture Inspector running on macOS">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $ogTitle }}">
+    <meta name="twitter:description" content="{{ $ogDesc }}">
+    <meta name="twitter:image" content="{{ $ogImage }}">
+    <meta name="twitter:image:alt" content="Capture Inspector running on macOS">
+
+    <!-- Favicon (the info-"i" mark) -->
+    <link rel="icon" type="image/svg+xml" href="/captureinspector/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="/captureinspector/images/favicon.png">
+    <link rel="apple-touch-icon" href="/captureinspector/images/apple-touch-icon.png">
+
+    <!-- Theme color follows the gray canvas -->
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+
+    <!-- Preload the display font used above the fold -->
+    <link rel="preload" href="/captureinspector/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Styles -->
+    {{ with resources.Get "css/styles.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+    {{ end }}
+
+    {{ block "head" . }}{{ end }}
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://web.nonstrictmetrics.com/js/pa-5d7r576Ms9Yaj423O_jsY.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+
+    {{ with .Params.robots }}
+    <meta name="robots" content="{{ . }}">
+    {{ end }}
+</head>
+<body class="bg-neutral-100 font-sans text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100">
+    {{ block "header" . }}
+        {{ partial "header.html" . }}
+    {{ end }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ block "scripts" . }}{{ partial "scripts.html" . }}{{ end }}
+</body>
+</html>
