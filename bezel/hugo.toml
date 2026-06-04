@@ -8,6 +8,8 @@ enableRobotsTXT = true
   description = "The best way to display and record any iPhone, iPad, and Apple TV."
   ogImage = "images/og-main.png"
   favicon = "/bezel/images/favicon.png"
+  # Cloudflare Turnstile for the newsletter form (NS Customer now requires a verified token).
+  turnstileSiteKey = "0x4AAAAAACszGculHHNbfIfG"
 
 [permalinks]
   article = "/article/:slug/"
