@@ -119,7 +119,6 @@
     var tsWidget = document.getElementById('ts-widget');
     var thanks = document.getElementById('beta-thanks');
     var fineprint = document.getElementById('beta-fineprint');
-    var dl = document.getElementById('beta-download');
     var submitBtn = form.querySelector('button[type="submit"]');
     var btnLabel = submitBtn ? submitBtn.textContent.trim() : '';
     var siteKey = form.getAttribute('data-turnstile-sitekey') || '';
@@ -142,15 +141,14 @@
       if (hasTurnstile && tsWidgetId !== null && window.turnstile) window.turnstile.reset(tsWidgetId);
     }
 
-    function finish() {                       /* show thanks + start the download (once) */
+    function finish() {                       /* reveal the platform-aware download button (once) */
       if (done) return;
       done = true;
       form.classList.add('hidden');
       if (fineprint) fineprint.classList.add('hidden');
       if (errEl) errEl.classList.add('hidden');         /* clear any stale error (sibling of the form) */
       if (tsWidget) tsWidget.classList.add('hidden');   /* the solved widget is a sibling too — hide it */
-      thanks.classList.remove('hidden');
-      if (dl && dl.href) window.location = dl.href;   /* the .zip downloads without unloading the page */
+      thanks.classList.remove('hidden');                /* the split button picks up the chosen platform */
     }
 
     /* Add to the NS Customer list via a real CORS request and act on the JSON reply. */
@@ -192,6 +190,9 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var addr = (emailEl.value || '').trim();
+      /* DEV ONLY (data-dev-skip is emitted only under `hugo server`): an empty email
+         skips the subscribe entirely and just reveals the download button. */
+      if (form.getAttribute('data-dev-skip') && !addr) { finish(); return; }
       if (!EMAIL_RE.test(addr)) {            /* loose "looks slightly valid" check */
         errEl.textContent = 'Please enter a valid email address.';
         errEl.classList.remove('hidden');
@@ -208,6 +209,91 @@
         subscribe(null);                       /* Turnstile not configured/ready: try anyway (server may reject) */
       }
     });
+  })();
+
+  /* ---- Platform switch: hero highlight + screenshot + download default ---- */
+  (function () {
+    var picks = document.querySelectorAll('[data-platform-pick]');
+    if (!picks.length) return;
+    var shot = document.getElementById('hero-shot');
+    var dlBox = document.getElementById('beta-download');
+    var dlPrimary = document.getElementById('dl-primary');
+    var dlToggle = document.getElementById('dl-toggle');
+    var dlMenu = document.getElementById('dl-menu');
+
+    /* Full class strings (kept literal so Tailwind keeps them on build). */
+    var PLAT_ACTIVE = 'ci-plat font-semibold underline-offset-4 transition text-brand underline decoration-2 decoration-brand';
+    var PLAT_IDLE = 'ci-plat font-semibold underline-offset-4 transition text-neutral-600 underline decoration-dotted hover:text-brand dark:text-neutral-300 cursor-pointer';
+
+    var DL = dlBox ? {
+      mac:  { label: 'Download for Mac',             menu: 'macOS',           href: dlBox.dataset.dlMac },
+      wint: { label: 'Download for Windows (Intel)', menu: 'Windows (Intel)', href: dlBox.dataset.dlWinIntel },
+      warm: { label: 'Download for Windows (Arm)',   menu: 'Windows (Arm)',   href: dlBox.dataset.dlWinArm }
+    } : null;
+
+    /* platform → primary build + the rest (in menu order); the others stay reachable so
+       there's always an escape to another OS/arch. */
+    var LAYOUT = {
+      mac:     { primary: 'mac',  menu: ['wint', 'warm'] },
+      windows: { primary: 'wint', menu: ['warm', 'mac'] }
+    };
+
+    function openMenu() { if (dlMenu) { dlMenu.classList.remove('hidden'); dlToggle.setAttribute('aria-expanded', 'true'); } }
+    function closeMenu() { if (dlMenu) { dlMenu.classList.add('hidden'); dlToggle.setAttribute('aria-expanded', 'false'); } }
+
+    function applyDownload(p) {
+      if (!DL || !dlPrimary || !dlMenu) return;
+      var lay = LAYOUT[p];
+      var prim = DL[lay.primary];
+      dlPrimary.textContent = prim.label;
+      dlPrimary.href = prim.href;
+      dlMenu.innerHTML = '';
+      lay.menu.forEach(function (key) {
+        var item = DL[key];
+        var a = document.createElement('a');
+        a.setAttribute('role', 'menuitem');
+        a.href = item.href;
+        a.textContent = item.menu;
+        a.className = 'block whitespace-nowrap px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-white/5';
+        dlMenu.appendChild(a);
+      });
+    }
+
+    function setPlatform(p) {
+      picks.forEach(function (btn) {
+        var active = btn.getAttribute('data-platform-pick') === p;
+        btn.className = active ? PLAT_ACTIVE : PLAT_IDLE;
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if (shot) {
+        var src = p === 'windows' ? shot.dataset.shotWindows : shot.dataset.shotMac;
+        var alt = p === 'windows' ? shot.dataset.altWindows : shot.dataset.altMac;
+        if (src) shot.src = src;
+        if (alt) shot.alt = alt;
+      }
+      applyDownload(p);
+    }
+
+    picks.forEach(function (btn) {
+      btn.addEventListener('click', function () { setPlatform(btn.getAttribute('data-platform-pick')); closeMenu(); });
+    });
+
+    if (dlToggle && dlMenu) {
+      dlToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (dlMenu.classList.contains('hidden')) openMenu(); else closeMenu();
+      });
+      document.addEventListener('click', function (e) { if (dlBox && !dlBox.contains(e.target)) closeMenu(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    }
+
+    /* Initial selection: highlight the visitor's own OS (Windows defaults to the Intel build). */
+    function detectOS() {
+      var pf = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+      var ua = navigator.userAgent || '';
+      return (/win/i.test(pf) || /windows/i.test(ua)) ? 'windows' : 'mac';
+    }
+    setPlatform(detectOS());
   })();
 })();
 </script>

@@ -10,7 +10,7 @@
     </h2>
     <p class="mx-auto mt-3 max-w-xl text-neutral-600 dark:text-neutral-300">
       Drop your email and download the beta.<br>
-      <span class="text-neutral-900 dark:text-white">Free while in beta. Mac now, Windows soon.</span>
+      <span class="text-neutral-900 dark:text-white">Free while in beta. Mac and Windows.</span>
     </p>
 
     {{/* JS intercepts submit and posts via fetch (CORS); see scripts.html. */}}
@@ -19,6 +19,9 @@
       class="mx-auto mt-7 flex max-w-md flex-col gap-3 sm:flex-row"
       action="{{ .Site.Params.mailingSubscribeURL }}" method="post" novalidate
       data-turnstile-sitekey="{{ .Site.Params.turnstileSiteKey }}"
+      {{/* DEV ONLY (hugo server): lets an empty submit skip the subscribe and reveal the
+           download button — handy for local testing. Absent in production builds. */}}
+      {{ if hugo.IsServer }}data-dev-skip="1"{{ end }}
     >
       <input type="hidden" name="list_id" value="{{ .Site.Params.mailingListId }}">
       <input type="hidden" name="source" value="{{ .Site.Params.mailingSource }}">
@@ -41,13 +44,31 @@
     <div id="beta-thanks" class="mx-auto mt-7 hidden max-w-md">
       <p class="flex items-center justify-center gap-2 font-semibold text-neutral-900 dark:text-white">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-live"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-        You're on the list. Your download should start automatically.
+        You're on the list, grab your download:
       </p>
-      <a
-        id="beta-download" href="{{ .Site.Params.downloadMac }}"
-        class="mt-5 inline-block rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
-      >Download for Mac</a>
-      <p class="mt-3 font-mono text-xs text-neutral-400 dark:text-neutral-500">Didn't start? Use the button above.</p>
+
+      {{/* Split download button: the primary action follows the selected platform; the caret
+           opens the other builds so there's always an escape. Wired up in scripts.html. */}}
+      <div
+        id="beta-download" class="relative mt-5 inline-flex"
+        data-dl-mac="{{ .Site.Params.downloadMac }}"
+        data-dl-win-intel="{{ .Site.Params.downloadWindowsIntel }}"
+        data-dl-win-arm="{{ .Site.Params.downloadWindowsArm }}"
+      >
+        <a id="dl-primary" href="{{ .Site.Params.downloadMac }}"
+          class="rounded-l-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+          Download for Mac
+        </a>
+        <button id="dl-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="More download options"
+          class="flex items-center rounded-r-lg border-l border-white/25 bg-brand px-3 text-white shadow-sm transition hover:bg-brand-700">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </button>
+        {{/* Items injected by scripts.html based on the selected platform. */}}
+        <div id="dl-menu" role="menu"
+          class="absolute right-0 top-full z-20 mt-2 hidden min-w-full overflow-hidden rounded-lg border border-neutral-200 bg-white py-1 text-left shadow-xl dark:border-white/10 dark:bg-neutral-900"></div>
+      </div>
+
+      <p class="mt-3 font-mono text-xs text-neutral-400 dark:text-neutral-500">Other platforms are in the&nbsp;▾&nbsp;menu.</p>
     </div>
 
     <p id="beta-fineprint" class="mt-3 font-mono text-xs text-neutral-400 dark:text-neutral-500">No spam, just the occasional beta update.</p>

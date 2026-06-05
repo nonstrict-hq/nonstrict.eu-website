@@ -14,6 +14,10 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
   # Beta download + mailing signup (single source of truth).
   downloadMac = "https://download.nonstrict.eu/captureinspector/mac/CaptureInspector.zip"
+  downloadWindowsIntel = "https://download.nonstrict.eu/captureinspector/windows/CaptureInspectorSetup.exe"
+  downloadWindowsArm = "https://download.nonstrict.eu/captureinspector/windows/CaptureInspectorSetup-arm64.exe"
+  # Beta feedback form (Tally) — linked from the header.
+  feedbackURL = "https://tally.so/r/Pdr5N1"
   # TODO: create the "captureinspector-updates" list in NS Customer before going live.
   mailingSubscribeURL = "https://customers.nonstrict.com/api/v1/mailing/subscribe"
   mailingListId = "captureinspector-updates"

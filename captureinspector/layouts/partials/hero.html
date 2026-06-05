@@ -17,7 +17,15 @@
       Capture Inspector
     </h1>
     <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-300 sm:text-xl">
-      Real-time details on every camera, microphone, and display.
+      Real-time details on every camera, microphone, and display<br class="hidden sm:block">
+      {{/* Platform switch: the active one is highlighted, the other is a link that
+           toggles the hero screenshot + the download default. Styled by scripts.html. */}}
+      <span class="inline-flex items-center gap-1.5">
+        for
+        <button type="button" data-platform-pick="mac" class="ci-plat font-semibold underline-offset-4 transition">Mac</button>
+        and
+        <button type="button" data-platform-pick="windows" class="ci-plat font-semibold underline-offset-4 transition">Windows</button><span class="-ml-1.5">.</span>
+      </span>
     </p>
 
     <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -44,7 +52,12 @@
       </button>
       {{ end }}
       <img
+        id="hero-shot"
         src="/captureinspector/images/captureinspector-hero.webp"
+        data-shot-mac="/captureinspector/images/captureinspector-hero.webp"
+        data-shot-windows="/captureinspector/images/captureinspector-hero-windows.webp"
+        data-alt-mac="Capture Inspector on macOS showing live camera, microphone and display details"
+        data-alt-windows="Capture Inspector on Windows showing live camera, microphone and display details"
         width="2400" height="1660" loading="eager" fetchpriority="high"
         alt="Capture Inspector on macOS showing live camera, microphone and display details"
         class="w-full"
