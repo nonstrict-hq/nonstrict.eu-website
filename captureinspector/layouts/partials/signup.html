@@ -1,9 +1,8 @@
-{{/* Beta signup → adds email to NS Customer, then hands over the download.
-     Progressive enhancement: works as a native form POST (no JS); JS upgrades it to
-     an inline "you're on the list" + auto-download. See scripts.html for the handler.
+{{/* Beta signup → adds email to NS Customer over a CORS request, then hands over the
+     download inline. Requires JS (Turnstile + the fetch handler in scripts.html).
      Bot protection: Cloudflare Turnstile (invisible, runs on submit) — set
-     params.turnstileSiteKey in hugo.toml to enable; the subscribe endpoint must
-     verify the cf-turnstile-response token server-side. */}}
+     params.turnstileSiteKey in hugo.toml to enable; the subscribe endpoint verifies
+     the cf-turnstile-response token server-side and replies with JSON. */}}
 <section id="beta" class="scroll-mt-20">
   <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
     <h2 class="font-display text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
@@ -14,7 +13,7 @@
       <span class="text-neutral-900 dark:text-white">Free while in beta. Mac now, Windows soon.</span>
     </p>
 
-    {{/* The form: native POST is the no-JS fallback; JS intercepts for the inline flow. */}}
+    {{/* JS intercepts submit and posts via fetch (CORS); see scripts.html. */}}
     <form
       id="beta-form"
       class="mx-auto mt-7 flex max-w-md flex-col gap-3 sm:flex-row"
@@ -23,7 +22,6 @@
     >
       <input type="hidden" name="list_id" value="{{ .Site.Params.mailingListId }}">
       <input type="hidden" name="source" value="{{ .Site.Params.mailingSource }}">
-      <input type="hidden" name="return_url" value="{{ "thank-you/" | absURL }}">
       <label for="beta-email" class="sr-only">Email address</label>
       <input
         id="beta-email" type="email" name="email_address" autocomplete="email" required

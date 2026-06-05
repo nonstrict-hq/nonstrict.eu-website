@@ -110,12 +110,13 @@
     }, 80);
   })();
 
-  /* ---- Beta signup: Cloudflare Turnstile (invisible, on submit) → subscribe → download ---- */
+  /* ---- Beta signup: Cloudflare Turnstile (invisible, on submit) → CORS subscribe → download ---- */
   (function () {
     var form = document.getElementById('beta-form');
     if (!form) return;
     var emailEl = document.getElementById('beta-email');
     var errEl = document.getElementById('beta-error');
+    var tsWidget = document.getElementById('ts-widget');
     var thanks = document.getElementById('beta-thanks');
     var fineprint = document.getElementById('beta-fineprint');
     var dl = document.getElementById('beta-download');
@@ -134,27 +135,44 @@
       submitBtn.textContent = busy ? 'Verifying…' : btnLabel;
     }
 
+    function showError(msg) {                  /* re-enable, surface the problem, get a fresh token for retry */
+      setBusy(false);
+      errEl.textContent = msg || 'Something went wrong. Please try again.';
+      errEl.classList.remove('hidden');
+      if (hasTurnstile && tsWidgetId !== null && window.turnstile) window.turnstile.reset(tsWidgetId);
+    }
+
     function finish() {                       /* show thanks + start the download (once) */
       if (done) return;
       done = true;
       form.classList.add('hidden');
       if (fineprint) fineprint.classList.add('hidden');
+      if (errEl) errEl.classList.add('hidden');         /* clear any stale error (sibling of the form) */
+      if (tsWidget) tsWidget.classList.add('hidden');   /* the solved widget is a sibling too — hide it */
       thanks.classList.remove('hidden');
       if (dl && dl.href) window.location = dl.href;   /* the .zip downloads without unloading the page */
     }
 
-    function subscribe(token) {               /* fire-and-forget add to list; opaque (no-cors) is fine */
+    /* Add to the NS Customer list via a real CORS request and act on the JSON reply. */
+    async function subscribe(token) {
+      var body = new URLSearchParams({
+        list_id: form.list_id.value,
+        source: form.source.value,
+        email_address: pendingEmail
+      });
+      if (token) body.set('cf-turnstile-response', token);
       try {
-        var body = new URLSearchParams({
-          list_id: form.list_id.value,
-          source: form.source.value,
-          return_url: form.return_url.value,
-          email_address: pendingEmail
-        });
-        if (token) body.set('cf-turnstile-response', token);
-        fetch(form.action, { method: 'POST', mode: 'no-cors', body: body });
-      } catch (ignored) {}
-      finish();
+        /* Backend replies 200 {status:"subscribed"} on success; any other status is a
+           deliberately-generic rejection, so show one catch-all message. */
+        var res = await fetch(form.action, { method: 'POST', mode: 'cors', body: body });
+        if (res.ok) {
+          finish();
+        } else {
+          showError('Could not sign you up. Please try again.');
+        }
+      } catch (e) {
+        showError('Network error. Please check your connection and try again.');
+      }
     }
 
     /* Turnstile renders invisibly and only runs when we call execute() on submit. */
@@ -165,8 +183,8 @@
         execution: 'execute',
         appearance: 'interaction-only',
         callback: function (token) { subscribe(token); },
-        'error-callback': function () { setBusy(false); subscribe(null); },  /* don't trap the user */
-        'timeout-callback': function () { setBusy(false); },
+        'error-callback': function () { showError('Verification failed. Please try again.'); },
+        'timeout-callback': function () { showError('Verification timed out. Please try again.'); },
         'expired-callback': function () { if (tsWidgetId !== null) window.turnstile.reset(tsWidgetId); }
       });
     };
@@ -175,6 +193,7 @@
       e.preventDefault();
       var addr = (emailEl.value || '').trim();
       if (!EMAIL_RE.test(addr)) {            /* loose "looks slightly valid" check */
+        errEl.textContent = 'Please enter a valid email address.';
         errEl.classList.remove('hidden');
         emailEl.focus();
         return;
@@ -186,7 +205,7 @@
         setBusy(true);
         window.turnstile.execute(tsWidgetId);  /* invisible unless a challenge is needed → callback → subscribe */
       } else {
-        subscribe(null);                       /* Turnstile not configured/ready: proceed */
+        subscribe(null);                       /* Turnstile not configured/ready: try anyway (server may reject) */
       }
     });
   })();
