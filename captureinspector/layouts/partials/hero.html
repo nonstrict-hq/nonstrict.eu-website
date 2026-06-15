@@ -47,7 +47,9 @@
       {{ with .Site.Params.demoVideoURL }}
       <button type="button" data-video="{{ . }}" aria-label="Play the demo video" class="absolute inset-0 z-10 grid place-items-center">
         <span class="grid h-16 w-16 place-items-center rounded-full bg-white/90 shadow-xl ring-1 ring-black/5 backdrop-blur transition duration-200 group-hover:scale-105">
-          <svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-brand" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+          {{/* Optical-center nudge for the play triangle (2px; inline because the CSS is
+             precompiled and ml-0.5 isn't in the build). */}}
+        <svg viewBox="0 0 24 24" style="margin-left: 2px" class="h-7 w-7 fill-brand" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
         </span>
       </button>
       {{ end }}

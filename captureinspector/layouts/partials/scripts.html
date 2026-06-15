@@ -1,10 +1,17 @@
-{{/* Video modal — play buttons carry a data-video URL (YouTube/Tella embed). Empty = "coming soon". */}}
+{{/* Video modal — play buttons carry a data-video URL. A local .mp4 plays in the native
+     <video>; anything else (YouTube/Tella) loads in the <iframe>. Empty = "coming soon". */}}
 <div id="video-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-5 backdrop-blur-sm">
-  <div class="relative w-full max-w-4xl">
+  {{/* Width is the smaller of: 90rem (1440px ≈ 1.5× the video's 960px retina-native size,
+       so it stays crisp on 2× displays), the viewport width, and the width whose 16:9 height
+       still fits the viewport (151vh ≈ 85vh×16/9) — grows as large as it can without ever
+       overflowing either axis. Inline style because the CSS is precompiled (no JIT for
+       arbitrary Tailwind values). */}}
+  <div class="relative w-full" style="width: min(90rem, 92vw, 151vh)">
     <button id="video-close" type="button" aria-label="Close video" class="absolute -top-10 right-0 text-white/80 transition hover:text-white">
       <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <div class="aspect-video overflow-hidden rounded-xl bg-black shadow-2xl ring-1 ring-white/10">
+      <video id="video-player" class="hidden h-full w-full bg-black" controls playsinline preload="metadata"></video>
       <iframe id="video-frame" class="hidden h-full w-full" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       <div id="video-placeholder" class="grid h-full w-full place-items-center bg-neutral-900 text-center">
         <div>
@@ -23,15 +30,23 @@
   /* ---- Video modal ---- */
   var modal = document.getElementById('video-modal');
   var frame = document.getElementById('video-frame');
+  var player = document.getElementById('video-player');
   var placeholder = document.getElementById('video-placeholder');
 
+  function isFileVideo(url) { return /\.(mp4|webm|mov)(\?|#|$)/i.test(url); }
+
   function openVideo(url) {
-    if (url) {
+    frame.classList.add('hidden');
+    player.classList.add('hidden');
+    placeholder.classList.add('hidden');
+    if (url && isFileVideo(url)) {
+      player.src = url;
+      player.classList.remove('hidden');
+      player.play().catch(function () {});  /* autoplay best-effort; controls cover the rest */
+    } else if (url) {
       frame.src = url;
       frame.classList.remove('hidden');
-      placeholder.classList.add('hidden');
     } else {
-      frame.classList.add('hidden');
       placeholder.classList.remove('hidden');
     }
     modal.classList.remove('hidden');
@@ -42,6 +57,9 @@
     modal.classList.add('hidden');
     modal.classList.remove('flex');
     frame.src = '';
+    player.pause();
+    player.removeAttribute('src');
+    player.load();                          /* fully release the stream */
     document.body.style.overflow = '';
   }
 

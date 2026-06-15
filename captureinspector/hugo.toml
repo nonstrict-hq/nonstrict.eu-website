@@ -22,8 +22,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
   mailingSubscribeURL = "https://customers.nonstrict.com/api/v1/mailing/subscribe"
   mailingListId = "captureinspector-updates"
   mailingSource = "captureinspector-website"
-  # Demo video: set to the YouTube/Tella *embed* URL once recorded. Empty = play buttons hidden.
-  demoVideoURL = ""
+  # Demo video: a local .mp4 (played in a native <video>) or a YouTube/Tella *embed* URL.
+  # Empty = play buttons hidden.
+  demoVideoURL = "/captureinspector/video/capture-inspector-demo.mp4"
   # Cloudflare Turnstile (invisible, runs on submit). Paste the portal's public site key here
   # to enable; leave empty to disable. The subscribe endpoint must verify cf-turnstile-response.
   turnstileSiteKey = "0x4AAAAAACszGculHHNbfIfG"
