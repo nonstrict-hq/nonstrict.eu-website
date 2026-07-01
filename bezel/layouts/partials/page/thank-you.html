@@ -5,32 +5,32 @@
     <div class="mx-auto max-w-6xl px-9 pt-7 lg:flex lg:gap-9 lg:place-content-between lg:px-8 lg:pt-20">
         <div class="mx-auto max-w-lg min-h-[24rem] sm:min-h-[448px] lg:min-h-min lg:max-h-[448px] flex-shrink-0 flex flex-col justify-center gap-10 lg:mx-0 lg:mt-8">
             <div>
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">Download started</h1>
-                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">Not working? <a class="underline" href="https://download.nonstrict.eu/bezel/Bezel.dmg">Start download again.</a></p>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{ T "ty_title" }}</h1>
+                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "ty_not_working" }} <a class="underline" href="https://download.nonstrict.eu/bezel/Bezel.dmg">{{ T "ty_download_again" }}</a></p>
             </div>
             <form id="form" action="https://customers.nonstrict.com/api/v1/mailing/subscribe" method="post" target="_self" novalidate="">
                 <p class="mt-4 mb-4 text-lg leading-8">
-                    <span class="text-gray-900 dark:text-white font-bold">Sign up for updates</span><br>
-                    <span class="text-gray-600 dark:text-gray-300">Be the first to learn about new features.</a>
+                    <span class="text-gray-900 dark:text-white font-bold">{{ T "ty_signup_title" }}</span><br>
+                    <span class="text-gray-600 dark:text-gray-300">{{ T "ty_signup_sub" }}</a>
                 </p>
-                <label for="email-address" class="sr-only">Email address</label>
+                <label for="email-address" class="sr-only">{{ T "form_email_label" }}</label>
                 <input type="hidden" name="list_id" value="bezel-updates">
                 <input type="hidden" name="source" value="bezel-download">
                 <div class="flex items-center gap-x-0">
-                    <input id="email-address" name="email_address" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-l-md border-0 bg-white/5 px-3.5 py-2 text-gray-900 placeholder-gray-600/70 dark:text-white dark:placeholder-gray-300 shadow-sm ring-1 ring-inset ring-gray-600/70 dark:ring-white/10 sm:text-sm sm:leading-6" placeholder="Your email address">
-                    <button type="submit" class="flex-none rounded-r-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Sign up</button>
+                    <input id="email-address" name="email_address" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-l-md border-0 bg-white/5 px-3.5 py-2 text-gray-900 placeholder-gray-600/70 dark:text-white dark:placeholder-gray-300 shadow-sm ring-1 ring-inset ring-gray-600/70 dark:ring-white/10 sm:text-sm sm:leading-6" placeholder="{{ T "form_email_placeholder" }}">
+                    <button type="submit" class="flex-none rounded-r-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{{ T "form_signup_btn" }}</button>
                 </div>
                 <div id="bezel-ts" class="mt-3 flex"></div>
                 <p id="form-error" class="mt-2 hidden text-sm text-red-500 dark:text-red-400"></p>
-                <p class="text-left text-xs pt-2 text-gray-600 dark:text-gray-400"><span class="whitespace-nowrap">Bezel updates only, unsubscribe anytime.</span></p>
+                <p class="text-left text-xs pt-2 text-gray-600 dark:text-gray-400"><span class="whitespace-nowrap">{{ T "ty_updates_note" }}</span></p>
             </form>
             <div id="thanks" class="hidden flex place-content-between">
                 <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 inline-block text-purple-400 mr-2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Great, you're on the list.</p>
-                <a href="/bezel/" class="mt-4 text-lg text-purple-400 underline text-right">Back to homepage →</a>
+                {{ T "ty_thanks" }}</p>
+                <a href="{{ .Site.Home.RelPermalink }}" class="mt-4 text-lg text-purple-400 underline text-right">{{ T "back_to_homepage" }}</a>
             </div>
         </div>
 
@@ -46,6 +46,17 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onBezelTurnstile&render=explicit" async defer></script>
 {{ end }}
 <script>
+    /* Localized, user-facing strings for the newsletter form below. */
+    window.__bezelFormStrings = {
+        signingUp: {{ T "form_js_signing_up" }},
+        invalidEmail: {{ T "form_js_invalid_email" }},
+        couldNotSignup: {{ T "form_js_could_not_signup" }},
+        networkError: {{ T "form_js_network_error" }},
+        verificationFailed: {{ T "form_js_verification_failed" }},
+        verificationTimeout: {{ T "form_js_verification_timeout" }},
+        genericError: {{ T "form_js_generic_error" }}
+    };
+
     function startDownload() {
         window.location = 'https://download.nonstrict.eu/bezel/Bezel.dmg';
     }
@@ -54,6 +65,7 @@
     /* Newsletter form: invisible Turnstile runs on submit, then a CORS request adds the email
        to the NS Customer list and we act on the JSON reply (no cross-domain redirect). */
     (function () {
+        var S = window.__bezelFormStrings || {};
         var form = document.getElementById('form');
         if (!form) return;
         var siteKey = '{{ .Site.Params.turnstileSiteKey }}';
@@ -67,11 +79,11 @@
         var pendingEmail = '';
         var done = false;
 
-        function setBusy(b) { if (btn) { btn.disabled = b; btn.textContent = b ? 'Signing up…' : btnLabel; } }
+        function setBusy(b) { if (btn) { btn.disabled = b; btn.textContent = b ? S.signingUp : btnLabel; } }
 
         function showError(msg) {                  /* re-enable, surface the problem, get a fresh token for retry */
             setBusy(false);
-            if (errEl) { errEl.textContent = msg || 'Something went wrong. Please try again.'; errEl.classList.remove('hidden'); }
+            if (errEl) { errEl.textContent = msg || S.genericError; errEl.classList.remove('hidden'); }
             if (siteKey && widgetId !== null && window.turnstile) window.turnstile.reset(widgetId);
         }
 
@@ -97,10 +109,10 @@
                 if (res.ok) {
                     finish();
                 } else {
-                    showError('Could not sign you up. Please try again.');
+                    showError(S.couldNotSignup);
                 }
             } catch (e) {
-                showError('Network error. Please check your connection and try again.');
+                showError(S.networkError);
             }
         }
 
@@ -111,8 +123,8 @@
                 execution: 'execute',
                 appearance: 'interaction-only',
                 callback: function (token) { subscribe(token); },
-                'error-callback': function () { showError('Verification failed. Please try again.'); },
-                'timeout-callback': function () { showError('Verification timed out. Please try again.'); }
+                'error-callback': function () { showError(S.verificationFailed); },
+                'timeout-callback': function () { showError(S.verificationTimeout); }
             });
         };
 
@@ -120,7 +132,7 @@
             e.preventDefault();
             pendingEmail = (emailEl && emailEl.value || '').trim();
             if (!EMAIL_RE.test(pendingEmail)) {
-                showError('Please enter a valid email address.');
+                showError(S.invalidEmail);
                 if (emailEl) emailEl.focus();
                 return;
             }

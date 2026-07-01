@@ -1,0 +1,626 @@
+# Dutch (nl) UI strings for the Bezel website — mirrors the keys in en.toml.
+# Only the value strings are translated; HTML, URLs and proper nouns are preserved.
+
+#
+# ─── Navigation (header.html, ios-header.html, vision-header.html) ───
+#
+[nav_features]
+other = "Functies"
+
+[nav_pricing]
+other = "Prijzen"
+
+[nav_ios]
+other = "iOS"
+
+[nav_faq]
+other = "FAQ"
+
+[nav_macos]
+other = "macOS"
+
+[nav_download]
+other = "Download"
+
+[header_ios_title]
+other = "Bezel · iOS-app"
+
+[header_vision_title]
+other = "Bezel · Vision Pro-app"
+
+#
+# ─── Footer (footer.html, ios-footer.html, vision-footer.html) ───
+#
+[footer_helper]
+other = "Bezel Helper"
+
+[footer_vision]
+other = "Vision Pro-app"
+
+[footer_manage_subscription]
+other = "Abonnement beheren"
+
+[footer_knowledge_base]
+other = "Kennisbank"
+
+[footer_press_kit]
+other = "Perskit"
+
+[footer_terms]
+other = "Voorwaarden"
+
+[footer_privacy]
+other = "Privacy"
+
+[footer_address_main]
+other = "Amersfoort, Nederland"
+
+[footer_address_inline]
+other = "gevestigd in Amersfoort, Nederland"
+
+#
+# ─── Language switcher (language-switcher.html) ───
+#
+[language_switcher_label]
+other = "Taal"
+
+#
+# ─── Hero (hero.html) ───
+#
+[hero_badge]
+other = "NIEUW: Draadloze synchrone weergave"
+
+[hero_title]
+other = "Geef elke iPhone synchroon weer<br />op je Mac"
+
+[hero_subtitle]
+other = "Voor demo's, opnames en presentaties die indruk maken."
+
+[hero_cta_try]
+other = "Probeer het"
+
+[hero_cta_buy]
+other = "Koop het"
+
+[hero_loved_by]
+other = "geliefd bij 5,400+ mensen"
+
+[trusted_by]
+other = "Vertrouwd voor synchrone weergave van iPhones door:"
+
+#
+# ─── Feature sections (hero.html) ───
+#
+[features_instant_title]
+other = "Direct elke iPhone synchroon weergeven"
+
+[features_instant_sub]
+other = "Geef draadloos weer met AirPlay of sluit aan met een kabel."
+
+[features_recordings_title]
+other = "Prachtige opnames met één klik."
+
+[features_recordings_sub]
+other = "Compleet met rand en achtergrond. Klaar om te delen."
+
+[features_present_title]
+other = "Presenteer zonder afleiding."
+
+[features_present_sub]
+other = "Neem het hele scherm over. Alle ogen op je content."
+
+[features_toolkit_title]
+other = "De complete toolkit voor synchrone weergave:"
+
+[feature_airplay]
+other = "Draadloos synchroon weergeven via AirPlay."
+
+[feature_usb]
+other = "Synchroon weergeven via USB-kabel."
+
+[feature_every_iphone]
+other = "Ondersteunt elke iPhone, zelfs verschillende iCloud-accounts."
+
+[feature_more_devices]
+other = "iPad, Apple TV, Vision Pro en iPod Touch worden ook ondersteund."
+
+[feature_recordings]
+other = "Schermopnames met rand en achtergrond."
+
+[feature_screenshots]
+other = "Schermafbeeldingen in hoge resolutie."
+
+[feature_audio]
+other = "Synchrone audioweergave."
+
+[feature_fullscreen]
+other = "Schermvullende modus."
+
+[feature_pinning]
+other = "Altijd-bovenop vastzetten."
+
+[feature_autorotate]
+other = "Automatisch meedraaien met het apparaat."
+
+[feature_autobezel]
+other = "Automatisch passende randen en kleuren."
+
+[feature_customcolors]
+other = "Aangepaste randkleuren."
+
+[feature_guided]
+other = "Begeleide configuratie voor nieuwe apparaten."
+
+[feature_sleeplock]
+other = "Detecteert sluimer- en vergrendelmodus."
+
+[feature_sizing]
+other = "Levensechte of pixelperfecte weergavegrootte."
+
+[feature_native]
+other = "Native macOS-app."
+
+[feature_remove_watermark]
+other = "Watermerk verwijderen."
+
+[feature_unlimited]
+other = "Onbeperkt synchroon weergeven."
+
+[badge_pro]
+other = "Pro"
+
+#
+# ─── Testimonials (testimonials.html). Quotes render with safeHTML.
+#     Person names, @handles and product/company names stay untranslated. ───
+#
+[testimonials_title]
+other = "Mensen houden van Bezel ❤️"
+
+[t_dk_quote]
+other = "“Ik gebruik Bezel dagelijks om demo's te geven aan stakeholders en nieuwe functies te testen met mijn teams. Bezel maakt het zo naadloos om een bepaalde app-ervaring te laten zien.”"
+
+[t_dk_role]
+other = "Product Manager iOS- en Android-apps"
+
+[t_st_quote]
+other = "“oké, eerlijk gezegd, wat @mac_cain13 heeft gemaakt met de Bezel-app is echt verdomd gaaf.\n                            <br><br>\n                            goed getimed voor mij, want ik lanceer net een iPhone-app voor mijn SaaS. wordt geweldig voor productdemo's enzovoort.\n                            <br><br>\n                            benieuwd hoe hij dit verder laat groeien...”"
+
+[t_st_role]
+other = "Werkt aan Squabbble"
+
+[t_jp_quote]
+other = "“Was er maar een excuus om een mobiele app voor Cradle te maken.”"
+
+[t_jp_role]
+other = "Oprichter van Cradle.bio"
+
+[t_bh_quote]
+other = "“Dit ziet er heel gaaf uit!!!”"
+
+[t_bh_role]
+other = "Maker van de Vivid-app"
+
+[t_jh_quote]
+other = "“Nu al diep onder de indruk van Bezel, super benieuwd naar wat er nog komt!”"
+
+[t_jh_role]
+other = "Kwaliteitsspecialist"
+
+[t_bs_quote]
+other = "“Dit is echt 100% precies waar ik altijd naar heb gezocht en wat ik wilde.”"
+
+[t_bs_role]
+other = "Ontwerper bij Q42 Agency"
+
+[t_fk_quote]
+other = "“Wauw, goed gedaan! Supersoepel!”"
+
+[t_fk_role]
+other = "Maker van Fastlane"
+
+[t_ae_quote]
+other = "“Vandaag twee apps gedownload met geweldige onboarding-flows die complexe rechten eenvoudig laten voelen:<br>\n                            - @RewindAI voor iOS<br>\n                            - Bezel van @nonstrict_hq”"
+
+[t_ae_role]
+other = "Desktop & Agents bij OpenAI"
+
+[t_rp_quote]
+other = "“Direct kopen als je iets op je telefoon doet dat je met anderen wilt delen!”"
+
+[t_rp_role]
+other = "Medeoprichter Rise Calender"
+
+[t_nr_quote]
+other = "“Beter dan QuickTime 👏”"
+
+[t_nr_role]
+other = "@ahmdnazrafq"
+
+[t_sl_quote]
+other = "“De configuratieprocedure is zo goed gedaan, en het werkt ook zo goed. Heel fijn om je eigen apparaat net zo makkelijk synchroon weer te geven als een simulator.”"
+
+[t_sl_role]
+other = "Swift/iOS-YouTuber"
+
+[t_pv_quote]
+other = "“Dit is zo'n geweldige app om je iPhone op de Mac te demonstreren, super gepolijst en naadloos.<br>\n                            <br>\n                            En het werkt super goed samen met Detail op macOS, waarbij je je camera en iPhone-scherm combineert om direct op te nemen en te bewerken.”"
+
+[t_pv_role]
+other = "Oprichter van Detail.co"
+
+[t_af_quote]
+other = "“Nonstrict maakt geweldige dingen. Mooi om te zien!”"
+
+[t_af_role]
+other = "Oprichter Reincubate"
+
+[t_mkl_quote]
+other = "“Wat een geweldige tool! Ik vind vooral de 'fysieke grootte' top. Het heeft me altijd verbaasd dat dit geen functie is in Sketch of Figma, zodat je je ontwerp op 1:1-formaat kunt bekijken. Het is zelfs precies de juiste grootte op mijn externe scherm!”"
+
+[t_mkl_role]
+other = "Creatief strateeg"
+
+[t_mk_quote]
+other = "“dank je! gekocht”"
+
+[t_mk_role]
+other = "Notepad.exe & Goodnotes"
+
+#
+# ─── Pricing page (pricing.html) ───
+#
+[pricing_title]
+other = "Bezel Pro"
+
+[pricing_subtitle]
+other = "Alle abonnementen bevatten alle functies en onbeperkte updates."
+
+[plan_monthly]
+other = "Maandelijks"
+
+[plan_monthly_desc]
+other = "Meest flexibele optie."
+
+[plan_yearly]
+other = "Jaarlijks"
+
+[plan_yearly_desc]
+other = "Bespaar meer dan 70% t.o.v. maandelijks."
+
+[plan_lifetime]
+other = "Levenslang"
+
+[plan_lifetime_desc]
+other = "Eenmalig betalen, voor altijd van jou."
+
+[price_per_month]
+other = "/maand"
+
+[price_per_year]
+other = "/jaar"
+
+[price_one_time]
+other = "eenmalig"
+
+[badge_best_value]
+other = "Beste waarde"
+
+[plan_user]
+other = "1 gebruiker"
+
+[plan_user_tooltip]
+other = "Alleen geldig voor 1 gebruiker, mag op maximaal 3 apparaten van die gebruiker worden geïnstalleerd."
+
+[plan_all_features]
+other = "Alle Bezel Pro-functies"
+
+[plan_unlimited_updates]
+other = "Onbeperkte app-updates"
+
+[plan_remove_watermark]
+other = "Watermerk en tijdslimieten verwijderen"
+
+[cta_subscribe]
+other = "Abonneren"
+
+[cta_buy_bezel]
+other = "Koop Bezel"
+
+[cta_download_trial]
+other = "Download gratis proefversie"
+
+[business_title]
+other = "Zakelijk"
+
+[business_price_period]
+other = "/gebruiker/jaar"
+
+[business_desc]
+other = "Werknemersinschrijving, gebundelde facturatie en teambeheer."
+
+[business_contact]
+other = "Neem contact op"
+
+[pricing_note_currency]
+other = "Prijzen in USD. Er kunnen belastingen van toepassing zijn."
+
+[pricing_note_guarantee]
+other = "Niet-goed-geld-terug-garantie van 30 dagen."
+
+#
+# ─── Pricing FAQ (pricing.html). Answers with links render with safeHTML. ───
+#
+[faq_title]
+other = "Veelgestelde vragen"
+
+[faq_multi_q]
+other = "Kan ik Bezel op meerdere Macs installeren?"
+
+[faq_multi_a]
+other = "Ja! Elke persoonlijke licentie is geldig voor 1 gebruiker, maar kan op maximaal 3 Macs worden geïnstalleerd. Dit is perfect als je een desktop en een laptop hebt, of verschillende machines gebruikt op werk en thuis."
+
+[faq_sub_vs_lifetime_q]
+other = "Wat is het verschil tussen een abonnement en levenslang?"
+
+[faq_sub_vs_lifetime_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Met een <strong>abonnement</strong> (maandelijks of jaarlijks) krijg je volledige toegang tot alle Bezel Pro-functies zolang je abonnement actief is. Als je opzegt, kun je nog steeds de gratis proefversie gebruiken.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">De <strong>levenslange</strong> licentie is een eenmalige aankoop die je permanente toegang geeft tot alle Pro-functies gedurende de levensduur van de app, inclusief alle toekomstige updates.</p>"
+
+[faq_cancel_q]
+other = "Wat gebeurt er als ik mijn abonnement opzeg?"
+
+[faq_cancel_a]
+other = "Als je je abonnement opzegt, behoud je toegang tot de Pro-functies tot het einde van je factuurperiode. Daarna keert Bezel terug naar de gratis proefversie, die een watermerk en tijdslimieten bevat."
+
+[faq_guarantee_q]
+other = "Wat houdt de niet-goed-geld-terug-garantie van 30 dagen in?"
+
+[faq_guarantee_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Die zorgt voor risicovrij aankopen! Laat ons binnen 30 dagen na aankoop weten waarom je ontevreden bent, en we betalen je terug, wat de reden ook is.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">Neem contact met ons op via <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a></p>"
+
+[faq_invoice_q]
+other = "Kan ik een factuur krijgen voor mijn aankoop?"
+
+[faq_invoice_a]
+other = "Na een succesvolle aankoop ontvang je een e-mail van Paddle met de factuur als bijlage. Als je je bedrijfsgegevens en/of btw-nummer op de factuur nodig hebt, voeg dan in de tweede stap tijdens het afrekenen btw-informatie toe via de link \"Add VAT\" linksonder."
+
+[faq_manage_q]
+other = "Hoe beheer ik mijn abonnement?"
+
+[faq_manage_a]
+other = "Je kunt je abonnement beheren, betaalmethoden bijwerken of op elk moment opzeggen via het <a class=\"underline\" href=\"https://customer-portal.paddle.com/cpl_01h3qnwsb8ac4b74xbkbbj631g\">Paddle-klantenportaal</a>. Je kunt dit ook openen vanuit Bezel via Instellingen > Over."
+
+[faq_license_q]
+other = "Waar vind ik mijn licentie?"
+
+[faq_license_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Na een succesvolle aankoop ontvang je van ons een e-mail met je licentiesleutel. Controleer ook je map met ongewenste e-mail.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">Kun je je licentiesleutel niet vinden? Neem dan contact met ons op via <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a>.</p>"
+
+[faq_upgrade_q]
+other = "Is er een upgradekorting beschikbaar?"
+
+[faq_upgrade_a]
+other = "Als je Bezel hebt gekocht met een licentie met één jaar updates, kom je in aanmerking voor 50% korting op de nieuwe Bezel-abonnementen. Voer hieronder je vorige serienummer in om je upgradekorting te krijgen."
+
+[upgrade_banner_title]
+other = "Upgraden vanaf een eerdere versie van Bezel?"
+
+[upgrade_banner_sub]
+other = "Voer je vorige serienummer in voor 50% korting."
+
+[upgrade_enter_serial]
+other = "Serienummer invoeren"
+
+[upgrade_get_discount]
+other = "Korting ophalen"
+
+[upgrade_to_yearly]
+other = "Upgraden naar jaarlijks"
+
+[upgrade_to_lifetime]
+other = "Upgraden naar levenslang"
+
+[faq_transfer_q]
+other = "Hoe draag ik mijn licentie over naar een andere Mac?"
+
+[faq_transfer_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Deactiveer de Mac die je licentie momenteel gebruikt door naar Instellingen > Over te gaan en op de knop \"Licentie deactiveren..\" te klikken. Na het deactiveren kun je de licentiesleutel op een andere Mac gebruiken.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">Als je geen toegang meer hebt tot de machine die je licentie gebruikt, neem dan contact met ons op via <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a>.</p>"
+
+# Dynamic strings surfaced by the upgrade-serial JavaScript on the pricing page.
+[upgrade_js_need_serial]
+other = "Voer eerst je vorige serienummer in."
+[upgrade_js_invalid_serial]
+other = "Voer een geldig serienummer in met de notatie XXXX-XXXX-XXXX-XXXX-XXXX"
+[upgrade_js_checking]
+other = "Bezig met controleren…"
+[upgrade_js_generic_error]
+other = "Er is iets misgegaan. Probeer het opnieuw."
+
+#
+# ─── iOS page (partials/page/ios.html) ───
+#
+[ios_hero_title]
+other = "Prachtig omlijste schermafbeeldingen<br>direct op je iPhone."
+
+[ios_hero_sub]
+other = "Voegt een rand en achtergrond toe aan je schermafbeeldingen."
+
+[ios_feat1_title]
+other = "Schermafbeeldingen direct omlijsten"
+
+[ios_feat1_sub]
+other = "Omlijst met Visual Intelligence rechtstreeks vanuit het schermafbeeldingsscherm."
+
+[ios_feat2_title]
+other = "Aangepaste achtergronden"
+
+[ios_feat2_sub]
+other = "Zoek op Unsplash naar prachtige wallpapers."
+
+[ios_feat3_title]
+other = "Kies je rand"
+
+[ios_feat3_sub]
+other = "Kies de rand die jou het beste bevalt."
+
+[ios_more_1]
+other = "Importeren vanuit Foto's."
+
+[ios_more_2]
+other = "Importeren vanuit Bestanden."
+
+[ios_more_3]
+other = "Opvulling aanpassen."
+
+[more_to_love_title]
+other = "En er is nog meer om van te houden!"
+
+[also_available_macos]
+other = "Bezel is ook beschikbaar op macOS"
+
+#
+# ─── Vision Pro page (partials/page/vision.html) ───
+#
+[vision_hero_title]
+other = "Toon je iPhone<br>in <span class=\"hidden sm:inline\">Apple </span>Vision Pro"
+
+[vision_hero_sub]
+other = "Bezel geeft je een scherpe, goed leesbare weergave van je iPhone."
+
+[vision_feat1_title]
+other = "Scherpe, leesbare iPhone"
+
+[vision_feat1_sub]
+other = "Geen wazige passthrough meer."
+
+[vision_feat2_title]
+other = "Schitterend uiterlijk"
+
+[vision_feat2_sub]
+other = "Het scherm wordt synchroon weergegeven in een driedimensionale iPhone."
+
+[vision_feat3_title]
+other = "Volledig draadloos"
+
+[vision_feat3_sub]
+other = "Gebruik de gratis iOS-app om draadloos weer te geven."
+
+[vision_more_1]
+other = "Ondersteuning voor staand en liggend."
+
+[vision_more_2]
+other = "Geef meerdere apparaten tegelijk synchroon weer."
+
+[vision_more_4]
+other = "Mooie en snelle native visionOS-app."
+
+[vision_faq1_q]
+other = "Waar krijg ik Bezel voor visionOS? Wat is de prijs?"
+
+[vision_faq1_a]
+other = "Bezel is beschikbaar in de <a class=\"underline\" href=\"https://apps.apple.com/us/app/bezel-device-mirror/id6476657945\">App Store</a> als een eenmalige aankoop van $5. De Bezel-app voor iOS (gratis versie) is ook vereist op de iPhone die je wilt weergeven."
+
+[vision_faq2_q]
+other = "Welke apparaten kunnen worden weergegeven naar Bezel voor visionOS?"
+
+[vision_faq2_a]
+other = "Bij de lancering worden iPhones met FaceID die iOS 16.4 of nieuwer draaien ondersteund. We willen in de toekomst meer Apple-apparaten ondersteunen."
+
+[vision_faq3_q]
+other = "Hoe verhoudt Bezel voor visionOS zich tot Bezel voor macOS?"
+
+[vision_faq3_a]
+other = "Bezel voor visionOS is een native app voor Apple Vision Pro die vanaf de grond is opgebouwd en als aparte aankoop wordt verkocht. Je kunt <a class=\"underline\" href=\"/bezel/\">Bezel voor Mac</a> krijgen via de <a class=\"underline\" href=\"/bezel/\">website</a>."
+
+#
+# ─── Helper page (partials/page/helper.html) ───
+#
+[helper_title]
+other = "Bezel Helper"
+
+[helper_intro]
+other = "Om Bezel <strong>het model, de kleur en de verbindingsstatus van de iPhone</strong> of iPad die op je Mac is aangesloten te laten herkennen, moet je een kleine hulpapplicatie installeren."
+
+[helper_step1]
+other = "Download de Bezel Helper-app:"
+
+[helper_download_btn]
+other = "Download Helper"
+
+[helper_step2]
+other = "Wanneer de download voltooid is, start je Bezel Helper door erop te dubbelklikken."
+
+[helper_step3]
+other = "De Helper maakt automatisch verbinding met Bezel en herkent het model, de kleur en de verbindingsstatus van je iPhone."
+
+[helper_why_title]
+other = "Waarom is dit nodig?"
+
+[helper_why_text]
+other = "Sandboxing in macOS voorkomt dat Bezel rechtstreeks met de iPhone communiceert, dus wanneer je een iPhone of iPad aansluit, gebruikt Bezel de hulpapp (die buiten de sandbox draait) als tussenpersoon."
+
+#
+# ─── Thank-you / download page (partials/page/thank-you.html) ───
+#
+[ty_title]
+other = "Download gestart"
+
+[ty_not_working]
+other = "Werkt het niet?"
+
+[ty_download_again]
+other = "Start de download opnieuw."
+
+[ty_signup_title]
+other = "Schrijf je in voor updates"
+
+[ty_signup_sub]
+other = "Wees de eerste die hoort over nieuwe functies."
+
+[form_email_label]
+other = "E-mailadres"
+
+[form_email_placeholder]
+other = "Je e-mailadres"
+
+[form_signup_btn]
+other = "Inschrijven"
+
+[ty_updates_note]
+other = "Alleen Bezel-updates, je kunt je op elk moment uitschrijven."
+
+[ty_thanks]
+other = "Top, je staat op de lijst."
+
+[back_to_homepage]
+other = "Terug naar de homepage →"
+
+# Dynamic strings surfaced by the newsletter-form JavaScript.
+[form_js_signing_up]
+other = "Bezig met inschrijven…"
+[form_js_invalid_email]
+other = "Voer een geldig e-mailadres in."
+[form_js_could_not_signup]
+other = "Inschrijven is niet gelukt. Probeer het opnieuw."
+[form_js_network_error]
+other = "Netwerkfout. Controleer je verbinding en probeer het opnieuw."
+[form_js_verification_failed]
+other = "Verificatie mislukt. Probeer het opnieuw."
+[form_js_verification_timeout]
+other = "Verificatie verlopen. Probeer het opnieuw."
+[form_js_generic_error]
+other = "Er is iets misgegaan. Probeer het opnieuw."
+
+#
+# ─── Subscribed page (partials/page/subscribed.html) ───
+#
+[subscribed_title]
+other = "Bedankt<br />voor je inschrijving"
+
+[subscribed_sub]
+other = "We houden je op de hoogte van het laatste en beste nieuws van Bezel."
+
+#
+# ─── Knowledge Base / articles (article/list.html) ───
+#
+[knowledge_base]
+other = "Kennisbank"

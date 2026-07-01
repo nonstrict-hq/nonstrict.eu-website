@@ -5,8 +5,8 @@
 
     <div class="mx-auto max-w-6xl px-9 pt-7">
         <div class="mt-12 sm:mt-24 text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">Beautiful framed screenshots<br>instantly on your iPhone.</h1>
-            <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">Adds a device frame and background to your screenshots.</p>
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{ T "ios_hero_title" | safeHTML }}</h1>
+            <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "ios_hero_sub" }}</p>
             <p class="mt-16 sm:mt-20 text-lg leading-8 text-gray-600 dark:text-gray-300"><a href="https://apps.apple.com/app/apple-store/id6476268685"><img class="inline w-44 sm:w-48" alt="Download on the App Store" src="/bezel/images/appstore.svg"></a></p>
         </div>
 
@@ -17,27 +17,27 @@
 <div class="relative isolate overflow-hidden">
     <div id="features" class="text-center mx-auto max-w-4xl px-9 pt-10 lg:place-content-between lg:px-8 lg:pt-40">
         <div class="mt-12">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Directly frame screenshots</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">Frame using Visual Intelligence directly from the screenshot screen.</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "ios_feat1_title" }}</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "ios_feat1_sub" }}</p>
             <video autoplay muted playsinline loop preload="auto" class="mx-auto mt-8 max-w-[320px] rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
                 <source src="/bezel/video/ios-visual-intelligence.mp4#t=0.001" type="video/mp4">
             </video>
         </div>
 
         <div class="mt-20">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Custom Backgrounds</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">Search Unsplash for stunning wallpapers.</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "ios_feat2_title" }}</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "ios_feat2_sub" }}</p>
             <img src="/bezel/images/ios/custom-backgrounds.png" alt="" class="mx-auto mt-8 max-w-[320px] rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
         </div>
 
         <div class="mt-20">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Choose your bezel</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">Pick the device frame you like best.</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "ios_feat3_title" }}</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "ios_feat3_sub" }}</p>
             <img src="/bezel/images/ios/bezels.png" alt="" class="mx-auto mt-8 max-w-[320px] rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
         </div>
 
         <div class="mt-20">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">And there's more to love!</h2>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "more_to_love_title" }}</h2>
 
             <div class="flex items-center">
                 <div class="mt-8 mx-auto max-w-2xl grid grid-cols-1 gap-y-2 text-left text-lg leading-8 text-gray-600 dark:text-gray-300">
@@ -45,19 +45,19 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    Import from Photos.
+                    {{ T "ios_more_1" }}
                     </p>
                     <p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    Import from Files.
+                    {{ T "ios_more_2" }}
                     </p>
                     <p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    Adjust padding.
+                    {{ T "ios_more_3" }}
                     </p>
                 </div>
             </div>
@@ -70,8 +70,8 @@
             <p class="mt-16 sm:mt-20 text-lg leading-8 text-gray-600 dark:text-gray-300"><a href="https://apps.apple.com/us/app/bezel-device-mirror/id6476268685"><img class="inline w-44 sm:w-48" alt="Download on the App Store" src="/bezel/images/appstore.svg"></a></p>
         </div>
         <p class="mt-6 text-center">
-        <a class="rounded-full px-3 py-1 text-sm leading-6 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 ring-1 ring-slate-800/20 dark:ring-slate-200/20 hover:ring-slate-600/60 dark:hover:ring-slate-800/60" href="/bezel/">
-            Bezel is also available on macOS <span aria-hidden="true">&rarr;</span>
+        <a class="rounded-full px-3 py-1 text-sm leading-6 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 ring-1 ring-slate-800/20 dark:ring-slate-200/20 hover:ring-slate-600/60 dark:hover:ring-slate-800/60" href="{{ .Site.Home.RelPermalink }}">
+            {{ T "also_available_macos" }} <span aria-hidden="true">&rarr;</span>
         </a>
         </p>
     </div>

@@ -1,0 +1,626 @@
+# French (Français) UI strings for the Bezel website.
+# Mirrors the keys in en.toml; values translated. HTML, URLs and markup preserved.
+# Proper nouns (Bezel, Nonstrict B.V., person names, @handles, product names) left untranslated.
+
+#
+# ─── Navigation ───
+#
+[nav_features]
+other = "Fonctionnalités"
+
+[nav_pricing]
+other = "Tarifs"
+
+[nav_ios]
+other = "iOS"
+
+[nav_faq]
+other = "FAQ"
+
+[nav_macos]
+other = "macOS"
+
+[nav_download]
+other = "Télécharger"
+
+[header_ios_title]
+other = "Bezel · Application iOS"
+
+[header_vision_title]
+other = "Bezel · Application Vision Pro"
+
+#
+# ─── Footer ───
+#
+[footer_helper]
+other = "Bezel Helper"
+
+[footer_vision]
+other = "Application Vision Pro"
+
+[footer_manage_subscription]
+other = "Gérer l'abonnement"
+
+[footer_knowledge_base]
+other = "Base de connaissances"
+
+[footer_press_kit]
+other = "Kit presse"
+
+[footer_terms]
+other = "Conditions"
+
+[footer_privacy]
+other = "Confidentialité"
+
+[footer_address_main]
+other = "Amersfoort, Pays-Bas"
+
+[footer_address_inline]
+other = "basé à Amersfoort, Pays-Bas"
+
+#
+# ─── Language switcher ───
+#
+[language_switcher_label]
+other = "Langue"
+
+#
+# ─── Hero ───
+#
+[hero_badge]
+other = "NOUVEAU : Recopie sans fil"
+
+[hero_title]
+other = "Recopiez n'importe quel iPhone<br />sur votre Mac"
+
+[hero_subtitle]
+other = "Pour des démos, des enregistrements et des présentations qui marquent les esprits."
+
+[hero_cta_try]
+other = "Essayer"
+
+[hero_cta_buy]
+other = "Acheter"
+
+[hero_loved_by]
+other = "adoré par 5,400+ personnes"
+
+[trusted_by]
+other = "Ils nous font confiance pour recopier leur iPhone :"
+
+#
+# ─── Feature sections ───
+#
+[features_instant_title]
+other = "Recopie instantanée de n'importe quel iPhone"
+
+[features_instant_sub]
+other = "Recopiez sans fil avec AirPlay ou branchez un câble."
+
+[features_recordings_title]
+other = "De superbes enregistrements en un clic."
+
+[features_recordings_sub]
+other = "Avec le cadre et l'arrière-plan. Prêts à partager."
+
+[features_present_title]
+other = "Présentez sans distractions."
+
+[features_present_sub]
+other = "Occupez tout l'écran. Tous les regards sur votre contenu."
+
+[features_toolkit_title]
+other = "La boîte à outils complète pour la recopie :"
+
+[feature_airplay]
+other = "Recopie sans fil via AirPlay."
+
+[feature_usb]
+other = "Recopie via câble USB."
+
+[feature_every_iphone]
+other = "Compatible avec tous les iPhone, même sur des comptes iCloud différents."
+
+[feature_more_devices]
+other = "iPad, Apple TV, Vision Pro et iPod Touch également pris en charge."
+
+[feature_recordings]
+other = "Enregistrements d'écran avec cadre et arrière-plan."
+
+[feature_screenshots]
+other = "Captures d'écran en haute résolution."
+
+[feature_audio]
+other = "Recopie audio."
+
+[feature_fullscreen]
+other = "Mode plein écran."
+
+[feature_pinning]
+other = "Épinglage toujours au premier plan."
+
+[feature_autorotate]
+other = "Rotation automatique avec l'appareil."
+
+[feature_autobezel]
+other = "Cadres et couleurs assortis automatiquement."
+
+[feature_customcolors]
+other = "Couleurs de cadre personnalisées."
+
+[feature_guided]
+other = "Configuration guidée pour les nouveaux appareils."
+
+[feature_sleeplock]
+other = "Détecte les modes veille et verrouillage."
+
+[feature_sizing]
+other = "Taille réelle ou au pixel près."
+
+[feature_native]
+other = "Application macOS native."
+
+[feature_remove_watermark]
+other = "Suppression du filigrane."
+
+[feature_unlimited]
+other = "Recopie illimitée."
+
+[badge_pro]
+other = "Pro"
+
+#
+# ─── Testimonials ───
+#
+[testimonials_title]
+other = "Tout le monde adore Bezel ❤️"
+
+[t_dk_quote]
+other = "« J'utilise Bezel au quotidien pour faire des démos à mes parties prenantes et tester de nouvelles fonctionnalités avec mes équipes. Bezel rend la présentation d'une expérience d'app tellement fluide. »"
+
+[t_dk_role]
+other = "Chef de produit, apps iOS et Android"
+
+[t_st_quote]
+other = "« ok, franchement, ce que @mac_cain13 a créé avec l'app Bezel est vraiment trop cool.\n                            <br><br>\n                            ça tombe à pic pour moi, je lance justement une app iPhone pour mon SaaS. ce sera parfait pour les démos produit, etc.\n                            <br><br>\n                            hâte de voir comment il fait grandir tout ça… »"
+
+[t_st_role]
+other = "Travaille sur Squabbble"
+
+[t_jp_quote]
+other = "« J'aimerais avoir une excuse pour créer une app mobile pour Cradle. »"
+
+[t_jp_role]
+other = "Fondateur de Cradle.bio"
+
+[t_bh_quote]
+other = "« Ça a l'air vraiment cool !!! »"
+
+[t_bh_role]
+other = "Créateur de l'app Vivid"
+
+[t_jh_quote]
+other = "« Déjà très impressionné par Bezel, super curieux de voir la suite ! »"
+
+[t_jh_role]
+other = "Spécialiste qualité"
+
+[t_bs_quote]
+other = "« C'est vraiment à 100 % exactement ce que j'ai toujours cherché et voulu. »"
+
+[t_bs_role]
+other = "Designer chez Q42 Agency"
+
+[t_fk_quote]
+other = "« Wow, beau travail ! Super fluide ! »"
+
+[t_fk_role]
+other = "Créateur de Fastlane"
+
+[t_ae_quote]
+other = "« J'ai téléchargé deux apps aujourd'hui avec d'excellents parcours d'intégration qui rendent les autorisations complexes très simples :<br>\n                            - @RewindAI pour iOS<br>\n                            - Bezel par @nonstrict_hq »"
+
+[t_ae_role]
+other = "Desktop & Agents chez OpenAI"
+
+[t_rp_quote]
+other = "« Achat immédiat si vous faites quoi que ce soit sur votre téléphone que vous devez partager avec d'autres ! »"
+
+[t_rp_role]
+other = "Cofondateur de Rise Calender"
+
+[t_nr_quote]
+other = "« Mieux que QuickTime 👏 »"
+
+[t_nr_role]
+other = "@ahmdnazrafq"
+
+[t_sl_quote]
+other = "« La procédure de configuration est tellement bien faite, et ça marche super bien aussi. C'est très agréable de recopier facilement son propre appareil aussi simplement qu'un simulateur. »"
+
+[t_sl_role]
+other = "YouTubeur Swift/iOS"
+
+[t_pv_quote]
+other = "« Une app vraiment géniale pour faire la démo de son iPhone sur Mac, super soignée et fluide.<br>\n                            <br>\n                            Et elle fonctionne super bien avec Detail sur macOS, en combinant votre caméra et l'écran de votre iPhone pour enregistrer et monter instantanément. »"
+
+[t_pv_role]
+other = "Fondateur de Detail.co"
+
+[t_af_quote]
+other = "« Nonstrict fait du super boulot. Un plaisir à voir ! »"
+
+[t_af_role]
+other = "Fondateur de Reincubate"
+
+[t_mkl_quote]
+other = "« Quel super outil ! J'aime particulièrement la « taille physique ». J'ai toujours été surpris que ce ne soit pas une fonctionnalité de Sketch ou Figma, pour pouvoir visualiser son design au format 1:1. C'est même à la bonne taille sur mon écran externe ! »"
+
+[t_mkl_role]
+other = "Stratège créatif"
+
+[t_mk_quote]
+other = "« merci ! acheté »"
+
+[t_mk_role]
+other = "Notepad.exe & Goodnotes"
+
+#
+# ─── Pricing page ───
+#
+[pricing_title]
+other = "Bezel Pro"
+
+[pricing_subtitle]
+other = "Tous les forfaits incluent toutes les fonctionnalités et des mises à jour illimitées."
+
+[plan_monthly]
+other = "Mensuel"
+
+[plan_monthly_desc]
+other = "L'option la plus flexible."
+
+[plan_yearly]
+other = "Annuel"
+
+[plan_yearly_desc]
+other = "Économisez plus de 70 % par rapport au mensuel."
+
+[plan_lifetime]
+other = "À vie"
+
+[plan_lifetime_desc]
+other = "Payez une fois, à vous pour toujours."
+
+[price_per_month]
+other = "/mois"
+
+[price_per_year]
+other = "/an"
+
+[price_one_time]
+other = "paiement unique"
+
+[badge_best_value]
+other = "Meilleur rapport qualité-prix"
+
+[plan_user]
+other = "1 utilisateur"
+
+[plan_user_tooltip]
+other = "Valable pour 1 utilisateur uniquement, installable sur 3 appareils maximum de cet utilisateur."
+
+[plan_all_features]
+other = "Toutes les fonctionnalités de Bezel Pro"
+
+[plan_unlimited_updates]
+other = "Mises à jour illimitées de l'app"
+
+[plan_remove_watermark]
+other = "Suppression du filigrane et des limites de temps"
+
+[cta_subscribe]
+other = "S'abonner"
+
+[cta_buy_bezel]
+other = "Acheter Bezel"
+
+[cta_download_trial]
+other = "Télécharger la version d'essai gratuite"
+
+[business_title]
+other = "Entreprise"
+
+[business_price_period]
+other = "/poste/an"
+
+[business_desc]
+other = "Inscription des employés, facturation consolidée et gestion d'équipe."
+
+[business_contact]
+other = "Nous contacter"
+
+[pricing_note_currency]
+other = "Prix en USD. Des taxes peuvent s'appliquer."
+
+[pricing_note_guarantee]
+other = "Garantie de remboursement de 30 jours."
+
+#
+# ─── Pricing FAQ ───
+#
+[faq_title]
+other = "Foire aux questions"
+
+[faq_multi_q]
+other = "Puis-je installer Bezel sur plusieurs Mac ?"
+
+[faq_multi_a]
+other = "Oui ! Chaque licence personnelle est valable pour 1 utilisateur mais peut être installée sur 3 Mac maximum. C'est parfait si vous avez un ordinateur de bureau et un portable, ou si vous utilisez des machines différentes au travail et à la maison."
+
+[faq_sub_vs_lifetime_q]
+other = "Quelle est la différence entre l'abonnement et la licence à vie ?"
+
+[faq_sub_vs_lifetime_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Avec un <strong>abonnement</strong> (mensuel ou annuel), vous bénéficiez d'un accès complet à toutes les fonctionnalités de Bezel Pro tant que votre abonnement est actif. Si vous résiliez, vous pourrez toujours utiliser la version d'essai gratuite.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">La licence <strong>à vie</strong> est un achat unique qui vous donne un accès permanent à toutes les fonctionnalités Pro pendant toute la durée de vie de l'app, y compris toutes les futures mises à jour.</p>"
+
+[faq_cancel_q]
+other = "Que se passe-t-il si je résilie mon abonnement ?"
+
+[faq_cancel_a]
+other = "Si vous résiliez votre abonnement, vous conservez l'accès aux fonctionnalités Pro jusqu'à la fin de votre période de facturation. Après cela, Bezel reviendra à la version d'essai gratuite, qui inclut un filigrane et des limites de temps."
+
+[faq_guarantee_q]
+other = "Qu'est-ce que la garantie de remboursement de 30 jours ?"
+
+[faq_guarantee_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Elle vous permet d'acheter sans risque ! Dites-nous simplement, dans les 30 jours suivant l'achat, pourquoi vous n'êtes pas satisfait, et nous vous rembourserons quelle qu'en soit la raison.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">Contactez-nous à <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a></p>"
+
+[faq_invoice_q]
+other = "Puis-je obtenir une facture pour mon achat ?"
+
+[faq_invoice_a]
+other = "Après un achat réussi, vous recevez un e-mail de Paddle avec la facture jointe. Si vous avez besoin de vos coordonnées professionnelles et/ou de votre numéro de TVA sur la facture, ajoutez les informations de TVA lors de la deuxième étape du paiement à l'aide du lien « Add VAT » en bas à gauche."
+
+[faq_manage_q]
+other = "Comment gérer mon abonnement ?"
+
+[faq_manage_a]
+other = "Vous pouvez gérer votre abonnement, mettre à jour vos moyens de paiement ou résilier à tout moment via le <a class=\"underline\" href=\"https://customer-portal.paddle.com/cpl_01h3qnwsb8ac4b74xbkbbj631g\">portail client Paddle</a>. Vous pouvez également y accéder depuis Bezel via Réglages > À propos."
+
+[faq_license_q]
+other = "Où puis-je trouver ma licence ?"
+
+[faq_license_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Après un achat réussi, vous recevez de notre part un e-mail contenant votre clé de licence. Pensez à vérifier votre dossier Spam.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">Si vous ne trouvez pas votre clé de licence, contactez-nous à <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a>.</p>"
+
+[faq_upgrade_q]
+other = "Une remise de mise à niveau est-elle disponible ?"
+
+[faq_upgrade_a]
+other = "Si vous avez acheté Bezel avec une licence incluant un an de mises à jour, vous avez droit à une remise de 50 % sur les nouveaux forfaits Bezel. Saisissez votre ancien numéro de série ci-dessous pour obtenir votre remise de mise à niveau."
+
+[upgrade_banner_title]
+other = "Vous passez d'une version antérieure de Bezel ?"
+
+[upgrade_banner_sub]
+other = "Saisissez votre ancien numéro de série pour une remise de 50 %."
+
+[upgrade_enter_serial]
+other = "Saisir le numéro de série"
+
+[upgrade_get_discount]
+other = "Obtenir la remise"
+
+[upgrade_to_yearly]
+other = "Passer à l'annuel"
+
+[upgrade_to_lifetime]
+other = "Passer à la licence à vie"
+
+[faq_transfer_q]
+other = "Comment transférer ma licence vers un autre Mac ?"
+
+[faq_transfer_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">Désactivez le Mac qui utilise actuellement votre licence en allant dans Réglages > À propos et en cliquant sur le bouton « Désactiver la licence… ». Après la désactivation, vous pouvez utiliser la clé de licence sur un autre Mac.</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">Si vous avez perdu l'accès à la machine utilisant votre licence, contactez-nous à <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a>.</p>"
+
+# Dynamic strings surfaced by the upgrade-serial JavaScript on the pricing page.
+[upgrade_js_need_serial]
+other = "Veuillez d'abord saisir votre ancien numéro de série."
+[upgrade_js_invalid_serial]
+other = "Veuillez saisir un numéro de série valide au format XXXX-XXXX-XXXX-XXXX-XXXX"
+[upgrade_js_checking]
+other = "Vérification…"
+[upgrade_js_generic_error]
+other = "Une erreur s'est produite. Veuillez réessayer."
+
+#
+# ─── iOS page ───
+#
+[ios_hero_title]
+other = "De superbes captures d'écran encadrées<br>instantanément sur votre iPhone."
+
+[ios_hero_sub]
+other = "Ajoute un cadre d'appareil et un arrière-plan à vos captures d'écran."
+
+[ios_feat1_title]
+other = "Encadrez directement vos captures d'écran"
+
+[ios_feat1_sub]
+other = "Encadrez avec Visual Intelligence directement depuis l'écran de capture."
+
+[ios_feat2_title]
+other = "Arrière-plans personnalisés"
+
+[ios_feat2_sub]
+other = "Recherchez de superbes fonds d'écran sur Unsplash."
+
+[ios_feat3_title]
+other = "Choisissez votre cadre"
+
+[ios_feat3_sub]
+other = "Choisissez le cadre d'appareil qui vous plaît le plus."
+
+[ios_more_1]
+other = "Importez depuis Photos."
+
+[ios_more_2]
+other = "Importez depuis Fichiers."
+
+[ios_more_3]
+other = "Ajustez les marges."
+
+[more_to_love_title]
+other = "Et il y a encore plus à aimer !"
+
+[also_available_macos]
+other = "Bezel est aussi disponible sur macOS"
+
+#
+# ─── Vision Pro page ───
+#
+[vision_hero_title]
+other = "Affichez votre iPhone<br>dans <span class=\"hidden sm:inline\">l'Apple </span>Vision Pro"
+
+[vision_hero_sub]
+other = "Bezel vous offre une recopie nette et lisible de votre iPhone."
+
+[vision_feat1_title]
+other = "iPhone net et lisible"
+
+[vision_feat1_sub]
+other = "Fini le rendu flou du pass-through."
+
+[vision_feat2_title]
+other = "Un rendu superbe"
+
+[vision_feat2_sub]
+other = "L'écran est recopié dans un iPhone en trois dimensions."
+
+[vision_feat3_title]
+other = "Entièrement sans fil"
+
+[vision_feat3_sub]
+other = "Utilisez l'app iOS gratuite pour recopier sans fil."
+
+[vision_more_1]
+other = "Prise en charge du portrait et du paysage."
+
+[vision_more_2]
+other = "Recopiez plusieurs appareils à la fois."
+
+[vision_more_4]
+other = "Une superbe app visionOS native et rapide."
+
+[vision_faq1_q]
+other = "Où puis-je obtenir Bezel pour visionOS ? Quel est le tarif ?"
+
+[vision_faq1_a]
+other = "Bezel est disponible sur l'<a class=\"underline\" href=\"https://apps.apple.com/us/app/bezel-device-mirror/id6476657945\">App Store</a> pour un achat unique de $5. L'app Bezel pour iOS (version gratuite) est également requise sur l'iPhone que vous souhaitez recopier."
+
+[vision_faq2_q]
+other = "Quels appareils peuvent être recopiés vers Bezel pour visionOS ?"
+
+[vision_faq2_a]
+other = "Au lancement, les iPhone dotés de FaceID exécutant iOS 16.4 ou une version ultérieure sont pris en charge. Nous prévoyons de prendre en charge davantage d'appareils Apple à l'avenir."
+
+[vision_faq3_q]
+other = "Quel est le rapport entre Bezel pour visionOS et Bezel pour macOS ?"
+
+[vision_faq3_a]
+other = "Bezel pour visionOS est une app native pour Apple Vision Pro conçue de A à Z et vendue comme un achat séparé. Vous pouvez obtenir <a class=\"underline\" href=\"/bezel/\">Bezel pour Mac</a> depuis le <a class=\"underline\" href=\"/bezel/\">site web</a>."
+
+#
+# ─── Helper page ───
+#
+[helper_title]
+other = "Bezel Helper"
+
+[helper_intro]
+other = "Pour que Bezel puisse <strong>identifier le modèle, la couleur et l'état de connexion de l'iPhone</strong> ou de l'iPad connecté à votre Mac, vous devez installer une petite application d'assistance."
+
+[helper_step1]
+other = "Téléchargez l'app Bezel Helper :"
+
+[helper_download_btn]
+other = "Télécharger Helper"
+
+[helper_step2]
+other = "Une fois le téléchargement terminé, lancez Bezel Helper en double-cliquant dessus."
+
+[helper_step3]
+other = "Le Helper se connecte automatiquement à Bezel et identifie le modèle, la couleur et l'état de connexion de votre iPhone."
+
+[helper_why_title]
+other = "Pourquoi est-ce nécessaire ?"
+
+[helper_why_text]
+other = "Le sandboxing de macOS empêche Bezel de communiquer directement avec l'iPhone. Ainsi, lorsque vous connectez un iPhone ou un iPad, Bezel utilise l'app d'assistance (qui se trouve en dehors du bac à sable) comme intermédiaire."
+
+#
+# ─── Thank-you / download page ───
+#
+[ty_title]
+other = "Téléchargement démarré"
+
+[ty_not_working]
+other = "Ça ne fonctionne pas ?"
+
+[ty_download_again]
+other = "Relancer le téléchargement."
+
+[ty_signup_title]
+other = "Inscrivez-vous aux mises à jour"
+
+[ty_signup_sub]
+other = "Soyez le premier informé des nouvelles fonctionnalités."
+
+[form_email_label]
+other = "Adresse e-mail"
+
+[form_email_placeholder]
+other = "Votre adresse e-mail"
+
+[form_signup_btn]
+other = "S'inscrire"
+
+[ty_updates_note]
+other = "Uniquement les mises à jour de Bezel, désinscription à tout moment."
+
+[ty_thanks]
+other = "Parfait, vous êtes sur la liste."
+
+[back_to_homepage]
+other = "Retour à l'accueil →"
+
+# Dynamic strings surfaced by the newsletter-form JavaScript.
+[form_js_signing_up]
+other = "Inscription…"
+[form_js_invalid_email]
+other = "Veuillez saisir une adresse e-mail valide."
+[form_js_could_not_signup]
+other = "Impossible de vous inscrire. Veuillez réessayer."
+[form_js_network_error]
+other = "Erreur réseau. Veuillez vérifier votre connexion et réessayer."
+[form_js_verification_failed]
+other = "La vérification a échoué. Veuillez réessayer."
+[form_js_verification_timeout]
+other = "Le délai de vérification a expiré. Veuillez réessayer."
+[form_js_generic_error]
+other = "Une erreur s'est produite. Veuillez réessayer."
+
+#
+# ─── Subscribed page ───
+#
+[subscribed_title]
+other = "Merci<br />pour votre inscription"
+
+[subscribed_sub]
+other = "Nous vous tiendrons informé des dernières nouveautés de Bezel."
+
+#
+# ─── Knowledge Base / articles ───
+#
+[knowledge_base]
+other = "Base de connaissances"

@@ -1,20 +1,82 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" class="bg-gray-100 dark:bg-gray-900">
+<html lang="{{ .Site.Language.LanguageCode }}"{{ with .Site.Language.LanguageDirection }} dir="{{ . }}"{{ end }} class="bg-gray-100 dark:bg-gray-900">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preferred-language auto-detect. On the first visit we pick the best match
+         for the browser's languages among the ones we ship and redirect there,
+         recording the choice so we never fight a manual switch afterwards. -->
+    <script>
+      window.__bezelI18n = {
+        current: {{ .Site.Language.Lang }},
+        available: [{{ range $i, $l := site.Languages }}{{ if $i }}, {{ end }}{{ $l.Lang }}{{ end }}],
+        translations: { {{ range .AllTranslations }}{{ .Language.Lang }}: {{ .RelPermalink }}, {{ end }} },
+        homes: { {{ range .Site.Home.AllTranslations }}{{ .Language.Lang }}: {{ .RelPermalink }}, {{ end }} }
+      };
+      (function () {
+        var i = window.__bezelI18n;
+        if (!i || !i.available || !i.available.length) return;
+        var stored = null;
+        try { stored = localStorage.getItem('bezelLang'); } catch (e) {}
+        if (stored) return; /* preference already decided — respect the current page */
+        var langs = navigator.languages || (navigator.language ? [navigator.language] : []);
+        var pick = i.current;
+        outer:
+        for (var k = 0; k < langs.length; k++) {
+          var lower = (langs[k] || '').toLowerCase();
+          if (!lower) continue;
+          for (var a = 0; a < i.available.length; a++) {
+            if (lower === i.available[a].toLowerCase()) { pick = i.available[a]; break outer; }
+          }
+          var base = lower.split('-')[0];
+          for (var b = 0; b < i.available.length; b++) {
+            if (i.available[b].toLowerCase().split('-')[0] === base) { pick = i.available[b]; break outer; }
+          }
+        }
+        try { localStorage.setItem('bezelLang', pick); } catch (e) {}
+        if (pick !== i.current) {
+          var dest = i.translations[pick] || i.homes[pick];
+          if (dest && dest !== location.pathname) { location.replace(dest); }
+        }
+      })();
+    </script>
+
     <title>{{ if .Params.fullTitle }}{{ .Title }}{{ else if and .Title (not .IsHome) }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ if .Params.fullTitle }}{{ .Title }}{{ else if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ .Site.Params.ogImage }}{{ end }}">
+    {{- /* Social banner. Auto-uses a per-language variant when present — e.g.
+           static/images/og-main.nl.png for Dutch — and falls back to the English
+           image otherwise. Drop localized PNGs next to the original with a `.<lang>`
+           suffix before the extension to enable them. */ -}}
+    {{ $ogimg := .Site.Params.ogImage }}
+    {{ with .Params.images }}{{ $ogimg = index . 0 }}{{ end }}
+    {{ if and (ne .Site.Language.Lang "en") (not (strings.HasPrefix $ogimg "/")) }}
+        {{ $ext := path.Ext $ogimg }}
+        {{ $localized := printf "%s.%s%s" (strings.TrimSuffix $ext $ogimg) .Site.Language.Lang $ext }}
+        {{ if os.FileExists (printf "static/%s" $localized) }}{{ $ogimg = $localized }}{{ end }}
+    {{ end }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogimg }}">
+    <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ $ogimg }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="{{ replace .Site.Language.LanguageCode "-" "_" }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+
+    <!-- hreflang alternates for search engines. Uses the language-level `hreflang`
+         param (e.g. pt for pt-BR) so a single variant serves the whole language
+         audience; falls back to the precise LanguageCode when unset. -->
+    {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ with .Language.Params.hreflang }}{{ . }}{{ else }}{{ .Language.LanguageCode }}{{ end }}" href="{{ .Permalink }}">
+    {{- end }}
+    {{- range .AllTranslations }}{{ if eq .Language.Lang "en" }}
+    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+    {{- end }}{{ end }}
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}">

@@ -1,0 +1,629 @@
+# Japanese UI strings for the Bezel website.
+# Mirrors the keys in en.toml; values are translated, structure is identical.
+# Values containing HTML are rendered in templates with `| safeHTML`.
+# Proper nouns (Bezel, Nonstrict B.V., person names, @handles, product names) are
+# intentionally left untranslated.
+
+#
+# ─── Navigation (header.html, ios-header.html, vision-header.html) ───
+#
+[nav_features]
+other = "機能"
+
+[nav_pricing]
+other = "価格"
+
+[nav_ios]
+other = "iOS"
+
+[nav_faq]
+other = "FAQ"
+
+[nav_macos]
+other = "macOS"
+
+[nav_download]
+other = "ダウンロード"
+
+[header_ios_title]
+other = "Bezel · iOS app"
+
+[header_vision_title]
+other = "Bezel · Vision Pro app"
+
+#
+# ─── Footer (footer.html, ios-footer.html, vision-footer.html) ───
+#
+[footer_helper]
+other = "Bezel Helper"
+
+[footer_vision]
+other = "Vision Pro app"
+
+[footer_manage_subscription]
+other = "サブスクリプションの管理"
+
+[footer_knowledge_base]
+other = "ナレッジベース"
+
+[footer_press_kit]
+other = "プレスキット"
+
+[footer_terms]
+other = "利用規約"
+
+[footer_privacy]
+other = "プライバシー"
+
+[footer_address_main]
+other = "Amersfoort、オランダ"
+
+[footer_address_inline]
+other = "拠点はオランダの Amersfoort"
+
+#
+# ─── Language switcher (language-switcher.html) ───
+#
+[language_switcher_label]
+other = "言語"
+
+#
+# ─── Hero (hero.html) ───
+#
+[hero_badge]
+other = "新機能：ワイヤレスミラーリング"
+
+[hero_title]
+other = "あらゆる iPhone を<br />Mac にミラーリング"
+
+[hero_subtitle]
+other = "印象に残るデモ、録画、プレゼンテーションのために。"
+
+[hero_cta_try]
+other = "試してみる"
+
+[hero_cta_buy]
+other = "購入する"
+
+[hero_loved_by]
+other = "5,400+ の人々に愛用されています"
+
+[trusted_by]
+other = "iPhone ミラーリングで信頼されています："
+
+#
+# ─── Feature sections (hero.html) ───
+#
+[features_instant_title]
+other = "あらゆる iPhone を瞬時にミラーリング"
+
+[features_instant_sub]
+other = "AirPlay でワイヤレスに、またはケーブルでつないでミラーリング。"
+
+[features_recordings_title]
+other = "ワンクリックで美しい録画。"
+
+[features_recordings_sub]
+other = "ベゼルと背景付き。すぐに共有できます。"
+
+[features_present_title]
+other = "気が散ることなくプレゼン。"
+
+[features_present_sub]
+other = "画面全体を使って。すべての視線をあなたのコンテンツに。"
+
+[features_toolkit_title]
+other = "ミラーリングの完全なツールキット："
+
+[feature_airplay]
+other = "AirPlay でワイヤレスにミラーリング。"
+
+[feature_usb]
+other = "USB ケーブルでミラーリング。"
+
+[feature_every_iphone]
+other = "異なる iCloud アカウントでも、あらゆる iPhone に対応。"
+
+[feature_more_devices]
+other = "iPad、Apple TV、Vision Pro、iPod Touch にも対応。"
+
+[feature_recordings]
+other = "ベゼルと背景付きの画面録画。"
+
+[feature_screenshots]
+other = "高解像度のスクリーンショット。"
+
+[feature_audio]
+other = "オーディオのミラーリング。"
+
+[feature_fullscreen]
+other = "フルスクリーンモード。"
+
+[feature_pinning]
+other = "常に最前面にピン留め。"
+
+[feature_autorotate]
+other = "デバイスに合わせて自動回転。"
+
+[feature_autobezel]
+other = "ベゼルとカラーを自動でマッチング。"
+
+[feature_customcolors]
+other = "カスタムベゼルカラー。"
+
+[feature_guided]
+other = "新しいデバイスのガイド付きセットアップ。"
+
+[feature_sleeplock]
+other = "スリープとロックのモードを検出。"
+
+[feature_sizing]
+other = "実物大またはピクセルパーフェクトなサイズ。"
+
+[feature_native]
+other = "ネイティブの macOS アプリ。"
+
+[feature_remove_watermark]
+other = "ウォーターマークを削除。"
+
+[feature_unlimited]
+other = "無制限のミラーリング。"
+
+[badge_pro]
+other = "Pro"
+
+#
+# ─── Testimonials (testimonials.html). Quotes render with safeHTML.
+#     Person names, @handles and product/company names stay untranslated. ───
+#
+[testimonials_title]
+other = "みんなが Bezel を愛しています ❤️"
+
+[t_dk_quote]
+other = "「Bezel を毎日使ってステークホルダーへのデモやチームでの新機能テストをしています。Bezel のおかげで特定のアプリ体験を見せるのが本当にシームレスです。」"
+
+[t_dk_role]
+other = "iOS & Android アプリのプロダクトマネージャー"
+
+[t_st_quote]
+other = "「ぶっちゃけ、@mac_cain13 が Bezel アプリで作ったものはマジでかっこいい。\n                            <br><br>\n                            ちょうど自分の SaaS 向けに iPhone アプリをローンチするところだから、タイミングも完璧。プロダクトデモなんかに最高だ。\n                            <br><br>\n                            これをどう成長させていくのか楽しみ…」"
+
+[t_st_role]
+other = "Squabbble を開発中"
+
+[t_jp_quote]
+other = "「Cradle 向けにモバイルアプリを作る言い訳がほしいくらいだ。」"
+
+[t_jp_role]
+other = "Cradle.bio の創業者"
+
+[t_bh_quote]
+other = "「これはすごくかっこいい！！！」"
+
+[t_bh_role]
+other = "Vivid app の制作者"
+
+[t_jh_quote]
+other = "「すでに Bezel にすっかり感心しています。次に何が来るのかとても気になります！」"
+
+[t_jh_role]
+other = "品質スペシャリスト"
+
+[t_bs_quote]
+other = "「これはまさに私がずっと探し求めていた、100% その通りのものです。」"
+
+[t_bs_role]
+other = "Q42 Agency のデザイナー"
+
+[t_fk_quote]
+other = "「すごい、よくできてる！とてもスムーズ！」"
+
+[t_fk_role]
+other = "Fastlane の制作者"
+
+[t_ae_quote]
+other = "「今日、複雑な権限をシンプルに感じさせる優れたオンボーディングフローのアプリを2つダウンロードした：<br>\n                            - iOS 向けの @RewindAI<br>\n                            - @nonstrict_hq の Bezel」"
+
+[t_ae_role]
+other = "OpenAI のデスクトップ & エージェント担当"
+
+[t_rp_quote]
+other = "「スマホで何かをやって他の人と共有する必要があるなら、即買いです！」"
+
+[t_rp_role]
+other = "Rise Calender 共同創業者"
+
+[t_nr_quote]
+other = "「QuickTime より良い 👏」"
+
+[t_nr_role]
+other = "@ahmdnazrafq"
+
+[t_sl_quote]
+other = "「セットアップの手順が本当によくできていて、動作もとてもいい。シミュレーターと同じくらい簡単に自分のデバイスをミラーリングできるのは最高です。」"
+
+[t_sl_role]
+other = "Swift/iOS YouTuber"
+
+[t_pv_quote]
+other = "「iPhone を Mac でデモするのにこれほど素晴らしいアプリはありません。とても洗練されていてシームレスです。<br>\n                            <br>\n                            そして macOS の Detail と組み合わせると、カメラと iPhone の画面を合わせて即座に録画・編集できて、本当によく動きます。」"
+
+[t_pv_role]
+other = "Detail.co の創業者"
+
+[t_af_quote]
+other = "「Nonstrict はすごいものを作っている。見ていてうれしくなる！」"
+
+[t_af_role]
+other = "Reincubate 創業者"
+
+[t_mkl_quote]
+other = "「なんて素晴らしいツール！特に『実寸サイズ』が気に入っています。Sketch や Figma にこの機能がないのがずっと不思議でした。デザインを 1:1 のフォーマットで確認できるんです。外部ディスプレイでも正しいサイズで表示されます！」"
+
+[t_mkl_role]
+other = "クリエイティブストラテジスト"
+
+[t_mk_quote]
+other = "「ありがとう！購入したよ」"
+
+[t_mk_role]
+other = "Notepad.exe & Goodnotes"
+
+#
+# ─── Pricing page (pricing.html) ───
+#
+[pricing_title]
+other = "Bezel Pro"
+
+[pricing_subtitle]
+other = "すべてのプランにすべての機能と無制限のアップデートが含まれます。"
+
+[plan_monthly]
+other = "月額"
+
+[plan_monthly_desc]
+other = "もっとも柔軟な選択肢。"
+
+[plan_yearly]
+other = "年額"
+
+[plan_yearly_desc]
+other = "月額より 70% 以上お得。"
+
+[plan_lifetime]
+other = "買い切り"
+
+[plan_lifetime_desc]
+other = "一度の支払いで、ずっとあなたのものに。"
+
+[price_per_month]
+other = "/月"
+
+[price_per_year]
+other = "/年"
+
+[price_one_time]
+other = "一回限り"
+
+[badge_best_value]
+other = "もっともお得"
+
+[plan_user]
+other = "1 ユーザー"
+
+[plan_user_tooltip]
+other = "1 ユーザーのみ有効。そのユーザーの最大 3 台のデバイスにインストールできます。"
+
+[plan_all_features]
+other = "すべての Bezel Pro 機能"
+
+[plan_unlimited_updates]
+other = "無制限のアプリアップデート"
+
+[plan_remove_watermark]
+other = "ウォーターマークと時間制限を削除"
+
+[cta_subscribe]
+other = "登録する"
+
+[cta_buy_bezel]
+other = "Bezel を購入"
+
+[cta_download_trial]
+other = "無料トライアルをダウンロード"
+
+[business_title]
+other = "ビジネス"
+
+[business_price_period]
+other = "/シート/年"
+
+[business_desc]
+other = "従業員の登録、一括請求、チーム管理。"
+
+[business_contact]
+other = "お問い合わせ"
+
+[pricing_note_currency]
+other = "価格は USD 表示です。税金が加算される場合があります。"
+
+[pricing_note_guarantee]
+other = "30日間の返金保証。"
+
+#
+# ─── Pricing FAQ (pricing.html). Answers with links render with safeHTML. ───
+#
+[faq_title]
+other = "よくある質問"
+
+[faq_multi_q]
+other = "Bezel を複数の Mac にインストールできますか？"
+
+[faq_multi_a]
+other = "はい！各個人ライセンスは 1 ユーザーで有効ですが、最大 3 台の Mac にインストールできます。デスクトップとノートパソコンをお持ちの場合や、職場と自宅で別々のマシンを使う場合に最適です。"
+
+[faq_sub_vs_lifetime_q]
+other = "サブスクリプションと買い切りの違いは何ですか？"
+
+[faq_sub_vs_lifetime_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\"><strong>サブスクリプション</strong>（月額または年額）では、サブスクリプションが有効な限り、すべての Bezel Pro 機能にフルアクセスできます。解約した場合でも、無料トライアル版を引き続き使用できます。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\"><strong>買い切り</strong>ライセンスは一度きりの購入で、今後のすべてのアップデートを含め、アプリのライフタイムにわたってすべての Pro 機能に永続的にアクセスできます。</p>"
+
+[faq_cancel_q]
+other = "サブスクリプションを解約するとどうなりますか？"
+
+[faq_cancel_a]
+other = "サブスクリプションを解約すると、請求期間の終了まで Pro 機能へのアクセスが維持されます。その後、Bezel はウォーターマークと時間制限を含む無料トライアル版に戻ります。"
+
+[faq_guarantee_q]
+other = "30日間の返金保証とは何ですか？"
+
+[faq_guarantee_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">リスクなしで購入できます！購入から 30 日以内にご不満の理由をお知らせいただければ、理由を問わず返金いたします。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">お問い合わせは <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a> まで</p>"
+
+[faq_invoice_q]
+other = "購入の請求書をもらえますか？"
+
+[faq_invoice_a]
+other = "購入が完了すると、Paddle から請求書を添付したメールが届きます。請求書に会社情報や VAT 番号が必要な場合は、チェックアウトの 2 番目のステップで左下の「Add VAT」リンクから VAT 情報を追加してください。"
+
+[faq_manage_q]
+other = "サブスクリプションはどのように管理しますか？"
+
+[faq_manage_a]
+other = "<a class=\"underline\" href=\"https://customer-portal.paddle.com/cpl_01h3qnwsb8ac4b74xbkbbj631g\">Paddle カスタマーポータル</a>から、いつでもサブスクリプションの管理、支払い方法の更新、解約ができます。Bezel 内の「設定」>「情報」からもアクセスできます。"
+
+[faq_license_q]
+other = "ライセンスはどこで確認できますか？"
+
+[faq_license_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">購入が完了すると、ライセンスキーを記載したメールが当社から届きます。迷惑メールフォルダも必ずご確認ください。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">ライセンスキーが見つからない場合は、<a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a> までご連絡ください。</p>"
+
+[faq_upgrade_q]
+other = "アップグレード割引はありますか？"
+
+[faq_upgrade_a]
+other = "1 年間のアップデート付きライセンスで Bezel を購入された方は、新しい Bezel プランで 50% 割引を受けられます。以前のシリアル番号を下に入力してアップグレード割引を取得してください。"
+
+[upgrade_banner_title]
+other = "以前のバージョンの Bezel からアップグレードしますか？"
+
+[upgrade_banner_sub]
+other = "以前のシリアル番号を入力して 50% 割引を受けましょう。"
+
+[upgrade_enter_serial]
+other = "シリアル番号を入力"
+
+[upgrade_get_discount]
+other = "割引を取得"
+
+[upgrade_to_yearly]
+other = "年額にアップグレード"
+
+[upgrade_to_lifetime]
+other = "買い切りにアップグレード"
+
+[faq_transfer_q]
+other = "ライセンスを別の Mac に移すにはどうすればいいですか？"
+
+[faq_transfer_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">現在ライセンスを使用している Mac で「設定」>「情報」に進み、「ライセンスの認証を解除…」ボタンをクリックして認証を解除します。認証を解除すると、別の Mac でそのライセンスキーを使用できます。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">ライセンスを使用しているマシンにアクセスできなくなった場合は、<a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a> までご連絡ください。</p>"
+
+# Dynamic strings surfaced by the upgrade-serial JavaScript on the pricing page.
+[upgrade_js_need_serial]
+other = "まず以前のシリアル番号を入力してください。"
+[upgrade_js_invalid_serial]
+other = "XXXX-XXXX-XXXX-XXXX-XXXX の形式で有効なシリアル番号を入力してください"
+[upgrade_js_checking]
+other = "確認中…"
+[upgrade_js_generic_error]
+other = "問題が発生しました。もう一度お試しください。"
+
+#
+# ─── iOS page (partials/page/ios.html) ───
+#
+[ios_hero_title]
+other = "美しいフレーム付きスクリーンショットを<br>iPhone で瞬時に。"
+
+[ios_hero_sub]
+other = "スクリーンショットにデバイスフレームと背景を追加します。"
+
+[ios_feat1_title]
+other = "スクリーンショットを直接フレーミング"
+
+[ios_feat1_sub]
+other = "スクリーンショット画面から Visual Intelligence を使って直接フレーミング。"
+
+[ios_feat2_title]
+other = "カスタム背景"
+
+[ios_feat2_sub]
+other = "Unsplash で美しい壁紙を検索。"
+
+[ios_feat3_title]
+other = "ベゼルを選ぶ"
+
+[ios_feat3_sub]
+other = "お気に入りのデバイスフレームを選びましょう。"
+
+[ios_more_1]
+other = "「写真」から読み込み。"
+
+[ios_more_2]
+other = "「ファイル」から読み込み。"
+
+[ios_more_3]
+other = "余白を調整。"
+
+[more_to_love_title]
+other = "まだまだ嬉しい機能が！"
+
+[also_available_macos]
+other = "Bezel は macOS でも利用できます"
+
+#
+# ─── Vision Pro page (partials/page/vision.html) ───
+#
+[vision_hero_title]
+other = "iPhone を<span class=\"hidden sm:inline\">Apple </span>Vision Pro の<br>中に表示"
+
+[vision_hero_sub]
+other = "Bezel は iPhone のくっきりと読みやすいミラーを提供します。"
+
+[vision_feat1_title]
+other = "くっきり読みやすい iPhone"
+
+[vision_feat1_sub]
+other = "ぼやけたパススルーはもう不要です。"
+
+[vision_feat2_title]
+other = "美しい見た目"
+
+[vision_feat2_sub]
+other = "画面は立体的な iPhone にミラーリングされます。"
+
+[vision_feat3_title]
+other = "完全ワイヤレス"
+
+[vision_feat3_sub]
+other = "無料の iOS アプリを使ってワイヤレスでミラーリング。"
+
+[vision_more_1]
+other = "縦向き & 横向きに対応。"
+
+[vision_more_2]
+other = "複数のデバイスを同時にミラーリング。"
+
+[vision_more_4]
+other = "美しく高速なネイティブ visionOS アプリ。"
+
+[vision_faq1_q]
+other = "visionOS 版 Bezel はどこで入手できますか？価格は？"
+
+[vision_faq1_a]
+other = "Bezel は <a class=\"underline\" href=\"https://apps.apple.com/us/app/bezel-device-mirror/id6476657945\">App Store</a> で $5 の一回限りの購入として利用できます。ミラーリングしたい iPhone には、iOS 版 Bezel アプリ（無料版）も必要です。"
+
+[vision_faq2_q]
+other = "visionOS 版 Bezel にはどのデバイスをミラーリングできますか？"
+
+[vision_faq2_a]
+other = "ローンチ時点では、iOS 16.4 以降を搭載した FaceID 対応の iPhone がサポートされています。今後、さらに多くの Apple デバイスへの対応を目指しています。"
+
+[vision_faq3_q]
+other = "visionOS 版 Bezel と macOS 版 Bezel の関係は？"
+
+[vision_faq3_a]
+other = "visionOS 版 Bezel は Apple Vision Pro 向けにゼロから作られたネイティブアプリで、別売りで販売されています。<a class=\"underline\" href=\"/bezel/\">Bezel for Mac</a> は<a class=\"underline\" href=\"/bezel/\">ウェブサイト</a>から入手できます。"
+
+#
+# ─── Helper page (partials/page/helper.html) ───
+#
+[helper_title]
+other = "Bezel Helper"
+
+[helper_intro]
+other = "Bezel が Mac に接続された iPhone や iPad の<strong>モデル、カラー、接続状態を識別する</strong>には、小さなヘルパーアプリケーションをインストールする必要があります。"
+
+[helper_step1]
+other = "Bezel Helper アプリをダウンロード："
+
+[helper_download_btn]
+other = "Helper をダウンロード"
+
+[helper_step2]
+other = "ダウンロードが完了したら、ダブルクリックして Bezel Helper を起動します。"
+
+[helper_step3]
+other = "Helper は自動的に Bezel に接続し、iPhone のモデル、カラー、接続状態を識別します。"
+
+[helper_why_title]
+other = "これはなぜ必要なのですか？"
+
+[helper_why_text]
+other = "macOS のサンドボックス化により、Bezel が iPhone と直接通信することができません。そのため iPhone や iPad を接続すると、Bezel はサンドボックスの外にあるヘルパーアプリを仲介役として使用します。"
+
+#
+# ─── Thank-you / download page (partials/page/thank-you.html) ───
+#
+[ty_title]
+other = "ダウンロードを開始しました"
+
+[ty_not_working]
+other = "うまくいきませんか？"
+
+[ty_download_again]
+other = "もう一度ダウンロードを開始。"
+
+[ty_signup_title]
+other = "アップデートに登録"
+
+[ty_signup_sub]
+other = "新機能をいち早く知りましょう。"
+
+[form_email_label]
+other = "メールアドレス"
+
+[form_email_placeholder]
+other = "あなたのメールアドレス"
+
+[form_signup_btn]
+other = "登録"
+
+[ty_updates_note]
+other = "Bezel のアップデートのみ。いつでも配信停止できます。"
+
+[ty_thanks]
+other = "ありがとうございます。リストに登録されました。"
+
+[back_to_homepage]
+other = "ホームページに戻る →"
+
+# Dynamic strings surfaced by the newsletter-form JavaScript.
+[form_js_signing_up]
+other = "登録中…"
+[form_js_invalid_email]
+other = "有効なメールアドレスを入力してください。"
+[form_js_could_not_signup]
+other = "登録できませんでした。もう一度お試しください。"
+[form_js_network_error]
+other = "ネットワークエラーです。接続を確認してもう一度お試しください。"
+[form_js_verification_failed]
+other = "認証に失敗しました。もう一度お試しください。"
+[form_js_verification_timeout]
+other = "認証がタイムアウトしました。もう一度お試しください。"
+[form_js_generic_error]
+other = "問題が発生しました。もう一度お試しください。"
+
+#
+# ─── Subscribed page (partials/page/subscribed.html) ───
+#
+[subscribed_title]
+other = "ご登録<br />ありがとうございます"
+
+[subscribed_sub]
+other = "Bezel の最新情報をお届けします。"
+
+#
+# ─── Knowledge Base / articles (article/list.html) ───
+#
+[knowledge_base]
+other = "ナレッジベース"

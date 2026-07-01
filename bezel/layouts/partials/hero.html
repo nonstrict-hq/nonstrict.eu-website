@@ -16,15 +16,14 @@
                             <path fill-rule="evenodd"
                                 d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
                                 clip-rule="evenodd"></path>
-                        </svg>NEW: Wireless Mirroring <span aria-hidden="true">&rarr;</span></a>
+                        </svg>{{ T "hero_badge" }} <span aria-hidden="true">&rarr;</span></a>
                 </p>
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">Mirror any
-                    iPhone<br />on your Mac</h1>
-                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">For demos, recordings, and presentations that leave an impression.</p>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{ T "hero_title" | safeHTML }}</h1>
+                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "hero_subtitle" }}</p>
             </div>
             <div class="m-top-8 flex items-center gap-x-6">
                 <div class="basis-0 grow flex flex-col">
-                    <a href="/bezel/thank-you-for-trying-bezel?utm_source=bezel&utm_medium=website&utm_content=hero"
+                    <a href="{{ "thank-you-for-trying-bezel" | relLangURL }}?utm_source=bezel&utm_medium=website&utm_content=hero"
                         class="w-full text-center rounded-md px-3.5 py-3 text-m font-semibold text-purple-600 dark:text-white shadow-sm ring-1 ring-purple-600 hover:text-white hover:bg-purple-400 hover:ring-purple-400">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                             class="inline-block w-6 h-6 mr-1 -mt-1">
@@ -32,36 +31,36 @@
                                 d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
                                 clip-rule="evenodd" />
                         </svg>
-                        Try it
+                        {{ T "hero_cta_try" }}
                     </a>
                 </div>
                 <div class="basis-0 grow flex flex-col">
-                    <a href="/bezel/pricing"
+                    <a href="{{ "pricing" | relLangURL }}"
                         class="w-full text-center rounded-md bg-purple-600 px-3.5 py-3 text-m font-semibold text-white shadow-sm hover:bg-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="inline-block w-6 h-6 mr-1 -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
                         </svg>
-                        Buy it
+                        {{ T "hero_cta_buy" }}
                     </a>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row mt-8">
                 <div class="sm:basis-0 sm:grow flex justify-center sm:justify-end -space-x-2 overflow-hidden p-1">
-                    <a href="/bezel/#testimonials"><img class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                    <a href="{{ .Site.Home.RelPermalink }}#testimonials"><img class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
                             src="/bezel/images/avatar/dk.jpg"
                             alt="Daan van de Kamp, Product Manager at Booking.com"></a>
-                    <a href="/bezel/#testimonials"><img
+                    <a href="{{ .Site.Home.RelPermalink }}#testimonials"><img
                             class="inline-block h-10 w-10 rounded-full ring-2 ring-gray-100 dark:ring-white"
                             src="/bezel/images/avatar/st.png" alt="SaaS Trash">
-                        <a href="/bezel/#testimonials"><img
+                        <a href="{{ .Site.Home.RelPermalink }}#testimonials"><img
                                 class="inline-block h-10 w-10 rounded-full ring-2 ring-gray-100 dark:ring-white"
                                 src="/bezel/images/avatar/bh.jpg" alt="Ben Harraway, Creator of Vivid app"></a>
-                        <a href="/bezel/#testimonials"><img
+                        <a href="{{ .Site.Home.RelPermalink }}#testimonials"><img
                                 class="inline-block h-10 w-10 rounded-full ring-2 ring-gray-100 dark:ring-white"
                                 src="/bezel/images/avatar/pv.jpg" alt="Paul Veugen, Founder of Detail.co"></a>
-                        <a href="/bezel/#testimonials"><img
+                        <a href="{{ .Site.Home.RelPermalink }}#testimonials"><img
                                 class="inline-block h-10 w-10 rounded-full ring-2 ring-gray-100 dark:ring-white"
                                 src="/bezel/images/avatar/fk.jpg" alt="Felix Krause, Creator of Fastlane"></a>
                 </div>
@@ -94,22 +93,21 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </div>
-                    <span class="text-center text-sm text-gray-600 dark:text-gray-400">&nbsp;loved by 5,400+
-                        people</span>
+                    <span class="text-center text-sm text-gray-600 dark:text-gray-400">&nbsp;{{ T "hero_loved_by" }}</span>
                 </div>
             </div>
         </div>
         <div class="mx-auto max-w-lg lg:mx-0 lg:mt-8">
             <video id="demo-video" data-trigger="replay-demo-video" autoplay muted playsinline loop preload="auto"
                 class="mx-auto mt-16 w-full max-w-[448px] rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50 lg:mt-auto">
-                <source src="video/mac-connect-wireless-square.mov#t=0.001" type="video/mp4">
+                <source src="/bezel/video/mac-connect-wireless-square.mov#t=0.001" type="video/mp4">
             </video>
         </div>
     </div>
 
     <div class="text-center mx-auto max-w-6xl px-9 pb-0 pt-10 sm:pb-0 lg:px-8 lg:pt-20">
         <div class="mt-12">
-            <h2 class="text-gray-600 dark:text-gray-400 mx-auto max-w-2xl text-lg leading-8">Trusted for iPhone mirroring by:</h2>
+            <h2 class="text-gray-600 dark:text-gray-400 mx-auto max-w-2xl text-lg leading-8">{{ T "trusted_by" }}</h2>
         </div>
         <div
             class="text-gray-500 dark:text-gray-400 mt-4 md:mt-3 flex flex-col sm:flex-row gap-y-4 items-center place-content-between">
@@ -179,36 +177,36 @@
 
     <div id="features" class="text-center mx-auto max-w-6xl px-9 pt-10 pb-24 lg:place-content-between lg:px-8 lg:pt-20">
         <div class="mt-12">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Instant mirroring of any iPhone</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">Mirror wirelessly with AirPlay or plug in with a cable.</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "features_instant_title" }}</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "features_instant_sub" }}</p>
             <video id="demo-video" data-trigger="replay-demo-video" autoplay muted playsinline loop preload="auto"
                 class="mx-auto mt-12 w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
-                <source src="video/mac-connect-wired.mov#t=0.001" type="video/mp4">
+                <source src="/bezel/video/mac-connect-wired.mov#t=0.001" type="video/mp4">
             </video>
         </div>
 
         <div class="mt-24">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Beautiful one-click recordings.</h2>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "features_recordings_title" }}</h2>
             <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Complete with bezel and background. Ready to share.</p>
+                {{ T "features_recordings_sub" }}</p>
             <video id="demo-video" data-trigger="replay-demo-video" autoplay muted playsinline loop preload="auto"
                 class="mx-auto mt-12 w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
-                <source src="video/mac-recording.mov#t=0.001" type="video/mp4">
+                <source src="/bezel/video/mac-recording.mov#t=0.001" type="video/mp4">
             </video>
             <span id="fullscreen">&nbsp;</span>
         </div>
 
         <div class="mt-24">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Present without distractions.</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">Take over the entire screen. All eyes on your content.</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "features_present_title" }}</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "features_present_sub" }}</p>
             <video id="demo-video" data-trigger="replay-demo-video" autoplay muted playsinline loop preload="auto"
                 class="mx-auto mt-12 w-full rounded-md bg-white/5 ring-1 ring-gray-600/50 dark:ring-white/50">
-                <source src="video/mac-fullscreen.mov#t=0.001" type="video/mp4">
+                <source src="/bezel/video/mac-fullscreen.mov#t=0.001" type="video/mp4">
             </video>
         </div>
 
         <div class="mt-24">
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">The complete mirroring toolkit:</h2>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ T "features_toolkit_title" }}</h2>
 
             <div class="jutsify-center flex items-center">
                 <div
@@ -219,7 +217,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Wirelessly mirror via AirPlay.
+                        {{ T "feature_airplay" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -227,7 +225,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Mirror via USB cable.
+                        {{ T "feature_usb" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -235,7 +233,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Supports every iPhone, even different iCloud accounts.
+                        {{ T "feature_every_iphone" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -243,7 +241,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        iPad, Apple TV, Vision Pro, and iPod Touch also supported.
+                        {{ T "feature_more_devices" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -251,7 +249,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Screen recordings with bezel and backdrop.
+                        {{ T "feature_recordings" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -259,7 +257,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Screenshots in high resolution.
+                        {{ T "feature_screenshots" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -267,7 +265,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Audio mirroring.
+                        {{ T "feature_audio" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -275,7 +273,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Full screen mode.
+                        {{ T "feature_fullscreen" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -283,7 +281,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Always-on-top pinning.
+                        {{ T "feature_pinning" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -291,7 +289,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Auto-rotate with device.
+                        {{ T "feature_autorotate" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -299,7 +297,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Auto-matching bezels and colors.
+                        {{ T "feature_autobezel" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -307,7 +305,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Custom bezel colors.
+                        {{ T "feature_customcolors" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -315,7 +313,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Guided setup for new devices.
+                        {{ T "feature_guided" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -323,7 +321,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Detects sleep and lock modes.
+                        {{ T "feature_sleeplock" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -331,7 +329,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        True-to-life or pixel-perfect sizing.
+                        {{ T "feature_sizing" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -339,7 +337,7 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Native macOS app.
+                        {{ T "feature_native" }}
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -347,8 +345,8 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Remove watermark.
-                        <span class="bg-purple-400 text-white uppercase text-xs font-medium ml-1 me-2 px-2.5 py-0.5 rounded inline-block -translate-y-0.5">Pro</span>
+                        {{ T "feature_remove_watermark" }}
+                        <span class="bg-purple-400 text-white uppercase text-xs font-medium ml-1 me-2 px-2.5 py-0.5 rounded inline-block -translate-y-0.5">{{ T "badge_pro" }}</span>
                     </p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -356,8 +354,8 @@
                             class="w-6 h-6 text-purple-600 dark:text-purple-400 inline-block -mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        Unlimited mirroring.
-                        <span class="bg-purple-400 text-white uppercase text-xs font-medium ml-1 me-2 px-2.5 py-0.5 rounded inline-block -translate-y-0.5">Pro</span>
+                        {{ T "feature_unlimited" }}
+                        <span class="bg-purple-400 text-white uppercase text-xs font-medium ml-1 me-2 px-2.5 py-0.5 rounded inline-block -translate-y-0.5">{{ T "badge_pro" }}</span>
                     </p>
                 </div>
             </div>

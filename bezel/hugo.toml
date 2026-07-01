@@ -1,15 +1,101 @@
 baseURL = "https://nonstrict.eu/bezel/"
-languageCode = "en-US"
 disablePathToLower = true
-title = "Bezel • Mirror any iPhone on your Mac"
 enableRobotsTXT = true
+contentDir = "Content"
+
+# Multilingual setup. English stays at /bezel/, other languages live under
+# /bezel/<lang>/. Languages mirror the set the Bezel app ships with; add a new
+# [languages.<code>] block plus an i18n/<code>.toml file to enable another one.
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 [params]
-  description = "The best way to display and record any iPhone, iPad, and Apple TV."
   ogImage = "images/og-main.png"
   favicon = "/bezel/images/favicon.png"
   # Cloudflare Turnstile for the newsletter form (NS Customer now requires a verified token).
   turnstileSiteKey = "0x4AAAAAACszGculHHNbfIfG"
+
+[languages]
+  [languages.en]
+    languageCode = "en-US"
+    languageName = "English"
+    weight = 1
+    title = "Bezel • Mirror any iPhone on your Mac"
+    [languages.en.params]
+      description = "The best way to display and record any iPhone, iPad, and Apple TV."
+      hreflang = "en"
+
+  [languages.nl]
+    languageCode = "nl-NL"
+    languageName = "Nederlands"
+    weight = 2
+    title = "Bezel • Spiegel elke iPhone op je Mac"
+    [languages.nl.params]
+      description = "De beste manier om elke iPhone, iPad en Apple TV te tonen en op te nemen."
+      hreflang = "nl"
+
+  [languages.de]
+    languageCode = "de-DE"
+    languageName = "Deutsch"
+    weight = 3
+    title = "Bezel • Jedes iPhone auf deinem Mac spiegeln"
+    [languages.de.params]
+      description = "Die beste Art, jedes iPhone, iPad und Apple TV zu zeigen und aufzunehmen."
+      hreflang = "de"
+
+  [languages.fr]
+    languageCode = "fr-FR"
+    languageName = "Français"
+    weight = 4
+    title = "Bezel • Recopiez n'importe quel iPhone sur votre Mac"
+    [languages.fr.params]
+      description = "La meilleure façon d'afficher et d'enregistrer n'importe quel iPhone, iPad et Apple TV."
+      hreflang = "fr"
+
+  [languages.es]
+    languageCode = "es-ES"
+    languageName = "Español"
+    weight = 5
+    title = "Bezel • Refleja cualquier iPhone en tu Mac"
+    [languages.es.params]
+      description = "La mejor forma de mostrar y grabar cualquier iPhone, iPad y Apple TV."
+      hreflang = "es"
+
+  [languages.it]
+    languageCode = "it-IT"
+    languageName = "Italiano"
+    weight = 6
+    title = "Bezel • Riproduci qualsiasi iPhone sul tuo Mac"
+    [languages.it.params]
+      description = "Il modo migliore per mostrare e registrare qualsiasi iPhone, iPad e Apple TV."
+      hreflang = "it"
+
+  [languages.ja]
+    languageCode = "ja-JP"
+    languageName = "日本語"
+    weight = 7
+    title = "Bezel • どんなiPhoneもMacにミラーリング"
+    [languages.ja.params]
+      description = "あらゆるiPhone、iPad、Apple TVを表示・録画する最良の方法。"
+      hreflang = "ja"
+
+  [languages.zh-Hans]
+    languageCode = "zh-Hans"
+    languageName = "简体中文"
+    weight = 8
+    title = "Bezel • 在 Mac 上镜像任何 iPhone"
+    [languages.zh-Hans.params]
+      description = "展示和录制任何 iPhone、iPad 和 Apple TV 的最佳方式。"
+      hreflang = "zh-Hans"
+
+  [languages.pt-BR]
+    languageCode = "pt-BR"
+    languageName = "Português (BR)"
+    weight = 9
+    title = "Bezel • Espelhe qualquer iPhone no seu Mac"
+    [languages.pt-BR.params]
+      description = "A melhor forma de exibir e gravar qualquer iPhone, iPad e Apple TV."
+      hreflang = "pt"
 
 [permalinks]
   article = "/article/:slug/"

@@ -3,15 +3,15 @@
         <div class="flex justify-center space-x-6 md:order-2">
             <a rel="me" href="https://mastodon.social/@bezelapp" class="hidden underline text-gray-600 dark:text-gray-400 text-xs">Mastodon @bezelapp</a>
             <a rel="me" href="https://mastodon.social/@nonstrict" class="hidden underline text-gray-600 dark:text-gray-400 text-xs">Mastodon @nonstrict</a>
-            <a href="/bezel/vision/" class="underline text-gray-600 dark:text-gray-400 text-xs">Vision Pro app</a>
-            <a href="/bezel/article/" class="underline text-gray-600 dark:text-gray-400 text-xs">Knowledge Base</a>
-            <a href="/bezel/helper/" class="underline text-gray-600 dark:text-gray-400 text-xs">Bezel Helper</a>
-            <a href="https://impresskit.net/bezel-vision" class="underline text-gray-600 dark:text-gray-400 text-xs">Press Kit</a>
-            <a href="/bezel/terms/" class="underline text-gray-600 dark:text-gray-400 text-xs">Terms</a>
-            <a href="/bezel/privacy/" class="underline text-gray-600 dark:text-gray-400 text-xs">Privacy</a>
+            <a href="{{ "vision/" | relLangURL }}" class="underline text-gray-600 dark:text-gray-400 text-xs">{{ T "footer_vision" }}</a>
+            <a href="{{ "article/" | relLangURL }}" class="underline text-gray-600 dark:text-gray-400 text-xs">{{ T "footer_knowledge_base" }}</a>
+            <a href="{{ "helper/" | relLangURL }}" class="underline text-gray-600 dark:text-gray-400 text-xs">{{ T "footer_helper" }}</a>
+            <a href="https://impresskit.net/bezel-vision" class="underline text-gray-600 dark:text-gray-400 text-xs">{{ T "footer_press_kit" }}</a>
+            <a href="/bezel/terms/" class="underline text-gray-600 dark:text-gray-400 text-xs">{{ T "footer_terms" }}</a>
+            <a href="/bezel/privacy/" class="underline text-gray-600 dark:text-gray-400 text-xs">{{ T "footer_privacy" }}</a>
         </div>
         <div class="mt-8 md:order-1 md:mt-0">
-            <p class="text-center text-xs leading-5 text-gray-600 dark:text-gray-400">&copy; 2023-{{ now.Year }} <a href="https://nonstrict.eu" class="underline">Nonstrict B.V.</a> based in Amersfoort, The Netherlands &mdash; KVK 89067657</p>
+            <p class="text-center text-xs leading-5 text-gray-600 dark:text-gray-400">&copy; 2023-{{ now.Year }} <a href="https://nonstrict.eu" class="underline">Nonstrict B.V.</a> {{ T "footer_address_inline" }} &mdash; KVK 89067657</p>
         </div>
     </div>
 </footer>

@@ -5,11 +5,11 @@
     <div class="mx-auto max-w-6xl px-9 pt-7 lg:flex lg:gap-9 lg:place-content-between lg:px-8 lg:pt-20">
         <div class="mx-auto max-w-lg min-h-[24rem] sm:min-h-[448px] lg:min-h-min lg:max-h-[448px] flex-shrink-0 flex flex-col justify-center gap-10 lg:mx-0 lg:mt-8">
             <div>
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">Thank you<br />for signing up</h1>
-                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">We'll keep you posted on the latest and greatest of Bezel.</p>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{ T "subscribed_title" | safeHTML }}</h1>
+                <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">{{ T "subscribed_sub" }}</p>
             </div>
             <div id="thanks" class="flex place-content-between">
-                <a href="/bezel/" class="mt-4 text-lg text-purple-600 dark:text-purple-400 underline text-left">Back to homepage →</a>
+                <a href="{{ .Site.Home.RelPermalink }}" class="mt-4 text-lg text-purple-600 dark:text-purple-400 underline text-left">{{ T "back_to_homepage" }}</a>
             </div>
         </div>
 

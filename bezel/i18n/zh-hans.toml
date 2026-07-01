@@ -1,0 +1,629 @@
+# Simplified Chinese (简体中文) UI strings for the Bezel website.
+# Mirrors the keys in en.toml; missing keys fall back to English.
+# Values containing HTML are rendered in templates with `| safeHTML`.
+# Proper nouns (Bezel, Nonstrict B.V., person names, @handles, product names) are
+# intentionally left untranslated.
+
+#
+# ─── Navigation (header.html, ios-header.html, vision-header.html) ───
+#
+[nav_features]
+other = "功能"
+
+[nav_pricing]
+other = "价格"
+
+[nav_ios]
+other = "iOS"
+
+[nav_faq]
+other = "常见问题"
+
+[nav_macos]
+other = "macOS"
+
+[nav_download]
+other = "下载"
+
+[header_ios_title]
+other = "Bezel · iOS 应用"
+
+[header_vision_title]
+other = "Bezel · Vision Pro 应用"
+
+#
+# ─── Footer (footer.html, ios-footer.html, vision-footer.html) ───
+#
+[footer_helper]
+other = "Bezel Helper"
+
+[footer_vision]
+other = "Vision Pro 应用"
+
+[footer_manage_subscription]
+other = "管理订阅"
+
+[footer_knowledge_base]
+other = "知识库"
+
+[footer_press_kit]
+other = "媒体资料包"
+
+[footer_terms]
+other = "条款"
+
+[footer_privacy]
+other = "隐私"
+
+[footer_address_main]
+other = "Amersfoort，荷兰"
+
+[footer_address_inline]
+other = "总部位于荷兰 Amersfoort"
+
+#
+# ─── Language switcher (language-switcher.html) ───
+#
+[language_switcher_label]
+other = "语言"
+
+#
+# ─── Hero (hero.html) ───
+#
+[hero_badge]
+other = "全新：无线镜像"
+
+[hero_title]
+other = "在你的 Mac 上<br />镜像任意 iPhone"
+
+[hero_subtitle]
+other = "用于演示、录制和展示，让人印象深刻。"
+
+[hero_cta_try]
+other = "试用"
+
+[hero_cta_buy]
+other = "购买"
+
+[hero_loved_by]
+other = "5,400+ 人喜爱"
+
+[trusted_by]
+other = "他们都用它来镜像 iPhone："
+
+#
+# ─── Feature sections (hero.html) ───
+#
+[features_instant_title]
+other = "即时镜像任意 iPhone"
+
+[features_instant_sub]
+other = "通过 AirPlay 无线镜像，或用数据线连接。"
+
+[features_recordings_title]
+other = "一键即得精美录制。"
+
+[features_recordings_sub]
+other = "自带边框和背景，随时可分享。"
+
+[features_present_title]
+other = "演示时不受干扰。"
+
+[features_present_sub]
+other = "占据整个屏幕，让所有目光聚焦你的内容。"
+
+[features_toolkit_title]
+other = "完整的镜像工具包："
+
+[feature_airplay]
+other = "通过 AirPlay 无线镜像。"
+
+[feature_usb]
+other = "通过 USB 数据线镜像。"
+
+[feature_every_iphone]
+other = "支持每一台 iPhone，即便是不同的 iCloud 账户。"
+
+[feature_more_devices]
+other = "同样支持 iPad、Apple TV、Vision Pro 和 iPod Touch。"
+
+[feature_recordings]
+other = "带边框和背景的屏幕录制。"
+
+[feature_screenshots]
+other = "高分辨率截屏。"
+
+[feature_audio]
+other = "音频镜像。"
+
+[feature_fullscreen]
+other = "全屏模式。"
+
+[feature_pinning]
+other = "始终置顶。"
+
+[feature_autorotate]
+other = "随设备自动旋转。"
+
+[feature_autobezel]
+other = "自动匹配的边框和颜色。"
+
+[feature_customcolors]
+other = "自定义边框颜色。"
+
+[feature_guided]
+other = "为新设备提供引导式设置。"
+
+[feature_sleeplock]
+other = "检测睡眠和锁定模式。"
+
+[feature_sizing]
+other = "实物大小或像素级精准尺寸。"
+
+[feature_native]
+other = "原生 macOS 应用。"
+
+[feature_remove_watermark]
+other = "去除水印。"
+
+[feature_unlimited]
+other = "无限镜像。"
+
+[badge_pro]
+other = "Pro"
+
+#
+# ─── Testimonials (testimonials.html). Quotes render with safeHTML.
+#     Person names, @handles and product/company names stay untranslated. ───
+#
+[testimonials_title]
+other = "大家都喜爱 Bezel ❤️"
+
+[t_dk_quote]
+other = "“我每天都用 Bezel 向相关方演示，并和团队一起测试新功能。Bezel 让展示某个 App 体验变得无比顺畅。”"
+
+[t_dk_role]
+other = "iOS 与 Android 应用产品经理"
+
+[t_st_quote]
+other = "“ok, ngl, what @mac_cain13 created with the Bezel app is pretty fucking cool.\n                            <br><br>\n                            timely for me as I am launching an iPhone app for my SaaS.  will be great for product demos, etc.\n                            <br><br>\n                            excited to see how he grows this...”"
+
+[t_st_role]
+other = "Working on Squabbble"
+
+[t_jp_quote]
+other = "“真希望我有理由为 Cradle 做一个移动 App。”"
+
+[t_jp_role]
+other = "Cradle.bio 创始人"
+
+[t_bh_quote]
+other = "“看起来太酷了！！！”"
+
+[t_bh_role]
+other = "Vivid app 创作者"
+
+[t_jh_quote]
+other = "“已经被 Bezel 深深折服，超级好奇接下来还有什么！”"
+
+[t_jh_role]
+other = "质量专家"
+
+[t_bs_quote]
+other = "“这真的 100% 正是我一直在寻找和想要的东西。”"
+
+[t_bs_role]
+other = "Q42 Agency 设计师"
+
+[t_fk_quote]
+other = "“哇，做得真棒！超级流畅！”"
+
+[t_fk_role]
+other = "Fastlane 创作者"
+
+[t_ae_quote]
+other = "“今天下载了两款上手引导极佳的 App，把复杂的权限设置变得轻而易举：<br>\n                            - @RewindAI for iOS<br>\n                            - Bezel by @nonstrict_hq”"
+
+[t_ae_role]
+other = "OpenAI 桌面端与智能体团队"
+
+[t_rp_quote]
+other = "“如果你需要在手机上做任何要分享给别人的事情，必须立刻入手！”"
+
+[t_rp_role]
+other = "Rise Calender 联合创始人"
+
+[t_nr_quote]
+other = "“比 QuickTime 更好用 👏”"
+
+[t_nr_role]
+other = "@ahmdnazrafq"
+
+[t_sl_quote]
+other = "“设置流程做得太好了，用起来也非常顺畅。能像使用模拟器一样轻松地镜像自己的设备，真的很棒。”"
+
+[t_sl_role]
+other = "Swift/iOS YouTuber"
+
+[t_pv_quote]
+other = "“这是一款在 Mac 上演示 iPhone 的绝佳 App，极其精致流畅。<br>\n                            <br>\n                            它和 macOS 上的 Detail 配合得非常好，把摄像头画面和 iPhone 屏幕结合起来，即可即时录制和编辑。”"
+
+[t_pv_role]
+other = "Detail.co 创始人"
+
+[t_af_quote]
+other = "“Nonstrict 做的东西很棒。看到真高兴！”"
+
+[t_af_role]
+other = "Reincubate 创始人"
+
+[t_mkl_quote]
+other = "“多棒的工具！我尤其喜欢‘实物大小’。我一直很惊讶 Sketch 或 Figma 居然没有这个功能，让你能以 1:1 的格式查看设计。在我的外接显示器上尺寸都分毫不差！”"
+
+[t_mkl_role]
+other = "创意策略师"
+
+[t_mk_quote]
+other = "“谢谢你！已购买”"
+
+[t_mk_role]
+other = "Notepad.exe & Goodnotes"
+
+#
+# ─── Pricing page (pricing.html) ───
+#
+[pricing_title]
+other = "Bezel Pro"
+
+[pricing_subtitle]
+other = "所有方案均包含全部功能和无限更新。"
+
+[plan_monthly]
+other = "月付"
+
+[plan_monthly_desc]
+other = "最灵活的选择。"
+
+[plan_yearly]
+other = "年付"
+
+[plan_yearly_desc]
+other = "相比月付节省超过 70%。"
+
+[plan_lifetime]
+other = "永久"
+
+[plan_lifetime_desc]
+other = "一次付费，永久拥有。"
+
+[price_per_month]
+other = "/月"
+
+[price_per_year]
+other = "/年"
+
+[price_one_time]
+other = "一次性"
+
+[badge_best_value]
+other = "最超值"
+
+[plan_user]
+other = "1 位用户"
+
+[plan_user_tooltip]
+other = "仅供 1 位用户使用，可安装在该用户的至多 3 台设备上。"
+
+[plan_all_features]
+other = "全部 Bezel Pro 功能"
+
+[plan_unlimited_updates]
+other = "无限应用更新"
+
+[plan_remove_watermark]
+other = "去除水印和时间限制"
+
+[cta_subscribe]
+other = "订阅"
+
+[cta_buy_bezel]
+other = "购买 Bezel"
+
+[cta_download_trial]
+other = "下载免费试用版"
+
+[business_title]
+other = "企业版"
+
+[business_price_period]
+other = "/席位/年"
+
+[business_desc]
+other = "员工注册、合并账单和团队管理。"
+
+[business_contact]
+other = "联系我们"
+
+[pricing_note_currency]
+other = "价格以 USD 计。可能需缴税。"
+
+[pricing_note_guarantee]
+other = "30 天退款保证。"
+
+#
+# ─── Pricing FAQ (pricing.html). Answers with links render with safeHTML. ───
+#
+[faq_title]
+other = "常见问题"
+
+[faq_multi_q]
+other = "我可以在多台 Mac 上安装 Bezel 吗？"
+
+[faq_multi_a]
+other = "可以！每个个人许可证供 1 位用户使用，但可安装在至多 3 台 Mac 上。如果你既有台式机又有笔记本，或在公司和家里使用不同的机器，这非常合适。"
+
+[faq_sub_vs_lifetime_q]
+other = "订阅和永久版有什么区别？"
+
+[faq_sub_vs_lifetime_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">使用<strong>订阅</strong>（月付或年付）时，只要订阅处于有效状态，你就能完整使用全部 Bezel Pro 功能。如果取消订阅，你仍可使用免费试用版。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\"><strong>永久</strong>许可证是一次性购买，让你在应用的整个生命周期内永久使用全部 Pro 功能，包括所有未来更新。</p>"
+
+[faq_cancel_q]
+other = "如果我取消订阅会怎样？"
+
+[faq_cancel_a]
+other = "如果你取消订阅，在当前计费周期结束前仍可使用 Pro 功能。之后，Bezel 将恢复为免费试用版，其中包含水印和时间限制。"
+
+[faq_guarantee_q]
+other = "30 天退款保证是什么？"
+
+[faq_guarantee_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">它让你的购买毫无风险！只需在购买后 30 天内告诉我们你为何不满意，无论原因如何，我们都会退款。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">请通过 <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a> 联系我们</p>"
+
+[faq_invoice_q]
+other = "我可以获取购买发票吗？"
+
+[faq_invoice_a]
+other = "成功购买后，你会收到 Paddle 发来的邮件，并附上发票。如果你需要在发票上填写公司信息和/或增值税号，请在结账的第二步中，使用左下角的“Add VAT”链接添加增值税信息。"
+
+[faq_manage_q]
+other = "我该如何管理我的订阅？"
+
+[faq_manage_a]
+other = "你可以随时通过 <a class=\"underline\" href=\"https://customer-portal.paddle.com/cpl_01h3qnwsb8ac4b74xbkbbj631g\">Paddle 客户门户</a> 管理订阅、更新付款方式或取消订阅。你也可以在 Bezel 中通过“设置 > 关于”进入。"
+
+[faq_license_q]
+other = "我在哪里可以找到我的许可证？"
+
+[faq_license_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">成功购买后，你会收到我们发来的邮件，其中包含你的许可证密钥。请务必检查垃圾邮件文件夹。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">如果你找不到许可证密钥，请通过 <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a> 联系我们。</p>"
+
+[faq_upgrade_q]
+other = "有升级折扣吗？"
+
+[faq_upgrade_a]
+other = "如果你购买的是含一年更新的 Bezel 许可证，便有资格在新的 Bezel 方案上享受 50% 折扣。请在下方输入你之前的序列号以获取升级折扣。"
+
+[upgrade_banner_title]
+other = "从早期 Bezel 版本升级？"
+
+[upgrade_banner_sub]
+other = "输入你之前的序列号以享受 50% 折扣。"
+
+[upgrade_enter_serial]
+other = "输入序列号"
+
+[upgrade_get_discount]
+other = "获取折扣"
+
+[upgrade_to_yearly]
+other = "升级到年付"
+
+[upgrade_to_lifetime]
+other = "升级到永久版"
+
+[faq_transfer_q]
+other = "我该如何把许可证转移到另一台 Mac？"
+
+[faq_transfer_a]
+other = "<p class=\"my-2 text-gray-600 dark:text-gray-400\">前往“设置 > 关于”，点击“Deactivate License..”按钮，停用当前正在使用许可证的 Mac。停用后，你便可在另一台 Mac 上使用该许可证密钥。</p>\n        <p class=\"my-2 text-gray-600 dark:text-gray-400\">如果你已无法访问正在使用许可证的机器，请通过 <a class=\"underline\" href=\"mailto:team@nonstrict.com\">team@nonstrict.com</a> 联系我们。</p>"
+
+# Dynamic strings surfaced by the upgrade-serial JavaScript on the pricing page.
+[upgrade_js_need_serial]
+other = "请先输入你之前的序列号。"
+[upgrade_js_invalid_serial]
+other = "请按 XXXX-XXXX-XXXX-XXXX-XXXX 的格式输入有效的序列号"
+[upgrade_js_checking]
+other = "正在检查…"
+[upgrade_js_generic_error]
+other = "出错了，请重试。"
+
+#
+# ─── iOS page (partials/page/ios.html) ───
+#
+[ios_hero_title]
+other = "精美的带框截图<br>即刻呈现在你的 iPhone 上。"
+
+[ios_hero_sub]
+other = "为你的截屏添加设备边框和背景。"
+
+[ios_feat1_title]
+other = "直接为截屏加框"
+
+[ios_feat1_sub]
+other = "在截屏界面上直接使用视觉智能加框。"
+
+[ios_feat2_title]
+other = "自定义背景"
+
+[ios_feat2_sub]
+other = "在 Unsplash 上搜索惊艳的壁纸。"
+
+[ios_feat3_title]
+other = "选择你的边框"
+
+[ios_feat3_sub]
+other = "挑选你最喜欢的设备边框。"
+
+[ios_more_1]
+other = "从“照片”导入。"
+
+[ios_more_2]
+other = "从“文件”导入。"
+
+[ios_more_3]
+other = "调整边距。"
+
+[more_to_love_title]
+other = "还有更多惊喜！"
+
+[also_available_macos]
+other = "Bezel 也可在 macOS 上使用"
+
+#
+# ─── Vision Pro page (partials/page/vision.html) ───
+#
+[vision_hero_title]
+other = "在 <span class=\"hidden sm:inline\">Apple </span>Vision Pro 中<br>展示你的 iPhone"
+
+[vision_hero_sub]
+other = "Bezel 为你呈现清晰易读的 iPhone 镜像。"
+
+[vision_feat1_title]
+other = "清晰易读的 iPhone"
+
+[vision_feat1_sub]
+other = "告别模糊的透视画面。"
+
+[vision_feat2_title]
+other = "惊艳外观"
+
+[vision_feat2_sub]
+other = "屏幕被镜像到一台立体的 iPhone 上。"
+
+[vision_feat3_title]
+other = "完全无线"
+
+[vision_feat3_sub]
+other = "使用免费的 iOS 应用即可无线镜像。"
+
+[vision_more_1]
+other = "支持竖屏和横屏。"
+
+[vision_more_2]
+other = "同时镜像多台设备。"
+
+[vision_more_4]
+other = "精美而快速的原生 visionOS 应用。"
+
+[vision_faq1_q]
+other = "我在哪里能获取适用于 visionOS 的 Bezel？价格是多少？"
+
+[vision_faq1_a]
+other = "Bezel 在 <a class=\"underline\" href=\"https://apps.apple.com/us/app/bezel-device-mirror/id6476657945\">App Store</a> 上以一次性 $5 的价格提供。你想镜像的 iPhone 上还需安装 iOS 版 Bezel 应用（免费版）。"
+
+[vision_faq2_q]
+other = "哪些设备可以镜像到适用于 visionOS 的 Bezel？"
+
+[vision_faq2_a]
+other = "首发时支持搭载 FaceID 并运行 iOS 16.4 或更新版本的 iPhone。我们计划在未来支持更多 Apple 设备。"
+
+[vision_faq3_q]
+other = "适用于 visionOS 的 Bezel 与适用于 macOS 的 Bezel 有什么关系？"
+
+[vision_faq3_a]
+other = "适用于 visionOS 的 Bezel 是为 Apple Vision Pro 从零打造的原生应用，作为独立购买的产品出售。你可以从<a class=\"underline\" href=\"/bezel/\">网站</a>获取 <a class=\"underline\" href=\"/bezel/\">Bezel for Mac</a>。"
+
+#
+# ─── Helper page (partials/page/helper.html) ───
+#
+[helper_title]
+other = "Bezel Helper"
+
+[helper_intro]
+other = "为了让 Bezel 能够<strong>识别连接到你 Mac 的 iPhone</strong> 或 iPad 的型号、颜色和连接状态，你需要安装一个小型辅助应用。"
+
+[helper_step1]
+other = "下载 Bezel Helper 应用："
+
+[helper_download_btn]
+other = "下载 Helper"
+
+[helper_step2]
+other = "下载完成后，双击启动 Bezel Helper。"
+
+[helper_step3]
+other = "Helper 会自动连接到 Bezel，并识别你 iPhone 的型号、颜色和连接状态。"
+
+[helper_why_title]
+other = "为什么需要这个？"
+
+[helper_why_text]
+other = "macOS 的沙盒机制阻止 Bezel 直接与 iPhone 通信，因此当你连接 iPhone 或 iPad 时，Bezel 会借助这个运行在沙盒之外的辅助应用作为中介。"
+
+#
+# ─── Thank-you / download page (partials/page/thank-you.html) ───
+#
+[ty_title]
+other = "下载已开始"
+
+[ty_not_working]
+other = "无法正常下载？"
+
+[ty_download_again]
+other = "重新开始下载。"
+
+[ty_signup_title]
+other = "订阅更新"
+
+[ty_signup_sub]
+other = "第一时间了解新功能。"
+
+[form_email_label]
+other = "电子邮件地址"
+
+[form_email_placeholder]
+other = "你的电子邮件地址"
+
+[form_signup_btn]
+other = "订阅"
+
+[ty_updates_note]
+other = "仅发送 Bezel 更新，可随时退订。"
+
+[ty_thanks]
+other = "太好了，你已加入名单。"
+
+[back_to_homepage]
+other = "返回主页 →"
+
+# Dynamic strings surfaced by the newsletter-form JavaScript.
+[form_js_signing_up]
+other = "正在订阅…"
+[form_js_invalid_email]
+other = "请输入有效的电子邮件地址。"
+[form_js_could_not_signup]
+other = "无法为你订阅，请重试。"
+[form_js_network_error]
+other = "网络错误。请检查你的连接后重试。"
+[form_js_verification_failed]
+other = "验证失败，请重试。"
+[form_js_verification_timeout]
+other = "验证超时，请重试。"
+[form_js_generic_error]
+other = "出错了，请重试。"
+
+#
+# ─── Subscribed page (partials/page/subscribed.html) ───
+#
+[subscribed_title]
+other = "感谢你<br />的订阅"
+
+[subscribed_sub]
+other = "我们会及时向你分享 Bezel 的最新最棒动态。"
+
+#
+# ─── Knowledge Base / articles (article/list.html) ───
+#
+[knowledge_base]
+other = "知识库"
