@@ -1,5 +1,116 @@
 # Changelog
 
+### 0.97.0
+
+- Swift: `RKMouseEvent.targetsCurrentProcess` is now correct when keyboard input is recorded as well
+
+### 0.96.0
+
+- Swift: Add signals for conditions that need attention but don't end a recording, via `onSignalsChanged` on `RKRecorder` init and `setSignalsHandler(_:)`
+- Swift: Add `lowDiskSpace` signal, raised when free disk space drops below `diskSpaceWarningLevel`
+- Swift: Renamed `minimumFreeDiskSpaceToPrepareRecording` to `diskSpaceWarningLevel` and `minimumFreeDiskSpace` to `diskSpaceAbortLevel` on `RKRecorder.Settings`
+- Electron: Add `signals` event to `Recorder` and rename disk space settings to `diskSpaceWarningLevel` and `diskSpaceAbortLevel`
+
+### 0.95.0
+
+- Fix `RKWindow` resize, move, center and maximize failing for Chrome windows
+
+### 0.94.1
+
+- Fix microphone audio drifting out of sync when another app (e.g. FaceTime) takes over the microphone
+
+### 0.94.0
+
+- Swift: Core Audio backend now records all subprocesses in the bundle ID namespace of the selected app, fixing missing Microsoft Teams meeting audio
+- Swift: Core Audio backend now includes or excludes processes that start during the recording
+- Fix Core Audio backend recording silence on output devices that also have inputs
+
+### 0.93.0
+
+- Swift: Add `minimumFreeDiskSpace` and `minimumFreeDiskSpaceToPrepareRecording` to `RKRecorder.Settings` to abort recordings when disk space runs low
+- Swift: Add `RKError.Code.insufficientDiskSpace`
+- Electron: Add `minimumFreeDiskSpace` and `minimumFreeDiskSpaceToPrepareRecording` to `RecorderSettings`
+- Swift: Compensate microphone attenuation when another app (e.g. FaceTime) uses voice processing, instead of refusing to record
+- Fix wrong-speed system audio with Core Audio backend when output device uses a different sample rate (e.g. Bluetooth headsets)
+
+### 0.92.1
+
+- Fix `RKWindow` operations failing repeatedly after an earlier error
+
+### 0.92.0
+
+- Swift: Add `driver` property to `RKCamera`
+- Swift: `manufacturer` and `modelID` on `RKCamera` now update live for virtual cameras
+
+### 0.91.0
+
+- Fix audio drift for microphones with more than two channels (e.g. Focusrite Vocaster, aggregate devices)
+- Fix incorrect orientation tracking for downscaled iPad recordings
+- Fix last frames of Apple device recordings being dropped
+
+### 0.90.0
+
+- Electron: API now on par with Swift, adding discovery, permissions, window control, camera format selection, all schema items and outputs, input events, echo cancellation, background blur and log events
+- Fix recording hanging on stop after a long microphone gap (e.g. Mac sleeping during a recording)
+- Fix audio playing early after a long microphone gap
+
+### 0.89.0
+
+- Swift: Remove `_useTimeline` setting from `RKRecorder.Settings`, timeline is now always used
+- Swift: Add F20-F24, media, volume and brightness keys to `RKKeyboardKeyType`
+- Swift: Add cross-platform cursor types to `RKCursorType`
+- Swift: Refuse to record the built-in MacBook microphone while a FaceTime call makes it capture silence
+- Improved background blur performance
+- Fix `RKMicrophonePreview` under-reporting peak levels
+
+### 0.88.3
+
+- Fix background blur failing after switching cameras
+
+### 0.88.2
+
+- Swift: `RKLogger` is now `Sendable`
+- Fix mirroring on DJI Osmo Pocket 3 on macOS 15
+
+### 0.88.1
+
+- Fix crash in Center Stage camera workaround when multiple camera previews or recordings start at the same time
+
+### 0.88.0
+
+- Swift: Add `backgroundBlur` option to webcam schema items and `RKCameraPreview`
+- Swift: Add `setActiveFormat(bestFor:)` and `bestFormat(for:)` methods to `RKCamera`
+- Swift: Add `maxVideoDimensions` and `preserveActiveCameraConfiguration` to `RKCameraPreview`
+- Swift: Cameras without usable video formats are no longer listed
+- Fix `RKCameraPreview` unexpectedly changing the camera resolution
+- Smoother camera switching in `RKCameraPreview`
+
+### 0.87.3
+
+- Swift: Add public initializer to `RKRecorder.EchoCancellation.AEC3Config`
+- Swift: Add DocC guides for project setup, first recording, output formats, logging, system audio, Apple device recording and echo cancellation
+
+### 0.87.2
+
+- Swift: Package now includes documentation articles and `AGENTS.md`
+
+### 0.87.1
+
+- Swift: Throw `RKError` with `videoFormatError` code instead of crashing when a camera reports invalid video dimensions
+
+### 0.87.0
+
+- Swift: Virtual webcams that only offer BGRA formats (e.g. Persona) can now be recorded
+- Fix crash on virtual machines caused by unsupported video compression properties
+- Fix echo cancelled audio being longer than the recording
+- Fix Core Audio system audio recording in virtual machines
+
+### 0.86.0
+
+- Swift: Add `echoCancellation` option to webcam schema items
+- Swift: Remove unused public `VTCompressionSession` extension
+- Fix data race crash during audio recording
+
 ### 0.85.0
 
 - Swift: Renamed App Store SDK from `RecordKitAppStore` to `RecordKitSandboxed`
