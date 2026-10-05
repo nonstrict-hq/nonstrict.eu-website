@@ -3,6 +3,7 @@ languageCode = "en-US"
 disablePathToLower = true
 title = "Bezel • Mirror any iPhone on your Mac"
 enableRobotsTXT = true
+buildFuture = true
 
 [params]
   description = "The best way to display and record any iPhone, iPad, and Apple TV."
@@ -20,6 +21,8 @@ enableRobotsTXT = true
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]

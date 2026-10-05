@@ -1,0 +1,47 @@
+<div class="not-prose my-10" data-carousel>
+    <div class="relative">
+        <div data-carousel-track class="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&>figure]:my-0 [&>figure]:w-full [&>figure]:shrink-0 [&>figure]:snap-center [&_figcaption]:hidden">
+            {{ .Inner | .Page.RenderString (dict "display" "block") }}
+        </div>
+        <button type="button" data-carousel-prev aria-label="Previous" class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow ring-1 ring-gray-900/10 hover:bg-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" /></svg>
+        </button>
+        <button type="button" data-carousel-next aria-label="Next" class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow ring-1 ring-gray-900/10 hover:bg-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
+        </button>
+    </div>
+    <div data-carousel-dots class="mt-4 flex justify-center gap-2"></div>
+    {{ with .Get "caption" }}<p class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400">{{ . }}</p>{{ end }}
+</div>
+<script>
+(() => {
+  const carousel = document.currentScript.previousElementSibling;
+  const track = carousel.querySelector('[data-carousel-track]');
+  const slides = [...track.children];
+  const dots = slides.map((slide, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'h-2 w-2 rounded-full bg-gray-300 aria-[current=true]:bg-purple-600 dark:bg-gray-600 dark:aria-[current=true]:bg-purple-400';
+    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    dot.addEventListener('click', () => { stop(); go(i); });
+    carousel.querySelector('[data-carousel-dots]').append(dot);
+    return dot;
+  });
+  const current = () => Math.round(track.scrollLeft / track.clientWidth);
+  const go = i => track.scrollTo({ left: ((i + slides.length) % slides.length) * track.clientWidth, behavior: 'smooth' });
+  const update = () => dots.forEach((dot, i) => dot.setAttribute('aria-current', i === current()));
+  track.addEventListener('scroll', update, { passive: true });
+  update();
+
+  let timer = null, stopped = false, paused = false;
+  const stop = () => { stopped = true; clearInterval(timer); };
+  carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => { stop(); go(current() - 1); });
+  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => { stop(); go(current() + 1); });
+  track.addEventListener('pointerdown', stop);
+  carousel.addEventListener('mouseenter', () => paused = true);
+  carousel.addEventListener('mouseleave', () => paused = false);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    timer = setInterval(() => { if (!stopped && !paused) go(current() + 1); }, 4000);
+  }
+})();
+</script>

@@ -1,0 +1,10 @@
+[outputFormats.presskitmd]
+  mediaType = "text/markdown"
+  baseName = "presskit"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  page = ["presskitmd"]
+  section = ["presskitmd"]
+  home = ["presskitmd"]

@@ -1,0 +1,58 @@
+{{- $kit := site.GetPage "/presskit" -}}
+{{- $release := . -}}
+
+<div class="mx-auto max-w-5xl px-6 pb-24 pt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-x-16 lg:pt-20">
+    <article class="min-w-0 max-w-2xl">
+        <p class="text-sm text-gray-500 dark:text-gray-400">Press release · <time datetime="{{ $release.Date.Format "2006-01-02" }}">{{ $release.Date | time.Format ":date_long" }}</time></p>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{{ $release.Title }}</h1>
+        <p class="mt-6 text-xl leading-8 text-gray-600 dark:text-gray-300">{{ $release.Params.lede }}</p>
+
+        {{ partial "presskit/actions.html" (dict "release" $release "class" "mt-8 sm:flex-row sm:[&>div]:flex-1 lg:hidden" "noteClass" "hidden") }}
+
+        <div class="prose prose-lg prose-gray mt-12 max-w-none dark:prose-invert prose-a:text-purple-600 dark:prose-a:text-purple-400">
+            {{ $release.Content }}
+        </div>
+
+        <div class="mt-10 flex flex-col items-center gap-3">
+            {{ range $release.Params.links | default $kit.Params.links }}
+            <a href="{{ .url }}" class="rounded-md bg-purple-600 px-6 py-3 font-semibold text-white shadow-sm hover:bg-purple-500">{{ .title }}</a>
+            {{ with .note }}<p class="-mt-1 text-xs text-gray-500 dark:text-gray-400">{{ . }}</p>{{ end }}
+            {{ end }}
+        </div>
+
+        <section class="mt-10 border-t border-gray-900/10 pt-10 dark:border-white/10">
+            <h2 class="font-semibold text-gray-900 dark:text-white">About Bezel</h2>
+            <p class="mt-3 leading-7 text-gray-600 dark:text-gray-300">{{ $kit.Params.boilerplate }}</p>
+            <dl class="mt-6 divide-y divide-gray-900/10 border-y border-gray-900/10 text-sm dark:divide-white/10 dark:border-white/10">
+                {{ range $kit.Params.facts }}
+                <div class="py-3 sm:grid sm:grid-cols-[9rem_1fr] sm:gap-4">
+                    <dt class="text-gray-500 dark:text-gray-400">{{ .label }}</dt>
+                    <dd class="mt-1 text-gray-900 sm:mt-0 dark:text-white [&_a]:text-purple-600 [&_a:hover]:underline dark:[&_a]:text-purple-400">{{ .value | markdownify }}</dd>
+                </div>
+                {{ end }}
+            </dl>
+        </section>
+
+        <section class="mt-10 lg:hidden">
+            {{ partial "presskit/actions.html" (dict "release" $release "class" "sm:flex-row sm:[&>div]:flex-1" "hideLinks" true) }}
+        </section>
+
+        {{ with where (where $kit.Pages "Kind" "page") "Permalink" "!=" $release.Permalink }}
+        <section class="mt-10 border-t border-gray-900/10 pt-10 text-sm dark:border-white/10">
+            <h2 class="font-semibold text-gray-900 dark:text-white">Other press releases</h2>
+            <ul class="mt-3 space-y-2">
+                {{ range .ByDate.Reverse }}
+                <li><a href="{{ .RelPermalink }}" class="text-purple-600 hover:underline dark:text-purple-400">{{ .Title }}</a> <span class="text-gray-500 dark:text-gray-400">· {{ .Date | time.Format ":date_long" }}</span></li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+    </article>
+
+    <aside class="hidden lg:block">
+        <div class="sticky top-32">
+            <h2 class="text-xs font-semibold uppercase leading-5 tracking-wider text-gray-400 dark:text-gray-500">Resources</h2>
+            {{ partial "presskit/actions.html" (dict "release" $release "class" "mt-3") }}
+        </div>
+    </aside>
+</div>

@@ -1,0 +1,5 @@
+{{- $zip := dict -}}
+{{- if fileExists (printf "static/presskit/bezel-%s.zip" .) -}}
+{{- $zip = dict "url" (printf "presskit/bezel-%s.zip" . | relURL) -}}
+{{- end -}}
+{{- return $zip -}}

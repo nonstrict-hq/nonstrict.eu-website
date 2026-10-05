@@ -1,0 +1,5 @@
+{{ define "main" }}
+{{ with index (where .Pages "Kind" "page").ByDate.Reverse 0 }}
+{{ partial "presskit/release.html" . }}
+{{ end }}
+{{ end }}

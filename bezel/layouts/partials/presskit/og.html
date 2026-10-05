@@ -1,0 +1,9 @@
+{{- $og := dict -}}
+{{- if eq .Section "presskit" -}}
+{{- $release := . -}}
+{{- if .IsSection -}}{{- $release = index (where .Pages "Kind" "page").ByDate.Reverse 0 -}}{{- end -}}
+{{- with or ($release.Resources.GetMatch "og.*") (index ($release.Resources.ByType "image") 0) -}}
+{{- $og = dict "title" (printf "%s | Bezel press release" $release.Title) "description" $release.Params.lede "image" (.Fill "1200x630 Center png").Permalink -}}
+{{- end -}}
+{{- end -}}
+{{- return $og -}}

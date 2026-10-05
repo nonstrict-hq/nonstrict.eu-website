@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+./presskit-zips.sh
+
 # Build Tailwind CSS in watch mode in background
 ./tailwindcss -i assets/css/input.css -o assets/css/styles.css --watch &
 TAILWIND_PID=$!
