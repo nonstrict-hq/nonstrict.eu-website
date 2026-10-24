@@ -1,0 +1,19 @@
+{{ $row := "flex items-center gap-x-3 rounded-md bg-white dark:bg-white/5 ring-1 ring-gray-300 dark:ring-white/10 px-3 py-2" }}
+{{ $action := "text-base leading-6 font-semibold text-gray-900 dark:text-white" }}
+{{ $moves := slice
+    (dict "icon" "closed" "action" "Start with the Duo closed")
+    (dict "icon" "open-landscape" "action" "Unfold it")
+    (dict "icon" "open" "action" "Turn it to portrait and back")
+    (dict "icon" "closed" "action" "Close it again")
+}}
+<ol class="mt-3 grid gap-2">
+    {{ range $moves }}
+    <li class="{{ $row }}">
+        <span class="flex h-8 w-10 flex-none items-center justify-center text-purple-600 dark:text-purple-400" aria-hidden="true">
+            {{ (resources.Get (printf "images/duo-test/%s.svg" .icon)).Content | replaceRE "<svg " "<svg class=\"h-8 w-auto\" " | safeHTML }}
+        </span>
+        <p class="{{ $action }}">{{ .action }}</p>
+    </li>
+    {{ end }}
+</ol>
+<p class="mt-3 text-base leading-7 text-gray-600 dark:text-gray-300">Watch the Mac: did the mirror look right the whole time?</p>
