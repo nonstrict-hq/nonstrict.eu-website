@@ -1,5 +1,29 @@
 # Changelog
 
+### 0.99.0
+
+- Add `muted`, `disconnected` and `noAudio` signals for microphones and system audio, see [Logging, Signals and Error Handling](/guides/logging-and-errors#signals)
+- Swift: Add `source` to `RKRecorder.Signal`, `noAudioDuration` to `RKRecorder.Settings` and `id` to `RKRecorder.SchemaItem`
+- Electron: Add `source` to `Signal` and `noAudioDuration` to `RecorderSettings`
+- Fix half-pitch system audio with Core Audio backend on output devices that also have inputs (e.g. USB headsets)
+
+### 0.98.0
+
+- Fix microphone recordings aborting when the microphone switches channel count mid-recording (e.g. the built-in MacBook microphone when a call starts or ends)
+- Fix microphone audio being stretched when the microphone's sample rate changes mid-recording
+- Swift: `RKAuthorization.requestSystemAudioRecording(backend:)` now returns `true` on macOS 26+ when system audio is recorded regardless of the answer to the permission dialog
+- Swift: Core Audio backend now fails with `systemAudioPermissionRequired` when the system audio permission dialog stays open for 120 seconds
+
+### 0.97.2
+
+- Swift: Fix clicks and drift in microphone stream audio
+- Fix cursor changes not being recorded while the mouse doesn't move
+
+### 0.97.1
+
+- Swift: Add `targetsCurrentProcess` to `RKKeyboardEvent` and `RKInputModifiersChangedEvent`
+- Keyboard events for space, return and tab now include their characters
+
 ### 0.97.0
 
 - Swift: `RKMouseEvent.targetsCurrentProcess` is now correct when keyboard input is recorded as well
