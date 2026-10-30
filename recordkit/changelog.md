@@ -1,5 +1,20 @@
 # Changelog
 
+### 0.100.0
+
+- The signals handler now decides whether a recording continues
+- The default signal handler aborts the recording when a mic disconnects or the disk is full
+- Add `insufficientDiskSpace` signal, raised below `insufficientDiskSpaceThreshold` instead of aborting right away, and the `abortedOnSignal` error code
+- Renamed `diskSpaceWarningLevel` to `lowDiskSpaceThreshold` and `diskSpaceAbortLevel` to `insufficientDiskSpaceThreshold`
+- Fix a microphone staying silent for the rest of the recording after it's unplugged and plugged back into the same port
+- Fix `stop()` taking minutes after the microphone stopped delivering audio for a long time
+- Fix a silent microphone track from audio interfaces with more than two channels when the mic isn't on the first input
+- Leave the loopback channels of audio interfaces out of mono microphone recordings
+- Fix flooding the log after the output device behind a tap disappears
+- Fix a listener staying installed after each recording until the app quits
+- Log a warning when a recorder is released without `stop()`
+- Recognize the latest MacBook Pro and iMac models
+
 ### 0.99.0
 
 - Add `muted`, `disconnected` and `noAudio` signals for microphones and system audio, see [Logging, Signals and Error Handling](/guides/logging-and-errors#signals)
