@@ -12,6 +12,9 @@
 - Leave the loopback channels of audio interfaces out of mono microphone recordings
 - Fix flooding the log after the output device behind a tap disappears
 - Fix a listener staying installed after each recording until the app quits
+- Fix microphones, system audio and screen capture staying on after a recording is stopped before it starts or fails to prepare
+- Fix echo cancellation keeping its system audio tap running after a microphone recorder is cancelled
+- Log which other apps use audio input during a recording
 - Log a warning when a recorder is released without `stop()`
 - Recognize the latest MacBook Pro and iMac models
 
