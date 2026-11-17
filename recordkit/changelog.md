@@ -1,5 +1,21 @@
 # Changelog
 
+### 0.102.0
+
+- Core Audio backend now keeps recording an app after it's quit and opened again, including helper processes that only start later
+- Add `applicationClosed` signal for system audio items that record specific apps, raised while one of those apps isn't running
+- Fix Zoom Phone calls recording as silence with the Core Audio backend
+
+### 0.101.0
+
+- Swift: Add recording checkpoints with `RKRecorder.requestCheckpoint(at:_:)`, which hands out the recording up to a given time while it continues, for example to upload the start of a recording before it stops
+- Add `disconnected` and `noVideo` signals for cameras; by default a disconnected camera aborts the recording with `cameraUnavailable`
+- Fix arrow and I-beam cursors being recorded as custom cursors after the pointer colors were changed in System Settings
+- Fix screen recordings failing to start when the macOS screen capture service hangs, it's now restarted (not in the sandboxed build)
+- Start screen recordings faster
+- Read the window list off the main thread
+- Fix a segmented playlist listing a segment twice after writing it failed on a full disk
+
 ### 0.100.0
 
 - The signals handler now decides whether a recording continues
