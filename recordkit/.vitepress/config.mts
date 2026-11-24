@@ -74,6 +74,7 @@ export default defineConfig({
           { text: 'Output Formats', link: '/guides/output-formats' },
           { text: 'System Audio Recording', link: '/guides/system-audio-recording' },
           { text: 'Echo Cancellation', link: '/guides/echo-cancellation' },
+          { text: 'Crash Recovery', link: '/guides/crash-recovery' },
         ]
       },
       {

@@ -1,5 +1,14 @@
 # Changelog
 
+### 0.104.0
+
+- Recordings now survive a crash: media files stay readable up to about the last second, see [Crash Recovery](/guides/crash-recovery)
+- Swift: Add `RKRecorder.interruptedRecordings()`, `recoverBundles()`, and `recover()` and `discard()` on `RKInterruptedRecording`, to finish or remove recordings that didn't stop normally
+- Add `crashRecovery` to the recorder settings, on by default
+- Add the `recordingNotRecoverable` error code
+- Swift: Add `RKDisplay.silhouette`
+- Fix a recorder whose `finish()` failed writing into the bundle after `stop()` returned
+
 ### 0.103.0
 
 - Abort a recording with `outputDirectoryRemoved` when its output directory is deleted, moved or unmounted
