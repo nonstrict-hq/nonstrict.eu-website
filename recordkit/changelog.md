@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.103.0
+
+- Abort a recording with `outputDirectoryRemoved` when its output directory is deleted, moved or unmounted
+- Fix `prepare()` hanging when macOS doesn't report purgeable disk space
+- Fixes to the `lidClosed` microphone and camera availability state on MacBooks
+- Fix recordings aborting with the lid closed when a microphone is plugged into the headphone jack
+
 ### 0.102.0
 
 - Core Audio backend now keeps recording an app after it's quit and reopened
